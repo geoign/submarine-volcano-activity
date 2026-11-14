@@ -89,7 +89,8 @@ function drawMarkers() {
       : { radius: 3, fillColor: surface, fillOpacity: 0.9, color: cssVar("--muted"), weight: 1 };
     if (!hit) Object.assign(opt, { fillOpacity: 0.12, opacity: 0.2 });
     const m = L.circleMarker([v.lat, shiftLon(v.lon)], opt).addTo(map);
-    m.bindTooltip(() => `${volcanoName(v)} · ${cls ? classLabel(cls, true) : t("class.none")}`, { direction: "top", offset: [0, -4] });
+    // A node, not a string: Leaflet would insert a string as HTML.
+    m.bindTooltip(() => el("span", { text: `${volcanoName(v)} · ${cls ? classLabel(cls, true) : t("class.none")}` }), { direction: "top", offset: [0, -4] });
     m.bindPopup(() => popupContent(v, summarise(v)), { maxWidth: 280 });
     markers.push(m);
   }
