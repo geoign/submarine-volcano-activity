@@ -2,10 +2,6 @@ MIT License
 
 Copyright (c) 2026 Fumihiko Ikegami (Ikegami GeoResearch)
 
-This licence covers the code of this repository: the files under tools/, tests/ and assets/js/,
-the style sheet and the HTML pages. The data are under the licence in LICENSE-DATA. Leaflet, in
-assets/vendor/leaflet/, is under its own licence (BSD 2-Clause).
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights

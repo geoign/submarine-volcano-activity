@@ -75,9 +75,11 @@ monitor's reviews and from `curation/overrides.csv`; see the module docstrings.
 
 ## Licence and citation
 
-The data (`db/`, `curation/` and the images) are under
-[CC BY 4.0](LICENSE-DATA); the code is under the [MIT licence](LICENSE). The images are made from
-Copernicus Sentinel and Landsat data; give the sources above as well when you reuse them.
+The data (`db/`, `curation/`, the texts in `docs/` and the images) are under
+[CC BY 4.0](LICENSE-DATA). The code (`tools/`, `tests/`, `assets/js/`, the style sheet and the HTML
+pages) is under the [MIT licence](LICENSE). Leaflet, in `assets/vendor/leaflet/`, keeps its own
+licence. The images are made from Copernicus Sentinel and Landsat data; give the sources above as
+well when you reuse them.
 
 > Ikegami, F. (2026). Submarine Volcano Activity Database.
 > https://github.com/geoign/submarine-volcano-activity
