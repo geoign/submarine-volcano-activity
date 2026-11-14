@@ -23,6 +23,18 @@ within 14 days of an episode that is not counted as a documented eruption or lik
 class counts 75 at least and 20 is added: a visit that saw something beside a review that did not
 is the first thing to look at. Records of a neighbouring island do not count for this.
 It only orders the work; it is not published.
+
+The form can leave out volcanoes where activity is seen almost all the time (Lateiki, Home Reef,
+Fukutoku-Oka-no-Ba...), so that the author can work on the rest. Each volcano of data.js carries
+its baseline class (`base`), the number of its episodes in the form (`n`), those of class known,
+likely, possible or recurrent (`act`), and `steady`, see steady(): whether it is left out when the
+filter is on. That only sets the default of a filter of the form; the author changes the set in
+the form (kept in the browser), and none of it is published.
+
+Keys of the form: 1 to 7 verdict, A agree with the class, Enter save and next, J/K or arrows up/down
+next/previous episode, arrows left/right pass, C comment, D date of the pass into the comment
+(Alt+D inside it), G grid of all passes, H enhancement of the images, and Q W E R T Y U I O P Z X V
+the causes of a "nonvolcanic" verdict (in the order of vocab.CAUSES).
 """
 
 from __future__ import annotations
@@ -49,6 +61,8 @@ WEIGHT = {"likely": 100, "possible": 80, "unreviewed": 70, "known": 65, "airborn
           "recurrent": 30, "nonvolcanic": 0}
 CONTEXT = 2          # usable passes shown before the first and after the last alert
 QUIET_INSIDE = 10    # at most this many passes without an alert from inside the episode
+ACTIVE = ("known", "likely", "possible", "recurrent")   # the classes counted as activity for steady()
+STEADY_ACT = 10      # this many such episodes in the form make a volcano "steady" whatever its baseline
 
 
 def read(path: Path) -> list[dict]:
@@ -74,6 +88,15 @@ def importance(e: dict, seen_by_jcg: bool = False) -> float:
     score += min(6 * math.log10(1 + f(e["max_dw_km2"])), 15)
     score += 5 * ("fl" in ph or "nl" in ph) + 2 * ("th" in ph)
     return round(score, 1)
+
+
+def steady(base: str, act: int) -> bool:
+    """Whether the form leaves the volcano out by default when "almost always active" is filtered.
+
+    True for a baseline class of "persistent" or "frequent", or for STEADY_ACT or more episodes of
+    an active class in the form. Only the default of a filter of the form; not published.
+    """
+    return base in ("persistent", "frequent") or act >= STEADY_ACT
 
 
 def site_of(zone: str) -> str:
@@ -144,10 +167,16 @@ def main() -> None:
                 status=e.get("review_status", ""), imp=importance(e, seen), passes=rows, jcg=near, jh=int(seen),
                 periods=known))
     out.sort(key=lambda r: (-r["imp"], r["s"]))
+    n_eps, n_act = defaultdict(int), defaultdict(int)
+    for r in out:
+        n_eps[r["v"]] += 1
+        n_act[r["v"]] += r["cls"] in ACTIVE
     data = dict(
         generated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), db_generated=meta["generated"],
         image_base=meta["image_base"], site=SITE, classes=[c for c in CLASSES if c != "unreviewed"], causes=CAUSES,
-        volcanoes={k: dict(name=v["name"], name_ja=v["name_ja"], country=v["country"], gvp=v["gvp_number"])
+        volcanoes={k: dict(name=v["name"], name_ja=v["name_ja"], country=v["country"], gvp=v["gvp_number"],
+                           base=v.get("baseline_class", ""), n=n_eps[k], act=n_act[k],
+                           steady=steady(v.get("baseline_class", ""), n_act[k]))
                    for k, v in volcanoes.items()},
         episodes=out,
         reviews={k: dict(verdict=r["verdict"], cause=r.get("cause", ""), comment=r.get("comment", ""),
@@ -163,6 +192,9 @@ def main() -> None:
     print(f"review/index.html: {len(out)} episodes with images ({skipped} without), "
           f"{len(reviews)} already reviewed, data.js {len(text) / 1e6:.1f} MB")
     print("by class:", dict(by_class))
+    left = [k for k, v in data["volcanoes"].items() if v["steady"] and v["n"]]
+    print(f"almost always active (left out by default when the filter is on): {len(left)} volcanoes, "
+          f"{sum(n_eps[k] for k in left)} episodes")
     print("something seen at the volcano in the Coast Guard's database at the time:", sum(r["jh"] for r in out), "episodes")
 
 

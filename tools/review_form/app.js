@@ -29,11 +29,26 @@ const BASIS = {
 };
 const ROLE = { a: "警戒", q: "期間内", b: "前", c: "後" };
 const JCG = { anomaly: "記録あり", none: "特異事象なし", not_visible: "視認できず", other: "その他" };
+const BASE = { quiet: "静穏", frequent: "頻繁", persistent: "常時" };
+// Keys of the causes of a "nonvolcanic" verdict, in the order of D.causes.
+const CAUSE_KEY = {
+  cloud: "q", cloud_shadow: "w", sun_glint: "e", reef_or_shoal: "r", land_or_surf: "t", land_or_ice: "y", bloom: "u",
+  sediment_plume: "i", ship_wake: "o", sensor_artifact: "p", neighbour_eruption: "z", persistent: "x", other: "v",
+};
+const KEY_CAUSE = Object.fromEntries(Object.entries(CAUSE_KEY).map(([c, k]) => [k, c]));
+const ENH = ["なし", "中", "強"];
+// Conveniences of this browser, not records: the author's changes to the set of volcanoes left out
+// (volcano id -> 0 or 1, over the default of data.js) and the view settings.
+const STEADY = "submvolc-review-steady-v1";
+const PREFS = "submvolc-review-prefs-v1";
+const IDB = { name: "submvolc-review", store: "handles", key: "csv" };
 
 const S = {
   status: "pending", sort: "imp", q: "", high: true, low: true, jcg: false, classes: new Set(Object.keys(LABEL)),
   shown: 200, current: null, pass: 0, list: [], fileHandle: null, dirty: false,
+  hideSteady: false, hidden: { n: 0, v: 0 }, grid: false, enh: 0, preload: [],
 };
+let steadyOv = {};
 let reviews = {};
 let embedded = "";     // the reviews as the CSV file had them when the form was built
 
@@ -81,6 +96,40 @@ function quicklook(p) {
   const stamp = t.slice(0, 4) + t.slice(5, 7) + t.slice(8, 10) + "T" + t.slice(11, 13) + t.slice(14, 16);
   return `${D.image_base}/ql/${p[0]}/${p[0]}_${stamp}_${p[2]}.jpg`;
 }
+
+// ---------------------------------------------------------------- view settings (browser storage, optional)
+
+function loadJSON(key) {
+  try {
+    const v = JSON.parse(localStorage.getItem(key) || "{}");
+    return v && typeof v === "object" && !Array.isArray(v) ? v : {};
+  } catch { return {}; }
+}
+function saveJSON(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* the form works without storage */ }
+}
+
+function loadPrefs() {
+  const p = loadJSON(PREFS);
+  const bool = (k) => { if (typeof p[k] === "boolean") S[k] = p[k]; };
+  ["high", "low", "jcg", "hideSteady", "grid"].forEach(bool);
+  if (["pending", "done", "all"].includes(p.status)) S.status = p.status;
+  if (["imp", "new", "old", "volcano"].includes(p.sort)) S.sort = p.sort;
+  if ([0, 1, 2].includes(p.enh)) S.enh = p.enh;
+  if (Array.isArray(p.classes)) S.classes = new Set(p.classes.filter((c) => c in LABEL));
+  steadyOv = loadJSON(STEADY);
+}
+function savePrefs() {
+  saveJSON(PREFS, {
+    status: S.status, sort: S.sort, high: S.high, low: S.low, jcg: S.jcg, classes: [...S.classes],
+    hideSteady: S.hideSteady, grid: S.grid, enh: S.enh,
+  });
+}
+
+// In the set of volcanoes left out by the filter: the author's choice, else the default of the build.
+const isSteady = (vid) => (vid in steadyOv ? Boolean(steadyOv[vid]) : Boolean((D.volcanoes[vid] || {}).steady));
+const leftOut = (vid) => S.hideSteady && isSteady(vid);
+function setSteady(vid, on) { steadyOv[vid] = on ? 1 : 0; saveJSON(STEADY, steadyOv); }
 
 // ---------------------------------------------------------------- storage and CSV
 
@@ -181,18 +230,95 @@ function showSaveState() {
   else if (S.fileHandle) { node.className = "state warn"; node.textContent = `${S.fileHandle.name} への書き込みに失敗しました。ダウンロードで保存してください`; }
   else if (S.dirty) { node.className = "state warn"; node.textContent = "まだファイルに保存していない確認があります。保存先を選ぶか、ダウンロードしてください"; }
   else { node.className = "state"; node.textContent = n ? `human_review.csv の ${n} 件を読み込み済み` : "保存先は未設定です"; }
+  $("file-hint").hidden = Boolean(S.fileHandle);
 }
 
 async function pickFile() {
   if (!window.showSaveFilePicker) { alert("このブラウザはファイルへの直接保存に対応していません。「CSV をダウンロード」を使ってください。"); return; }
   try {
-    S.fileHandle = await window.showSaveFilePicker({
+    const handle = await window.showSaveFilePicker({
+      id: "submvolc-review",          // the browser opens the dialog in the folder used last time
       suggestedName: "human_review.csv", types: [{ description: "CSV", accept: { "text/csv": [".csv"] } }],
     });
-    await persist();      // reads the chosen file first: reviews it already holds are kept
-    drawList();
-    if (S.current) drawDetail();
+    await useHandle(handle);
+    rememberHandle(handle);
   } catch (err) { if (err.name !== "AbortError") console.error(err); }
+}
+
+// Write to this file from now on. persist() reads it first: reviews it already holds are kept.
+// The open episode is drawn again only when the file brought another review of it: a comment that
+// is being typed is not thrown away.
+async function useHandle(handle) {
+  S.fileHandle = handle;
+  $("reuse").hidden = true;
+  const held = S.current ? JSON.stringify(reviews[S.current.id] || null) : "";
+  await persist();
+  drawList();
+  if (S.current && JSON.stringify(reviews[S.current.id] || null) !== held) drawDetail();
+}
+
+// The chosen file is remembered between sessions in IndexedDB. Every failure leaves the form without it.
+function openHandles() {
+  return new Promise((resolve, reject) => {
+    if (!window.indexedDB) { reject(new Error("no IndexedDB")); return; }
+    const req = indexedDB.open(IDB.name, 1);
+    req.onupgradeneeded = () => req.result.createObjectStore(IDB.store);
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+async function rememberHandle(handle) {
+  try {
+    const db = await openHandles();
+    await new Promise((resolve, reject) => {
+      const tx = db.transaction(IDB.store, "readwrite");
+      tx.objectStore(IDB.store).put(handle, IDB.key);
+      tx.oncomplete = resolve;
+      tx.onerror = () => reject(tx.error);
+      tx.onabort = () => reject(tx.error);
+    });
+    db.close();
+    return true;
+  } catch (err) { console.warn(err); return false; }
+}
+
+async function storedHandle() {
+  try {
+    const db = await openHandles();
+    const handle = await new Promise((resolve, reject) => {
+      const req = db.transaction(IDB.store, "readonly").objectStore(IDB.store).get(IDB.key);
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => reject(req.error);
+    });
+    db.close();
+    return handle;
+  } catch (err) { console.warn(err); return null; }
+}
+
+// At start: take the file of the last session again. Granted: at once; to be asked: a button in the header.
+async function reconnect() {
+  try {
+    const handle = await storedHandle();
+    if (!handle || S.fileHandle || typeof handle.queryPermission !== "function") return;
+    const state = await handle.queryPermission({ mode: "readwrite" });
+    if (state === "granted") {
+      await handle.getFile();          // a file that is gone throws here and is not created again
+      if (!S.fileHandle) await useHandle(handle);
+    } else if (state === "prompt") {
+      const button = $("reuse");
+      button.textContent = `前回の保存先 (${handle.name}) を使う`;
+      button.onclick = async () => {
+        try {
+          if (await handle.requestPermission({ mode: "readwrite" }) !== "granted") return;
+          await handle.getFile();
+          if (!S.fileHandle) await useHandle(handle);
+          else button.hidden = true;
+        } catch (err) { console.warn(err); button.hidden = true; }
+      };
+      button.hidden = false;
+    }
+  } catch (err) { console.warn(err); }
 }
 
 function download() {
@@ -206,6 +332,10 @@ function download() {
 
 function filtered() {
   const q = S.q.trim().toLowerCase();
+  // Episodes that match every other condition but belong to a volcano left out: counted, so that a
+  // search for such a volcano does not look empty without a reason.
+  let hidden = 0;
+  const hiddenVolcanoes = new Set();
   const rows = D.episodes.filter((e) => {
     const done = isDone(e);
     if (S.status === "pending" && done) return false;
@@ -217,8 +347,10 @@ function filtered() {
       const v = vol(e);
       if (![v.name, v.name_ja, v.country, e.id].some((s) => (s || "").toLowerCase().includes(q))) return false;
     }
+    if (leftOut(e.v)) { hidden++; hiddenVolcanoes.add(e.v); return false; }
     return true;
   });
+  S.hidden = { n: hidden, v: hiddenVolcanoes.size };
   if (S.sort === "new") rows.sort((a, b) => (a.s < b.s ? 1 : -1));
   else if (S.sort === "old") rows.sort((a, b) => (a.s > b.s ? 1 : -1));
   else if (S.sort === "volcano") rows.sort((a, b) => vol(a).name.localeCompare(vol(b).name) || (a.s > b.s ? 1 : -1));
@@ -230,7 +362,8 @@ function drawList() {
   S.list = filtered();
   const done = D.episodes.filter(isDone).length;
   $("progress").textContent = `確認済み ${done} / ${D.episodes.length} 件`;
-  $("count").textContent = `この条件で ${S.list.length} 件`;
+  $("count").textContent = `この条件で ${S.list.length} 件`
+    + (S.hidden.n ? ` · 常時活動の ${S.hidden.v} 火山 (${S.hidden.n} 件) を除外中` : "");
   const box = clear($("list"));
   for (const e of S.list.slice(0, S.shown)) {
     const r = rev(e.id);
@@ -251,8 +384,58 @@ function drawChips() {
   for (const c of Object.keys(LABEL)) {
     box.append(el("button", {
       type: "button", class: "chip", "aria-pressed": String(S.classes.has(c)),
-      onclick: () => { S.classes.has(c) ? S.classes.delete(c) : S.classes.add(c); S.shown = 200; drawChips(); drawList(); },
+      onclick: () => { S.classes.has(c) ? S.classes.delete(c) : S.classes.add(c); S.shown = 200; savePrefs(); drawChips(); drawList(); },
     }, el("i", { class: `dot ${c}` }), LABEL[c]));
+  }
+}
+
+// ---------------------------------------------------------------- volcanoes left out
+
+function drawSteadyButton() {
+  const b = $("steady-btn");
+  if (b && S.current) b.textContent = leftOut(S.current.v) ? "この火山を一覧に戻す" : "この火山を一覧から除く";
+}
+
+// After the set of volcanoes left out changed. The open episode stays open while it is in the list;
+// if it left the list and openNext is true, the next one is opened.
+function afterSteadyChange(openNext) {
+  const cur = S.current;
+  const index = cur ? S.list.findIndex((x) => x.id === cur.id) : -1;
+  S.shown = 200;
+  drawList();
+  drawSteadyButton();
+  if (openNext && cur && !S.list.some((x) => x.id === cur.id)) {
+    const target = S.list[Math.min(Math.max(index, 0), S.list.length - 1)];
+    if (target) open(target);
+  }
+  if ($("steady-dlg").open) drawSteadyDialog();
+}
+
+// The button in the head of the open episode.
+function toggleCurrentVolcano() {
+  if (!S.current) return;
+  const vid = S.current.v;
+  if (leftOut(vid)) setSteady(vid, false);
+  else {
+    setSteady(vid, true);
+    if (!S.hideSteady) { S.hideSteady = true; $("f-steady").checked = true; savePrefs(); }
+  }
+  afterSteadyChange(true);
+}
+
+function drawSteadyDialog() {
+  const pending = {};
+  for (const e of D.episodes) if (!isDone(e)) pending[e.v] = (pending[e.v] || 0) + 1;
+  const rows = Object.entries(D.volcanoes).filter(([, v]) => v.n > 0)
+    .sort(([, a], [, b]) => b.act - a.act || b.n - a.n || a.name.localeCompare(b.name));
+  const box = clear($("steady-list"));
+  for (const [vid, v] of rows) {
+    box.append(el("li", {}, el("label", {},
+      el("input", { type: "checkbox", checked: isSteady(vid), onchange: (ev) => { setSteady(vid, ev.target.checked); afterSteadyChange(false); } }),
+      el("span", { class: "name" }, v.name_ja ? `${v.name_ja} (${v.name})` : v.name,
+        (D.volcanoes[vid].steady ? el("span", { class: "def", title: "既定で除く火山", text: "既定" }) : null)),
+      el("span", { class: "base", text: BASE[v.base] || v.base || "-" }),
+      el("span", { class: "nums", text: `活動の区分 ${v.act} 件 / 全 ${v.n} 件 · 未確認 ${pending[vid] || 0} 件` }))));
   }
 }
 
@@ -285,7 +468,70 @@ function drawPass() {
   clear($("cap")).append(el("b", { text: `${S.pass + 1} / ${e.passes.length}` }), " · ", parts.join(" · "));
   [...$("strip").children].forEach((b, i) => b.setAttribute("aria-current", String(i === S.pass)));
   const cur = $("strip").children[S.pass];
-  if (cur) $("strip").scrollLeft = cur.offsetLeft - $("strip").clientWidth / 2 + 54;
+  if (cur && !S.grid) $("strip").scrollLeft = cur.offsetLeft - $("strip").clientWidth / 2 + 54;
+  const grid = $("grid");
+  if (grid) {
+    [...grid.children].forEach((b, i) => b.setAttribute("aria-current", String(i === S.pass)));
+    const tile = grid.children[S.pass];
+    if (tile && S.grid) tile.scrollIntoView({ block: "nearest" });
+  }
+  // The neighbours are fetched while this one is looked at (kept referenced until the next pass).
+  S.preload = [S.pass + 1, S.pass - 1].filter((i) => e.passes[i]).map((i) => {
+    const img = new Image();
+    img.src = quicklook(e.passes[i]);
+    return img;
+  });
+}
+
+// All passes of the episode as tiles (the true-colour half of each quicklook), or the single view.
+function fillGrid() {
+  const e = S.current, grid = $("grid");
+  if (!grid || grid.childElementCount) return;
+  grid.append(...e.passes.map((p, i) => el("button", {
+    type: "button", class: p[13] === "a" ? "alert" : null, title: `${p[1]} ${p[2]} ${ROLE[p[13]]}`,
+    onclick: () => { S.pass = i; setGrid(false); },
+  }, el("img", { loading: "lazy", alt: "", src: quicklook(p), width: 240, height: 240, onerror: (ev) => ev.target.closest("button").classList.add("broken") }),
+    el("span", { class: "t" }, `${p[1].slice(0, 16).replace("T", " ")}`, el("br"),
+      `${p[2]} · ${ROLE[p[13]]}`, p[3] ? el("i", { text: ` ${p[3]}` }) : null))));
+}
+
+function applyGrid() {
+  const fig = $("big-fig");
+  if (!fig) return;
+  if (S.grid) fillGrid();
+  fig.hidden = S.grid;
+  $("strip").hidden = S.grid;
+  $("grid").hidden = !S.grid;
+  const b = $("grid-btn");
+  b.textContent = S.grid ? "1 枚表示に戻す (G)" : "全通過を並べる (G)";
+  b.setAttribute("aria-pressed", String(S.grid));
+  drawPass();
+}
+
+function setGrid(on) {
+  S.grid = on;
+  savePrefs();
+  applyGrid();
+}
+
+// Enhancement of the images: off, medium, strong (a CSS filter, see style.css).
+function applyEnh() {
+  document.body.dataset.enh = String(S.enh);
+  const b = $("enh-btn");
+  if (b) { b.textContent = `強調: ${ENH[S.enh]} (H)`; b.setAttribute("aria-pressed", String(S.enh > 0)); }
+}
+
+function cycleEnh() {
+  S.enh = (S.enh + 1) % ENH.length;
+  savePrefs();
+  applyEnh();
+}
+
+function movePass(dir) {
+  const e = S.current;
+  if (!e || !e.passes.length) return;
+  S.pass = Math.min(Math.max(S.pass + dir, 0), e.passes.length - 1);
+  drawPass();
 }
 
 function drawDetail() {
@@ -295,7 +541,8 @@ function drawDetail() {
   main.append(
     el("div", { class: "head" },
       el("h2", { text: volName(e) }), v.name_ja ? el("span", { class: "alt", text: v.name }) : null,
-      badge(e.cls), isDone(e) ? el("span", { class: "tag human", text: `human-reviewed${r ? " " + when(r) : ""}` }) : null),
+      badge(e.cls), isDone(e) ? el("span", { class: "tag human", text: `human-reviewed${r ? " " + when(r) : ""}` }) : null,
+      el("button", { type: "button", id: "steady-btn", class: "mini", onclick: toggleCurrentVolcano })),
     el("div", { class: "facts" },
       el("span", {}, el("b", { text: range(e.s, e.e) })), el("span", { text: v.country }),
       el("span", { text: e.tier === "lowres" ? "低解像度" : `高解像度 · ${e.z} · ${e.sens}` }),
@@ -309,7 +556,10 @@ function drawDetail() {
   const viewer = el("div", { class: "viewer" });
   if (e.tier === "highres") {
     viewer.append(
-      el("figure", {}, el("a", { id: "big-link", target: "_blank", rel: "noopener" }, el("img", {
+      el("div", { class: "tools" },
+        el("button", { type: "button", id: "grid-btn", class: "mini", onclick: () => setGrid(!S.grid) }),
+        el("button", { type: "button", id: "enh-btn", class: "mini", onclick: cycleEnh })),
+      el("figure", { id: "big-fig" }, el("a", { id: "big-link", target: "_blank", rel: "noopener" }, el("img", {
         id: "big", class: "big", alt: "",
         onload: (ev) => { ev.target.classList.remove("broken"); ev.target.alt = ""; },
         onerror: (ev) => { ev.target.classList.add("broken"); ev.target.alt = "画像を読み込めませんでした (ネットワークか画像の保管先を確かめてください)"; },
@@ -319,7 +569,8 @@ function drawDetail() {
       el("div", { class: "strip", id: "strip" }, ...e.passes.map((p, i) => el("button", {
         type: "button", class: p[13] === "a" ? "alert" : null, title: `${p[1]} ${p[2]} ${ROLE[p[13]]}`, onclick: () => { S.pass = i; drawPass(); },
       }, el("img", { loading: "lazy", alt: "", src: quicklook(p), width: 104, height: 104, onerror: (ev) => ev.target.closest("button").classList.add("broken") }),
-        el("span", { class: "t" }, p[1].slice(0, 10), p[13] === "a" ? el("i", { text: ` ${p[3]}` }) : null)))));
+        el("span", { class: "t" }, p[1].slice(0, 10), p[13] === "a" ? el("i", { text: ` ${p[3]}` }) : null)))),
+      el("div", { class: "grid", id: "grid", hidden: true }));
   } else {
     const url = `${D.image_base}/${e.image}`;
     viewer.append(
@@ -345,7 +596,9 @@ function drawDetail() {
   }
   viewer.append(notes);
   main.append(el("div", { class: "work" }, viewer, formFor(e, r)));
-  if (e.tier === "highres") drawPass();
+  drawSteadyButton();
+  applyEnh();
+  if (e.tier === "highres") applyGrid();      // draws the pass
 }
 
 function formFor(e, r) {
@@ -357,9 +610,16 @@ function formFor(e, r) {
       el("kbd", { text: String(i + 1) }), el("i", { class: `dot ${c}` }),
       el("span", { class: "lab" }, el("input", { type: "radio", name: "verdict", value: c, checked: c === chosen, disabled: c === "known" && !e.known, onchange: syncCause }), " ", LABEL[c],
         c === e.cls ? " (いまの区分)" : "", c === "known" && !e.known ? " (照合した噴火期間が無い)" : "")))),
-    el("select", { id: "cause", "aria-label": "原因" }, el("option", { value: "", text: "原因 (火山性ではない場合)" }),
-      ...D.causes.map((c) => el("option", { value: c, text: CAUSE[c] || c, selected: (r ? r.cause : e.cause) === c }))),
+    // A cause key selects "nonvolcanic" and that cause; the group is disabled for any other verdict.
+    el("fieldset", { id: "causes", class: "causes" }, el("legend", { text: "原因 (火山性ではない場合)" }),
+      ...D.causes.map((c) => el("label", { title: CAUSE[c] || c },
+        el("input", { type: "radio", name: "cause", value: c, checked: (r ? r.cause : e.cause) === c }),
+        CAUSE_KEY[c] ? el("kbd", { text: CAUSE_KEY[c].toUpperCase() }) : null, el("span", { text: CAUSE[c] || c })))),
+    el("div", { class: "comment-tools" },
+      el("label", { for: "comment", text: "コメント" }),
+      e.tier === "highres" ? el("button", { type: "button", class: "mini", onclick: insertDate, text: "この通過の日付を入れる (D)" }) : null),
     el("textarea", { id: "comment", placeholder: "コメント (任意。公開の表に作者の判定として載ります)" }),
+    commonComments(),
     el("div", { class: "actions" },
       el("button", { type: "submit", class: "primary", text: "保存して次へ (Enter)" }),
       el("button", { type: "button", text: "いまの区分で確認 (A)", onclick: agree }),
@@ -373,15 +633,62 @@ function formFor(e, r) {
   return form;
 }
 
+// The comments the author used more than once (reviews held here, by count, then by the latest use),
+// as chips. A comment used once is a note on one episode and would only fill the form.
+function commonComments() {
+  const used = new Map();
+  for (const r of Object.values(reviews)) {
+    const text = r.verdict ? (r.comment || "").trim() : "";
+    if (!text) continue;
+    const u = used.get(text) || { n: 0, last: "" };
+    u.n++;
+    if ((r.reviewed_at || "") > u.last) u.last = r.reviewed_at || "";
+    used.set(text, u);
+  }
+  const top = [...used].filter(([, u]) => u.n > 1)
+    .sort(([, a], [, b]) => b.n - a.n || (a.last < b.last ? 1 : a.last > b.last ? -1 : 0)).slice(0, 6);
+  if (!top.length) return null;
+  return el("div", { class: "cchips" }, ...top.map(([text, u]) => el("button", {
+    type: "button", class: "chip", title: `${text} (${u.n} 回)`,
+    text: text.length > 28 ? text.slice(0, 27) + "…" : text,
+    onclick: () => {
+      const box = $("comment");
+      box.value = box.value.trim() === "" ? text : box.value.replace(/\s*$/, " ") + text;
+      box.focus();
+      box.setSelectionRange(box.value.length, box.value.length);
+    },
+  })));
+}
+
+// "MM-DD: " of the pass shown, at the cursor of the comment box.
+function insertDate() {
+  const e = S.current, box = $("comment");
+  if (!e || e.tier !== "highres" || !box) return;
+  const p = e.passes[S.pass];
+  if (!p) return;
+  const start = box.selectionStart ?? box.value.length, end = box.selectionEnd ?? start;
+  const before = box.value.slice(0, start);
+  const text = (before !== "" && !/\s$/.test(before) ? " " : "") + `${p[1].slice(5, 10)}: `;
+  box.focus();
+  box.setRangeText(text, start, end, "end");
+}
+
 function syncCause() {
   const v = document.querySelector('input[name="verdict"]:checked');
-  const cause = $("cause");
-  if (cause) cause.disabled = !v || v.value !== "nonvolcanic";
+  const causes = $("causes");
+  if (causes) causes.disabled = !v || v.value !== "nonvolcanic";
 }
 
 function setVerdict(c) {
   const input = document.querySelector(`input[name="verdict"][value="${c}"]`);
   if (input && !input.disabled) { input.checked = true; syncCause(); }
+}
+
+function setCause(c) {
+  if (!S.current) return;
+  setVerdict("nonvolcanic");
+  const input = document.querySelector(`input[name="cause"][value="${c}"]`);
+  if (input) input.checked = true;
 }
 
 function agree() {
@@ -396,7 +703,8 @@ async function save(next) {
   if (!e) return;
   const v = document.querySelector('input[name="verdict"]:checked');
   if (!v) { alert("区分を選んでください。"); return; }
-  const cause = v.value === "nonvolcanic" ? ($("cause").value || "other") : "";
+  const c = document.querySelector('input[name="cause"]:checked');
+  const cause = v.value === "nonvolcanic" ? (c ? c.value : "other") : "";
   reviews[e.id] = { verdict: v.value, cause, comment: $("comment").value.trim().replace(/\s*\n\s*/g, " "), reviewed_at: stamp() };
   await persist();
   const index = S.list.findIndex((x) => x.id === e.id);
@@ -429,17 +737,32 @@ function step(dir) {
 function start() {
   if (!D) { $("detail").textContent = "data.js がありません。python tools/build_review.py を実行してください。"; return; }
   loadStored();
+  loadPrefs();
+  $("f-status").value = S.status;
+  $("f-sort").value = S.sort;
+  $("f-high").checked = S.high;
+  $("f-low").checked = S.low;
+  $("f-jcg").checked = S.jcg;
+  $("f-steady").checked = S.hideSteady;
+  applyEnh();
   drawChips();
   drawList();
   showSaveState();
   if (S.list.length) open(S.list[0]);
+  reconnect();
 
-  $("f-status").addEventListener("change", (e) => { S.status = e.target.value; S.shown = 200; drawList(); });
-  $("f-sort").addEventListener("change", (e) => { S.sort = e.target.value; drawList(); });
+  const filter = (apply) => (e) => { apply(e.target); S.shown = 200; savePrefs(); drawList(); };
+  $("f-status").addEventListener("change", filter((t) => { S.status = t.value; }));
+  $("f-sort").addEventListener("change", filter((t) => { S.sort = t.value; }));
   $("f-q").addEventListener("input", (e) => { S.q = e.target.value; S.shown = 200; drawList(); });
-  $("f-high").addEventListener("change", (e) => { S.high = e.target.checked; drawList(); });
-  $("f-low").addEventListener("change", (e) => { S.low = e.target.checked; drawList(); });
-  $("f-jcg").addEventListener("change", (e) => { S.jcg = e.target.checked; S.shown = 200; drawList(); });
+  $("f-high").addEventListener("change", filter((t) => { S.high = t.checked; }));
+  $("f-low").addEventListener("change", filter((t) => { S.low = t.checked; }));
+  $("f-jcg").addEventListener("change", filter((t) => { S.jcg = t.checked; }));
+  // With the filter switched on, an open episode of a volcano that is now left out gives way to the next one.
+  $("f-steady").addEventListener("change", (e) => { S.hideSteady = e.target.checked; savePrefs(); afterSteadyChange(true); });
+  $("steady-open").addEventListener("click", () => { drawSteadyDialog(); $("steady-dlg").showModal(); });
+  $("steady-close").addEventListener("click", () => $("steady-dlg").close());
+  $("steady-reset").addEventListener("click", () => { steadyOv = {}; saveJSON(STEADY, steadyOv); afterSteadyChange(false); });
   $("more").addEventListener("click", () => { S.shown += 300; drawList(); });
   $("pick").addEventListener("click", pickFile);
   $("download").addEventListener("click", download);
@@ -455,23 +778,30 @@ function start() {
     alert(`${n} 件を読み込みました。`);
   });
   document.addEventListener("keydown", (e) => {
-    const tag = (e.target.tagName || "").toLowerCase();
-    if (tag === "textarea" || tag === "select" || (tag === "input" && e.target.type !== "radio")) {
-      if (e.key === "Escape") e.target.blur();
+    // Typing with an input method, and the dialog of volcanoes, keep their keys.
+    if (e.isComposing || e.keyCode === 229 || $("steady-dlg").open) return;
+    const t = e.target, tag = (t.tagName || "").toLowerCase();
+    if (tag === "textarea" || tag === "select" || (tag === "input" && !["radio", "checkbox", "button"].includes(t.type))) {
+      if (t.id === "comment" && e.altKey && !e.ctrlKey && !e.metaKey && e.code === "KeyD") { insertDate(); e.preventDefault(); }
+      else if (e.key === "Escape") t.blur();
       return;
     }
     if (e.ctrlKey || e.metaKey || e.altKey) return;
-    // Enter and Space on a button or a link do what that button does, not "save and next".
-    if ((tag === "button" || tag === "a") && (e.key === "Enter" || e.key === " ")) return;
+    // Enter and Space on a button, a link or a checkbox do what that control does, not "save and next".
+    if ((tag === "button" || tag === "a" || (tag === "input" && t.type !== "radio")) && (e.key === "Enter" || e.key === " ")) return;
     const k = e.key.toLowerCase();
     if (k >= "1" && k <= String(D.classes.length)) { setVerdict(D.classes[Number(k) - 1]); e.preventDefault(); }
     else if (k === "a") { agree(); e.preventDefault(); }
     else if (k === "enter") { save(true); e.preventDefault(); }
     else if (k === "j" || k === "arrowdown") { step(1); e.preventDefault(); }
     else if (k === "k" || k === "arrowup") { step(-1); e.preventDefault(); }
-    else if (k === "arrowright" && S.current && S.current.passes.length) { S.pass = Math.min(S.pass + 1, S.current.passes.length - 1); drawPass(); e.preventDefault(); }
-    else if (k === "arrowleft" && S.current && S.current.passes.length) { S.pass = Math.max(S.pass - 1, 0); drawPass(); e.preventDefault(); }
+    else if (k === "arrowright" && S.current && S.current.passes.length) { movePass(1); e.preventDefault(); }
+    else if (k === "arrowleft" && S.current && S.current.passes.length) { movePass(-1); e.preventDefault(); }
     else if (k === "c") { const c = $("comment"); if (c) { c.focus(); e.preventDefault(); } }
+    else if (k === "d") { if (S.current && S.current.tier === "highres") { insertDate(); e.preventDefault(); } }
+    else if (k === "g") { if ($("big-fig")) { setGrid(!S.grid); e.preventDefault(); } }
+    else if (k === "h") { cycleEnh(); e.preventDefault(); }
+    else if (k.length === 1 && KEY_CAUSE[k] && D.causes.includes(KEY_CAUSE[k])) { setCause(KEY_CAUSE[k]); e.preventDefault(); }
   });
   window.addEventListener("beforeunload", (e) => { if (S.dirty) { e.preventDefault(); e.returnValue = ""; } });
   // Another tab of the form saved: take its reviews (the open episode is left as it is being edited).

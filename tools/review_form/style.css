@@ -120,6 +120,60 @@ main { overflow: auto; padding: .7rem 1rem 2rem; min-height: 0; }
 .form .small { color: var(--ink-2); font-size: .8rem; margin-top: .35rem; }
 .help { border-top: 1px solid var(--border); background: var(--surface); color: var(--ink-2); font-size: .8rem; padding: .25rem .9rem; }
 
+/* Second round: volcanoes left out, cause keys, comment tools, grid of passes, enhancement, file. */
+button.mini { font-size: .8rem; padding: .05rem .5rem; }
+.head button.mini { align-self: center; }
+.file-hint { flex-basis: 100%; font-size: .8rem; opacity: .85; margin-top: -.2rem; }
+.file-hint code { font-size: .95em; }
+[hidden] { display: none !important; }
+
+.steady-dlg { width: min(760px, calc(100vw - 2rem)); max-height: calc(100vh - 3rem); border: 1px solid var(--border); border-radius: 10px;
+  background: var(--surface); color: var(--ink); padding: .8rem 1rem; }
+.steady-dlg::backdrop { background: rgba(0, 0, 0, .35); }
+.steady-dlg h2 { font-size: 1.05rem; margin: 0 0 .3rem; }
+.steady-dlg .small { color: var(--ink-2); font-size: .82rem; margin: 0 0 .5rem; }
+.steady-dlg ol { list-style: none; margin: 0; padding: 0; max-height: 60vh; overflow: auto; border-top: 1px solid var(--grid); }
+.steady-dlg li label { display: grid; grid-template-columns: 1.2rem minmax(0, 1fr) 3.2rem auto; gap: .5rem; align-items: center;
+  padding: .22rem .2rem; border-bottom: 1px solid var(--grid); cursor: pointer; font-size: .88rem; }
+.steady-dlg li label:hover { background: var(--surface-2); }
+.steady-dlg .base { color: var(--ink-2); }
+.steady-dlg .nums { color: var(--ink-2); font-size: .8rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.steady-dlg .def { margin-left: .4em; padding: 0 .3em; border: 1px solid var(--border); border-radius: 3px; color: var(--ink-2); font-size: .7rem; }
+.steady-dlg .actions { display: flex; justify-content: flex-end; gap: .5rem; margin-top: .6rem; }
+
+.causes { border: 1px solid var(--border); border-radius: 6px; margin: .35rem 0 0; padding: .15rem .35rem .3rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: .05rem .4rem; }
+.causes legend { font-size: .8rem; color: var(--ink-2); padding: 0 .2rem; }
+.causes label { display: flex; align-items: center; gap: .3rem; font-size: .8rem; cursor: pointer; min-width: 0; padding: .05rem .1rem; border-radius: 4px; }
+.causes label:hover { background: var(--surface-2); }
+.causes label span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.causes input { margin: 0; flex: none; }
+.causes kbd { flex: none; font-size: .75em; }
+.causes:disabled { opacity: .4; }
+.causes:disabled label { cursor: default; }
+.causes:disabled label:hover { background: none; }
+
+.comment-tools { display: flex; align-items: center; justify-content: space-between; gap: .4rem; margin-top: .45rem; font-size: .85rem; color: var(--ink-2); }
+.form .comment-tools + textarea { margin-top: .2rem; }
+.cchips { display: flex; flex-wrap: wrap; gap: .25rem; margin-top: .3rem; }
+.cchips .chip { padding: .05rem .5rem; max-width: 100%; text-align: left; }
+
+.viewer .tools { display: flex; gap: .4rem; justify-content: flex-end; margin-bottom: .3rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 6px; }
+.grid button { padding: 0; border: 2px solid transparent; border-radius: 4px; background: #000; position: relative; overflow: hidden; }
+.grid button[aria-current="true"] { border-color: var(--accent); }
+.grid button.alert { box-shadow: 0 -4px 0 var(--c-likely) inset; }
+.grid button.broken { outline: 2px dashed var(--muted); outline-offset: -2px; }
+.grid img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: left center; }
+.grid .t { position: absolute; left: 0; right: 0; bottom: 0; font-size: .74rem; line-height: 1.3; color: #fff; background: rgba(0, 0, 0, .6);
+  padding: .1rem .3rem .2rem; text-align: left; font-variant-numeric: tabular-nums; }
+.grid .t i { font-style: normal; }
+.grid button.alert .t i { color: #fab219; font-weight: 700; }
+
+/* Enhancement of the images (key H): contrast, saturation and a little brightness. */
+body[data-enh="1"] .viewer img.big, body[data-enh="1"] .strip img, body[data-enh="1"] .grid img { filter: contrast(1.25) saturate(1.4) brightness(1.06); }
+body[data-enh="2"] .viewer img.big, body[data-enh="2"] .strip img, body[data-enh="2"] .grid img { filter: contrast(1.6) saturate(1.9) brightness(1.12); }
+
 @media (max-width: 1000px) {
   .layout { grid-template-columns: 1fr; }
   aside { max-height: 38vh; border-right: 0; border-bottom: 1px solid var(--border); }
