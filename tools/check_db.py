@@ -136,6 +136,13 @@ def check_tables() -> None:
         if gone:
             fail(f"curation/overrides.csv names {len(gone)} episode(s) that are not in the tables, e.g. {gone[:3]}")
     human = ROOT / "curation" / "human_review.csv"
+    withdrawn = ROOT / "curation" / "review_withdrawn.csv"
+    since = {}          # episode -> time of the author's withdrawal of its review
+    if withdrawn.exists():
+        for w in read(withdrawn):
+            if not re.fullmatch(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d[+-]\d\d:\d\d", w.get("withdrawn_at") or ""):
+                fail(f"curation/review_withdrawn.csv: withdrawn_at {w.get('withdrawn_at')!r} of {w.get('episode_id')}")
+            since[w["episode_id"]] = w.get("withdrawn_at") or ""
     if human.exists():
         rows = read(human)
         gone = [r["episode_id"] for r in rows if r["episode_id"] not in ids]
@@ -146,7 +153,15 @@ def check_tables() -> None:
         by_id = {e["episode_id"]: e for e in episodes}
         for r in rows:
             e = by_id.get(r["episode_id"])
-            if e and (e["class"] != r["verdict"] or e["review_status"] != "human-reviewed"):
+            if not e:
+                continue
+            if r["episode_id"] in since and r["reviewed_at"] <= since[r["episode_id"]]:
+                # Withdrawn after it was entered: the tables must not carry it as the author's verdict.
+                day, comment = r["reviewed_at"][:10], r["comment"].strip()
+                if e["owner_ja"].startswith(f"{day}: {comment}" if comment else f"{day}: 画像を確認"):
+                    fail(f"{r['episode_id']}: the tables still show the review that was withdrawn on {since[r['episode_id']][:10]}")
+                continue
+            if e["class"] != r["verdict"] or e["review_status"] != "human-reviewed":
                 fail(f"{r['episode_id']}: the author's verdict {r['verdict']} is not what the table shows ({e['class']})")
     for e in episodes:
         if e["tier"] == "lowres" and "fl" in e["phenomena"].split("+"):

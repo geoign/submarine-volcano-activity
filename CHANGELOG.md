@@ -29,14 +29,17 @@ First publication.
 
 ## 2026-11-14, third update
 
-- The author's first reviews in the form: 219 episodes, so that 244 are `human-reviewed`
-  (3,517 `ai-reviewed`, 189 `automatic`). 141 of them changed class: 49 episodes without a review
-  and 49 that the review had kept as possible or undetermined were judged not volcanic, 34 were
+- The author's first reviews in the form: 218 episodes, so that 243 are `human-reviewed`
+  (3,517 `ai-reviewed`, 190 `automatic`). 140 of them changed class: 49 episodes without a review
+  and 49 that the review had kept as possible or undetermined were judged not volcanic, 33 were
   raised to likely volcanic (most of them the recurring discoloured water of Fukutoku-Oka-no-Ba
   and Lateiki), three passes matched by date to a documented eruption (two at Gorshkov Caldera,
   one at Myojinsho) were judged not volcanic, and six moved to possible, undetermined or
-  recurrent. Classes now: 88 known, 78 likely, 77 possible, 234 recurrent, 22 airborne,
-  161 undetermined, 3,232 not volcanic, 58 unreviewed.
+  recurrent. Classes now: 88 known, 77 likely, 77 possible, 234 recurrent, 22 airborne,
+  161 undetermined, 3,232 not volcanic, 59 unreviewed.
+- A review can be withdrawn (`curation/review_withdrawn.csv`). The author withdrew the review of
+  the episode of 2017-04-08 at Napo Taroare the same day, until it is settled whether the pale
+  patch there is discoloured water or the shoal at the zone centre; the episode awaits review.
 - Of the 22 episodes that disagreed with the Coast Guard's records, the author reviewed 19:
   four were raised to likely volcanic and one to possibly volcanic, one stays undetermined, and
   13 were confirmed as not volcanic. Three at Funka Asane are left.

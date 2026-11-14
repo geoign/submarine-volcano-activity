@@ -144,14 +144,29 @@ def md_table(path: Path, first_header: str) -> list[dict]:
 
 # ----------------------------------------------------------------------------- curation
 
+def live_reviews(rows: list[dict], withdrawn: list[dict]) -> dict[str, dict]:
+    """The author's reviews that stand: a review is dropped when the author withdrew it afterwards.
+
+    curation/review_withdrawn.csv lists withdrawals made outside the form (episode_id, withdrawn_at).
+    A copy of the review can survive in a browser's storage or in an older file and come back with
+    the next save; it stays out as long as it is not newer than the withdrawal. A review entered
+    after the withdrawal counts again. Timestamps are compared as text, as the form does.
+    """
+    since = {w["episode_id"]: w.get("withdrawn_at", "") for w in withdrawn}
+    return {r["episode_id"]: r for r in rows if (r.get("reviewed_at") or "") > since.get(r["episode_id"], "")
+            or r["episode_id"] not in since}
+
+
 def load_curation() -> dict:
     cur = {"overrides": {}, "notes_en": {}, "names_ja": {}, "summaries": {}, "figures": [], "human": {}}
     p = CURATION / "human_review.csv"
     if p.exists():
-        for r in read_csv(p):
+        rows = read_csv(p)
+        for r in rows:
             if r.get("verdict") not in CLASSES or r["verdict"] == "unreviewed":
                 raise SystemExit(f"curation/human_review.csv: verdict {r.get('verdict')!r} for {r.get('episode_id')}")
-            cur["human"][r["episode_id"]] = r
+        w = CURATION / "review_withdrawn.csv"
+        cur["human"] = live_reviews(rows, read_csv(w) if w.exists() else [])
     p = CURATION / "overrides.csv"
     if p.exists():
         for r in read_csv(p):

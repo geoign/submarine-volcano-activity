@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14T14:15Z",
+ "generated": "2026-11-14T14:36Z",
  "monitor_commit": "16ae189",
  "image_base": "https://gis.ikgm.net/submvolc",
  "cut": "2025-11-12T00:00:00Z",
@@ -13,13 +13,13 @@
  "episodes": 3950,
  "episodes_by_class": {
   "known": 88,
-  "likely": 78,
+  "likely": 77,
   "possible": 77,
   "recurrent": 234,
   "airborne": 22,
   "undetermined": 161,
   "nonvolcanic": 3232,
-  "unreviewed": 58
+  "unreviewed": 59
  },
  "episodes_by_source": {
   "hindcast2": 3488,
@@ -28,8 +28,8 @@
  },
  "episodes_by_review_status": {
   "ai-reviewed": 3517,
-  "automatic": 189,
-  "human-reviewed": 244
+  "automatic": 190,
+  "human-reviewed": 243
  },
  "ring_wave_records": 4,
  "airborne_band_records": 24,

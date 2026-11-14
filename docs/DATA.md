@@ -217,6 +217,11 @@ offset). The build gives these episodes the verdict as their class, the basis `o
 status `human-reviewed`. A row whose episode is no longer in the tables is kept and reported by
 `tools/check_db.py`.
 
+`curation/review_withdrawn.csv` lists reviews the author withdrew without the form: `episode_id`,
+`withdrawn_at`, `note`. A review that is not newer than its withdrawal does not count, wherever a
+copy of it survives (the review file, the storage of a browser); the episode goes back to the class
+it had without the review. A review entered after the withdrawal counts again.
+
 ## index.json, meta.json
 
 `index.json` is what the map page reads: the volcanoes with their episodes that are not dismissed,

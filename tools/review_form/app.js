@@ -196,11 +196,19 @@ async function mergeFile() {
   }
 }
 
+// Withdrawals recorded outside the form (curation/review_withdrawn.csv, through data.js): an entry
+// without a verdict, so that a copy of the review in this browser's storage or in an older file does
+// not come back. A review entered after the withdrawal is newer and counts again.
+function mergeWithdrawn() {
+  return mergeRows(Object.entries(D.withdrawn || {}).map(([episode_id, at]) => ({ episode_id, verdict: "", reviewed_at: at })), true);
+}
+
 function loadStored() {
   reviews = {};
   mergeRows(Object.entries(D.reviews || {}).map(([episode_id, r]) => ({ episode_id, ...r })));
   embedded = csvText();
   mergeStorage();
+  mergeWithdrawn();
   S.dirty = csvText() !== embedded;
 }
 

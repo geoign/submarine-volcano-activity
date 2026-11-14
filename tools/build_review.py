@@ -48,7 +48,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_db import jcg_near, jcg_split  # noqa: E402
+from build_db import jcg_near, jcg_split, live_reviews  # noqa: E402
 from safeio import copy, write_text  # noqa: E402
 from vocab import CAUSES, CLASSES  # noqa: E402
 
@@ -113,7 +113,8 @@ def main() -> None:
     meta = json.loads((DB / "meta.json").read_text(encoding="utf-8"))
     volcanoes = {v["volcano_id"]: v for v in read(DB / "volcanoes.csv")}
     episodes = read(DB / "episodes.csv")
-    reviews = {r["episode_id"]: r for r in read(ROOT / "curation" / "human_review.csv")}
+    withdrawn = read(ROOT / "curation" / "review_withdrawn.csv")
+    reviews = live_reviews(read(ROOT / "curation" / "human_review.csv"), withdrawn)
     periods = defaultdict(list)
     for k in read(DB / "known_periods.csv"):
         periods[k["volcano_id"]].append(k)
@@ -179,6 +180,8 @@ def main() -> None:
                            steady=steady(v.get("baseline_class", ""), n_act[k]))
                    for k, v in volcanoes.items()},
         episodes=out,
+        # Withdrawals made outside the form: the form drops an older copy of the review that its storage holds.
+        withdrawn={w["episode_id"]: w["withdrawn_at"] for w in withdrawn},
         reviews={k: dict(verdict=r["verdict"], cause=r.get("cause", ""), comment=r.get("comment", ""),
                          reviewed_at=r.get("reviewed_at", "")) for k, r in reviews.items()})
     OUT.mkdir(exist_ok=True)

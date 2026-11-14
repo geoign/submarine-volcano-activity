@@ -40,7 +40,9 @@ folder is synchronised to a cloud drive: keep it to text and the few images of t
    file that the new one lacks is a review the author withdrew, or a file from another browser,
    so ask before it is lost. After new reviews, the summaries of `curation/volcano_summaries.csv`
    that the verdicts contradict are rewritten, and the author's comments get an English text
-   (step 4).
+   (step 4). When the author asks for a review to be withdrawn, add a row to
+   `curation/review_withdrawn.csv` (episode, time, reason) and leave the review file alone: the
+   build and the form then ignore every copy of that review that is not newer.
 6. Volcanoes of Japan: the Japan Coast Guard adds observations to its database of submarine
    volcanoes a few times a year. `python tools/parse_jcg.py --fetch` reads its pages again (one
    request at a time) and extracts the records; `python tools/import_jcg.py --pending <file>`
