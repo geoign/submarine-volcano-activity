@@ -18,9 +18,10 @@ Importance (the order of the list) is a number made of
   - the alert passes (1.5 each, up to 8) and those of level L3 (2 each, up to 5);
   - the area of discoloured water (6 x log10(1 + km2), up to 15);
   - floating matter or new land (5), hot pixels (2).
-When the Japan Coast Guard's database has activity in the zone within 14 days of an episode that is
-not counted as a documented eruption or likely volcanic, the class counts 75 at least and 20 is
-added: a visit that saw something beside a review that did not is the first thing to look at.
+When the Japan Coast Guard's database records something seen at the volcano itself, in the zone and
+within 14 days of an episode that is not counted as a documented eruption or likely volcanic, the
+class counts 75 at least and 20 is added: a visit that saw something beside a review that did not
+is the first thing to look at. Records of a neighbouring island do not count for this.
 It only orders the work; it is not published.
 """
 
@@ -130,7 +131,7 @@ def main() -> None:
                 continue
             near = [[r["date"], r["category"], r["site_ja"], r["text_ja"], int(inside)]
                     for r, inside in jcg_near(e, reports.get(vid, []), 30)]
-            seen = bool(jcg_split(e, reports.get(vid, []))[0])
+            seen = any(r["match"] == "summit" for r in jcg_split(e, reports.get(vid, []))[0])
             known = [f"{k['source']} {k['kind']} {k['start']}..{k['end'] or ''}" for k in periods.get(vid, [])
                      if (k["end"] or "9999") >= e["start"][:4] and k["start"][:4] <= e["end"][:4]]
             out.append(dict(
@@ -162,7 +163,7 @@ def main() -> None:
     print(f"review/index.html: {len(out)} episodes with images ({skipped} without), "
           f"{len(reviews)} already reviewed, data.js {len(text) / 1e6:.1f} MB")
     print("by class:", dict(by_class))
-    print("activity in the Coast Guard's database at the time:", sum(r["jh"] for r in out), "episodes")
+    print("something seen at the volcano in the Coast Guard's database at the time:", sum(r["jh"] for r in out), "episodes")
 
 
 if __name__ == "__main__":

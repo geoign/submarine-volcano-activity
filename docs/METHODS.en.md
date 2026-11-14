@@ -77,7 +77,8 @@ The review had three stages.
 3. The author's verdict. The author, a volcanologist, read the reports and judged some of the cases himself.
 
 The field "Basis" of an episode says which stage its class comes from.
-Each episode also carries a review status, as earthquake catalogues do: "human-reviewed" when the author has judged it from the images, "AI-reviewed" when only the AI-assisted review has looked at it, and "automatic" when it rests on the screening and a date match alone.
+Each episode also carries a review status, as earthquake catalogues do: "human-reviewed" when the author has judged it from the images, "AI-reviewed" when only the AI-assisted review has looked at it, and "automatic" when nobody has looked at it: it rests on the screening and a date match, or on a decision taken for its whole zone.
+The status carries the day of the author's review; passes added to an episode after that day were not part of it.
 
 The archives were searched twice in November 2026; the notes call the two runs the first and the second hindcast and refer to their reports.
 The second run kept the review of the first for every episode that overlaps an episode reviewed there.
@@ -107,15 +108,16 @@ A record in this database does not mean that the activity had not been reported.
 
 For the volcanoes of Japan there is a second record to compare with.
 The Japan Coast Guard's database of submarine volcanoes (海域火山データベース) lists, volcano by volcano, the visits by aircraft and ship and what was seen. The observers are the Coast Guard and the Maritime Self-Defense Force, and one row is from the Japan Meteorological Agency.
-The records since 2013 were taken from the pages of 13 volcanoes of this database on 14 November 2026.
-Each record was sorted into "activity seen", "nothing unusual" or "not visible", and the records of activity were summarised in English; the Japanese text is the source's.
+The records since 2013 were taken from the pages of 14 volcanoes of this database on 14 November 2026.
+Each record was sorted into "something seen" (discoloured water, floating matter, steam and the like), "nothing unusual" or "not visible", and the records of something seen were summarised in English; the Japanese text is the source's.
+The source records what was seen and does not always take it for volcanic.
 The page of a volcano shows these records in a table and as squares on the timeline. Their dates are Japan time, while the satellite passes are in UTC.
 
 Every episode at these volcanoes is compared with the observations from 14 days before its start to 14 days after its end.
-The field "Earlier reports checked" says what the Coast Guard's database has for that time: activity, visits that found nothing unusual, or no visit.
-An observation counts for an episode when the feature it describes lies in the monitoring zone of the episode. One page of the source can cover several features, so activity at a neighbouring feature is named apart.
+The field "Earlier reports checked" gives a digest of what the Coast Guard's database has for that time: what was reported, the visits that found nothing unusual, or no record. Where there is no record, it says from when to when the records used here run, because a table of the source can begin late and its newest visits may not be in it yet.
+An observation counts for an episode when the feature it describes lies in the monitoring zone of the episode. One page of the source can cover several features, so what was seen at a neighbouring feature is named apart.
 The comparison does not change a class.
-Where the review dismissed an episode or left it undetermined, and the Coast Guard's database has activity in its zone at the time, the author's review takes that episode first.
+Where the review dismissed an episode or left it undetermined, and the Coast Guard's database records something seen in its zone at the time, the author's review takes that episode first.
 An aircraft sees a volcano for minutes, and the nearest satellite pass can be days away, so the two records can differ without either being wrong.
 
 ## Limits

@@ -58,6 +58,17 @@ def split_year(r: dict) -> list[dict]:
     return [dict(r, date=d, time="") for d in days] or [r]
 
 
+def unique(rows: list[dict]) -> list[dict]:
+    """Without the rows the source has twice (same site, day, time and text)."""
+    seen, out = set(), []
+    for r in rows:
+        key = (r["volcano_id"], r["site_ja"], r["date"], r["time"], r["text_ja"])
+        if key not in seen:
+            seen.add(key)
+            out.append(r)
+    return out
+
+
 def load_summaries(summaries: Path, previous: Path) -> dict:
     """text_ja -> summary_en: from the summaries file when it exists, else from the previous table."""
     out = {}
@@ -107,9 +118,11 @@ def main() -> None:
     if unknown:
         raise SystemExit(f"sites that curation/jcg_sites.csv does not have: {sorted(unknown)}")
     rows.sort(key=lambda r: (r["volcano_id"], r["date"], r["site_ja"], r["time"]))
+    twice = len(rows)
+    rows = unique(rows)
     n = write_csv(out, COLUMNS, rows)
     print(f"curation/jcg_observations.csv: {n} observations at {len({r['volcano_id'] for r in rows})} volcanoes "
-          f"({split} yearly rows of the source split into days); "
+          f"({split} yearly rows of the source split into days, {twice - n} repeated rows left out); "
           f"{missing} reports of activity without an English summary")
 
 

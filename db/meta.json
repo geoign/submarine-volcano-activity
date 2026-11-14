@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14T08:32Z",
+ "generated": "2026-11-14T09:14Z",
  "monitor_commit": "16ae189",
  "image_base": "https://gis.ikgm.net/submvolc",
  "cut": "2025-11-12T00:00:00Z",
@@ -27,11 +27,11 @@
   "olci_survey": 177
  },
  "episodes_by_review_status": {
-  "ai-reviewed": 3721,
-  "automatic": 199,
+  "ai-reviewed": 3665,
+  "automatic": 255,
   "human-reviewed": 30
  },
  "ring_wave_records": 4,
  "airborne_band_records": 24,
- "jcg_observations": 705
+ "jcg_observations": 714
 }

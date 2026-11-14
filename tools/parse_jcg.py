@@ -157,7 +157,7 @@ PHEN = [
     ("plume", re.compile(r"噴煙")),
     ("eruption", re.compile(r"噴火|噴出物|爆発|火柱|噴石|溶岩")),
     ("island", re.compile(r"新島|陸地|陸化|新たな島|島が出現")),
-    ("bubbles", re.compile(r"気泡|湧出|ガス")),
+    ("bubbles", re.compile(r"気泡|泡")),
     ("thermal", re.compile(r"熱|高温|温度")),
 ]
 NEG_TAIL = re.compile(r"(は|も)?(認められなかった|確認されなかった|確認できなかった|見られなかった|なかった|無かった|なし|無し|認めず|認められず|見当たらな|視認されな|確認できず|判別できな|不明)")

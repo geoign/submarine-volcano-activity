@@ -147,7 +147,7 @@ def test_day_span_reads_days_months_years_and_ranges():
 
 def _report(date, category="anomaly", zones="V-A", site="Here", phenomena="dw"):
     return dict(volcano_id="V", site_ja=site, site_en=site, zones=zones, date=date, category=category,
-                phenomena=phenomena, retrieved="2026-11-14")
+                phenomena=phenomena, retrieved="2026-11-14", url="https://example.org/page.htm", match="summit")
 
 
 def test_coast_guard_reports_are_compared_by_zone_and_day():
@@ -171,14 +171,37 @@ def test_prior_reports_say_what_the_coast_guard_database_has():
     eps = [dict(volcano_id="V", zone_id="V-A", tier="highres", start="2022-06-10", end="2022-06-17", prior_reports=""),
            dict(volcano_id="V", zone_id="V-A", tier="highres", start="2019-01-01", end="2019-01-01", prior_reports="GVP: read"),
            dict(volcano_id="X", zone_id="X-A", tier="highres", start="2022-06-10", end="2022-06-17", prior_reports="")]
-    rows = [_report("2022-06-01", phenomena="dw+fl"), _report("2022-06-20", zones="", site="There")]
+    rows = [_report("2022-06-01", phenomena="dw+fl"), _report("2022-06-01", phenomena="dw+fl"),
+            _report("2022-06-20", zones="", site="There"), _report("2022-06-01", "none", site="Here too"),
+            _report("2022-06-25", "none"), _report("2022-06-25", "none", site="Here too")]
     assert build_db.jcg_prior(eps, rows) == 2
-    assert eps[0]["prior_reports"] == ("Japan Coast Guard volcano database (retrieved 2026-11-14): activity reported on "
-                                       "2022-06-01 (discoloured water, floating matter at Here); outside this zone, "
-                                       "activity reported at There (1 report(s))")
-    assert eps[1]["prior_reports"].startswith("GVP: read; Japan Coast Guard volcano database")
-    assert eps[1]["prior_reports"].endswith("no observation of this zone within 14 days of the episode")
+    head = ("Japan Coast Guard, database of submarine volcanoes (https://example.org/page.htm; used on 2026-11-14; "
+            "digest made and edited by this database): ")
+    # the same record twice is said once; two sites seen on one day are one other day
+    assert eps[0]["prior_reports"] == (head + "reported on 2022-06-01 (discoloured water, floating matter at Here); "
+                                       "nothing unusual on 1 other day(s); "
+                                       "outside this zone, 1 record(s) of something seen at There")
+    # no record near the episode: say how far the records used reach, not that nobody looked
+    assert eps[1]["prior_reports"] == ("GVP: read; " + head + "no record for this zone within 14 days of the episode "
+                                       "(the records of Here and Here too used here run from 2022-06-01 to 2022-06-25)")
     assert eps[2]["prior_reports"] == ""      # no page for this volcano: nothing was read, nothing is said
+    lone = [dict(volcano_id="V", zone_id="V-B", tier="highres", start="2022-06-10", end="2022-06-17", prior_reports="")]
+    build_db.jcg_prior(lone, rows)
+    assert lone[0]["prior_reports"].endswith("the source has no table for a feature in this zone; "
+                                             "outside this zone, 3 record(s) of something seen at Here and There")
+
+
+def test_a_row_the_coast_guard_has_twice_is_kept_once():
+    import import_jcg
+    r = dict(volcano_id="V", site_ja="S", date="2023-10-04", time="12:00", text_ja="変色水を認めた。")
+    assert import_jcg.unique([r, dict(r), dict(r, time="13:00")]) == [r, dict(r, time="13:00")]
+
+
+def test_a_welling_up_of_discoloured_water_is_not_bubbles():
+    import parse_jcg
+    assert parse_jcg.categorise("東海徳場付近に、円型の濃厚な黄白色の変色水の湧出を認めた。") == ("anomaly", "dw")
+    assert parse_jcg.categorise("少量の変色水若しくはガスとみられる青白色の変色域を認めた。") == ("anomaly", "dw")
+    assert parse_jcg.categorise("海水面に気泡を認めた。") == ("anomaly", "bubbles")
 
 
 def test_a_yearly_row_of_the_coast_guard_becomes_its_days():

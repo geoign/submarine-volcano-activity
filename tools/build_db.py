@@ -396,7 +396,8 @@ def lowres_episodes(mon: Path, volcanoes: dict) -> list[dict]:
             rows.append(_lowres_row(k, "known", "catalogue", "", "", "", sheet=False))
         elif k["volcano"] in REEF_ZONES:
             # Left out of the one-by-one review as reef zones (report of the second hindcast).
-            rows.append(_lowres_row(dict(k, known=""), "nonvolcanic", "lead_review", "reef_or_shoal", "0", REEF_JA, sheet=False))
+            rows.append(dict(_lowres_row(dict(k, known=""), "nonvolcanic", "lead_review", "reef_or_shoal", "0", REEF_JA,
+                                         sheet=False), _bulk=True))
         else:
             rows.append(_lowres_row(dict(k, known=""), "unreviewed", "", "", "", "", sheet=False))
     return [r for r in rows if r["volcano_id"] in volcanoes]
@@ -452,6 +453,9 @@ def classify(episodes: list[dict], volcanoes: dict, cur: dict) -> None:
         h = cur.get("human", {}).get(e["episode_id"])
         if h:
             # The author's review in the form (tools/build_review.py) is the last word.
+            if h["verdict"] == "known" and not e.get("known_ref"):
+                raise SystemExit(f"curation/human_review.csv: {e['episode_id']} is judged 'known', but the episode "
+                                 "matches no eruption period (the review form does not offer that class for it)")
             day = (h.get("reviewed_at") or "")[:10]
             e["cls"], e["basis"] = h["verdict"], "owner"
             e["cause"] = (h.get("cause") or e["cause"] or "other") if h["verdict"] == "nonvolcanic" else ""
@@ -461,12 +465,13 @@ def classify(episodes: list[dict], volcanoes: dict, cur: dict) -> None:
             e["_reviewed_at"] = day
         if e["cls"] != "nonvolcanic" and e["cause"] and e["cls"] != "recurrent":
             e["cause"] = ""
-        # Who looked: the author, an AI-assisted review, or only the screening and a date match.
+        # Who looked: the author, an AI-assisted review, or nobody (screening, a date match, or a
+        # decision taken for a whole zone without looking at its episodes).
         if e["basis"] == "owner":
             e["review_status"] = "human-reviewed"
             m = re.match(r"(\d{4}-\d\d-\d\d)", e.get("owner_ja") or "")
             e["reviewed_at"] = e.get("_reviewed_at") or (m.group(1) if m else "")
-        elif e["basis"] in ("ai_review", "ai_review_partial", "lead_review", "rule"):
+        elif e["basis"] in ("ai_review", "ai_review_partial", "lead_review", "rule") and not e.get("_bulk"):
             e["review_status"], e["reviewed_at"] = "ai-reviewed", ""
         else:
             e["review_status"], e["reviewed_at"] = "automatic", ""
@@ -613,36 +618,53 @@ def jcg_split(e: dict, rows: list[dict], window: int = JCG_WINDOW) -> tuple[list
 
 
 def jcg_prior(episodes: list[dict], rows: list[dict]) -> int:
-    """Say in prior_reports what the Coast Guard's database has within JCG_WINDOW days of each episode."""
+    """Say in prior_reports what the Coast Guard's database has within JCG_WINDOW days of each episode.
+
+    The text is this database's digest of the source: it names the pages and says that it was edited.
+    It says "reported", not "activity": the source records what was seen and does not always take it
+    for volcanic."""
     by = defaultdict(list)
     for r in rows:
         by[r["volcano_id"]].append(r)
-    read = max((r.get("retrieved", "") for r in rows), default="")
 
     def item(r):
-        what = ", ".join(JCG_PHENOMENA.get(p, p) for p in r["phenomena"].split("+") if p) or "activity"
+        what = ", ".join(JCG_PHENOMENA.get(p, p) for p in r["phenomena"].split("+") if p) or "a phenomenon"
         return f"{r['date']} ({what} at {r['site_en'] or r['site_ja']})"
+
+    def some(items, more):
+        items = list(dict.fromkeys(items))
+        return ", ".join(items[:6]) + (f" and {len(items) - 6} more {more}" if len(items) > 6 else "")
+
+    def names(rs):
+        return " and ".join(sorted({r["site_en"] or r["site_ja"] for r in rs}))
     n = 0
     for e in episodes:
         mine = by.get(e["volcano_id"])
         if not mine:
             continue
         here, away, quiet = jcg_split(e, mine)
+        zone = site_of(e["zone_id"])
+        tables = [r for r in mine if e["tier"] == "lowres" or zone in r.get("zones", "").split()]
         parts = []
         if here:
-            parts.append("activity reported on " + ", ".join(item(r) for r in here[:6])
-                         + (f" and in {len(here) - 6} more reports" if len(here) > 6 else ""))
-            if quiet:
-                parts.append(f"nothing unusual on {len(quiet)} other visit(s)")
+            parts.append("reported on " + some([item(r) for r in here], "records"))
+            other = {r["date"] for r in quiet} - {r["date"] for r in here}
+            if other:
+                parts.append(f"nothing unusual on {len(other)} other day(s)")
         elif quiet:
-            parts.append("nothing unusual reported on " + ", ".join(r["date"] for r in quiet[:6])
-                         + (f" and on {len(quiet) - 6} more visits" if len(quiet) > 6 else ""))
+            parts.append("nothing unusual reported on " + some([r["date"] for r in quiet], "days"))
+        elif tables:
+            days = sorted(r["date"][:10] for r in tables)
+            parts.append(f"no record for this zone within {JCG_WINDOW} days of the episode "
+                         f"(the records of {names(tables)} used here run from {days[0]} to {days[-1]})")
         else:
-            parts.append(f"no observation of this zone within {JCG_WINDOW} days of the episode")
+            parts.append("the source has no table for a feature in this zone")
         if away:
-            sites = sorted({r["site_en"] or r["site_ja"] for r in away})
-            parts.append(f"outside this zone, activity reported at {' and '.join(sites)} ({len(away)} report(s))")
-        text = f"Japan Coast Guard volcano database (retrieved {read}): " + "; ".join(parts)
+            parts.append(f"outside this zone, {len(away)} record(s) of something seen at {names(away)}")
+        pages = " and ".join(dict.fromkeys(r.get("url", "") for r in mine))
+        read = max(r.get("retrieved", "") for r in mine)
+        text = (f"Japan Coast Guard, database of submarine volcanoes ({pages}; used on {read}; "
+                "digest made and edited by this database): " + "; ".join(parts))
         e["prior_reports"] = f"{e['prior_reports']}; {text}" if e["prior_reports"] else text
         n += 1
     return n

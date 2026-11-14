@@ -18,11 +18,11 @@ First publication.
 ## 2026-11-14, second update
 
 - Every episode has a review status (`review_status`, `reviewed_at`): 30 are `human-reviewed`
-  (cases the author had judged before), 3,721 `ai-reviewed`, 199 `automatic`. The author's reviews
+  (cases the author had judged before), 3,665 `ai-reviewed`, 255 `automatic`. The author's reviews
   are entered in a local form and kept in `curation/human_review.csv`.
 - Observations by aircraft and ship from the Japan Coast Guard's database of submarine volcanoes
-  for 13 volcanoes of Japan: `db/jcg_observations.csv`, 705 rows from 2013-01-22 to 2026-09-17,
-  216 of them with activity. For the 244 episodes at these volcanoes, `prior_reports` says what
-  that database has within 14 days. The classes are unchanged: 22 episodes that the review had
-  dismissed, left undetermined or counted as a usual feature have a record of activity in their
-  zone at the time, and wait for the author's review.
+  for 14 volcanoes of Japan: `db/jcg_observations.csv`, 714 rows from 2013-01-22 to 2026-09-17,
+  215 of them with something seen. For the 244 episodes at these volcanoes, `prior_reports` says
+  what that database has within 14 days. The classes are unchanged: 22 episodes that the review
+  had dismissed, left undetermined or counted as a usual feature have a record of something seen
+  in their zone at the time, and wait for the author's review.

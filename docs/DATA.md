@@ -80,13 +80,13 @@ around it, and a review note or a volcano summary may give a larger area seen by
 | `sensors` | `Sentinel-2`, `Landsat`, `Landsat+Sentinel-2` or `OLCI` |
 | `peak` | The strongest pass (as `<zone>_<YYYYMMDDTHHMM>_<satellite>`) or, at low resolution, the peak day |
 | `class` | Public class, see below |
-| `review_status` | Who looked at the episode: `human-reviewed` (the author judged it from the images), `ai-reviewed` (AI-assisted review only), `automatic` (screening and date match only; nobody looked) |
-| `reviewed_at` | Day of the author's review, for `human-reviewed` |
+| `review_status` | Who looked at the episode: `human-reviewed` (the author judged it from the images), `ai-reviewed` (AI-assisted review only), `automatic` (nobody looked at the episode: screening and a date match only, or a decision taken for a whole zone). With the basis `ai_review_partial` the AI-assisted review saw only some of the alert passes |
+| `reviewed_at` | Day of the author's review, for `human-reviewed`. Passes added to the episode after that day were not part of the review |
 | `basis` | Where the class comes from: `catalogue` (date match with an eruption period), `ai_review` (AI-assisted review of the episode's passes), `ai_review_partial` (the review was of an overlapping episode of the first hindcast, or of an earlier state of the monitor's list, and saw only some of this episode's alert passes; its note may describe other days), `rule` (place with a usual feature, or the usual volcanic discoloured water of the volcano), `lead_review` (conclusion of the review report), `owner` (the author's verdict). Empty for `unreviewed` |
 | `cause` | For `nonvolcanic`: `cloud`, `cloud_shadow`, `sun_glint`, `reef_or_shoal`, `land_or_surf`, `land_or_ice`, `bloom`, `sediment_plume`, `ship_wake`, `sensor_artifact`, `neighbour_eruption`, `other` |
 | `interest` | Interest given by the first-pass review, 0 (dismissed) to 3; how much the episode deserved a second look, not a verdict |
 | `known_ref` | The eruption period the episode was matched to: `GVP <kind> <start>..<end>` with the dates of the catalogue, or `Own event list <start>..<end>` |
-| `prior_reports` | What was checked against earlier reports, with the date of the check. For a volcano that has a page in the Japan Coast Guard's database: what that database has from 14 days before the episode to 14 days after it (see `jcg_observations.csv`). Empty: nothing was checked |
+| `prior_reports` | What was checked against earlier reports, with the date of the check. For a volcano that has a page in the Japan Coast Guard's database: a digest, made for this database, of what that database has from 14 days before the episode to 14 days after it (see `jcg_observations.csv`), with the pages and the day they were used. "No record" comes with the span of the records used, since a table of the source can begin late and end before the episode. Empty: nothing was checked |
 | `image` | Path of a review sheet under the image base (low-resolution episodes that were reviewed) |
 | `note_en`, `note_ja` | Review note. Written in Japanese; the English is a translation and is missing for most dismissed episodes |
 | `owner_en`, `owner_ja` | The author's verdict, where there is one |
@@ -171,7 +171,9 @@ Observations by aircraft and ship at the volcanoes of Japan since 2013, made by 
 Coast Guard's database of submarine volcanoes (海域火山データベース,
 <https://www1.kaiho.mlit.go.jp/kaiikiDB/list-2.htm>). One row for an observation of one feature.
 The source has one table for Kaikata Seamount, which is two volcanoes here: its rows are listed
-under both.
+under both. A row the source has twice is kept once. Tables of features farther than about 10 km
+from every zone centre of a volcano are not used (the islands Hachijojima, Aogashima, Mikurajima
+and Io-Torishima, and the rock Sofu-gan, 20 km from the Sofu Seamount caldera).
 
 | Column | Meaning |
 |---|---|
@@ -179,9 +181,9 @@ under both.
 | `site_ja`, `site_en` | The feature the table of the source is about: an island, a reef, a seamount |
 | `match` | `summit`: the feature is the volcano itself; `nearby`: a neighbouring feature |
 | `zones` | The high-resolution zones the feature lies in, separated by spaces; empty when it lies outside all of them. An observation is compared with the episodes of these zones and with the low-resolution episodes of the volcano |
-| `date`, `time` | As the source gives them (Japan time). Two days in one row are written `a/b`. Four rows of the source sum up the visits of a year; each became one row for every day it names |
+| `date`, `time` | As the source gives them (Japan time, UTC+9). Two days in one row are written `a/b`. Four rows of the source sum up the visits of a year; each became one row for every day it names, with the text and the observers of the yearly row and without a time |
 | `observer` | As given: 海上保安庁 (Japan Coast Guard), 第三管区/第十管区海上保安本部 (its regional headquarters), 海上自衛隊 (Maritime Self-Defense Force), 気象庁 (Japan Meteorological Agency) |
-| `category` | `anomaly` (discoloured water, floating matter or other activity was seen), `none` (nothing unusual), `not_visible` (the place could not be seen), `other`. Set for this database from the text |
+| `category` | `anomaly` (something was seen: discoloured water, floating matter, steam and the like; the source does not always take it for volcanic), `none` (nothing unusual), `not_visible` (the sea surface could not be judged), `other`. Set for this database from the text |
 | `phenomena` | For `anomaly`, joined by `+`: `dw` discoloured water, `fl` floating matter, `steam`, `plume`, `eruption`, `island` (new island), `bubbles`, `thermal` (thermal anomaly), `other` |
 | `text_ja` | The text of the source |
 | `summary_en` | English summary of the text, for `anomaly`. Written for this database, not by the Coast Guard |
@@ -208,8 +210,10 @@ Figures shown on a volcano's page: `volcano_id`, `file` (path under the image ba
 ## curation/human_review.csv
 
 The author's reviews, entered in the local review form (`tools/build_review.py`): `episode_id`,
-`verdict` (a class), `cause` (for `nonvolcanic`), `comment`, `reviewed_at`. The build gives these
-episodes the verdict as their class, the basis `owner` and the status `human-reviewed`.
+`verdict` (a class), `cause` (for `nonvolcanic`), `comment`, `reviewed_at` (local time with its
+offset). The build gives these episodes the verdict as their class, the basis `owner` and the
+status `human-reviewed`. A row whose episode is no longer in the tables is kept and reported by
+`tools/check_db.py`.
 
 ## index.json, meta.json
 

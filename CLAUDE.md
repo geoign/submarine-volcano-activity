@@ -33,6 +33,8 @@ folder is synchronised to a cloud drive: keep it to text and the few images of t
    from disk, not committed). The author saves the reviews from the form into
    `curation/human_review.csv`; the next build gives those episodes the status `human-reviewed`.
    Never edit that file by hand or on the author's behalf: it records what a person looked at.
+   A row whose episode has gone from the tables stays; `tools/check_db.py` notes it. The form
+   lists an episode again when passes were added to it after the day of its review.
 6. Volcanoes of Japan: the Japan Coast Guard adds observations to its database of submarine
    volcanoes a few times a year. `python tools/parse_jcg.py --fetch` reads its pages again (one
    request at a time) and extracts the records; `python tools/import_jcg.py --pending <file>`
@@ -72,7 +74,14 @@ folder is synchronised to a cloud drive: keep it to text and the few images of t
   has Minami-Ioto, and Kita-Fukutoku-tai has a page of its own but is a zone of the same volcano
   here. The first comparison took every row of a volcano for every episode. An observation now
   counts for the zones its feature lies in (`curation/jcg_sites.csv`), and for the low-resolution
-  episodes of the volcano.
+  episodes of the volcano. The table of Kaitoku Seamount is of Higashi-Kaitoku-ba only.
+- The first rules read "湧出" (discoloured water welling up) as bubbles: 17 rows said "bubbles"
+  under the Coast Guard's name without the source saying so. A label is added only for a word the
+  text has; `prior_reports` says "reported", not "activity", and says how far the records reach
+  where there is none, because a table can begin late (Omuro-dashi: 2025).
+- The review form once wrote its file without reading it: opened in another browser, it would
+  have replaced the saved reviews with its own. It now merges the file and the browser's storage
+  before every write, and a withdrawn review stays as an entry without a verdict.
 - `num()` of the build once stripped trailing zeros from whole numbers, so a bearing of 290 was
   written 29 and ten hot pixels became one. Zeros are stripped from a fraction only; the test
   covers multiples of ten.

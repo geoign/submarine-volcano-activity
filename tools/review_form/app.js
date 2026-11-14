@@ -1,6 +1,11 @@
 // Local review form. Data comes from data.js (window.REVIEW_DATA), written by tools/build_review.py.
 // Verdicts are kept in the browser's storage as they are entered and written to a CSV file:
 // curation/human_review.csv of the repository, which tools/build_db.py reads.
+//
+// The file is the record and more than one place can write it (another tab, another browser), so
+// nothing is written without reading first: every save merges what the storage and the file hold
+// now, and the later entry of an episode wins. A withdrawn review stays in the storage as an
+// entry without a verdict, so that an older copy of it cannot come back.
 
 "use strict";
 
@@ -23,7 +28,7 @@ const BASIS = {
   rule: "規則", lead_review: "報告書の結論", owner: "作者の判定", "": "判定なし",
 };
 const ROLE = { a: "警戒", q: "期間内", b: "前", c: "後" };
-const JCG = { anomaly: "異常あり", none: "特異事象なし", not_visible: "視認できず", other: "その他" };
+const JCG = { anomaly: "記録あり", none: "特異事象なし", not_visible: "視認できず", other: "その他" };
 
 const S = {
   status: "pending", sort: "imp", q: "", high: true, low: true, jcg: false, classes: new Set(Object.keys(LABEL)),
@@ -32,8 +37,13 @@ const S = {
 let reviews = {};
 let embedded = "";     // the reviews as the CSV file had them when the form was built
 
-// Done: reviewed in this form, or judged by the author before the form existed (status in the tables).
-const isDone = (e) => e.id in reviews || e.status === "human-reviewed";
+// The review of an episode, if there is one that has not been withdrawn.
+const rev = (id) => (reviews[id] && reviews[id].verdict ? reviews[id] : null);
+// Passes were added to the episode after the day it was reviewed.
+const grown = (e, r) => e.e > (r.reviewed_at || "").slice(0, 10);
+// Done: reviewed in this form and not grown since, or judged by the author before the form existed
+// (status in the tables). A withdrawn review is not done, whatever the tables still say.
+const isDone = (e) => (e.id in reviews ? Boolean(rev(e.id)) && !grown(e, reviews[e.id]) : e.status === "human-reviewed");
 
 // ---------------------------------------------------------------- small helpers
 
@@ -53,7 +63,13 @@ function el(tag, attrs, ...children) {
   return node;
 }
 const clear = (node) => { while (node.firstChild) node.removeChild(node.firstChild); return node; };
-const today = () => new Date().toISOString().slice(0, 10);
+// Local time with its offset: the day of a review is the author's day, and entries sort by it.
+function stamp() {
+  const d = new Date(), p = (n) => String(n).padStart(2, "0"), off = -d.getTimezoneOffset();
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`
+    + `${off < 0 ? "-" : "+"}${p(Math.floor(Math.abs(off) / 60))}:${p(Math.abs(off) % 60)}`;
+}
+const when = (r) => (r.reviewed_at || "").slice(0, 16).replace("T", " ");
 const vol = (e) => D.volcanoes[e.v] || { name: e.v, name_ja: "", country: "" };
 const volName = (e) => vol(e).name_ja || vol(e).name;
 const phenomena = (code) => (code || "").split("+").filter(Boolean).map((p) => PH[p] || p).join("、");
@@ -70,7 +86,7 @@ function quicklook(p) {
 
 function csvText() {
   const q = (v) => { const s = v === null || v === undefined ? "" : String(v); return /[",\n\r]/.test(s) ? `"${s.replaceAll('"', '""')}"` : s; };
-  const ids = Object.keys(reviews).sort();
+  const ids = Object.keys(reviews).filter(rev).sort();
   return [COLUMNS.join(","), ...ids.map((id) => [id, reviews[id].verdict, reviews[id].cause, reviews[id].comment, reviews[id].reviewed_at].map(q).join(","))].join("\n") + "\n";
 }
 
@@ -95,35 +111,57 @@ function parseCSV(text) {
   return rows.filter((r) => r.length > 1 || r[0] !== "").map((r) => Object.fromEntries(head.map((h, k) => [h, r[k] ?? ""])));
 }
 
-function mergeRows(rows) {
+// Take rows into the reviews held here. The later entry of an episode wins; what is held here stays
+// when the two are equally old. Entries without a verdict (withdrawn reviews) come from the storage only.
+function mergeRows(rows, withdrawn) {
   let n = 0;
   for (const r of rows) {
-    if (!r.episode_id || !(r.verdict in LABEL) || r.verdict === "unreviewed") continue;
+    if (!r.episode_id) continue;
+    if (r.verdict ? (!(r.verdict in LABEL) || r.verdict === "unreviewed") : !withdrawn) continue;
     const old = reviews[r.episode_id];
-    // The later review wins; a row of the same day replaces what the browser holds.
-    if (!old || (r.reviewed_at || "") >= (old.reviewed_at || "")) {
-      reviews[r.episode_id] = { verdict: r.verdict, cause: r.cause || "", comment: r.comment || "", reviewed_at: r.reviewed_at || today() };
+    if (!old || (r.reviewed_at || "") > (old.reviewed_at || "")) {
+      reviews[r.episode_id] = { verdict: r.verdict || "", cause: r.cause || "", comment: r.comment || "", reviewed_at: r.reviewed_at || stamp() };
       n++;
     }
   }
   return n;
 }
 
+function mergeStorage() {
+  try {
+    const kept = JSON.parse(localStorage.getItem(STORE) || "{}");
+    return mergeRows(Object.entries(kept).map(([episode_id, r]) => ({ episode_id, ...r })), true);
+  } catch { return 0; /* storage unavailable or damaged */ }
+}
+
+// What the chosen file holds now. Returns false when it could not be read (then it is not written).
+async function mergeFile() {
+  if (!S.fileHandle) return true;
+  try {
+    mergeRows(parseCSV(await (await S.fileHandle.getFile()).text()));
+    return true;
+  } catch (err) {
+    if (err.name === "NotFoundError") return true;      // a new file
+    console.error(err);
+    return false;
+  }
+}
+
 function loadStored() {
   reviews = {};
   mergeRows(Object.entries(D.reviews || {}).map(([episode_id, r]) => ({ episode_id, ...r })));
   embedded = csvText();
-  try {
-    const kept = JSON.parse(localStorage.getItem(STORE) || "{}");
-    mergeRows(Object.entries(kept).map(([episode_id, r]) => ({ episode_id, ...r })));
-  } catch { /* storage unavailable or damaged: the embedded reviews stand */ }
+  mergeStorage();
   S.dirty = csvText() !== embedded;
 }
 
 async function persist() {
+  mergeStorage();                                 // another tab may have saved since
+  const readable = await mergeFile();             // and the file may hold more than this tab knows
   try { localStorage.setItem(STORE, JSON.stringify(reviews)); } catch { /* the file is the record */ }
   if (S.fileHandle) {
     try {
+      if (!readable) throw new Error("the file could not be read, so it is not overwritten");
       const w = await S.fileHandle.createWritable();
       await w.write(csvText());
       await w.close();
@@ -137,7 +175,7 @@ async function persist() {
 }
 
 function showSaveState() {
-  const n = Object.keys(reviews).length;
+  const n = Object.keys(reviews).filter(rev).length;
   const node = $("save-state");
   if (S.fileHandle && !S.dirty) { node.className = "state"; node.textContent = `${S.fileHandle.name} に保存済み (${n} 件)`; }
   else if (S.fileHandle) { node.className = "state warn"; node.textContent = `${S.fileHandle.name} への書き込みに失敗しました。ダウンロードで保存してください`; }
@@ -151,7 +189,9 @@ async function pickFile() {
     S.fileHandle = await window.showSaveFilePicker({
       suggestedName: "human_review.csv", types: [{ description: "CSV", accept: { "text/csv": [".csv"] } }],
     });
-    await persist();
+    await persist();      // reads the chosen file first: reviews it already holds are kept
+    drawList();
+    if (S.current) drawDetail();
   } catch (err) { if (err.name !== "AbortError") console.error(err); }
 }
 
@@ -193,7 +233,7 @@ function drawList() {
   $("count").textContent = `この条件で ${S.list.length} 件`;
   const box = clear($("list"));
   for (const e of S.list.slice(0, S.shown)) {
-    const r = reviews[e.id];
+    const r = rev(e.id);
     const li = el("li", { "aria-current": String(S.current && S.current.id === e.id), onclick: () => open(e) },
       el("i", { class: `dot ${r ? r.verdict : e.cls}` }),
       el("span", {}, el("span", { class: "name", text: volName(e) }),
@@ -249,13 +289,13 @@ function drawPass() {
 }
 
 function drawDetail() {
-  const e = S.current, v = vol(e), r = reviews[e.id];
+  const e = S.current, v = vol(e), r = rev(e.id);
   const main = clear($("detail"));
   const link = `${D.site}volcano.html?id=${encodeURIComponent(e.v)}&ep=${encodeURIComponent(e.id)}&lang=ja`;
   main.append(
     el("div", { class: "head" },
       el("h2", { text: volName(e) }), v.name_ja ? el("span", { class: "alt", text: v.name }) : null,
-      badge(e.cls), isDone(e) ? el("span", { class: "tag human", text: `human-reviewed${r ? " " + r.reviewed_at : ""}` }) : null),
+      badge(e.cls), isDone(e) ? el("span", { class: "tag human", text: `human-reviewed${r ? " " + when(r) : ""}` }) : null),
     el("div", { class: "facts" },
       el("span", {}, el("b", { text: range(e.s, e.e) })), el("span", { text: v.country }),
       el("span", { text: e.tier === "lowres" ? "低解像度" : `高解像度 · ${e.z} · ${e.sens}` }),
@@ -269,17 +309,24 @@ function drawDetail() {
   const viewer = el("div", { class: "viewer" });
   if (e.tier === "highres") {
     viewer.append(
-      el("figure", {}, el("a", { id: "big-link", target: "_blank", rel: "noopener" }, el("img", { id: "big", class: "big", alt: "" })),
+      el("figure", {}, el("a", { id: "big-link", target: "_blank", rel: "noopener" }, el("img", {
+        id: "big", class: "big", alt: "",
+        onload: (ev) => { ev.target.classList.remove("broken"); ev.target.alt = ""; },
+        onerror: (ev) => { ev.target.classList.add("broken"); ev.target.alt = "画像を読み込めませんでした (ネットワークか画像の保管先を確かめてください)"; },
+      })),
         el("div", { class: "halves" }, el("span", { text: "真色" }), el("span", { text: "短波長赤外の合成" }))),
       el("div", { class: "cap", id: "cap" }),
       el("div", { class: "strip", id: "strip" }, ...e.passes.map((p, i) => el("button", {
         type: "button", class: p[13] === "a" ? "alert" : null, title: `${p[1]} ${p[2]} ${ROLE[p[13]]}`, onclick: () => { S.pass = i; drawPass(); },
-      }, el("img", { loading: "lazy", alt: "", src: quicklook(p), width: 104, height: 104 }),
+      }, el("img", { loading: "lazy", alt: "", src: quicklook(p), width: 104, height: 104, onerror: (ev) => ev.target.closest("button").classList.add("broken") }),
         el("span", { class: "t" }, p[1].slice(0, 10), p[13] === "a" ? el("i", { text: ` ${p[3]}` }) : null)))));
   } else {
     const url = `${D.image_base}/${e.image}`;
     viewer.append(
-      el("div", { class: "sheetbox" }, el("a", { href: url, target: "_blank", rel: "noopener" }, el("img", { class: "sheet", alt: "", src: url }))),
+      el("div", { class: "sheetbox" }, el("a", { href: url, target: "_blank", rel: "noopener" }, el("img", {
+        class: "sheet", alt: "", src: url,
+        onerror: (ev) => { ev.target.classList.add("broken"); ev.target.alt = "画像を読み込めませんでした (ネットワークか画像の保管先を確かめてください)"; },
+      }))),
       el("div", { class: "cap" }, "低解像度の判定用のシート (前後 5 日の VIIRS・MODIS・OLCI の全通過)。",
         el("a", { href: `${D.image_base}/wide/digest/${e.z}.jpg`, target: "_blank", rel: "noopener", text: "火口付近の要約図" })));
   }
@@ -305,10 +352,11 @@ function formFor(e, r) {
   const chosen = r ? r.verdict : "";
   const form = el("form", { class: "form", onsubmit: (ev) => { ev.preventDefault(); save(true); } },
     el("h3", { text: "作者の判定" }),
-    el("div", { class: "verdicts" }, ...D.classes.map((c, i) => el("label", { class: c === e.cls ? "current" : null },
+    // "known" is a match by date with a documented eruption period: it is offered where there is one.
+    el("div", { class: "verdicts" }, ...D.classes.map((c, i) => el("label", { class: [c === e.cls ? "current" : "", c === "known" && !e.known ? "off" : ""].join(" ").trim() || null },
       el("kbd", { text: String(i + 1) }), el("i", { class: `dot ${c}` }),
-      el("span", { class: "lab" }, el("input", { type: "radio", name: "verdict", value: c, checked: c === chosen, onchange: syncCause }), " ", LABEL[c],
-        c === e.cls ? " (いまの区分)" : "")))),
+      el("span", { class: "lab" }, el("input", { type: "radio", name: "verdict", value: c, checked: c === chosen, disabled: c === "known" && !e.known, onchange: syncCause }), " ", LABEL[c],
+        c === e.cls ? " (いまの区分)" : "", c === "known" && !e.known ? " (照合した噴火期間が無い)" : "")))),
     el("select", { id: "cause", "aria-label": "原因" }, el("option", { value: "", text: "原因 (火山性ではない場合)" }),
       ...D.causes.map((c) => el("option", { value: c, text: CAUSE[c] || c, selected: (r ? r.cause : e.cause) === c }))),
     el("textarea", { id: "comment", placeholder: "コメント (任意。公開の表に作者の判定として載ります)" }),
@@ -317,7 +365,8 @@ function formFor(e, r) {
       el("button", { type: "button", text: "いまの区分で確認 (A)", onclick: agree }),
       el("button", { type: "button", text: "飛ばす (J)", onclick: () => step(1) }),
       r ? el("button", { type: "button", text: "確認を取り消す", onclick: undo }) : null),
-    r ? el("div", { class: "saved", text: `${r.reviewed_at} に確認済み: ${LABEL[r.verdict]}` }) : null,
+    r ? el("div", { class: "saved", text: `${when(r)} に確認済み: ${LABEL[r.verdict]}` }) : null,
+    r && grown(e, r) ? el("div", { class: "saved warn", text: `確認のあとに通過が増えています (エピソードの終わりは ${e.e})。もう一度確認してください。` }) : null,
     el("div", { class: "small", text: "破線の枠がいまの区分です。確認すると、公開の表でこのエピソードが human-reviewed になります。" }));
   form.querySelector("#comment").value = r ? r.comment : "";
   setTimeout(syncCause, 0);
@@ -332,7 +381,7 @@ function syncCause() {
 
 function setVerdict(c) {
   const input = document.querySelector(`input[name="verdict"][value="${c}"]`);
-  if (input) { input.checked = true; syncCause(); }
+  if (input && !input.disabled) { input.checked = true; syncCause(); }
 }
 
 function agree() {
@@ -348,7 +397,7 @@ async function save(next) {
   const v = document.querySelector('input[name="verdict"]:checked');
   if (!v) { alert("区分を選んでください。"); return; }
   const cause = v.value === "nonvolcanic" ? ($("cause").value || "other") : "";
-  reviews[e.id] = { verdict: v.value, cause, comment: $("comment").value.trim().replace(/\s*\n\s*/g, " "), reviewed_at: today() };
+  reviews[e.id] = { verdict: v.value, cause, comment: $("comment").value.trim().replace(/\s*\n\s*/g, " "), reviewed_at: stamp() };
   await persist();
   const index = S.list.findIndex((x) => x.id === e.id);
   drawList();
@@ -361,7 +410,8 @@ async function save(next) {
 
 async function undo() {
   if (!S.current || !confirm("このエピソードの確認を取り消しますか?")) return;
-  delete reviews[S.current.id];
+  // An entry without a verdict, newer than the review: older copies in the storage or the file stay out.
+  reviews[S.current.id] = { verdict: "", cause: "", comment: "", reviewed_at: stamp() };
   await persist();
   drawList();
   drawDetail();
@@ -411,6 +461,8 @@ function start() {
       return;
     }
     if (e.ctrlKey || e.metaKey || e.altKey) return;
+    // Enter and Space on a button or a link do what that button does, not "save and next".
+    if ((tag === "button" || tag === "a") && (e.key === "Enter" || e.key === " ")) return;
     const k = e.key.toLowerCase();
     if (k >= "1" && k <= String(D.classes.length)) { setVerdict(D.classes[Number(k) - 1]); e.preventDefault(); }
     else if (k === "a") { agree(); e.preventDefault(); }
@@ -422,6 +474,14 @@ function start() {
     else if (k === "c") { const c = $("comment"); if (c) { c.focus(); e.preventDefault(); } }
   });
   window.addEventListener("beforeunload", (e) => { if (S.dirty) { e.preventDefault(); e.returnValue = ""; } });
+  // Another tab of the form saved: take its reviews (the open episode is left as it is being edited).
+  // A tab that has the file writes it again, so the file follows whichever tab saved.
+  window.addEventListener("storage", async (e) => {
+    if (e.key !== STORE || !mergeStorage()) return;
+    if (S.fileHandle) await persist();
+    else { S.dirty = csvText() !== embedded; showSaveState(); }
+    drawList();
+  });
 }
 
 start();

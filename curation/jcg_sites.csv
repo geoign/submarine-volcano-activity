@@ -6,9 +6,9 @@ GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-
 GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,
 GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,
 CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,The island of the caldera
-GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,One table of the source for the whole seamount (KM and KC peaks)
-CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,One table of the source for the whole seamount (KM and KC peaks)
-GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,One table of the source for the seamount; the position it gives is Higashi-Kaitoku-ba
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,"One table of the source for the whole seamount, which is two volcanoes here (KM and KC peaks, 15 km apart); a record that names one peak would need its own row"
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,"One table of the source for the whole seamount, which is two volcanoes here (KM and KC peaks, 15 km apart); a record that names one peak would need its own row"
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A,One table of the source for the seamount; its position and its records are of Higashi-Kaitoku-ba (zone A). Nishi-Kaitoku-ba (zone B) is 17 km away and is not named in it
 GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,
 GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,The island 5.4 km from the zone centre (radius 7 km)
 GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,A separate seamount 15 km north-north-west of Fukutoku-Oka-no-Ba
@@ -16,4 +16,5 @@ GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,
 GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,The island 6.3 km from the centre of the zone (radius 5 km)
 GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,No high-resolution zone
 GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,No high-resolution zone
+GVP284133,kaiyo26-2.htm,福神海山,Fukujin Seamount,summit,,No high-resolution zone
 CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,The island of the caldera

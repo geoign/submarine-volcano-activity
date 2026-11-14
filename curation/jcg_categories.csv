@@ -1,5 +1,5 @@
 text_ja,category,phenomena,reason
-かつての新島付近において、前回4/18観測で確認した波浪礁は認められなかった。 福徳岡ノ場の火口直上に直径約300 mの円形の青白色の変色水が湧出し、そこから東方向へ帯状に約3 kmにわたって黄緑色の変色水が分布していた。 青白色の変色水湧出点付近に、白い浮遊物を認めた。,anomaly,dw+fl+bubbles,no island: the breaker reef was not seen
+かつての新島付近において、前回4/18観測で確認した波浪礁は認められなかった。 福徳岡ノ場の火口直上に直径約300 mの円形の青白色の変色水が湧出し、そこから東方向へ帯状に約3 kmにわたって黄緑色の変色水が分布していた。 青白色の変色水湧出点付近に、白い浮遊物を認めた。,anomaly,dw+fl,no island: the breaker reef was not seen
 伊豆鳥島北岸の船見岬～千歳浦の海岸線に幅約50ｍ、長さ約300ｍの薄い黄緑色の変色水域が分布していた。 硫黄山火口内からの噴気等の放出は認められなかった。 熱計測の結果、硫黄山火口の噴気帯に高温域が分布していた。,anomaly,dw+thermal,fumaroles not seen; hot fumarolic zone by thermal survey
 南岸～西岸～北岸にかけて茶褐色及び緑色の変色水域を認めた。 沿岸に濃い灰色の浮遊物を認めた。 浮遊物の出所については不明であるが、硫黄島との位置関係や浮遊物の色合から硫黄島翁浜沖からの噴出物である可能性が考えられる。,anomaly,dw+fl,eruption word refers to a possible source at Ioto
 福徳岡ノ場周辺に薄い緑色の変色水域を認めた。 福徳岡ノ場周辺に少量ではあるが広範囲に濃い灰色の浮遊物を認めた。 浮遊物の出所については不明であるが、硫黄島との位置関係や浮遊物の色合から硫黄島翁浜沖からの噴出物である可能性が考えられる。,anomaly,dw+fl,eruption word refers to a possible source at Ioto
@@ -22,3 +22,4 @@ text_ja,category,phenomena,reason
 福徳岡ノ場の火口直上に薄い黄緑色の変色水が分布していた。 噴火により形成された島が浸食を受けてできた浅海部がみられた。陸地部分が目視で確認できなくなった3/15観測以降、変色水により海面下の状況が確認できていなかったが、変色水量が減少したために目視が可能となった。 浮遊物や高温域は認めなかった。,anomaly,dw+other,"shallows of the eroded island, no eruption"
 福徳岡ノ場付近にて噴煙を確認。なお、噴火の規模が大きく接近しての詳細な観測はできなかった。,anomaly,plume+eruption,eruption named in the text
 ３月４日に確認された変色水域は認められなかった。熱計測の結果、硫黄山火口の噴気帯が前回調査（2014年10月）よりやや拡大していた。,anomaly,thermal,discoloured water not seen; fumarolic zone larger by thermal survey
+噴火や浮遊物は認められなかった。 波浪による砕け波の影響で、変色水の有無は不明。,not_visible,,"no eruption or floating matter, but breaking waves hid whether there was discoloured water"

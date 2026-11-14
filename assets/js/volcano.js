@@ -110,11 +110,14 @@ function isShownAlert(p) {
 function feedChart() {
   const zp = zonePasses();
   const eps = S.zone ? episodes.filter((e) => e.tier === "lowres" || e.zone_id === S.zone) : episodes;
-  const all = [...passes.map((p) => p.t), ...lowres.map((d) => d.t), ...episodes.flatMap((e) => [e.t0, e.t1])];
+  const all = [...passes.map((p) => p.t), ...lowres.map((d) => d.t), ...episodes.flatMap((e) => [e.t0, e.t1]),
+    ...reports.flatMap((r) => [r.t0, r.t1])];
+  // With a zone chosen, the reports of the features in it; a feature outside every zone shows with all zones only.
+  const reps = S.zone ? reports.filter((r) => r.zones.split(" ").includes(siteOf(S.zone))) : reports;
   const d0 = Math.min(...all), d1 = Math.max(...all, ms(meta.last_pass));
   const pad = (d1 - d0) * 0.012 + 5 * DAY;
   chart.showDismissed = S.showDismissed;
-  chart.setData({ passes: zp, lowres, episodes: eps, periods, reports, domain: [d0 - pad, d1 + pad] });
+  chart.setData({ passes: zp, lowres, episodes: eps, periods, reports: reps, domain: [d0 - pad, d1 + pad] });
 }
 
 function renderLegend() {
@@ -359,7 +362,8 @@ function renderReports() {
   src.append(t("v.jcg.lead", { date: reports.reduce((d, r) => (r.retrieved > d ? r.retrieved : d), "") }) + " ");
   for (const url of [...new Set(reports.map((r) => r.url))]) src.append(el("a", { href: url, target: "_blank", rel: "noopener", text: url.split("/").pop() }), " ");
   const rows = [...reports].sort((a, b) => (a.date < b.date ? 1 : -1));
-  const result = (r) => t("jcg." + r.category) + (r.phenomena ? ": " + r.phenomena.split("+").map((p) => t("jph." + p)).join(LANG === "ja" ? "、" : ", ") : "");
+  // What was seen is named as it is; the source does not always take it for volcanic.
+  const result = (r) => (r.phenomena ? r.phenomena.split("+").map((p) => t("jph." + p)).join(LANG === "ja" ? "、" : ", ") : t("jcg." + r.category));
   const text = (r) => (LANG === "ja" ? r.text_ja : (r.summary_en || (r.category === "anomaly" ? r.text_ja : "")));
   const who = (r) => (LANG === "ja" ? r.observer : r.observer.split(" ").map((o) => t("jobs." + o)).join(", "));
   simpleTable($("jcg"), ["j.date", "j.site", "j.observer", "j.result", "j.text"].map((k) => t(k)),
