@@ -1,0 +1,43 @@
+volcano_id,source,kind,start,end,continuing,area,note
+CAL103,GVP,Confirmed Eruption,2012-11-11,2016-10-18,,Snow,
+CAL314,GVP,Uncertain Eruption,2013-07-06,2013-07-06,,,
+GVP221020,GVP,Confirmed Eruption,2013-09-28,2013-11-20,,Jadid Island,
+GVP242050,GVP,Confirmed Eruption,2014-01-01,2014-01-01,,Summit,
+GVP242050,GVP,Confirmed Eruption,2014-10-16,2014-11-05,,Submarine,
+GVP242050,GVP,Uncertain Eruption,2016-11-11,2016-11-12,,,
+GVP243030,GVP,Confirmed Eruption,2017-01-23,2017-01-31,,Submarine,
+GVP243040,GVP,Confirmed Eruption,2014-12-19,2015-01-23,,about 1 km SW of Hunga Tonga and 1 km E of Hunga Ha'apai islands,
+GVP243040,monitor,Event period,2021-12-19,2022-03-31,,,"Hunga Tonga-Hunga Ha'apai: surtseyan activity from 2021-12-20, climactic eruption 2022-01-15"
+GVP243040,GVP,Confirmed Eruption,2021-12-20,2022-01-15,,,
+GVP243070,GVP,Confirmed Eruption,2019-10-13,2019-10-22,,,
+GVP243070,monitor,Event period,2019-10-13,2019-12-31,,,"Lateiki (Metis Shoal): eruption 2019-10-14 to 10-23, new island"
+GVP243080,monitor,Event period,2022-09-09,2022-12-31,,,Home Reef: island-forming eruption from 2022-09-10
+GVP243080,GVP,Confirmed Eruption,2022-09-10,2022-10-17,,,
+GVP243080,GVP,Confirmed Eruption,2023-10-12,2023-10-19,,,
+GVP243080,GVP,Confirmed Eruption,2024-06-10,2024-07-04,,,
+GVP243080,GVP,Confirmed Eruption,2024-12-04,2025-06-29,,,
+GVP243080,GVP,Confirmed Eruption,2025-12-17,2026-03-20,yes,,
+GVP243091,GVP,Confirmed Eruption,2019-08-06,2019-08-08,,,
+GVP250030,monitor,Event period,2026-05-08,2026-09-15,,,"Titan Ridge eruption: pumice rafts in May, discoloured water until at least 2026-08-13 (last usable pass before 09-22, when the sea was clear again)"
+GVP255060,GVP,Confirmed Eruption,2014-01-29,2014-01-29,,Submarine,
+GVP255060,GVP,Uncertain Eruption,2020-03-16,2024-04-24,,,
+GVP257060,GVP,Confirmed Eruption,2023-01-31,2023-02-23,,,
+GVP284070,GVP,Uncertain Eruption,2018-03-24,2018-03-24,,,
+GVP284070,GVP,Uncertain Eruption,2023-01-26,2023-01-26,,,
+GVP284080,GVP,Uncertain Eruption,2024-09-18,2024-10-05,,,
+GVP284100,monitor,Event period,2022-08-15,2023-03-31,,,Kaitoku Seamount: discoloured water reported by the Japan Coast Guard from 2022-08-23 into early 2023
+GVP284100,GVP,Confirmed Eruption,2022-08-18,2023-01-26,,,
+GVP284110,GVP,Confirmed Eruption,2022-03-27,2022-03-27,,Funka-Asane,
+GVP284110,GVP,Uncertain Eruption,2023-05-11,2023-05-11,,,
+GVP284130,monitor,Event period,2021-08-12,2021-12-31,,,"Fukutoku-Oka-no-Ba: eruption 2021-08-13 to 08-15, pumice rafts and new island"
+GVP284130,GVP,Confirmed Eruption,2021-08-13,2021-09-12,,,
+GVP284141,GVP,Confirmed Eruption,2014-04-24,2014-05-17,,Summit crater and SE slope,
+GVP284141,monitor,Event period,2022-10-10,2023-06-30,,,"Ahyi: submarine eruption from mid-October 2022, discoloured water plumes into 2023"
+GVP284141,GVP,Confirmed Eruption,2022-11-18,2023-06-11,,,
+GVP284141,GVP,Confirmed Eruption,2024-01-01,2024-03-27,,,
+GVP284141,GVP,Confirmed Eruption,2024-08-05,2025-05-28,,,
+GVP284141,GVP,Confirmed Eruption,2025-10-20,2026-01-09,,,
+GVP284202,GVP,Confirmed Eruption,2023-09-14,2023-09-15,,,
+GVP311300,GVP,Confirmed Eruption,2016-12-20,2017-08-30,,"Central vent, just below sea level",
+GVP360160,GVP,Confirmed Eruption,2015-07-23,2015-07-24,,Submarine,
+GVP360160,GVP,Confirmed Eruption,2017-04-29,2017-04-29,,,

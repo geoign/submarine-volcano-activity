@@ -1,0 +1,31 @@
+{
+ "generated": "2026-11-14T06:41Z",
+ "monitor_commit": "16ae189",
+ "image_base": "https://gis.ikgm.net/submvolc",
+ "cut": "2025-11-12T00:00:00Z",
+ "first_pass": "2013-04-01",
+ "last_pass": "2026-11-12",
+ "volcanoes": 204,
+ "zones": 397,
+ "passes": 242959,
+ "quicklooks": 127063,
+ "lowres_days": 190387,
+ "episodes": 3889,
+ "episodes_by_class": {
+  "known": 91,
+  "likely": 44,
+  "possible": 116,
+  "recurrent": 263,
+  "airborne": 22,
+  "undetermined": 204,
+  "nonvolcanic": 3120,
+  "unreviewed": 29
+ },
+ "episodes_by_source": {
+  "hindcast2": 3488,
+  "monitor": 285,
+  "olci_survey": 116
+ },
+ "ring_wave_records": 4,
+ "airborne_band_records": 24
+}

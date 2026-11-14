@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Episodes · Submarine Volcano Activity Database</title>
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css?v=1">
+</head>
+<body data-title="nav.episodes">
+<main class="wrap">
+  <h1 data-i18n="nav.episodes"></h1>
+  <p class="lead" data-i18n="e.lead"></p>
+  <div class="filters" role="group" aria-label="Filters">
+    <input type="search" id="q" data-i18n-placeholder="e.search" data-i18n-label="e.search">
+    <label><span data-i18n="e.years"></span>
+      <select id="y0" data-i18n-label="e.from"></select> – <select id="y1" data-i18n-label="e.to"></select></label>
+    <label><span data-i18n="e.tier"></span>
+      <select id="tier">
+        <option value="" data-i18n="e.tier.all"></option>
+        <option value="highres" data-i18n="tier.highres"></option>
+        <option value="lowres" data-i18n="tier.lowres"></option>
+      </select></label>
+  </div>
+  <div class="filters"><div class="chips" id="classes" role="group" data-i18n-label="map.classes"></div></div>
+  <div class="pager">
+    <strong id="count"></strong>
+    <button type="button" class="btn" id="prev">‹</button>
+    <span id="page"></span>
+    <button type="button" class="btn" id="next">›</button>
+    <button type="button" class="btn" id="download" data-i18n="e.download"></button>
+  </div>
+  <div class="table-wrap"><table class="data" id="table"></table></div>
+  <noscript><p class="error">This page needs JavaScript. The table is <a href="db/episodes.csv">db/episodes.csv</a>.</p></noscript>
+</main>
+<script type="module" src="assets/js/episodes.js?v=1"></script>
+</body>
+</html>

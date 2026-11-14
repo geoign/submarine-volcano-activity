@@ -1,0 +1,398 @@
+zone_id,volcano_id,tier,name,kind,lat,lon,radius_km,sensors
+CAL101-A,CAL101,highres,Kuril 49.47N,whole caldera (centroid of the rim polygon),49.4738,154.4044,9,s2+landsat
+W-CAL101,CAL101,lowres,Kuril 49.47N,whole volcano,49.4738,154.4044,30,lowres
+CAL102-A,CAL102,highres,Uratman,whole caldera (centroid of the rim polygon),47.13,152.2324,6,s2+landsat
+W-CAL102,CAL102,lowres,Uratman,whole volcano,47.13,152.2324,30,lowres
+CAL103-A,CAL103,highres,Gorshkov Caldera,whole caldera (centroid of the rim polygon),46.4907,150.8802,7,s2+landsat
+W-CAL103,CAL103,lowres,Gorshkov Caldera,whole volcano,46.4907,150.8802,30,lowres
+CAL104-A,CAL104,highres,Kuril 45.43N,whole caldera (centroid of the rim polygon),45.4341,148.2518,12,s2+landsat
+W-CAL104,CAL104,lowres,Kuril 45.43N,whole volcano,45.4341,148.2518,30,lowres
+CAL105-A,CAL105,highres,Moekeshiwan,whole caldera (centroid of the rim polygon),44.6145,146.9962,7,s2+landsat
+W-CAL105,CAL105,lowres,Moekeshiwan,whole volcano,44.6145,146.9962,30,lowres
+CAL301-A,CAL301,highres,Toshima Hole,whole caldera (centroid of the rim polygon),34.5646,139.2438,5,s2+landsat
+W-CAL301,CAL301,lowres,Toshima Hole,whole volcano,34.5646,139.2438,30,lowres
+CAL302-A,CAL302,highres,Niijima-Uranose Caldera,whole caldera (centroid of the rim polygon),34.4192,139.4021,5,s2+landsat
+W-CAL302,CAL302,lowres,Niijima-Uranose Caldera,whole volcano,34.4192,139.4021,30,lowres
+CAL304-A,CAL304,highres,Kurose-Nishi Hole,whole caldera (centroid of the rim polygon),33.3068,139.5403,6,s2+landsat
+W-CAL304,CAL304,lowres,Kurose-Nishi Hole,whole volcano,33.3068,139.5403,30,lowres
+CAL305-A,CAL305,highres,IBM 32.67N,whole caldera (centroid of the rim polygon),32.6647,139.1625,9,s2+landsat
+W-CAL305,CAL305,lowres,IBM 32.67N,whole volcano,32.6647,139.1625,30,lowres
+CAL306-A,CAL306,highres,Higashi-Aogashima Hole,whole caldera (centroid of the rim polygon),32.4594,139.9023,7,s2+landsat
+W-CAL306,CAL306,lowres,Higashi-Aogashima Hole,whole volcano,32.4594,139.9023,30,lowres
+CAL309-A,CAL309,highres,IBM 31.79N,whole caldera (centroid of the rim polygon),31.7929,139.6513,4,s2+landsat
+W-CAL309,CAL309,lowres,IBM 31.79N,whole volcano,31.7929,139.6513,30,lowres
+CAL310-A,CAL310,highres,IBM 31.72N,whole caldera (centroid of the rim polygon),31.7219,139.4661,4,s2+landsat
+W-CAL310,CAL310,lowres,IBM 31.72N,whole volcano,31.7219,139.4661,30,lowres
+CAL312-A,CAL312,highres,Daisan-Sumisu,whole caldera (centroid of the rim polygon),31.262,140.065,4,s2+landsat
+W-CAL312,CAL312,lowres,Daisan-Sumisu,whole volcano,31.262,140.065,30,lowres
+CAL314-A,CAL314,highres,Torishima Caldera,whole caldera (centroid of the rim polygon),30.5433,140.2761,9,s2+landsat
+W-CAL314,CAL314,lowres,Torishima Caldera,whole volcano,30.5433,140.2761,30,lowres
+CAL315-A,CAL315,highres,孀婦海山カルデラ全体,whole caldera,29.7799,140.1281,3.5,s2+landsat
+W-CAL315,CAL315,lowres,Soufu Seamount caldera,whole volcano,29.7799,140.1281,30,lowres
+CAL318-A,CAL318,highres,海形海山 KC峰中央火口丘,central cone,26.7092,141.0742,3,s2+landsat
+W-CAL318,CAL318,lowres,Kaikata East Peak,whole volcano,26.7092,141.0742,30,lowres
+CAL505-A,CAL505,highres,Kappa Sone caldera,whole caldera (centroid of the rim polygon),29.3408,129.486,5,s2+landsat
+W-CAL505,CAL505,lowres,Kappa Sone caldera,whole volcano,29.3408,129.486,30,lowres
+CAL506-A,CAL506,highres,Takara-jima caldera,whole caldera (centroid of the rim polygon),29.2138,129.2165,7,s2+landsat
+W-CAL506,CAL506,lowres,Takara-jima caldera,whole volcano,29.2138,129.2165,30,lowres
+CAL507-A,CAL507,highres,Yokoate-jima caldera,whole caldera (centroid of the rim polygon),28.8018,129.0067,6,s2+landsat
+W-CAL507,CAL507,lowres,Yokoate-jima caldera,whole volcano,28.8018,129.0067,30,lowres
+CAL508-A,CAL508,highres,Minami-Ensei Knoll,whole caldera (centroid of the rim polygon),28.4001,127.643,4,s2
+W-CAL508,CAL508,lowres,Minami-Ensei Knoll,whole volcano,28.4001,127.643,30,lowres
+CAL509-A,CAL509,highres,Io-Torishima Bank caldera,whole caldera (centroid of the rim polygon),27.8787,127.9569,7,s2+landsat
+W-CAL509,CAL509,lowres,Io-Torishima Bank caldera,whole volcano,27.8787,127.9569,30,lowres
+CAL510-A,CAL510,highres,Ryukyu Arc 27.44N,whole caldera (centroid of the rim polygon),27.4364,127.4155,4,s2+landsat
+W-CAL510,CAL510,lowres,Ryukyu Arc 27.44N,whole volcano,27.4364,127.4155,30,lowres
+CAL511-A,CAL511,highres,Izena Hole,whole caldera (centroid of the rim polygon),27.2555,127.0842,6,s2+landsat
+W-CAL511,CAL511,lowres,Izena Hole,whole volcano,27.2555,127.0842,30,lowres
+CAL604-A,CAL604,highres,Garove Island,whole caldera (centroid of the rim polygon),-4.6759,149.4929,5,s2+landsat
+W-CAL604,CAL604,lowres,Garove Island,whole volcano,-4.6759,149.4929,30,lowres
+CAL610-A,CAL610,highres,Vanuatu 16.99S,whole caldera (centroid of the rim polygon),-16.9887,168.5968,6,s2+landsat
+W-CAL610,CAL610,lowres,Vanuatu 16.99S,whole volcano,-16.9887,168.5968,30,lowres
+CAL611-A,CAL611,highres,Vanuatu 17.16S,whole caldera (centroid of the rim polygon),-17.16,168.4482,15,s2+landsat
+W-CAL611,CAL611,lowres,Vanuatu 17.16S,whole volcano,-17.16,168.4482,30,lowres
+CAL612-A,CAL612,highres,Vanuatu 17.42S,whole caldera (centroid of the rim polygon),-17.4228,168.4283,12,s2+landsat
+W-CAL612,CAL612,lowres,Vanuatu 17.42S,whole volcano,-17.4228,168.4283,30,lowres
+CAL709-A,CAL709,highres,Hunga SW,whole caldera (centroid of the rim polygon),-20.6664,-175.3242,4,s2+landsat
+W-CAL709,CAL709,lowres,Hunga SW,whole volcano,-20.6664,-175.3242,30,lowres
+CAL712-A,CAL712,highres,Lau Basin 21.34S,whole caldera (centroid of the rim polygon),-21.3434,-177.003,4,s2
+W-CAL712,CAL712,lowres,Lau Basin 21.34S,whole volcano,-21.3434,-177.003,30,lowres
+CAL725-A,CAL725,highres,Kermadec 29.16S,whole caldera (centroid of the rim polygon),-29.1634,-178.1552,5,s2+landsat
+W-CAL725,CAL725,lowres,Kermadec 29.16S,whole volcano,-29.1634,-178.1552,30,lowres
+CAL727-A,CAL727,highres,Raoul SW,whole caldera (centroid of the rim polygon),-29.487,-178.1024,5,s2+landsat
+W-CAL727,CAL727,lowres,Raoul SW,whole volcano,-29.487,-178.1024,30,lowres
+CAL801-A,CAL801,highres,Quest,whole caldera (centroid of the rim polygon),-55.8139,-28.5191,4,s2+landsat
+W-CAL801,CAL801,lowres,Quest,whole volcano,-55.8139,-28.5191,30,lowres
+CAL802-A,CAL802,highres,Resolution caldera,whole caldera (centroid of the rim polygon),-59.4294,-27.0631,5,s2+landsat
+W-CAL802,CAL802,lowres,Resolution caldera,whole volcano,-59.4294,-27.0631,30,lowres
+CAL804-A,CAL804,highres,Kemp Caldera,whole caldera (centroid of the rim polygon),-59.6937,-28.3403,6,s2+landsat
+W-CAL804,CAL804,lowres,Kemp Caldera,whole volcano,-59.6937,-28.3403,30,lowres
+CAL901-A,CAL901,highres,Orca,whole caldera (centroid of the rim polygon),-62.4296,-58.404,4,s2+landsat
+W-CAL901,CAL901,lowres,Orca,whole volcano,-62.4296,-58.404,30,lowres
+CAL902-A,CAL902,highres,Humpback,whole caldera (centroid of the rim polygon),-62.8504,-59.8461,5,s2+landsat
+W-CAL902,CAL902,lowres,Humpback,whole volcano,-62.8504,-59.8461,30,lowres
+GVP211031-A,GVP211031,highres,Palinuro,summit or vent (GVP coordinates),39.48,14.83,5,s2+landsat
+W-GVP211031,GVP211031,lowres,Palinuro,whole volcano,39.48,14.83,30,lowres
+GVP211041-A,GVP211041,highres,Panarea 東方岩礁群・島周辺,degassing vent and edifice,38.629,15.0847,5,s2+landsat
+W-GVP211041,GVP211041,lowres,Panarea,whole volcano,38.629,15.0847,30,lowres
+GVP211070-A,GVP211070,highres,Graham (Ferdinandea) Bank,vent of 1831,37.18,12.71,4,s2+landsat
+GVP211070-B,GVP211070,highres,Pinne,eruption site of 1846 and 1867,37.0936,13.1133,3,s2+landsat
+GVP211070-C,GVP211070,highres,Terribile Bank,summit,37.1561,12.8756,3,s2+landsat
+W-GVP211070,GVP211070,lowres,Campi Flegrei del Mar di Sicilia,whole volcano,37.18,12.71,30,lowres
+GVP211080-A,GVP211080,highres,Marsili,summit or vent (GVP coordinates),39.284,14.399,5,s2+landsat
+W-GVP211080,GVP211080,lowres,Marsili,whole volcano,39.284,14.399,30,lowres
+GVP212042-A,GVP212042,highres,Kolumbo 火口,vent,36.524,25.483,3,s2+landsat
+W-GVP212042,GVP212042,lowres,Kolumbo,whole volcano,36.524,25.483,30,lowres
+GVP221020-A,GVP221020,highres,Sholan Island (2011-12),vent (new island),15.1572,42.1011,3,s2+landsat
+GVP221020-B,GVP221020,highres,Jadid Island (2013),vent (new island),15.0975,42.1336,3,s2+landsat
+GVP221020-W,GVP221020,highres,Zubair 群島全体,whole island group,15.11,42.13,9,s2+landsat
+W-GVP221020,GVP221020,lowres,Zubair Group,whole volcano,15.1572,42.1011,30,lowres
+GVP234000-A,GVP234000,highres,Boomerang Seamount,summit or vent (GVP coordinates),-37.7216,77.8221,5,s2+landsat
+W-GVP234000,GVP234000,lowres,Boomerang Seamount,whole volcano,-37.7216,77.8221,30,lowres
+GVP234011-A,GVP234011,highres,McDonald Islands,seafloor around the volcanic island,-53.0394,72.595,10,s2+landsat
+W-GVP234011,GVP234011,lowres,McDonald Islands,whole volcano,-53.0394,72.595,30,lowres
+GVP241101-A,GVP241101,highres,Clark,summit or vent (GVP coordinates),-36.446,177.839,5,s2
+W-GVP241101,GVP241101,lowres,Clark,whole volcano,-36.446,177.839,30,lowres
+W-GVP241102,GVP241102,lowres,Tangaroa,whole volcano,-36.321,178.028,30,lowres
+W-GVP241110,GVP241110,lowres,Rumble V,whole volcano,-36.142,178.196,30,lowres
+W-GVP241120,GVP241120,lowres,Rumble IV,whole volcano,-36.13,178.05,30,lowres
+W-GVP241130,GVP241130,lowres,Rumble III,whole volcano,-35.745,178.478,30,lowres
+W-GVP241134,GVP241134,lowres,Silent II West,whole volcano,-35.169,178.902,30,lowres
+W-GVP241140,GVP241140,lowres,Healy,whole volcano,-35.004,178.973,30,lowres
+W-GVP241142,GVP241142,lowres,Rapuhia,whole volcano,-34.776,178.505,30,lowres
+W-GVP241143,GVP241143,lowres,Giljanes,whole volcano,-34.775,178.579,30,lowres
+W-GVP241200,GVP241200,lowres,Sonne,whole volcano,-34.077,179.576,30,lowres
+W-GVP241201,GVP241201,lowres,Ngatoroirangi,whole volcano,-33.729,179.827,30,lowres
+W-GVP241203,GVP241203,lowres,Kuiwai,whole volcano,-33.159,-179.957,30,lowres
+W-GVP241204,GVP241204,lowres,Haungaroa,whole volcano,-32.617,-179.624,30,lowres
+GVP242001-A,GVP242001,highres,Wright,summit or vent (GVP coordinates),-31.85,-179.18,5,landsat
+W-GVP242001,GVP242001,lowres,Wright,whole volcano,-31.85,-179.18,30,lowres
+GVP242005-A,GVP242005,highres,Havre カルデラ,whole caldera,-31.106,-179.034,5,landsat
+W-GVP242005,GVP242005,lowres,Havre Seamount,whole volcano,-31.106,-179.034,30,lowres
+GVP242010-A,GVP242010,highres,Curtis Island,volcanic island and caldera,-30.543,-178.556,8,s2+landsat
+GVP242010-B,GVP242010,highres,Vulkanolog 海山,summit,-30.687,-178.453,3,s2+landsat
+W-GVP242010,GVP242010,lowres,Curtis Island,whole volcano,-30.543,-178.556,30,lowres
+GVP242021-A,GVP242021,highres,Macauley,seafloor around the volcanic island,-30.21,-178.475,10,s2+landsat
+W-GVP242021,GVP242021,lowres,Macauley,whole volcano,-30.21,-178.475,30,lowres
+GVP242022-A,GVP242022,highres,Giggenbach,summit or vent (GVP coordinates),-30.036,-178.712,5,s2+landsat
+W-GVP242022,GVP242022,lowres,Giggenbach,whole volcano,-30.036,-178.712,30,lowres
+GVP242030-A,GVP242030,highres,Raoul 北北東海底火口(1886),submarine eruption site,-29.19,-177.88,3,s2+landsat
+GVP242030-W,GVP242030,highres,Raoul Island 全体,around the volcanic island,-29.27,-177.92,10,s2+landsat
+W-GVP242030,GVP242030,lowres,Raoul Island,whole volcano,-29.19,-177.88,30,lowres
+GVP242031-A,GVP242031,highres,Hinetapeka 北部カルデラ,caldera,-28.6248,-177.8042,7,landsat
+GVP242031-B,GVP242031,highres,Hinetapeka 南部山頂,summit,-28.831,-177.826,3,landsat
+W-GVP242031,GVP242031,lowres,Hinetapeka,whole volcano,-28.6248,-177.8042,30,lowres
+GVP242032-A,GVP242032,highres,Volcano OP,summit (GVP coordinates),-28.218,-177.692,5,landsat
+W-GVP242032,GVP242032,lowres,Volcano OP,whole volcano,-28.218,-177.692,30,lowres
+W-GVP242040,GVP242040,lowres,Putoto,whole volcano,-27.857,-177.621,30,lowres
+W-GVP242042,GVP242042,lowres,Gamble,whole volcano,-27.2,-177.41,30,lowres
+W-GVP242043,GVP242043,lowres,Rakahore,whole volcano,-26.81,-177.4,30,lowres
+W-GVP242044,GVP242044,lowres,Hinepuia,whole volcano,-26.39,-177.26,30,lowres
+W-GVP242050,GVP242050,lowres,Monowai,whole volcano,-25.887,-177.188,30,lowres
+W-GVP243001,GVP243001,lowres,Kermadec Arc at 24.8°S,whole volcano,-24.8,-177.02,30,lowres
+W-GVP243002,GVP243002,lowres,Kermadec Arc at 25.2°S,whole volcano,-25.2073,-177.0732,30,lowres
+W-GVP243003,GVP243003,lowres,Kermadec Arc at 25.4°S,whole volcano,-25.418,-177.103,30,lowres
+W-GVP243004,GVP243004,lowres,Kermadec Arc at 24.6°S,whole volcano,-24.58,-176.924,30,lowres
+W-GVP243005,GVP243005,lowres,Kermadec Arc at 24.5°S,whole volcano,-24.475,-176.923,30,lowres
+W-GVP243006,GVP243006,lowres,Kermadec Arc at 24.2°S,whole volcano,-24.178,-176.887,30,lowres
+GVP243008-A,GVP243008,highres,Kermadec Arc at 23.6°S,summit (GVP coordinates),-23.581,-176.663,8,landsat
+W-GVP243008,GVP243008,lowres,Kermadec Arc at 23.6°S,whole volcano,-23.581,-176.663,30,lowres
+GVP243009-A,GVP243009,highres,Tofua Arc 21.8°S 南東縁火口丘,cone,-21.83,-175.9248,2,s2+landsat
+GVP243009-W,GVP243009,highres,Tofua Arc 21.8°S カルデラ,whole caldera,-21.804,-175.941,5,s2+landsat
+W-GVP243009,GVP243009,lowres,Tofua Arc at 21.8°S,whole volcano,-21.83,-175.9248,30,lowres
+GVP243010-A,GVP243010,highres,Tofua Arc 21.3°S 山頂,summit,-21.3351,-175.6555,5,s2+landsat
+GVP243010-B,GVP243010,highres,Tofua Arc 21.3°S 北西カルデラ・火口丘,caldera and cone,-21.2856,-175.7001,4,s2+landsat
+W-GVP243010,GVP243010,lowres,Tofua Arc at 21.3°S,whole volcano,-21.3351,-175.6555,30,lowres
+GVP243011-A,GVP243011,highres,Volcano 1 (Tofua Arc 21.1°S),two scoria cones inside the caldera,-21.15,-175.75,6,s2+landsat
+W-GVP243011,GVP243011,lowres,Tofua Arc at 21.1°S,whole volcano,-21.15,-175.75,30,lowres
+GVP243012-A,GVP243012,highres,Tofua Arc at 22.0°S,summit (GVP coordinates),-22.061,-176.21,5,s2+landsat
+W-GVP243012,GVP243012,lowres,Tofua Arc at 22.0°S,whole volcano,-22.061,-176.21,30,lowres
+GVP243013-A,GVP243013,highres,Tofua Arc at 22.1°S,summit (GVP coordinates),-22.096,-176,5,s2+landsat
+W-GVP243013,GVP243013,lowres,Tofua Arc at 22.1°S,whole volcano,-22.096,-176,30,lowres
+GVP243014-A,GVP243014,highres,Tofua Arc at 22.2°S,summit (GVP coordinates),-22.219,-176.124,5,s2+landsat
+W-GVP243014,GVP243014,lowres,Tofua Arc at 22.2°S,whole volcano,-22.219,-176.124,30,lowres
+GVP243016-A,GVP243016,highres,Tofua Arc at 22.5°S,summit (GVP coordinates),-22.459,-176.351,5,s2+landsat
+W-GVP243016,GVP243016,lowres,Tofua Arc at 22.5°S,whole volcano,-22.459,-176.351,30,lowres
+GVP243017-A,GVP243017,highres,Tofua Arc at 22.6°S,summit (GVP coordinates),-22.632,-176.399,5,landsat
+W-GVP243017,GVP243017,lowres,Tofua Arc at 22.6°S,whole volcano,-22.632,-176.399,30,lowres
+GVP243018-A,GVP243018,highres,Tofua Arc at 22.8°S,summit (GVP coordinates),-22.846,-176.43,5,landsat
+W-GVP243018,GVP243018,lowres,Tofua Arc at 22.8°S,whole volcano,-22.846,-176.43,30,lowres
+GVP243019-A,GVP243019,highres,Tofua Arc at 23.0°S,summit (GVP coordinates),-22.981,-176.387,5,landsat
+W-GVP243019,GVP243019,lowres,Tofua Arc at 23.0°S,whole volcano,-22.981,-176.387,30,lowres
+GVP243030-A,GVP243030,highres,Tofua Arc at 20.9°S,summit or vent (GVP coordinates),-20.852,-175.55,5,s2+landsat
+W-GVP243030,GVP243030,lowres,Tofua Arc at 20.9°S,whole volcano,-20.852,-175.55,30,lowres
+GVP243040-W,GVP243040,highres,Hunga カルデラ,whole caldera,-20.5532,-175.3841,10,s2+landsat
+W-GVP243040,GVP243040,lowres,Hunga Tonga-Hunga Ha'apai,whole volcano,-20.5532,-175.3841,30,lowres
+GVP243050-A,GVP243050,highres,Fonuafo'ou 山頂,summit,-20.324,-175.401,4,s2+landsat
+W-GVP243050,GVP243050,lowres,Fonuafo'ou,whole volcano,-20.324,-175.401,30,lowres
+GVP243055-A,GVP243055,highres,Feinga Seamount,summit (GVP coordinates),-20.154,-175.163,9,s2+landsat
+W-GVP243055,GVP243055,lowres,Feinga Seamount,whole volcano,-20.154,-175.163,30,lowres
+GVP243056-A,GVP243056,highres,Tofua Arc at 19.9°S,summit (GVP coordinates),-19.9127,-175.1759,5,s2+landsat
+W-GVP243056,GVP243056,lowres,Tofua Arc at 19.9°S,whole volcano,-19.9127,-175.1759,30,lowres
+GVP243065-A,GVP243065,highres,Tofua Arc at 19.4°S,summit (GVP coordinates),-19.438,-174.952,8,s2+landsat
+W-GVP243065,GVP243065,lowres,Tofua Arc at 19.4°S,whole volcano,-19.438,-174.952,30,lowres
+GVP243070-A,GVP243070,highres,Lateiki 2019-20年火口,vent,-19.1781,-174.8504,4,s2+landsat
+W-GVP243070,GVP243070,lowres,Lateiki,whole volcano,-19.1781,-174.8504,30,lowres
+GVP243080-A,GVP243080,highres,Home Reef 2006/2022-24年火口,vent (new island),-18.991,-174.762,4,s2+landsat
+W-GVP243080,GVP243080,lowres,Home Reef,whole volcano,-18.991,-174.762,30,lowres
+GVP243091-A,GVP243091,highres,Volcano F 山頂・2019年火口,vent,-18.313,-174.3856,4,s2+landsat
+GVP243091-W,GVP243091,highres,Volcano F カルデラ全体,whole caldera,-18.325,-174.365,9,s2+landsat
+W-GVP243091,GVP243091,lowres,Tofua Arc at 18.3°S,whole volcano,-18.313,-174.3856,30,lowres
+GVP243102-A,GVP243102,highres,Curacoa 最浅部・1973年火口域,vent and summit,-15.6173,-173.628,4,s2+landsat
+GVP243102-B,GVP243102,highres,Curacoa カルデラ中央火口丘,central cone,-15.5658,-173.6896,2.5,s2+landsat
+GVP243102-W,GVP243102,highres,Curacoa 火山群全体,whole volcanic group,-15.5839,-173.6793,13,s2+landsat
+W-GVP243102,GVP243102,lowres,Curacoa,whole volcano,-15.6173,-173.628,30,lowres
+GVP243104-A,GVP243104,highres,Tofua Arc at 16.2°S,summit (GVP coordinates),-16.2,-173.92,6,s2+landsat
+W-GVP243104,GVP243104,lowres,Tofua Arc at 16.2°S,whole volcano,-16.2,-173.92,30,lowres
+GVP243105-A,GVP243105,highres,Tofua Arc at 16.7°S,summit (GVP coordinates),-16.655,-173.773,5,s2+landsat
+W-GVP243105,GVP243105,lowres,Tofua Arc at 16.7°S,whole volcano,-16.655,-173.773,30,lowres
+GVP243106-A,GVP243106,highres,Tofua Arc at 17.0°S,summit (GVP coordinates),-16.968,-173.848,5,s2+landsat
+W-GVP243106,GVP243106,lowres,Tofua Arc at 17.0°S,whole volcano,-16.968,-173.848,30,lowres
+GVP243107-A,GVP243107,highres,Tofua Arc at 17.2°S,summit (GVP coordinates),-17.231,-173.962,5,s2+landsat
+W-GVP243107,GVP243107,lowres,Tofua Arc at 17.2°S,whole volcano,-17.231,-173.962,30,lowres
+GVP243108-A,GVP243108,highres,Tofua Arc at 17.6°S,summit (GVP coordinates),-17.551,-174.154,5,s2+landsat
+W-GVP243108,GVP243108,lowres,Tofua Arc at 17.6°S,whole volcano,-17.551,-174.154,30,lowres
+GVP243109-A,GVP243109,highres,Tofua Arc at 17.8°S,summit (GVP coordinates),-17.842,-174.197,5,s2+landsat
+W-GVP243109,GVP243109,lowres,Tofua Arc at 17.8°S,whole volcano,-17.842,-174.197,30,lowres
+GVP243150-A,GVP243150,highres,Niua Volcanic Complex,summit (GVP coordinates),-15.122,-173.549,5,s2+landsat
+W-GVP243150,GVP243150,lowres,Niua Volcanic Complex,whole volcano,-15.122,-173.549,30,lowres
+GVP244000-A,GVP244000,highres,Vailuluu,summit or vent (GVP coordinates),-14.215,-169.058,5,s2+landsat
+W-GVP244000,GVP244000,lowres,Vailuluu,whole volcano,-14.215,-169.058,30,lowres
+GVP244011-A,GVP244011,highres,Northeast Bank,summit (GVP coordinates),-14.061,-170.084,5,s2+landsat
+W-GVP244011,GVP244011,lowres,Northeast Bank,whole volcano,-14.061,-170.084,30,lowres
+GVP244021-A,GVP244021,highres,Malumalu,summit or vent (GVP coordinates),-14.601,-169.787,5,s2+landsat
+W-GVP244021,GVP244021,lowres,Malumalu,whole volcano,-14.601,-169.787,30,lowres
+GVP244022-A,GVP244022,highres,Tulaga,summit (GVP coordinates),-14.518,-170.024,5,s2+landsat
+W-GVP244022,GVP244022,lowres,Tulaga,whole volcano,-14.518,-170.024,30,lowres
+GVP244023-A,GVP244023,highres,Malutut,summit (GVP coordinates),-14.371,-170.174,5,s2+landsat
+W-GVP244023,GVP244023,lowres,Malutut,whole volcano,-14.371,-170.174,30,lowres
+GVP244035-A,GVP244035,highres,Tisa,summit (GVP coordinates),-14.407,-171.221,5,s2+landsat
+W-GVP244035,GVP244035,lowres,Tisa,whole volcano,-14.407,-171.221,30,lowres
+GVP250010-A,GVP250010,highres,Tuluman (1953-57),vent,-2.4469,147.3167,3,s2+landsat
+GVP250010-W,GVP250010,highres,St. Andrew Strait 全体,whole strait,-2.38,147.35,10,s2+landsat
+W-GVP250010,GVP250010,lowres,St. Andrew Strait,whole volcano,-2.4469,147.3167,30,lowres
+GVP250030-A,GVP250030,highres,Titan Ridge 2026年噴火地点,eruption site of 2026 (NE and SW vents),-3.104,147.905,10,s2+landsat
+W-GVP250030,GVP250030,lowres,Titan Ridge,whole volcano,-3.104,147.905,30,lowres
+GVP251041-A,GVP251041,highres,Hankow Reef,summit or vent (GVP coordinates),-4.883,146.717,5,s2+landsat
+W-GVP251041,GVP251041,lowres,Hankow Reef,whole volcano,-4.883,146.717,30,lowres
+GVP251070-A,GVP251070,highres,Ritter Island,seafloor around the volcanic island,-5.519,148.115,5,s2+landsat
+W-GVP251070,GVP251070,lowres,Ritter Island,whole volcano,-5.519,148.115,30,lowres
+GVP255052-A,GVP255052,highres,Kana Keoki,summit or vent (GVP coordinates),-8.75,157.03,5,s2+landsat
+W-GVP255052,GVP255052,lowres,Kana Keoki,whole volcano,-8.75,157.03,30,lowres
+GVP255053-A,GVP255053,highres,Coleman Seamount,summit or vent (GVP coordinates),-8.841,157.16,5,s2+landsat
+W-GVP255053,GVP255053,lowres,Coleman Seamount,whole volcano,-8.841,157.16,30,lowres
+GVP255060-A,GVP255060,highres,Kavachi 山頂,vent,-8.994,157.9735,4,s2+landsat
+W-GVP255060,GVP255060,lowres,Kavachi,whole volcano,-8.994,157.9735,30,lowres
+GVP255061-A,GVP255061,highres,New Georgia at 8.9°S,GVP coordinates,-8.92,158.03,5,s2+landsat
+W-GVP255061,GVP255061,lowres,New Georgia at 8.9°S,whole volcano,-8.92,158.03,30,lowres
+GVP257060-A,GVP257060,highres,East Epi B (Cioan),vent,-16.6811,168.3886,3,s2+landsat
+GVP257060-W,GVP257060,highres,East Epi 火口丘群,group of cones (A to G),-16.695,168.39,6,s2+landsat
+W-GVP257060,GVP257060,lowres,East Epi,whole volcano,-16.6811,168.3886,30,lowres
+GVP257070-A,GVP257070,highres,Karua (Laika Bank),vent,-16.8289,168.5361,6,s2+landsat
+W-GVP257070,GVP257070,lowres,Kuwae,whole volcano,-16.8289,168.5361,30,lowres
+GVP257085-A,GVP257085,highres,Vanuatu Arc at 18.2°S,summit (GVP coordinates),-18.1961,168.8243,5,s2+landsat
+W-GVP257085,GVP257085,lowres,Vanuatu Arc at 18.2°S,whole volcano,-18.1961,168.8243,30,lowres
+GVP258001-A,GVP258001,highres,Oscostar (Gemini East),vent,-20.9886,170.2869,4,s2+landsat
+GVP258001-B,GVP258001,highres,Gemini West (South),summit,-21.0064,170.0569,3,s2+landsat
+GVP258001-C,GVP258001,highres,Gemini North,summit,-20.8781,170.0081,3,s2+landsat
+W-GVP258001,GVP258001,lowres,Gemini-Oscostar,whole volcano,-20.9886,170.2869,30,lowres
+GVP267030-A,GVP267030,highres,Banua Wuhu,summit or vent (GVP coordinates),3.1463,125.4422,5,s2+landsat
+W-GVP267030,GVP267030,lowres,Banua Wuhu,whole volcano,3.1463,125.4422,30,lowres
+GVP267065-A,GVP267065,highres,Napo Taroare,summit (GVP coordinates),4.048,125.345,5,s2+landsat
+W-GVP267065,GVP267065,lowres,Napo Taroare,whole volcano,4.048,125.345,30,lowres
+GVP275060-A,GVP275060,highres,"Cendres, Ile des",summit or vent (GVP coordinates),10.158,109.014,5,s2+landsat
+W-GVP275060,GVP275060,lowres,"Cendres, Ile des",whole volcano,10.158,109.014,30,lowres
+GVP284042-A,GVP284042,highres,Kurose Hole,summit or vent (GVP coordinates),33.4,139.68,5,s2+landsat
+W-GVP284042,GVP284042,lowres,Kurose Hole,whole volcano,33.4,139.68,30,lowres
+GVP284043-A,GVP284043,highres,Mikura Seamount,summit (GVP coordinates),33.725,139.408,5,s2+landsat
+W-GVP284043,GVP284043,lowres,Mikura Seamount,whole volcano,33.725,139.408,30,lowres
+GVP284061-A,GVP284061,highres,Kita-Bayonnaise,summit or vent (GVP coordinates),32.1,139.85,6,s2+landsat
+W-GVP284061,GVP284061,lowres,Kita-Bayonnaise,whole volcano,32.1,139.85,30,lowres
+GVP284070-A,GVP284070,highres,明神礁,post-caldera edifice (north-eastern caldera rim),31.9183,140.0217,2.5,s2+landsat
+GVP284070-B,GVP284070,highres,高根礁,central cone,31.8943,139.9778,2.5,s2+landsat
+GVP284070-W,GVP284070,highres,明神礁カルデラ全体,whole caldera,31.8884,139.9861,6.5,s2+landsat
+W-GVP284070,GVP284070,lowres,Myojinsho,whole volcano,31.9183,140.0217,30,lowres
+GVP284080-A,GVP284080,highres,白根,post-caldera cone (eastern caldera),31.495,140.077,2,s2+landsat
+GVP284080-B,GVP284080,highres,須美寿島,reef on the southern caldera rim,31.4397,140.0506,2,s2+landsat
+GVP284080-W,GVP284080,highres,スミスカルデラ全体,whole caldera,31.4852,140.0481,6,s2+landsat
+W-GVP284080,GVP284080,lowres,Sumisujima,whole volcano,31.495,140.077,30,lowres
+GVP284088-A,GVP284088,highres,Kayo Seamount,summit (GVP coordinates),29.064,140.537,5,s2
+W-GVP284088,GVP284088,lowres,Kayo Seamount,whole volcano,29.064,140.537,30,lowres
+GVP284089-A,GVP284089,highres,Kinyo Seamount,summit (GVP coordinates),28.084,140.802,5,s2+landsat
+W-GVP284089,GVP284089,lowres,Kinyo Seamount,whole volcano,28.084,140.802,30,lowres
+GVP284093-A,GVP284093,highres,Suiyo Seamount,summit or vent (GVP coordinates),28.575,140.633,5,s2
+W-GVP284093,GVP284093,lowres,Suiyo Seamount,whole volcano,28.575,140.633,30,lowres
+GVP284094-A,GVP284094,highres,Mokuyo Seamount,summit or vent (GVP coordinates),28.327,140.572,5,s2+landsat
+W-GVP284094,GVP284094,lowres,Mokuyo Seamount,whole volcano,28.327,140.572,30,lowres
+GVP284095-A,GVP284095,highres,Doyo Seamount,summit or vent (GVP coordinates),27.68,140.8,5,s2+landsat
+W-GVP284095,GVP284095,lowres,Doyo Seamount,whole volcano,27.68,140.8,30,lowres
+GVP284097-A,GVP284097,highres,海形海山 KM峰（西峰列）,summit,26.6667,140.9292,4,s2+landsat
+W-GVP284097,GVP284097,lowres,Kaikata Seamount,whole volcano,26.6667,140.9292,30,lowres
+GVP284100-A,GVP284100,highres,東海徳場,post-caldera central cone,26.125,141.1,4,s2+landsat
+GVP284100-B,GVP284100,highres,西海徳場,flat-topped edifice,26.063,140.938,3,s2+landsat
+W-GVP284100,GVP284100,lowres,Kaitoku Seamount,whole volcano,26.125,141.1,30,lowres
+GVP284110-A,GVP284110,highres,Funka Asane,summit or vent (GVP coordinates),25.455,141.2386,7,s2+landsat
+W-GVP284110,GVP284110,lowres,Funka Asane,whole volcano,25.455,141.2386,30,lowres
+W-GVP284122,GVP284122,lowres,Syoyo Ridge,whole volcano,22.546,142.863,30,lowres
+GVP284130-A,GVP284130,highres,福徳岡ノ場,main vent,24.285,141.4817,5,s2+landsat
+GVP284130-B,GVP284130,highres,北福徳堆,summit,24.4133,141.415,3,s2+landsat
+W-GVP284130,GVP284130,lowres,Fukutoku-Oka-no-Ba,whole volcano,24.285,141.4817,30,lowres
+W-GVP284131,GVP284131,lowres,Minami-Hiyoshi,whole volcano,23.5,141.935,30,lowres
+W-GVP284132,GVP284132,lowres,Nikko,whole volcano,23.078,142.326,30,lowres
+W-GVP284133,GVP284133,lowres,Fukujin,whole volcano,21.93,143.47,30,lowres
+W-GVP284134,GVP284134,lowres,Kasuga 1,whole volcano,21.765,143.71,30,lowres
+W-GVP284135,GVP284135,lowres,Kasuga 2,whole volcano,21.6,143.637,30,lowres
+W-GVP284137,GVP284137,lowres,Daikoku,whole volcano,21.324,144.194,30,lowres
+GVP284141-A,GVP284141,highres,Ahyi 山頂溶岩丘,summit crater,20.437,145.03,4,s2+landsat
+W-GVP284141,GVP284141,lowres,Ahyi,whole volcano,20.437,145.03,30,lowres
+GVP284142-A,GVP284142,highres,Supply Reef 山頂,summit,20.1414,145.0994,4,s2+landsat
+W-GVP284142,GVP284142,lowres,Supply Reef,whole volcano,20.1414,145.0994,30,lowres
+GVP284143-A,GVP284143,highres,Maug Islands,seafloor around the volcanic island,20.02,145.22,5,s2+landsat
+W-GVP284143,GVP284143,lowres,Maug Islands,whole volcano,20.02,145.22,30,lowres
+W-GVP284145,GVP284145,lowres,Eifuku,whole volcano,21.409,144.161,30,lowres
+W-GVP284146,GVP284146,lowres,South Daikoku,whole volcano,21.023,144.525,30,lowres
+GVP284147-A,GVP284147,highres,Chamorro,summit (GVP coordinates),20.81,144.704,5,landsat
+W-GVP284147,GVP284147,lowres,Chamorro,whole volcano,20.81,144.704,30,lowres
+GVP284175-A,GVP284175,highres,Southwest Pagan,summit (GVP coordinates),17.959,145.4864,5,s2+landsat
+W-GVP284175,GVP284175,lowres,Southwest Pagan,whole volcano,17.959,145.4864,30,lowres
+GVP284182-A,GVP284182,highres,West Guguan,summit (GVP coordinates),17.2645,145.5706,5,s2+landsat
+W-GVP284182,GVP284182,lowres,West Guguan,whole volcano,17.2645,145.5706,30,lowres
+GVP284184-A,GVP284184,highres,Northwest Zealandia,summit (GVP coordinates),16.9787,145.7169,5,s2+landsat
+W-GVP284184,GVP284184,lowres,Northwest Zealandia,whole volcano,16.9787,145.7169,30,lowres
+GVP284186-A,GVP284186,highres,West Zealandia,summit (GVP coordinates),16.887,145.7182,5,s2+landsat
+W-GVP284186,GVP284186,lowres,West Zealandia,whole volcano,16.887,145.7182,30,lowres
+GVP284188-A,GVP284188,highres,West Sarigan,summit (GVP coordinates),16.7424,145.6183,5,s2+landsat
+W-GVP284188,GVP284188,lowres,West Sarigan,whole volcano,16.7424,145.6183,30,lowres
+GVP284191-A,GVP284191,highres,Zealandia Bank 山頂,summit (twin peaks),16.8944,145.8502,3,s2+landsat
+GVP284191-B,GVP284191,highres,Zealandia Bank 西部カルデラ,caldera and central cone,16.8827,145.8218,2.5,s2+landsat
+W-GVP284191,GVP284191,lowres,Zealandia Bank,whole volcano,16.8944,145.8502,30,lowres
+GVP284193-A,GVP284193,highres,South Sarigan 火山群,"three cones (north: vent of 2010, south: shallowest, east)",16.5936,145.775,3.5,s2+landsat
+W-GVP284193,GVP284193,lowres,South Sarigan Seamount,whole volcano,16.5936,145.775,30,lowres
+GVP284201-A,GVP284201,highres,East Diamante,summit or vent (GVP coordinates),15.93,145.67,6,s2+landsat
+W-GVP284201,GVP284201,lowres,East Diamante,whole volcano,15.93,145.67,30,lowres
+GVP284202-A,GVP284202,highres,Ruby 山頂,summit,15.6046,145.5723,4,s2+landsat
+W-GVP284202,GVP284202,lowres,Ruby,whole volcano,15.6046,145.5723,30,lowres
+GVP284205-A,GVP284205,highres,West Diamante,summit (GVP coordinates),15.9522,145.4142,5,landsat
+W-GVP284205,GVP284205,lowres,West Diamante,whole volcano,15.9522,145.4142,30,lowres
+GVP284206-A,GVP284206,highres,West Saipan,summit (GVP coordinates),15.3093,145.4426,5,s2+landsat
+W-GVP284206,GVP284206,lowres,West Saipan,whole volcano,15.3093,145.4426,30,lowres
+GVP284207-A,GVP284207,highres,West Tinian,summit (GVP coordinates),15.0904,145.4206,5,s2+landsat
+W-GVP284207,GVP284207,lowres,West Tinian,whole volcano,15.0904,145.4206,30,lowres
+GVP284210-A,GVP284210,highres,Esmeralda Bank,summit or vent (GVP coordinates),14.958,145.249,5,s2+landsat
+W-GVP284210,GVP284210,lowres,Esmeralda Bank,whole volcano,14.958,145.249,30,lowres
+GVP284211-A,GVP284211,highres,NW Rota-1,summit or vent (GVP coordinates),14.601,144.775,5,landsat
+W-GVP284211,GVP284211,lowres,NW Rota-1,whole volcano,14.601,144.775,30,lowres
+GVP284215-A,GVP284215,highres,West Rota,summit (GVP coordinates),14.3222,144.8361,6,landsat
+W-GVP284215,GVP284215,lowres,West Rota,whole volcano,14.3222,144.8361,30,lowres
+GVP284803-A,GVP284803,highres,Tracey Seamount,summit (GVP coordinates),13.6351,144.4086,5,s2+landsat
+W-GVP284803,GVP284803,lowres,Tracey Seamount,whole volcano,13.6351,144.4086,30,lowres
+GVP290061-A,GVP290061,highres,Kuril Arc at 45.0°N,summit (GVP coordinates),45.0166,147.0245,5,s2+landsat
+W-GVP290061,GVP290061,lowres,Kuril Arc at 45.0°N,whole volcano,45.0166,147.0245,30,lowres
+GVP290130-A,GVP290130,highres,Kuril Arc at 46.3°N,summit or vent (GVP coordinates),46.2944,150.8526,5,s2+landsat
+W-GVP290130,GVP290130,lowres,Kuril Arc at 46.3°N,whole volcano,46.2944,150.8526,30,lowres
+GVP290160-A,GVP290160,highres,Arkhangelsky,summit (GVP coordinates),46.5165,151.4124,5,s2+landsat
+W-GVP290160,GVP290160,lowres,Arkhangelsky,whole volcano,46.5165,151.4124,30,lowres
+GVP290210-A,GVP290210,highres,Ushishur,seafloor around the volcanic island,47.5125,152.8139,5,s2+landsat
+W-GVP290210,GVP290210,lowres,Ushishur,whole volcano,47.5125,152.8139,30,lowres
+GVP300271-A,GVP300271,highres,Piip 山頂域（北峰・南峰）,summit,55.3966,167.2637,4,s2+landsat
+W-GVP300271,GVP300271,lowres,Piip,whole volcano,55.3966,167.2637,30,lowres
+GVP311300-A,GVP311300,highres,Bogoslof,seafloor around the volcanic island,53.93,-168.03,5,s2+landsat
+W-GVP311300,GVP311300,lowres,Bogoslof,whole volcano,53.93,-168.03,30,lowres
+GVP315055-A,GVP315055,highres,Addington Volcanic Field,summit (GVP coordinates),55.44,-134.17,5,s2+landsat
+W-GVP315055,GVP315055,lowres,Addington Volcanic Field,whole volcano,55.44,-134.17,30,lowres
+GVP331200-A,GVP331200,highres,Bowie Seamount,summit (GVP coordinates),53.3,-135.65,5,s2
+W-GVP331200,GVP331200,lowres,Bowie Seamount,whole volcano,53.3,-135.65,30,lowres
+GVP332000-A,GVP332000,highres,Kamaehuakanaloa,summit or vent (GVP coordinates),18.92,-155.27,5,s2+landsat
+W-GVP332000,GVP332000,lowres,Kamaehuakanaloa,whole volcano,18.92,-155.27,30,lowres
+GVP333030-A,GVP333030,highres,Moua Pihaa,summit or vent (GVP coordinates),-18.325,-148.525,5,landsat
+W-GVP333030,GVP333030,lowres,Moua Pihaa,whole volcano,-18.325,-148.525,30,lowres
+GVP333050-A,GVP333050,highres,Adams Seamount,summit or vent (GVP coordinates),-25.37,-129.27,5,s2
+W-GVP333050,GVP333050,lowres,Adams Seamount,whole volcano,-25.37,-129.27,30,lowres
+W-GVP333060,GVP333060,lowres,Macdonald,whole volcano,-28.98,-140.25,30,lowres
+W-GVP335040,GVP335040,lowres,Pacific-Antarctic Ridge at 50.5°S,whole volcano,-50.457,-139.154,30,lowres
+W-GVP356040,GVP356040,lowres,Seamount JF6,whole volcano,-33.427,-76.87,30,lowres
+GVP360160-A,GVP360160,highres,Kick 'em Jenny,summit or vent (GVP coordinates),12.3,-61.64,5,s2+landsat
+W-GVP360160,GVP360160,lowres,Kick 'em Jenny,whole volcano,12.3,-61.64,30,lowres
+GVP371022-A,GVP371022,highres,Eldey,seafloor around the volcanic island,63.733,-23,15,s2+landsat
+W-GVP371022,GVP371022,lowres,Eldey,whole volcano,63.733,-23,30,lowres
+GVP373100-A,GVP373100,highres,Tjornes Fracture Zone,summit or vent (GVP coordinates),66.309,-17.118,5,s2+landsat
+W-GVP373100,GVP373100,lowres,Tjornes Fracture Zone,whole volcano,66.309,-17.118,30,lowres
+GVP375010-A,GVP375010,highres,Kolbeinsey Ridge,seafloor around the volcanic island,66.67,-18.5,20,s2+landsat
+W-GVP375010,GVP375010,lowres,Kolbeinsey Ridge,whole volcano,66.67,-18.5,30,lowres
+GVP382050-A,GVP382050,highres,Serreta 海底尾根,WNW-ESE fissure ridge,38.7975,-27.4581,6,s2+landsat
+W-GVP382050,GVP382050,lowres,Terceira,whole volcano,38.7975,-27.4581,30,lowres
+GVP382070-A,GVP382070,highres,D. João de Castro Bank 山頂,summit on the caldera rim,38.2217,-26.6033,3,s2+landsat
+W-GVP382070,GVP382070,lowres,Don Joao de Castro Bank,whole volcano,38.2217,-26.6033,30,lowres
+GVP382110-A,GVP382110,highres,Monaco Bank,summit or vent (GVP coordinates),37.6,-25.88,5,s2+landsat
+W-GVP382110,GVP382110,lowres,Monaco Bank,whole volcano,37.6,-25.88,30,lowres
+GVP383020-A,GVP383020,highres,Tagoro,seafloor around the volcanic island,27.62,-17.99,5,s2+landsat
+W-GVP383020,GVP383020,lowres,Tagoro,whole volcano,27.62,-17.99,30,lowres
+GVP390030-A,GVP390030,highres,Deception Island,seafloor around the volcanic island,-62.9567,-60.6367,8,s2+landsat
+W-GVP390030,GVP390030,lowres,Deception Island,whole volcano,-62.9567,-60.6367,30,lowres
+GVP390070-A,GVP390070,highres,Southern Thule,seafloor around the volcanic island,-59.4167,-27.3333,10,s2+landsat
+W-GVP390070,GVP390070,lowres,Southern Thule,whole volcano,-59.4167,-27.3333,30,lowres
+GVP390140-A,GVP390140,highres,Protector Shoal,summit,-55.9383,-28.1,3,s2+landsat
+GVP390140-B,GVP390140,highres,JCR seamount,summit,-55.9133,-28.4133,3,s2+landsat
+W-GVP390140,GVP390140,lowres,Protector Seamounts,whole volcano,-55.9383,-28.1,30,lowres
+IR-Adventure_Caldera-A,IR-Adventure_Caldera,highres,Adventure Caldera,hydrothermal field (InterRidge coordinates),-59.721,-27.8571,6,s2+landsat
+W-IR-Adventure_Caldera,IR-Adventure_Caldera,lowres,Adventure Caldera,whole volcano,-59.721,-27.8571,30,lowres
+IR-Bayonnaise_Knoll_caldera-A,IR-Bayonnaise_Knoll_caldera,highres,Bayonnaise Knoll caldera,hydrothermal field (InterRidge coordinates),31.9667,139.7333,5,s2+landsat
+W-IR-Bayonnaise_Knoll_caldera,IR-Bayonnaise_Knoll_caldera,lowres,Bayonnaise Knoll caldera,whole volcano,31.9667,139.7333,30,lowres
+IR-Daiichi-Amami_knoll-A,IR-Daiichi-Amami_knoll,highres,第1奄美海丘 浅瀬全体,caldera and central cone,28.468,128.7653,5.5,s2+landsat
+W-IR-Daiichi-Amami_knoll,IR-Daiichi-Amami_knoll,lowres,Daiichi-Amami knoll,whole volcano,28.468,128.7653,30,lowres
+IR-Enarete_Seamount-A,IR-Enarete_Seamount,highres,Enarete Seamount,hydrothermal field (InterRidge coordinates),38.625,14,5,s2+landsat
+W-IR-Enarete_Seamount,IR-Enarete_Seamount,lowres,Enarete Seamount,whole volcano,38.625,14,30,lowres
+IR-Eolo_Seamount-A,IR-Eolo_Seamount,highres,Eolo Seamount,hydrothermal field (InterRidge coordinates),38.58,14.1667,5,s2+landsat
+W-IR-Eolo_Seamount,IR-Eolo_Seamount,lowres,Eolo Seamount,whole volcano,38.58,14.1667,30,lowres
+IR-Grover_Seamount-A,IR-Grover_Seamount,highres,Grover Seamount,hydrothermal field (InterRidge coordinates),-10.4667,164.25,5,s2+landsat
+W-IR-Grover_Seamount,IR-Grover_Seamount,lowres,Grover Seamount,whole volcano,-10.4667,164.25,30,lowres
+IR-Kolbeinsey_Field-A,IR-Kolbeinsey_Field,highres,Kolbeinsey Field,hydrothermal field (InterRidge coordinates),67.0833,-18.7167,5,s2+landsat
+W-IR-Kolbeinsey_Field,IR-Kolbeinsey_Field,lowres,Kolbeinsey Field,whole volcano,67.0833,-18.7167,30,lowres
+IR-Kos_south-A,IR-Kos_south,highres,"Kos, south",hydrothermal field (InterRidge coordinates),36.6667,27.25,5,s2+landsat
+W-IR-Kos_south,IR-Kos_south,lowres,"Kos, south",whole volcano,36.6667,27.25,30,lowres
+IR-Omuro_Hole-A,IR-Omuro_Hole,highres,Omuro Hole,hydrothermal field (InterRidge coordinates),34.5467,139.4417,5,s2+landsat
+W-IR-Omuro_Hole,IR-Omuro_Hole,lowres,Omuro Hole,whole volcano,34.5467,139.4417,30,lowres
+IR-Secca_del_Capo-A,IR-Secca_del_Capo,highres,Secca del Capo,hydrothermal field (InterRidge coordinates),38.6333,14.85,5,s2+landsat
+W-IR-Secca_del_Capo,IR-Secca_del_Capo,lowres,Secca del Capo,whole volcano,38.6333,14.85,30,lowres
+IR-Stanton_Seamount-A,IR-Stanton_Seamount,highres,Stanton Seamount,hydrothermal field (InterRidge coordinates),-10.867,166.7,5,s2+landsat
+W-IR-Stanton_Seamount,IR-Stanton_Seamount,lowres,Stanton Seamount,whole volcano,-10.867,166.7,30,lowres

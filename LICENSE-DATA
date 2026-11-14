@@ -1,0 +1,33 @@
+Submarine Volcano Activity Database - data licence
+
+Copyright (c) 2026 Fumihiko Ikegami (Ikegami GeoResearch)
+
+The data of this database - the tables under db/, the files under curation/, the texts under
+docs/ and the quicklook images published at https://gis.ikgm.net/submvolc/ - are licensed under
+the Creative Commons Attribution 4.0 International Licence (CC BY 4.0).
+
+You may share and adapt the data for any purpose, provided that you give appropriate credit,
+provide a link to the licence, and indicate if changes were made.
+
+Full text of the licence: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Suggested credit:
+
+    Ikegami, F. (2026). Submarine Volcano Activity Database.
+    https://github.com/geoign/submarine-volcano-activity
+
+Material from other sources
+
+The images and the measurements are derived from data of other providers, whose terms continue to
+apply to their part:
+
+- Sentinel-2 and Sentinel-3: contains modified Copernicus Sentinel data (2015 to 2026).
+- Landsat 8 and 9: U.S. Geological Survey.
+- VIIRS and MODIS images: NASA Global Imagery Browse Services (GIBS).
+- Eruption periods and volcano numbers (db/known_periods.csv, the column known_ref of
+  db/episodes.csv, the column gvp_number): Volcanoes of the World, Global Volcanism Program,
+  Smithsonian Institution.
+- assets/land.json: Natural Earth (public domain).
+
+The database comes without warranty of any kind. It is not a volcano warning and not official
+volcano information.

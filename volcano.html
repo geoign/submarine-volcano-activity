@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Submarine Volcano Activity Database</title>
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css?v=1">
+</head>
+<body>
+<main class="wrap" id="main">
+  <p><a href="index.html">← <span data-i18n="v.back"></span></a></p>
+  <div id="head"><p class="notice" data-i18n="loading"></p></div>
+
+  <section id="timeline-section" hidden>
+    <h2 data-i18n="v.timeline"></h2>
+    <div class="filters">
+      <div class="seg" id="range" role="group">
+        <button type="button" data-range="all" data-i18n="v.range.all"></button>
+        <button type="button" data-range="5" data-i18n="v.range.5y"></button>
+        <button type="button" data-range="1" data-i18n="v.range.1y"></button>
+      </div>
+      <div class="seg" role="group">
+        <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+        <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+      </div>
+      <label id="zone-label"><span data-i18n="v.zone"></span> <select id="zone"></select></label>
+      <label><input type="checkbox" id="dismissed"> <span data-i18n="v.dismissed"></span></label>
+    </div>
+    <div class="chart-card">
+      <canvas id="chart" tabindex="0" role="img" aria-label="Timeline of passes and episodes"></canvas>
+      <div class="tooltip" id="tip" hidden></div>
+      <div class="chart-legend" id="legend"></div>
+    </div>
+    <p class="notice" data-i18n="v.timeline.help"></p>
+
+    <div id="viewer-section" hidden>
+      <h2 data-i18n="v.image"></h2>
+      <div class="strip" id="strip"></div>
+      <div class="viewer">
+        <div>
+          <figure>
+            <img id="ql" alt="" hidden>
+            <div class="halves"><span data-i18n="v.image.left"></span><span data-i18n="v.image.right"></span></div>
+          </figure>
+          <p class="notice"><span data-i18n="v.image.circle"></span> <a id="ql-open" target="_blank" rel="noopener" hidden data-i18n="v.image.open"></a></p>
+        </div>
+        <div class="info card">
+          <div class="nav">
+            <button type="button" class="btn" id="prev-alert">« <span data-i18n="v.prevAlert"></span></button>
+            <button type="button" class="btn" id="prev">‹ <span data-i18n="v.prev"></span></button>
+            <button type="button" class="btn" id="next"><span data-i18n="v.next"></span> ›</button>
+            <button type="button" class="btn" id="next-alert"><span data-i18n="v.nextAlert"></span> »</button>
+          </div>
+          <div id="pass-info"><p class="notice" data-i18n="v.image.none"></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="episodes-section" hidden>
+    <h2 data-i18n="v.episodes"></h2>
+    <div class="filters"><button type="button" class="btn" id="toggle-dismissed" hidden></button></div>
+    <div class="episodes" id="episodes"></div>
+  </section>
+
+  <section id="figures-section" hidden>
+    <h2 data-i18n="v.figures"></h2>
+    <div class="figs" id="figures"></div>
+  </section>
+
+  <section id="records-section" hidden>
+    <h2 data-i18n="v.records"></h2>
+    <div id="records"></div>
+  </section>
+
+  <section id="zones-section" hidden>
+    <h2 data-i18n="v.zones"></h2>
+    <div class="table-wrap"><table class="data" id="zones"></table></div>
+    <h2 data-i18n="v.known" id="known-title" hidden></h2>
+    <div class="table-wrap" id="known-wrap" hidden><table class="data" id="known"></table></div>
+    <h2 data-i18n="v.data"></h2>
+    <p id="data-links"></p>
+  </section>
+  <noscript><p class="error">This page needs JavaScript. The data are plain CSV files under <a href="db/">db/</a>.</p></noscript>
+</main>
+<script type="module" src="assets/js/volcano.js?v=1"></script>
+</body>
+</html>
