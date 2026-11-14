@@ -35,7 +35,7 @@ async function load() {
   ]);
   meta = m;
   V = vols.find((v) => v.volcano_id === id);
-  if (!V) throw new Error(t("v.notfound"));
+  if (!V) throw Object.assign(new Error(t("v.notfound")), { plain: true });
   zones = zoneRows.filter((z) => z.volcano_id === id);
   episodes = eps.filter((e) => e.volcano_id === id).map((e) => ({ ...e, t0: ms(e.start), t1: ms(e.end) }));
   const lastT = ms(meta.last_pass) + DAY;
@@ -270,7 +270,7 @@ function renderEpisodes() {
   const box = clear($("episodes"));
   const list = episodes.filter((e) => S.listDismissed || e.class !== "nonvolcanic" || e.episode_id === wantEpisode)
     .sort((a, b) => b.t0 - a.t0);
-  if (!list.length) box.append(el("p", { class: "notice", text: t("v.episodes.none") }));
+  if (!list.length) box.append(el("p", { class: "notice", text: t(dismissed ? "v.episodes.onlyDismissed" : "v.episodes.none") }));
   for (const e of list) {
     const note = noteText(e, "note"), owner = noteText(e, "owner"), cur = noteText(e, "curation");
     const low = e.tier === "lowres";

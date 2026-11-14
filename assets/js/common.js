@@ -254,5 +254,6 @@ export function quicklookURL(base, p) {
 
 export function showError(container, err) {
   console.error(err);
-  clear(container).append(el("p", { class: "error", text: t("error.load") + " " + (err && err.message ? err.message : "") }));
+  const detail = err && err.message ? err.message : "";
+  clear(container).append(el("p", { class: "error", text: err && err.plain ? detail : `${t("error.load")} ${detail}` }));
 }
