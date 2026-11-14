@@ -60,6 +60,8 @@ aside { border-right: 1px solid var(--border); background: var(--surface); displ
 #list .meta { color: var(--ink-2); font-size: .8rem; font-variant-numeric: tabular-nums; }
 #list .imp { color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; }
 #list .done { color: var(--good); font-weight: 700; }
+#list .jcg { margin-left: .4em; padding: 0 .3em; border: 1px solid currentColor; border-radius: 3px; color: var(--ink-2); font-size: .68rem; font-weight: 700; }
+.note tr.away td { color: var(--muted); }
 #list .dot { align-self: center; }
 #more { margin: .4rem .6rem; }
 

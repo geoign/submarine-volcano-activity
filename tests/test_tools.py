@@ -133,3 +133,57 @@ def test_index_matches_the_episode_table():
     assert index["classes"] == CLASSES
     for v in index["volcanoes"]:
         assert -90 <= v["lat"] <= 90 and -180 <= v["lon"] <= 180
+
+
+def test_day_span_reads_days_months_years_and_ranges():
+    from datetime import date
+    assert build_db.day_span("2021-08-13") == (date(2021, 8, 13).toordinal(),) * 2
+    assert build_db.day_span("2024-02") == (date(2024, 2, 1).toordinal(), date(2024, 2, 29).toordinal())
+    assert build_db.day_span("2013") == (date(2013, 1, 1).toordinal(), date(2013, 12, 31).toordinal())
+    assert build_db.day_span("2026-07-06/2026-07-07") == (date(2026, 7, 6).toordinal(), date(2026, 7, 7).toordinal())
+    assert build_db.day_span("") is None
+    assert build_db.day_span("2021-13-01") is None
+
+
+def _report(date, category="anomaly", zones="V-A", site="Here", phenomena="dw"):
+    return dict(volcano_id="V", site_ja=site, site_en=site, zones=zones, date=date, category=category,
+                phenomena=phenomena, retrieved="2026-11-14")
+
+
+def test_coast_guard_reports_are_compared_by_zone_and_day():
+    e = dict(volcano_id="V", zone_id="V-A-LS", tier="highres", start="2022-06-10", end="2022-06-17")
+    rows = [_report("2022-06-01"),                                  # 9 days before, in the zone
+            _report("2022-06-20", zones="V-B", site="There"),       # another zone of the volcano
+            _report("2022-06-30", "none"),                          # a visit that saw nothing
+            _report("2022-07-02"),                                  # 15 days after: too late
+            _report("2022", "none"),                                # a year says nothing about a day
+            _report("2022-06-15", "not_visible")]
+    here, away, quiet = build_db.jcg_split(e, rows)
+    assert [r["date"] for r in here] == ["2022-06-01"]
+    assert [r["site_en"] for r in away] == ["There"]
+    assert [r["date"] for r in quiet] == ["2022-06-30"]
+    # a low-resolution zone holds every site of the volcano
+    wide = dict(e, zone_id="W-V", tier="lowres")
+    assert len(build_db.jcg_split(wide, rows)[0]) == 2
+
+
+def test_prior_reports_say_what_the_coast_guard_database_has():
+    eps = [dict(volcano_id="V", zone_id="V-A", tier="highres", start="2022-06-10", end="2022-06-17", prior_reports=""),
+           dict(volcano_id="V", zone_id="V-A", tier="highres", start="2019-01-01", end="2019-01-01", prior_reports="GVP: read"),
+           dict(volcano_id="X", zone_id="X-A", tier="highres", start="2022-06-10", end="2022-06-17", prior_reports="")]
+    rows = [_report("2022-06-01", phenomena="dw+fl"), _report("2022-06-20", zones="", site="There")]
+    assert build_db.jcg_prior(eps, rows) == 2
+    assert eps[0]["prior_reports"] == ("Japan Coast Guard volcano database (retrieved 2026-11-14): activity reported on "
+                                       "2022-06-01 (discoloured water, floating matter at Here); outside this zone, "
+                                       "activity reported at There (1 report(s))")
+    assert eps[1]["prior_reports"].startswith("GVP: read; Japan Coast Guard volcano database")
+    assert eps[1]["prior_reports"].endswith("no observation of this zone within 14 days of the episode")
+    assert eps[2]["prior_reports"] == ""      # no page for this volcano: nothing was read, nothing is said
+
+
+def test_a_yearly_row_of_the_coast_guard_becomes_its_days():
+    import import_jcg
+    r = dict(date="2013", category="none", time="", text_ja="2013年3月25日，7月1日 変色水を認めず，特異事象なし．")
+    assert [x["date"] for x in import_jcg.split_year(r)] == ["2013-03-25", "2013-07-01"]
+    assert import_jcg.split_year(dict(r, category="anomaly")) == [dict(r, category="anomaly")]
+    assert import_jcg.split_year(dict(r, date="2013-03-25"))[0]["date"] == "2013-03-25"

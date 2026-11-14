@@ -26,7 +26,7 @@ const ROLE = { a: "警戒", q: "期間内", b: "前", c: "後" };
 const JCG = { anomaly: "異常あり", none: "特異事象なし", not_visible: "視認できず", other: "その他" };
 
 const S = {
-  status: "pending", sort: "imp", q: "", high: true, low: true, classes: new Set(Object.keys(LABEL)),
+  status: "pending", sort: "imp", q: "", high: true, low: true, jcg: false, classes: new Set(Object.keys(LABEL)),
   shown: 200, current: null, pass: 0, list: [], fileHandle: null, dirty: false,
 };
 let reviews = {};
@@ -172,6 +172,7 @@ function filtered() {
     if (S.status === "done" && !done) return false;
     if (!S.classes.has(e.cls)) return false;
     if (e.tier === "highres" ? !S.high : !S.low) return false;
+    if (S.jcg && !e.jh) return false;
     if (q) {
       const v = vol(e);
       if (![v.name, v.name_ja, v.country, e.id].some((s) => (s || "").toLowerCase().includes(q))) return false;
@@ -196,6 +197,7 @@ function drawList() {
     const li = el("li", { "aria-current": String(S.current && S.current.id === e.id), onclick: () => open(e) },
       el("i", { class: `dot ${r ? r.verdict : e.cls}` }),
       el("span", {}, el("span", { class: "name", text: volName(e) }),
+        e.jh ? el("span", { class: "jcg", title: "海域火山データベースに、同じ時期のこの区域の異常の記録がある", text: "海保" }) : null,
         el("div", { class: "meta", text: `${range(e.s, e.e)} · ${e.tier === "lowres" ? "低解像度" : `${e.z.split("-").pop()} · ${phenomena(e.ph) || "-"}`}` })),
       isDone(e) ? el("span", { class: "done", text: "済" }) : el("span", { class: "imp", text: e.imp.toFixed(0) }));
     li.dataset.id = e.id;
@@ -290,9 +292,9 @@ function drawDetail() {
   block("照合した噴火期間・既報の確認", e.known ? el("p", { text: e.known }) : null, e.prior ? el("p", { text: e.prior }) : null,
     e.periods.length ? el("p", { class: "en", text: "この火山の噴火期間: " + e.periods.join(" / ") }) : null);
   if (e.jcg.length) {
-    block("海上保安庁の観測 (エピソードの前後 30 日)", el("table", {}, ...e.jcg.map((j) => el("tr", {},
+    block("海上保安庁の海域火山データベースの観測 (エピソードの前後 30 日)", el("table", {}, ...e.jcg.map((j) => el("tr", { class: j[4] ? null : "away" },
       el("td", { class: "d", text: j[0] }), el("td", { class: j[1] === "anomaly" ? "anomaly" : null, text: JCG[j[1]] || j[1] }),
-      el("td", { text: (j[2] ? `[${j[2]}] ` : "") + j[3] })))));
+      el("td", { text: `[${j[2]}${j[4] ? "" : "・この区域の外"}] ${j[3]}` })))));
   }
   viewer.append(notes);
   main.append(el("div", { class: "work" }, viewer, formFor(e, r)));
@@ -387,6 +389,7 @@ function start() {
   $("f-q").addEventListener("input", (e) => { S.q = e.target.value; S.shown = 200; drawList(); });
   $("f-high").addEventListener("change", (e) => { S.high = e.target.checked; drawList(); });
   $("f-low").addEventListener("change", (e) => { S.low = e.target.checked; drawList(); });
+  $("f-jcg").addEventListener("change", (e) => { S.jcg = e.target.checked; S.shown = 200; drawList(); });
   $("more").addEventListener("click", () => { S.shown += 300; drawList(); });
   $("pick").addEventListener("click", pickFile);
   $("download").addEventListener("click", download);

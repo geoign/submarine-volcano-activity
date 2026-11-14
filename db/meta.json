@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14T08:08Z",
+ "generated": "2026-11-14T08:32Z",
  "monitor_commit": "16ae189",
  "image_base": "https://gis.ikgm.net/submvolc",
  "cut": "2025-11-12T00:00:00Z",
@@ -32,5 +32,6 @@
   "human-reviewed": 30
  },
  "ring_wave_records": 4,
- "airborne_band_records": 24
+ "airborne_band_records": 24,
+ "jcg_observations": 705
 }

@@ -1,0 +1,706 @@
+volcano_id,jcg_page,site_ja,site_en,match,zones,date,time,observer,category,phenomena,text_ja,summary_en,retrieved
+CAL301,kaiyo7-2.htm,利島,Toshima,nearby,,2014-10-15,09:31-09:37,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL301,kaiyo7-2.htm,利島,Toshima,nearby,,2014-10-17,12:04-12:08,海上保安庁,anomaly,dw,コシダ崩れ付近に海岸線に沿って底辺約250ｍ幅約300ｍの三角形の薄黄緑色の変色水域を認めた。,"Pale yellow-green discoloured water was seen along the shore near Koshida-kuzure, in a triangle with a base of about 250 m and a width of about 300 m.",2026-11-14
+CAL301,kaiyo7-2.htm,利島,Toshima,nearby,,2019-01-30,12:42-12:43,海上保安庁,anomaly,dw,南東部に薄い青緑色の変色水域が幅約50m、長さ約300mで分布していた。,Pale blue-green discoloured water about 50 m wide and 300 m long lay off the south-east.,2026-11-14
+CAL301,kaiyo7-2.htm,利島,Toshima,nearby,,2024-05-08,15:12-15:25,海上保安庁,none,,特異事象は認められなかった。,,2026-11-14
+CAL301,kaiyo7-2.htm,利島,Toshima,nearby,,2025-05-14,11:47,海上保安庁,none,,特異事象は認められなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2014-03-24,15:15-15:25,海上保安庁,anomaly,steam,硫黄山火口内にごく少量の白色噴気を認めた。その他特異事象なし。,A very small amount of white steam was seen in the Iwo-yama crater; nothing else unusual.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2014-10-15,12:55-13:08 13:43-13:54,海上保安庁,anomaly,dw,"硫黄山の火口付近に噴気・噴煙は認められなかった。伊豆鳥島の千歳浦から涙ヶ浜北小島付近の海岸線に沿って、青白色で幅約300～500ｍ、燕埼から南埼の海岸線付近から薄い黄緑色で帯状に南東方向へ幅500ｍ、長さ約1,500ｍ、兵庫浦から船見岬の海岸線に薄い黄緑色で幅約200～500ｍの変色水域を認めた。","No steam or plume was seen near the Iwo-yama crater. Discoloured water was seen along the shore of Torishima: pale blue-white, about 300-500 m wide, from Chitose-ura to near Namida-ga-hama Kita-kojima; pale yellow-green in a band about 500 m wide and 1,500 m long running south-east from the shore between Tsubame-zaki and Minami-zaki; and pale yellow-green, about 200-500 m wide, along the shore from Hyogo-ura to Funami-misaki.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2015-08-18,,海上保安庁,anomaly,dw,硫黄山の火口及び付近に噴気噴煙は認められなかった。 船見岬～兵庫浦の海岸線に幅約200ｍ、長さ約200ｍの青白色の変色水域が分布していた。 燕埼～南埼の海岸線の２ヶ所に幅約700ｍの薄い褐色の変色水域が分布していた。,"No steam or plume was seen at or near the Iwo-yama crater. Pale blue-white discoloured water about 200 m wide and 200 m long lay along the shore between Funami-misaki and Hyogo-ura, and pale brown discoloured water about 700 m wide at two places along the shore between Tsubame-zaki and Minami-zaki.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2015-10-13,12:38-12:43,海上保安庁,anomaly,dw,硫黄山火口及び付近から噴気噴煙は確認できなかった。 伊豆鳥島北岸の船見岬から東岸の涙ヶ浜の海岸線に沿って幅約100～250ｍで青白色の変色水域が分布していた。,No steam or plume could be seen at or near the Iwo-yama crater. Pale blue-white discoloured water about 100-250 m wide lay along the shore of Torishima from Funami-misaki on the north shore to Namida-ga-hama on the east shore.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2016-03-04,14:36-14:38,海上保安庁,anomaly,dw+steam,硫黄山火口縁の南側に噴気帯と考えられる数条の噴気の放出が見られた。 船見岬～兵庫浦の海岸線付近に沿って長さ約300ｍ、沖方向へ幅約200ｍの薄い褐色の変色水域が分布していた。 燕埼～三ッ石付近の海岸線に沿って長さ約800ｍ、沖方向へ幅約300ｍの薄い褐色の変色水域が分布していた。,"Several plumes of steam, thought to come from a fumarolic zone, were seen on the south side of the Iwo-yama crater rim. Pale brown discoloured water lay along the shore between Funami-misaki and Hyogo-ura (about 300 m long, extending about 200 m offshore) and between Tsubame-zaki and near Mitsuishi (about 800 m long, extending about 300 m offshore).",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2016-03-05,14:00-14:15,海上保安庁,anomaly,thermal,３月４日に確認された変色水域は認められなかった。熱計測の結果、硫黄山火口の噴気帯が前回調査（2014年10月）よりやや拡大していた。,The discoloured water seen on 4 Mar was not seen. Thermal measurement showed that the fumarolic zone of the Iwo-yama crater had grown slightly since the previous survey (October 2014).,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2016-03-29,12:30-12:31,海上保安庁,anomaly,dw,"硫黄山火口からは噴気噴煙等の特異事象は認められなかった。 船見岬から兵庫浦の海岸線に沿って長さ約800ｍ、幅250ｍの範囲にごく薄い黄緑色の変色水域が分布していた。 また、三ツ石から燕埼の海岸線の約1,000ｍに海岸線から約500ｍの範囲にごく薄い褐色の変色水域が分布していた。","No steam, plume or other phenomenon from the Iwo-yama crater. Very pale yellow-green discoloured water lay along the shore from Funami-misaki to Hyogo-ura over about 800 m by 250 m, and very pale brown discoloured water along about 1,000 m of shore from Mitsuishi to Tsubame-zaki, up to about 500 m from the shore.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2016-05-03,11:13-11:46,海上保安庁,anomaly,steam,顕著な特異事象は認められなかったが、黄山火口にごく弱い白色噴気の放出を認めた。,"Nothing notable was seen, but very weak white steam was emitted from the crater of Iwo-yama (written 黄山 on the page).",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2016-09-15,,海上保安庁,anomaly,dw,"燕埼付近から三ツ石を経て南埼までの海岸線付近に沿って幅約200～300ｍの薄い褐色の変色水域が分布していた。 また、この変色水域は伊豆鳥島南端の三ツ石付近から南西方向へ帯状に長さ約1,000ｍ、幅約300ｍで分布していた。","Pale brown discoloured water about 200-300 m wide lay along the shore from near Tsubame-zaki past Mitsuishi to Minami-zaki, and extended in a band about 1,000 m long and 300 m wide south-west from near Mitsuishi at the south end of Torishima.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2016-11-25,14:29-14:35,海上保安庁,anomaly,dw+steam,硫黄山火口縁の南側に多数の白色噴気が放出していた。また、北西側の1ヶ所からも白色噴気が放出していた。 兵庫浦から北ノ鼻付近の海岸線に幅約500ｍの薄い黄緑色の変色水域が分布していた。また南埼から涙ヶ浜の伊豆鳥島南側の海岸線に幅300ｍの薄い黄緑色の変色水域が分布していた。,"Much white steam was emitted on the south side of the Iwo-yama crater rim, and white steam also from one place on the north-west side. Pale yellow-green discoloured water about 500 m wide lay along the shore from Hyogo-ura to near Kita-no-hana, and pale yellow-green discoloured water 300 m wide along the south coast of Torishima from Minami-zaki to Namida-ga-hama.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2016-12-24,13:35-13:43,海上保安庁,anomaly,dw+steam,"伊豆鳥島北岸の船見岬～兵庫浦付近の海岸線に幅約300ｍ、長さ約1,200ｍで薄い黄緑色の変色水域が分布していた。 伊豆鳥島南岸の三ッ石付近～燕埼の海岸線に幅約500ｍ、長さ約1,400ｍで茶褐色及び薄い黄緑色の変色水域が分布していた。 伊豆鳥島東岸の涙ヶ浜付近の海岸線に幅約200ｍ、長さ約500ｍで薄い黄緑色の変色水域が分布していた。 硫黄山火口内の１ヶ所からごく弱い白色噴気の放出が認められた。","Discoloured water lay along the shore of Torishima: pale yellow-green between Funami-misaki and Hyogo-ura on the north shore (about 300 m wide, 1,200 m long), brown and pale yellow-green from near Mitsuishi to Tsubame-zaki on the south shore (about 500 m wide, 1,400 m long), and pale yellow-green near Namida-ga-hama on the east shore (about 200 m wide, 500 m long). Very weak white steam was emitted from one place in the Iwo-yama crater.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2017-03-14,14:14-14:40,海上保安庁,anomaly,dw+steam,伊豆鳥島北岸の船見岬～兵庫浦付近の海岸線に幅約100ｍ、長さ約300ｍで薄い青白色の変色水域が分布していた。 南埼付近の海岸線に幅約50ｍ、長さ約600ｍで薄い青白色の変色水域が分布していた。 硫黄山火口内の数ヶ所からごく弱い白色噴気の放出が認められた。,"Pale blue-white discoloured water lay along the north shore of Torishima between Funami-misaki and Hyogo-ura, about 100 m wide and 300 m long, and along the shore near Minami-zaki, about 50 m wide and 600 m long. Very weak white steam was emitted from several places in the Iwo-yama crater.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2017-03-22,14:15-14:17,海上保安庁,not_visible,,天候が悪く特異事象を視認する事ができなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2017-03-24,12:23-12:25,海上保安庁,anomaly,dw,伊豆鳥島北岸の千歳浦～兵庫浦付近の海岸線の３ヶ所に幅約250～400ｍの薄い黄緑色の変色水域が分布していた。 伊豆鳥島南岸の三つ石付近～燕埼の海岸線に幅約200ｍ、長さ約500ｍで薄い黄緑色の変色水域が分布していた。 硫黄山火口からの噴気等の放出は認められなかった。,"Pale yellow-green discoloured water lay at three places along the north shore of Torishima between Chitose-ura and Hyogo-ura, about 250-400 m wide, and along the south shore from near Mitsuishi to Tsubame-zaki, about 200 m wide and 500 m long. No fumarolic emission from the Iwo-yama crater was seen.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2017-06-27,14:55-15:00,海上保安庁,not_visible,,天候が悪く調査を実施することができなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2017-06-29,12:31-12:32 15:15-15:30,海上保安庁,anomaly,dw+thermal,伊豆鳥島北岸の船見岬～千歳浦の海岸線に幅約50ｍ、長さ約300ｍの薄い黄緑色の変色水域が分布していた。 硫黄山火口内からの噴気等の放出は認められなかった。 熱計測の結果、硫黄山火口の噴気帯に高温域が分布していた。,Pale yellow-green discoloured water about 50 m wide and 300 m long lay along the north shore of Torishima between Funami-misaki and Chitose-ura. No fumarolic emission from the Iwo-yama crater was seen; thermal measurement showed a high-temperature area in the crater's fumarolic zone.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2018-03-03,13:54-14:35,海上保安庁,anomaly,dw+steam+thermal,硫黄山火口内の噴気帯から白色噴気の放出が認められた。 熱計測の結果、硫黄山火口の噴気帯に高温域が分布していた。 伊豆鳥島北岸の船見岬付近の海岸線に幅約100ｍ、長さ約200ｍで薄い黄緑色の変色水域が分布していた。伊豆鳥島東岸の涙ヶ浜付近の海岸線２ヶ所に幅約100ｍ、長さ約100ｍでごく薄い黄緑色の変色水域が分布していた。伊豆鳥島南岸の三ツ石付近～燕埼間の海岸線に幅約150ｍ、長さ約500ｍで薄い褐色の変色水域が分布していた。また、伊豆鳥島南西岸の三ツ石付近の海岸線に幅約100ｍ、長さ約100ｍでごく薄い黄緑色の変色水域が分布していた。,"White steam was emitted from the fumarolic zone in the Iwo-yama crater, where thermal measurement showed a high-temperature area. Discoloured water lay along the shore of Torishima: pale yellow-green near Funami-misaki on the north shore (about 100 m wide, 200 m long); very pale yellow-green at two places near Namida-ga-hama on the east shore (about 100 m by 100 m each); pale brown from near Mitsuishi to Tsubame-zaki on the south shore (about 150 m wide, 500 m long); and very pale yellow-green near Mitsuishi on the south-west shore (about 100 m by 100 m).",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2018-07-30,15:16-15:40,海上保安庁,anomaly,dw,伊豆鳥島南岸の三ツ石から燕埼の間に青白色～褐色の変色水域が幅約150ｍ、長さ約300ｍで分布していた。伊豆鳥島北東の北ノ鼻付近に薄黄緑色の変色水域が幅約100ｍ、長さ約100ｍで分布していた。,"Pale blue-white to brown discoloured water about 150 m wide and 300 m long lay between Mitsuishi and Tsubame-zaki on the south shore of Torishima, and pale yellow-green discoloured water about 100 m wide and 100 m long near Kita-no-hana in the north-east.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2019-01-30,15:01-15:10,海上保安庁,anomaly,dw,南東部の燕埼西方に薄い黄緑色の変色水域が約50m四方で分布していた。 北部の船見埼に黄緑色の変色水域が約100m四方で分布していた。 硫黄山火口内に噴気等は認められなかった。,"Pale yellow-green discoloured water about 50 m square lay west of Tsubame-zaki in the south-east, and yellow-green discoloured water about 100 m square at Funami-zaki in the north. No fumaroles were seen in the Iwo-yama crater.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2020-07-20,14:53-15:00,海上保安庁,none,,変色水域等の特異事象は認められなかった。 山頂付近は雲に覆われており観測できなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2020-08-19,15:04-15:13,海上保安庁,none,,変色水域等の特異事象は認められなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2020-11-24,14:54-15:01,海上保安庁,anomaly,dw+steam,硫黄山火口から白色噴気の放出が認められた。 伊豆鳥島南岸の三ツ石東部に薄い黄緑色の変色水域が幅約50ｍ、長さ約100mで分布していた。,White steam was emitted from the Iwo-yama crater. Pale yellow-green discoloured water about 50 m wide and 100 m long lay east of Mitsuishi on the south shore of Torishima.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2021-01-28,14:54-15:17,第三管区海上保安本部,anomaly,dw+steam+thermal,硫黄山火口南部から白色噴気の放出が認められ、付近は周囲より高温であった。 伊豆鳥島南岸の三ツ石東部に黄褐色の変色水域が幅約50ｍ、長さ約200mで分布していた。,"White steam was emitted from the southern part of the Iwo-yama crater, and the area was hotter than its surroundings. Yellowish-brown discoloured water about 50 m wide and 200 m long lay east of Mitsuishi on the south shore of Torishima.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2021-02-23,15:03-15:10,海上保安庁,anomaly,dw+steam+thermal,硫黄山火口南部から白色噴気の放出が認められ、付近は周囲より高温であった。 伊豆鳥島北岸の船見岬西部に薄い黄緑色の変色水域が幅約100m、長さ約200mで分布していた。,"White steam was emitted from the southern part of the Iwo-yama crater, and the area was hotter than its surroundings. Pale yellow-green discoloured water about 100 m wide and 200 m long lay west of Funami-misaki on the north shore of Torishima.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2021-07-09,14:47-14:53,海上保安庁,none,,変色水域等の特異事象は認められなかった。 硫黄山付近は雲に覆われており調査できなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2021-08-05,14:55-14:57,海上保安庁,none,,変色水域等の特異事象は認められなかった。 硫黄山付近は雲に覆われており調査できなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2022-03-15,15:24-15:29,海上保安庁,none,,変色水域等の特異事象は認められなかった。 硫黄山付近は雲に覆われており調査できなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2022-07-12,14:09-15:08,海上保安庁,anomaly,dw+steam+thermal,硫黄山火口から白色噴気の放出を認めた。 南西岸の南埼～三ツ石の間に薄い茶褐色の変色水域を認めた。 南東岸の三ツ石～燕埼にかけて薄い茶褐色の変色水域を認めた。 熱計測の結果、硫黄山火口の噴気帯及び硫黄山～子持山の間に、周囲より温度の高い領域を確認した。,White steam was emitted from the Iwo-yama crater. Pale brown discoloured water was seen between Minami-zaki and Mitsuishi on the south-west shore and from Mitsuishi to Tsubame-zaki on the south-east shore. Thermal measurement found areas warmer than their surroundings in the fumarolic zone of the Iwo-yama crater and between Iwo-yama and Komochi-yama.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2022-08-15,12:00-12:06,第三管区海上保安本部,none,,硫黄山火口からの噴気等は認められなかった。 変色水域等の特異事象は認められなかったが、接近しての観測を行っていないので詳細は不明である。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2023-01-26,12:23-12:30,海上保安庁,anomaly,dw+steam,硫黄山火口から白色噴気の放出を認めた。 北東岸の北ノ鼻～北西岸の兵庫浦に薄い黄緑色の変色水域を認めた。 南西岸の南埼～南東岸の燕埼にかけて薄い茶褐色及び黄緑色の変色水域を認めた。,"White steam was emitted from the Iwo-yama crater. Pale yellow-green discoloured water was seen from Kita-no-hana on the north-east shore to Hyogo-ura on the north-west shore, and pale brown and yellow-green discoloured water from Minami-zaki on the south-west shore to Tsubame-zaki on the south-east shore.",2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2023-10-20,12:28-12:35,海上保安庁,none,,硫黄山付近は雲に覆われており確認できなかった。 変色水域等の特異事象は認められなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2024-04-20,12:17-12:27,海上保安庁,anomaly,dw,島の西側からのみ観測を実施した。 北部の船見岬周辺及び南東岸の三ツ石～燕埼の間で、変色水域の分布を認めた。,Observed from the west side of the island only. Discoloured water was seen around Funami-misaki in the north and between Mitsuishi and Tsubame-zaki on the south-east shore.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2024-05-06,12:03-12:11,海上保安庁,none,,特異事象は認められなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2024-07-18,13:45-13:52,海上保安庁,anomaly,dw,南岸の三ツ石～燕崎にかけての海岸の一部に黄褐色の変色水域を認めた。,Yellowish-brown discoloured water was seen along part of the south shore between Mitsuishi and Tsubame-zaki.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2024-09-18,14:27,海上保安庁,anomaly,dw+fl,東岸～南岸～西岸にかけて薄い緑褐色の変色水域及び灰色の少量の浮遊物を認めた。 硫黄山からの噴気活動は認められなかった。,Pale greenish-brown discoloured water and a small amount of grey floating matter were seen from the east shore round the south shore to the west shore. No fumarolic activity of Iwo-yama was seen.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2024-12-25,13:59-14:03,海上保安庁,anomaly,dw+steam,硫黄山中央火口にごく少量の白色噴気を認めた。 北岸の船見岬付近及び南岸の三ツ石付近の海岸の一部に少量の青白色の変色水域を認めた。,A very small amount of white steam was seen in the central crater of Iwo-yama. Small amounts of pale blue-white discoloured water were seen along parts of the shore near Funami-misaki on the north coast and near Mitsuishi on the south coast.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2025-05-14,13:33-13:37,海上保安庁,none,,硫黄山は雲により観測できなかった。 特異事象は認められなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2025-08-13,03:03,海上保安庁,none,,特異事象は認められなかった。,,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2025-12-17,13:04-13:09,海上保安庁,anomaly,dw,硫黄山山頂に特異事象は認められなかった。 北岸の船見岬付近で少量の茶褐色、乳白色の変色水を認めた。,Nothing unusual at the summit of Iwo-yama. Small amounts of brown and milky-white discoloured water were seen near Funami-misaki on the north coast.,2026-11-14
+CAL314,kaiyo16-2.htm,伊豆鳥島,Izu-Torishima,summit,CAL314-A,2026-09-17,14:36-14:45,海上保安庁,anomaly,dw,硫黄山山頂に特異事象は認められなかった。 島の南岸の一部に薄い青白色の変色水を認めた。,Nothing unusual at the summit of Iwo-yama. Pale blue-white discoloured water was seen along part of the island's south coast.,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2013-03-26,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2013-06-20,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2014-10-17,15:37-15:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2015-08-17,12:22-12:33,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2016-03-29,13:25-13:27,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2016-12-24,14:35-14:38,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2017-03-24,13:20-13:21,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2017-06-28,15:02-15:06,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2017-12-11,13:38-13:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2018-04-27,09:16,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2018-07-18,13:45-13:53,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2019-01-29,13:54-13:56,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2019-11-19,14:42-14:48,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2021-06-08,14:36-14:39,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2021-07-09,13:39-13:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2021-08-05,14:00-14:01,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2022-07-11,13:33-13:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2024-12-26,14:59-15:01,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2025-08-14,15:01-15:02,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2025-12-18,14:43-14:46,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL318,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,CAL318-A,2026-06-15,14:25-14:26,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2013-11-15,,第十管区海上保安本部,anomaly,dw,島の接合部の北側の海岸線に沿って約200mの青白色の変色水域を確認した。,Pale blue-white discoloured water about 200 m long was seen along the shore north of the island's junction.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2014-01-27,,海上保安庁,anomaly,dw,島の接合部の南側の海岸線に沿って約200mの薄い褐色の変色水域を確認した。火口付近に噴気・噴煙等を認めず。,Pale brown discoloured water about 200 m long was seen along the shore south of the island's junction. No steam or plume was seen near the crater.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2014-01-28,,海上保安庁,anomaly,dw,島の接合部の南側の海岸線に沿って約200ｍ、南側の海岸線に沿って約400ｍの薄い褐色の変色水域を確認した。 東峰火口付近及び西峰山頂付近に噴気・噴煙等を認めず。熱計測の結果特異事象なし。,"Pale brown discoloured water was seen along the shore south of the island's junction for about 200 m and along the south shore for about 400 m. No steam or plume was seen near the East Peak crater or the West Peak summit, and the thermal measurement showed nothing unusual.",2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2014-05-25,12:17-12:22,海上保安庁,anomaly,dw+thermal,熱計測では、東峰火口内の南西側に32.8℃の周辺より約10℃高温の場所を確認した。 西峯と東峰の接合部南側の海岸に沿って、幅約150ｍで黄緑色の変色水域が分布している。,"Thermal measurement found a spot of 32.8 °C, about 10 °C hotter than its surroundings, on the south-west side of the East Peak crater. Yellow-green discoloured water about 150 m wide lay along the shore south of the junction of the West and East Peaks.",2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2014-05-27,11:46-11:56,海上保安庁,anomaly,dw,西峯と東峰の接合部の海岸に沿って、幅約50～150ｍで黄緑色の変色水域が分布している。 横当島北東にある上ノ根島及び付近海域に特異事象を認められず。,"Yellow-green discoloured water about 50-150 m wide lay along the shore at the junction of the West and East Peaks. Nothing unusual was seen at Kaminone-jima, north-east of Yokoate-jima, or in the sea around it.",2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2014-07-25,13:30-13:34,第十管区海上保安本部,anomaly,dw,東峰の陥没火口内には、噴気・噴煙等の特異事象は認められず。西峰と東峰の接合部南側の海岸に沿って、幅約100ｍで黄緑色の変色水域が分布している。,"No steam, plume or other phenomenon in the collapse crater of the East Peak. Yellow-green discoloured water about 100 m wide lay along the shore south of the junction of the West and East Peaks.",2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2015-07-29,,海上保安庁,anomaly,dw,"横当島中央部の南岸から南東方向へ幅約30ｍ､長さ約1,000ｍの帯状で黄緑色の変色水域が分布していた。火口付近に噴気・噴煙等を認められなかった。","Yellow-green discoloured water extended in a band about 30 m wide and 1,000 m long south-east from the south shore of central Yokoate-jima. No steam or plume was seen near the craters.",2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2016-02-26,12:34-12:48,第十管区海上保安本部,anomaly,dw,東峰の火口には特異事象なし。 東峰と西峰の接合部付近の南岸に幅約150ｍ、南へ長さ約150ｍで黄緑色の変色水域が分布していた。また、接合部付近の北岸にも幅約150ｍ、北へ長さ約100ｍで薄い黄緑色の変色水域が分布していた。,"Nothing unusual in the East Peak crater. Yellow-green discoloured water about 150 m wide extended about 150 m south from the south shore near the junction of the East and West Peaks, and pale yellow-green discoloured water about 150 m wide extended about 100 m north from the north shore near the junction.",2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2017-01-14,10:22-10:34,海上保安庁,anomaly,dw,東峰の火口に噴気等の放出は認められなかった。 東峰と西峰の接合部付近の南岸の海岸線に沿って幅約150ｍで黄緑色の変色水域が分布していた。,No steam was emitted from the East Peak crater. Yellow-green discoloured water about 150 m wide lay along the south shore near the junction of the East and West Peaks.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2017-07-12,13:22-13:54,第十管区海上保安本部,none,,東峰及び西峰の火口内は、雲のため確認できなかった。 東峰と西峰の接合部付近や島の周辺に変色水域は認められなかった。,,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2018-03-12,11:50-12:00,海上保安庁,anomaly,dw,東峰と西峰の接合部の南側付近に緑色の変色水域が幅約100m、長さ約100mで分布していた。 山頂付近は雲で視認できなかった。,Green discoloured water about 100 m wide and 100 m long lay near the south side of the junction of the East and West Peaks. The summit area was hidden by cloud.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2018-07-09,12:21-12:54,第十管区海上保安本部,anomaly,dw,"東峰の火口には噴気等の放出は認められなかった。 東峰と西峰の接合部南岸の海岸線に沿って幅約1,000ｍ、長さ100～200ｍで薄い黄緑色の変色水域が分布していた。東峰東岸の２箇所に北からそれぞれ幅約200ｍ、長さ約100ｍで褐色の変色水域が、幅約200ｍ、長さ約100ｍで薄い黄緑色の変色水域が分布していた。","No steam was emitted from the East Peak crater. Pale yellow-green discoloured water about 1,000 m wide and 100-200 m long lay along the south shore of the junction of the East and West Peaks; at two places on the East Peak's east shore lay, from the north, brown discoloured water about 200 m wide and 100 m long and pale yellow-green discoloured water about 200 m wide and 100 m long.",2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2019-11-25,11:51頃,第十管区海上保安本部,anomaly,dw,島の接合部南側付近に黄緑色の変色水域が幅約50m、長さ約200mで分布していた。,Yellow-green discoloured water about 50 m wide and 200 m long lay near the south side of the island's junction.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2020-09-29,12:45頃,第十管区海上保安本部,anomaly,dw,島の接合部南側付近に黄緑色の変色水域が幅約70ｍ、長さ約100ｍで分布していた。,Yellow-green discoloured water about 70 m wide and 100 m long lay near the south side of the island's junction.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2020-12-17,13:08頃,第十管区海上保安本部,anomaly,dw,島の接合部南側付近に黄緑色の変色水域が分布していた。,Yellow-green discoloured water lay near the south side of the island's junction.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2021-10-29,13:18頃,第十管区海上保安本部,none,,変色水域等の特異事象は認められなかった。,,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2022-03-15,13:30-13:46,第十管区海上保安本部,anomaly,dw,陥没火口内からの噴気は認められなかった。 島の接合部付近に黄緑色の変色水が分布していた。,No steam from the collapse crater was seen. Yellow-green discoloured water lay near the island's junction.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2022-11-06,12:23-12:30 12:34-12:44,海上保安庁,anomaly,dw,島接合部の南北に、岸に沿って黄緑色の変色水が分布していた。 東峰火山の南岸及び東岸に希薄な黄褐色の変色水域が点在していた。,"Yellow-green discoloured water lay along the shore north and south of the island's junction, and faint yellowish-brown discoloured water was scattered along the south and east shores of the East Peak volcano.",2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2023-02-14,13:16-13:20,第十管区海上保安本部,anomaly,dw,島接合部の南北に、黄緑色の変色水が分布していた。,Yellow-green discoloured water lay north and south of the island's junction.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2023-03-18,13:28-13:41,第十管区海上保安本部,anomaly,dw,島接合部の南北に、岸に沿って黄緑色の変色水が分布していた。 東峰火口に顕著な高温部はみられなかった。,Yellow-green discoloured water lay along the shore north and south of the island's junction. No notable hot area was seen in the East Peak crater.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2023-05-10,12:53-13:03,第十管区海上保安本部,anomaly,dw,横当島の島接合部の南北に、うすい緑色の変色水が分布していた。,Pale green discoloured water lay north and south of the junction of Yokoate-jima.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2025-01-20,13:11-13:21,第十管区海上保安本部,anomaly,dw,島接合部の南北に黄緑色の変色水域を認めた。 東峰沿岸の一部に薄い緑色の変色水域を認めた。 東峰火口に特異事象は認められなかった。,Yellow-green discoloured water was seen north and south of the island's junction and pale green discoloured water along part of the East Peak's coast. Nothing unusual was seen in the East Peak crater.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2025-07-09,14:08-14:16,第十管区海上保安本部,anomaly,dw,島接合部南側に黄褐色～緑色の変色水が分布していた。,Yellowish-brown to green discoloured water lay south of the island's junction.,2026-11-14
+CAL507,kaiyo35-2.htm,横当島,Yokoate-jima,summit,CAL507-A,2026-07-06/2026-07-07,11:47-11:56 12:52-12:53,第十管区海上保安本部,none,,特異事象は認められなかった。,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2013-03-25,,海上保安庁,none,,"ベヨネース列岩, 2013年3月25日，7月1日，変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2013-03-25,,海上保安庁,none,,"明神礁, 2013年3月25日，7月1日 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2013-07-01,,海上保安庁,none,,"ベヨネース列岩, 2013年3月25日，7月1日，変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2013-07-01,,海上保安庁,none,,"明神礁, 2013年3月25日，7月1日 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2014-10-15,12:02,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2014-10-15,12:11,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2015-03-24,13:57,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2015-03-24,13:56,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2015-08-18,14:05-14:15,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2015-08-18,14:05,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2015-12-05,12:30-12:40,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2015-12-06,11:50-12:00,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2015-12-22,16:05-16:10,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2016-02-03,11:15-11:25,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2016-03-04,12:43-12:45,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2016-03-29,12:07-12:10,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2016-10-06,11:21-11:23,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2016-10-06,11:21-11:23,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2016-11-25,15:02-15:08,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2016-11-25,15:02-15:08,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2016-12-24,13:10-13:16,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2016-12-24,13:10-13:16,海上保安庁,none,,"明神礁, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-03-14,15:19-15:27,海上保安庁,anomaly,dw,明神礁に直径約50ｍでごく薄い青白色の円形の変色水を認めた.,A circular patch of very pale blue-white discoloured water about 50 m across was seen at Myojinsho.,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2017-03-24,11:40-11:58,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-03-24,11:44-11:58 16:33-17:00,海上保安庁,anomaly,dw+bubbles,"明神礁, 北緯31度55分、東経140度02分(概位)を湧出点とする直径約30ｍの円形で薄い黄緑色の変色水域を認めた.16:33～17:00の間は天候状況が悪く、変色水域等の特異事象は視認できなかった.","A circular patch of pale yellow-green discoloured water about 30 m across, with its upwelling point at about 31°55'N 140°02'E, was seen at Myojinsho. From 16:33 to 17:00 the weather was poor and no discoloured water or other phenomena could be seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-03-25,11:02-14:10,海上保安庁,anomaly,dw+bubbles,"明神礁, 北緯31度55.2分、東経140度01.2分で黄緑色の変色水の湧出を認めた.変色水域は直径約200～約300ｍの円形であったが、その後風浪により拡散し、約１時間後にはほぼ消失した.約３時間の調査中、変色水の湧出は１回のみ発生した.","Yellow-green discoloured water welled up at 31°55.2'N 140°01.2'E at Myojinsho. The patch was circular, about 200-300 m across, then dispersed in wind and waves and had almost gone about an hour later; during the three-hour survey the welling-up happened only once.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-04-03,13:28-13:29,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-04-04,13:57-14:07,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-04-10,11:55-12:00,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-04-13,13:20-13:30,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-04-20,12:50-12:53,第三管区海上保安本部,anomaly,bubbles+thermal,"明神礁, 北緯31°55.0′、東経140°1.5′（概位）の海水面に気泡を認めた.赤外線観測によると、気泡が確認された箇所の海水面は半径約20ｍの範囲で周辺に比べて低温であった.変色水、浮遊物は認めず.","Bubbles were seen on the sea surface at about 31°55.0'N 140°1.5'E at Myojinsho; by infrared, the sea surface where the bubbles were was colder than its surroundings over a radius of about 20 m. No discoloured water or floating matter was seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-04-21,15:10-15:20,海上保安庁,anomaly,bubbles+thermal,"明神礁, 北緯31°55.0′、東経140°1.4′（概位）の海水面に気泡を認めた.赤外線観測によると、気泡が確認された箇所の海水面は周辺に比べて低温であった.変色水、浮遊物は認めず.","Bubbles were seen on the sea surface at about 31°55.0'N 140°1.4'E at Myojinsho; by infrared, the sea surface where the bubbles were was colder than its surroundings. No discoloured water or floating matter was seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-04-27,15:51-16:05,海上保安庁,anomaly,bubbles+thermal,"明神礁, 海水面に気泡を認めた。赤外線画像によると、気泡が認められる箇所には、周辺よりも低温部が4ヶ所認められ、中でも顕著な2ヶ所は、概位北緯31°55.0′、東経140°01.8′と北緯31°55.1′、東経140°01.7′ に直径30～50ｍで分布していた.変色水は認めず.","Bubbles were seen on the sea surface at Myojinsho. The infrared image showed four spots colder than their surroundings where the bubbles were; the two most marked, 30-50 m across, were at about 31°55.0'N 140°01.8'E and 31°55.1'N 140°01.7'E. No discoloured water was seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-05-02,15:00-15:10,海上保安庁,anomaly,dw+bubbles,"明神礁, 北緯31度54.5分、東経140度01.5分（概位）に変色水と気泡を認めた。変色水は薄い青白色で直径約30ｍに分布し、気泡は直径約300ｍに分布していた.浮遊物は認めず.","Discoloured water and bubbles were seen at about 31°54.5'N 140°01.5'E at Myojinsho: the discoloured water was pale blue-white and about 30 m across, the bubbles spread over about 300 m. No floating matter was seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-05-08,12:45-12:55,第三管区海上保安本部,anomaly,bubbles+thermal,"明神礁, 海水面に気泡を認めた。赤外線画像によると、気泡が確認された箇所の海水面は周辺に比べて低温であった.変色水、浮遊物は認めず.","Bubbles were seen on the sea surface at Myojinsho; by infrared image, the sea surface where the bubbles were was colder than its surroundings. No discoloured water or floating matter was seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-06-05,15:22-15:36,第三管区海上保安本部,anomaly,thermal,"明神礁, 赤外線観測により、概位北緯31°55.1′、東経140°01.3′に周辺よりも低温部を2カ所認めた.変色水、気泡、浮遊物等は認めず．","By infrared, two spots colder than their surroundings were found at about 31°55.1'N 140°01.3'E at Myojinsho. No discoloured water, bubbles or floating matter were seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-06-27,14:15-14:23,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2017-06-28,16:38-16:47,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-06-28,16:43-16:47,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-06-29,15:55-16:01,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-07-11,12:45-12:56,第三管区海上保安本部,anomaly,dw+bubbles+thermal,"明神礁, 北緯31度55.2分、東経140度01.4分（概位）周辺に気泡とごく薄い青白色の変色水を認めた.赤外線観測によると、海水面の低温部が北緯31度55.3分、東経140度01.4分（概位）から北東方向に長さ１km、幅100ｍの範囲にわたって斑点状に分布していた.浮遊物、気泡等は認めず.","Bubbles and very pale blue-white discoloured water were seen around about 31°55.2'N 140°01.4'E at Myojinsho. By infrared, cold patches of sea surface extended north-east from about 31°55.3'N 140°01.4'E over about 1 km by 100 m. No floating matter or bubbles were seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-07-31,15:06-15:11,第三管区海上保安本部,anomaly,bubbles+thermal,"明神礁, 北緯31度54.8分、東経140度01.6分（概位）周辺に気泡を認めた.赤外線観測によると、北緯31度54.9分、東経140度01.5分（概位）周辺の海水面に周囲より低温の部分が斑点状に分布していた.浮遊物、変色水等は認めず.","Bubbles were seen around about 31°54.8'N 140°01.6'E at Myojinsho; by infrared, patches of sea surface colder than their surroundings lay around about 31°54.9'N 140°01.5'E. No floating matter or discoloured water was seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-08-11,14:57-15:07,第三管区海上保安本部,anomaly,bubbles+thermal,"明神礁, 北緯31度54.8分、東経140度2.0分（概位）周辺の海水面に気泡を認めた.赤外線観測によると、その部分の海水面は周囲より低温で、低温部は３カ所、東西方向へ斑点状に分布していた.浮遊物、変色水等は認めず.","Bubbles were seen on the sea surface around about 31°54.8'N 140°2.0'E at Myojinsho; by infrared, that sea surface was colder than its surroundings, in three cold patches spread east-west. No floating matter or discoloured water was seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-08-24,15:34-15:43,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-09-13,16:06-16:16,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-10-07,15:14-15:24,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-11-14,15:14-15:33,第三管区海上保安本部,anomaly,dw,"明神礁, 北緯31度55.1分、東経140度01.2分（概位）に直径約200ｍの薄い青白色の変色水を視認した.海況が悪く、海水面の気泡、浮遊物や赤外線観測による温度異常等を認めず．","Pale blue-white discoloured water about 200 m across was seen at about 31°55.1'N 140°01.2'E at Myojinsho. The sea was rough; no bubbles, floating matter or temperature anomaly by infrared were seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2017-12-11,12:01-12:12,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2017-12-11,12:01-12:12,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-01-15,15:45-15:55,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-02-05,15:34-15:40,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2018-03-03,13:29-13:30,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-03-03,13:21-13:27,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-03-19,14:41-14:49,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-04-10,15:57-16:01,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-04-19,15:40-15:45,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-05-28,15:05-15:13,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-06-14,15:57-16:03,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2018-07-18,12:04-12:16,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-07-18,12:04-12:16,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2018-07-30,15:57-16:05,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-07-30,15:57-16:05,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-09-28,14:46-14:53,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-10-23,15:15-15:20,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2018-12-24,16:11-16:14,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2019-01-29,12:30-12:35,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2019-01-29,12:36-12:39,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2019-01-30,14:32-14:33,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2019-01-30,14:26-14:31,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2019-02-07,12:44-12:58,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2019-07-12,15:19-15:21,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2019-08-14,16:30-16:41,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2019-10-15,15:00-15:04,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2019-11-19,16:20-16:23,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2019-11-19,16:20-16:23,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2020-01-17,15:30-15:36,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-01-17,15:30-15:36,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-02-04,15:49-15:54,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-02-17,15:53-15:58,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-03-09,15:28-15:33,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-03-15,14:50-15:03,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-05-18,15:05-15:08,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2020-06-19,16:05-16:13,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-06-19,16:05-16:13,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2020-08-19,15:35-15:45,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-08-19,15:35-15:45,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2020-10-27,15:40-15:50,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-10-27,15:40-15:50,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2020-11-24,15:27-15:36,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-11-24,15:27-15:36,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2020-12-07,15:38-15:41,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2020-12-07,15:38-15:41,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2021-01-25,15:35-15:42,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2021-01-25,15:35-15:42,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2021-02-23,15:35-15:39,海上保安庁,none,,"ベヨネース列岩, 変色水を認めず，特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2021-02-23,15:35-15:39,海上保安庁,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2021-03-15,15:08,第三管区海上保安本部,none,,"明神礁, 変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2021-06-08,16:01-16:09,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2021-06-08,16:01-16:09,海上保安庁,none,,"変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2021-07-09,15:12-15:21,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2021-07-09,15:12-15:21,海上保安庁,none,,"変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2021-08-05,15:21-15:28,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2021-08-05,15:21-15:28,海上保安庁,none,,"変色水、気泡、海水面の低温部、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2021-10-12,15:47-15:57,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2021-10-12,15:47-15:57,海上保安庁,none,,"変色水、気泡、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2021-11-11,15:25-15:39,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2021-11-11,15:25-15:39,海上保安庁,none,,"変色水、気泡、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2021-12-27,15:42-15:48,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2021-12-27,15:42-15:48,海上保安庁,none,,"変色水、気泡、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2022-01-18,15:01-15:13,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2022-01-18,15:01-15:13,海上保安庁,none,,"変色水、気泡、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2022-03-15,15:48-15:53,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2022-03-15,15:48-15:53,海上保安庁,none,,"変色水、気泡、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2022-04-18,15:40-15:53,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2022-04-18,15:40-15:53,海上保安庁,none,,"変色水、気泡、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2022-07-12,13:31-13:40,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2022-07-12,13:31-13:40,海上保安庁,none,,"変色水、気泡、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2022-08-23,15:14-15:21,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2022-08-23,15:14-15:21,海上保安庁,none,,"変色水、気泡、浮遊物等を認めず,特異事象なし．",,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2023-01-26,13:11-13:16,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2023-01-26,13:18-13:28,海上保安庁,anomaly,dw,明神礁付近において、直径約100mの薄い黄緑色の変色水を認めた． 気泡及び付近に浮遊物は認めなかった. 温度異常も認めなかった.,"Pale yellow-green discoloured water about 100 m across was seen near Myojinsho. No bubbles, nearby floating matter or temperature anomaly were seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2023-02-17,12:18-12:23,第三管区海上保安本部,anomaly,dw,明神礁付近において、直径約600mの薄い黄緑色の変色水を認めた.そこから南方向に約2kmにわたって帯状に変色水の分布を認めた. 気泡及び付近に浮遊物は認めなかった.,"Pale yellow-green discoloured water about 600 m across was seen near Myojinsho, with a band of discoloured water extending about 2 km south from it. No bubbles or nearby floating matter were seen.",2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2023-05-11,15:22-15:29,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2023-05-11,15:22-15:29,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2023-09-20,15:15-15:22,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2023-09-20,15:15-15:22,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2023-10-04,15:52-15:57,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2023-10-04,15:52-15:57,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2024-05-06,12:53-13:01,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2024-05-06,13:12-13:16,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2024-07-18,13:03-13:07,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2024-07-18,13:03-13:07,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2024-12-25,13:25-13:31,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2024-12-25,13:25-13:31,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2025-03-12,15:32-15:42,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2025-03-12,15:32-15:42,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2025-04-11,12:02-12:13,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2025-04-11,12:02-12:13,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2025-05-14,12:59-13:03,海上保安庁,none,,変色水を認めず，特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2025-05-14,12:59-13:03,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2025-08-13,01:52,海上保安庁,none,,特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2025-09-30,15:04-15:11,海上保安庁,none,,特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2025-09-30,15:04-15:11,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2025-10-23,15:03-15:08,海上保安庁,none,,特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2025-10-23,15:03-15:08,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2025-12-17,12:35-12:40,海上保安庁,none,,特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2025-12-17,12:35-12:40,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2026-02-26,12:13-12:17,海上保安庁,none,,特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2026-02-26,12:13-12:17,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2026-04-16,15:24-15:30,海上保安庁,none,,特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2026-04-16,15:24-15:30,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2026-08-17,12:45,海上保安庁,none,,特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,ベヨネース列岩,Bayonnaise Rocks,nearby,GVP284070-W,2026-09-17,15:15-15:24,海上保安庁,none,,特異事象なし．,,2026-11-14
+GVP284070,kaiyo14-2.htm,明神礁,Myojinsho,summit,GVP284070-A GVP284070-W,2026-09-17,15:15-15:24,海上保安庁,none,,変色水域、気泡、浮遊物等の特異事象は認められなかった.,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2013-03-25,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2013-03-25,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2013-07-01,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2014-03-24,12:10-:12:15,海上保安庁,none,,変色水域等の特異事象なし,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2014-03-24,12:10-12:15,海上保安庁,none,,変色水域等の特異事象なし,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2014-10-15,12:25,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2014-10-15,12:29-12:35,海上保安庁,anomaly,dw,須美寿島の北西側と南東側に青白色の変色水域を認めた。,Pale blue-white discoloured water was seen north-west and south-east of Sumisujima.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2015-05-03,07:17-07:20,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2015-05-03,07:17-07:20,第三管区海上保安本部,none,,火山性変色水域等の特異事象は認められなかった。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2015-08-18,,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2015-10-13,12:22-12:25,海上保安庁,anomaly,dw,須美寿島から北東方向に幅約100ｍ、長さ約300ｍの帯状に分布する青白色の変色水域と、須美寿島から南東方向に幅約100ｍ、長さ約500ｍの帯状に分布する青白色の変色水域をそれぞれ確認した。,"Two bands of pale blue-white discoloured water were seen: one about 100 m wide and 300 m long running north-east from Sumisujima, the other about 100 m wide and 500 m long running south-east from it.",2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2016-03-04,12:50-12:51,海上保安庁,anomaly,dw,須美寿島南岸から帯状で幅約50ｍ、南東方向へ長さ約500ｍの薄い黄緑色の変色水域が分布していた。,Pale yellow-green discoloured water extended from the south shore of Sumisujima in a band about 50 m wide and about 500 m long to the south-east.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2016-03-29,12:14-12:19,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2016-03-29,12:14-12:19,海上保安庁,anomaly,dw,南東岸から北東へ向けて帯状で長さ約250ｍ、幅約150ｍの薄い青白色の変色水域を確認した。,Pale blue-white discoloured water was seen in a band about 250 m long and 150 m wide running north-east from the south-east shore.,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2016-09-15,,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2016-10-06,11:23-11:27,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2016-11-25,14:50-14:55,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2016-11-25,14:50-14:55,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2016-12-24,13:21-13:23,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2016-12-24,13:21-13:23,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2017-03-14,15:00-15:09,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2017-03-14,15:00-15:09,海上保安庁,anomaly,dw,須美寿島南端から南南西方向に幅100ｍ、長さ300ｍで青白色の変色水域が分布していた。,Pale blue-white discoloured water 100 m wide and 300 m long extended south-south-west from the south end of Sumisujima.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2017-03-24,12:07-12:08,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2017-03-24,12:07-12:08,海上保安庁,anomaly,dw,須美寿島の南西海岸から幅約50ｍ、長さ約250ｍの薄い青白色の変色水域が分布していた。,Pale blue-white discoloured water about 50 m wide and 250 m long extended from the south-west coast of Sumisujima.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2017-12-11,,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2017-12-11,,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2018-03-03,13:38,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2018-07-18,12:21-12:29,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2018-07-18,12:21-12:29,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2019-01-29,12:45,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2019-01-29,12:46,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2021-06-08,15:49-15:54,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2021-06-08,15:49-15:54,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2021-07-09,15:04-15:06,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2021-07-09,15:04-15:06,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2021-08-05,15:09-15:16,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2021-08-05,15:09-15:16,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2022-07-11,12:04-12:08,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2022-07-11,12:09-12:14,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2023-01-26,12:59-13:00,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2023-01-26,12:50-12:56,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2023-09-20,15:02-15:07,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2023-10-20,12:16,海上保安庁,anomaly,fl,須美寿島の西側に幅約10ｍ、長さ約300ｍ、南側に少量（長さ等未計測）のやや赤みがかった灰色の浮遊物を認めた。,"Slightly reddish grey floating matter was seen west of Sumisujima, about 10 m wide and 300 m long, and in a small amount (not measured) to the south.",2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2024-04-20,11:58-12:00,海上保安庁,none,,島の西側からのみ観測を実施した。特異事象は認められなかった。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2024-05-06,12:35-12:41,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2024-07-18,13:16-13:25,海上保安庁,anomaly,dw,東岸から約300ｍにかけて茶褐色～黄緑色の変色水域を認めた。,Brown to yellow-green discoloured water was seen extending about 300 m from the east shore.,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2024-08-22,13:20,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2024-09-18,14:42-14:56,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2024-09-18,14:42-14:56,海上保安庁,anomaly,dw+fl,"須美寿島の北岸より北西約1,800ｍにかけて薄い青白色の変色水域を認めた。 須美寿島の西岸及び変色水に沿って灰白色のごく少量の浮遊物を認めた。","Pale blue-white discoloured water was seen extending about 1,800 m north-west from the north shore of Sumisujima, and a very small amount of greyish-white floating matter along the west shore of Sumisujima and along the discoloured water.",2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2024-09-24,15:56-13:54,海上保安庁,anomaly,dw,須美寿島の西岸に薄い緑褐色の変色水域を認めた。,Pale greenish-brown discoloured water was seen on the west shore of Sumisujima.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2024-10-22,14:55-15:10,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2024-10-22,14:55-15:10,海上保安庁,anomaly,dw,須美寿島の西岸に希薄な緑色で小規模な変色水域を認めた。,A small patch of faint green discoloured water was seen on the west shore of Sumisujima.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2024-11-27,14:59-15:09,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2024-11-27,14:59-15:09,海上保安庁,anomaly,dw,須美寿島の北岸から北西側約400mにかけて青白色の変色水を認めた。浮遊物は認められなかった。,Pale blue-white discoloured water was seen extending about 400 m north-west from the north shore of Sumisujima. No floating matter was seen.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2024-12-25,13:38-13:44,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2024-12-25,13:38-13:44,海上保安庁,anomaly,dw,南岸から南東側へ約300ｍにかけて黄色味がかった乳白色の変色水域を認めた。,Yellowish milky-white discoloured water was seen extending about 300 m south-east from the south shore.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2025-01-27,15:36-15:55,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2025-01-27,15:36-15:55,海上保安庁,anomaly,dw,須美寿島の南岸～西岸～北岸にかけて青白色の変色水を認めた。,Pale blue-white discoloured water was seen from the south shore round the west shore to the north shore of Sumisujima.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2025-02-13,16:00-16:08,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2025-02-13,16:00-16:08,海上保安庁,none,,噴火や浮遊物は認められなかった。 波浪による砕け波の影響で、変色水の有無は不明。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2025-03-12,15:20-15:25,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2025-03-12,15:20-15:25,海上保安庁,anomaly,dw,西岸から西側約300ｍにかけて薄い青白色の変色水域を認めた。,Pale blue-white discoloured water was seen extending about 300 m west from the west shore.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2025-04-11,12:20-12:29,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2025-04-11,12:20-12:29,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2025-05-14,13:11-13:18,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2025-05-14,13:11-13:18,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2025-08-13,02:10,海上保安庁,none,,特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2025-09-30,14:46-14:56,海上保安庁,anomaly,dw,南岸から西側約1800ｍにかけて帯状に黄白色から青白色の変色水域を認めた。,"Yellowish-white to pale blue-white discoloured water was seen in a band extending about 1,800 m west from the south shore.",2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2025-10-23,14:51-14:58,海上保安庁,anomaly,dw,南西岸から西側約400ｍにかけて薄い黄緑色の変色水域を認めた。,Pale yellow-green discoloured water was seen extending about 400 m west from the south-west shore.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2025-12-17,12:47-12:53,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2025-12-17,12:47-12:53,海上保安庁,anomaly,dw,南岸より南側約600mにわたり黄白色の変色水を認めた。,Yellowish-white discoloured water was seen extending about 600 m south from the south shore.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2026-01-29,14:50-14:58,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2026-01-29,14:50-14:58,海上保安庁,not_visible,,波浪による砕け波の影響で、変色水の有無は不明。,,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2026-02-26,12:23-12:29,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2026-02-26,12:23-12:29,海上保安庁,anomaly,dw,西岸より南西側へ約600mにわたり、薄い青白色の変色水を認めた。,Pale blue-white discoloured water was seen extending about 600 m south-west from the west shore.,2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2026-04-16,15:08-15:13,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2026-04-16,15:08-15:13,海上保安庁,anomaly,dw,西岸より南西側へ約1000mにわたり、青白色の変色水を認めた。,"Pale blue-white discoloured water was seen extending about 1,000 m south-west from the west shore.",2026-11-14
+GVP284080,kaiyo15-2.htm,白根,Shirane,summit,GVP284080-A GVP284080-W,2026-09-17,14:58-15:06,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284080,kaiyo15-2.htm,須美寿島,Sumisujima,summit,GVP284080-B GVP284080-W,2026-09-17,14:58-15:06,海上保安庁,anomaly,dw,西岸より西側へ約500mにわたり、薄い青白色の変色水を認めた。,Pale blue-white discoloured water was seen extending about 500 m west from the west shore.,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2013-03-26,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2013-06-20,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2014-10-17,15:37-15:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2015-08-17,12:22-12:33,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2016-03-29,13:25-13:27,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2016-12-24,14:35-14:38,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2017-03-24,13:20-13:21,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2017-06-28,15:02-15:06,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2017-12-11,13:38-13:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2018-04-27,09:16,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2018-07-18,13:45-13:53,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2019-01-29,13:54-13:56,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2019-11-19,14:42-14:48,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2021-06-08,14:36-14:39,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2021-07-09,13:39-13:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2021-08-05,14:00-14:01,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2022-07-11,13:33-13:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2024-12-26,14:59-15:01,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2025-08-14,15:01-15:02,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2025-12-18,14:43-14:46,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284097,kaiyo19-2.htm,海形海山,Kaikata Seamount,summit,GVP284097-A,2026-06-15,14:25-14:26,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2013-03-08,11:00頃,海上自衛隊,none,,変色水を認めず。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2013-03-26,13:57-13:50,海上保安庁,none,,変色水等の特異事象なし．,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2013-04-10,10:40,海上自衛隊,none,,特異事象なし．,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2013-06-30,13:21-13:27,海上保安庁,none,,変色水等の特異事象なし．,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2013-09-27,13:08,海上自衛隊,none,,特異事象なし．,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2013-12-16,10:01,海上自衛隊,none,,特異事象なし．,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2014-04-15,10:50,海上自衛隊,none,,特異事象なし．,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2014-06-11,11:30,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2014-09-12,10:55,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2014-10-17,15:27-15:29,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2014-12-26,8:54,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2015-03-03,9:45,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2015-08-17,12:40-12:42,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2016-03-29,13:35-13:39,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2016-12-24,14:45-14:48,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2017-02-09,10:09,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2017-03-07,,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2017-03-24,13:30-13:32,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2017-03-30,,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2017-04-24,10:55,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2017-06-28,14:56-14:59,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2017-07-03,10:50,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2017-10-06,9:46,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2017-12-11,13:51-13:52,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2018-01-27,10:51,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2018-02-24,09:24,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2018-04-27,09:25,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2018-07-18,14:01-14:04,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2019-01-29,14:06,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2019-11-19,14:31-14:33,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2021-06-08,14:27-14:28,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2021-07-09,13:27-13:29,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2021-08-05,13:54-13:56,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2022-07-11,13:49,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2022-08-23,13:49-13:57,海上保安庁,anomaly,dw+fl,海徳海山の東海徳場付近に、直径約100mの若干浮遊物を伴う円型の薄い黄白色の変色水を認めた。,"A circular patch of pale yellowish-white discoloured water about 100 m across, with a little floating matter, was seen near Higashi-Kaitoku-ba of Kaitoku Seamount.",2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2022-08-28,13:00-13:05,第三管区海上保安本部,anomaly,dw+fl,"海徳海山付近に、直径約200mで円型の白色の変色水を複数認めた。 変色水箇所から南東方に幅約200m、長さ約6,000mの浮遊物を認めた。","Several circular patches of white discoloured water about 200 m across were seen near Kaitoku Seamount, and floating matter about 200 m wide and 6,000 m long extended south-east from them.",2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2022-09-16,14:16-14:24,第三管区海上保安本部,anomaly,dw,海徳海山の東海徳場付近に幅約20m、長さ約30ｍの青白色の変色水を認めた。,Pale blue-white discoloured water about 20 m wide and 30 m long was seen near Higashi-Kaitoku-ba of Kaitoku Seamount.,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2022-10-12,13:27-13:37,海上保安庁,anomaly,dw+bubbles,"海徳海山の東海徳場付近に、直径約200ｍの円型の濃厚な黄白色の変色水の湧出を認めた。そこから北方向に約1,200mにわたって変色水の分布を認めた。 浮遊物は認めなかった。","Dense yellowish-white discoloured water was seen welling up in a circle about 200 m across near Higashi-Kaitoku-ba of Kaitoku Seamount, with discoloured water extending about 1,200 m north from there. No floating matter was seen.",2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2022-10-23,13:24-13:26,海上保安庁,anomaly,dw+bubbles,海徳海山の東海徳場付近に、円型の濃厚な黄白色の変色水の湧出を認めた。付近に海流で流れた変色水の分布を認めた。 浮遊物は認めなかった。,"Dense yellowish-white discoloured water was seen welling up in a circle near Higashi-Kaitoku-ba of Kaitoku Seamount, with discoloured water carried by the current nearby. No floating matter was seen.",2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2022-11-22,14:37-14:52,第三管区海上保安本部,anomaly,dw+bubbles,海徳海山の東海徳場付近に、直径約300ｍの円型の濃厚な黄白色の変色水が間欠的に湧出しているのを認めた。そこから南西方向に幅約300m～900m、長さ約5.5kmにわたって変色水が分布していた。 浮遊物は認めなかった。,"Dense yellowish-white discoloured water welled up intermittently in a circle about 300 m across near Higashi-Kaitoku-ba of Kaitoku Seamount; from there discoloured water extended south-west for about 5.5 km, about 300-900 m wide. No floating matter was seen.",2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2022-11-25,13:51-14:04,海上保安庁,anomaly,dw+bubbles,海徳海山の東海徳場付近に、直径約300ｍの円型の濃厚な黄白色の変色水の湧出を認めた。そこから南西方向に幅約1km、長さ約10kmにわたって青白色の変色水の分布を認めた。 浮遊物は認めなかった。,"Dense yellowish-white discoloured water was seen welling up in a circle about 300 m across near Higashi-Kaitoku-ba of Kaitoku Seamount; from there pale blue-white discoloured water extended south-west for about 10 km, about 1 km wide. No floating matter was seen.",2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2023-05-11,13:46-13:50,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2024-11-27,13:30-13:33,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2024-12-26,14:48-14:50,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2025-01-27,14:09-14:11,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2025-02-13,14:40-14:43,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2025-08-14,14:52-14:53,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2025-12-18,14:32-14:33,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284100,kaiyo20-2.htm,海徳海山,Kaitoku Seamount,summit,GVP284100-A GVP284100-B,2026-06-15,14:14-14:16,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2013-03-26,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2013-03-26,,海上保安庁,anomaly,dw,噴火浅根の北側に乳白色の変色水と噴火浅根の南東側に青白色の変色水を認めた。,Milky-white discoloured water was seen north of Funka Asane and pale blue-white discoloured water south-east of it.,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2013-06-30,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2013-06-30,,海上保安庁,none,,噴火浅根に変色水等の特異事象を認めず。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2015-08-17,12:52-13:15,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2016-03-29,13:50-14:03,海上保安庁,anomaly,dw,直径約30ｍ～100ｍの薄い青白色の変色水域を３ヶ所認めた。,Three patches of pale blue-white discoloured water about 30-100 m across were seen.,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2016-12-24,14:54-15:00,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2017-03-24,13:42-13:56,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2017-06-28,14:31-14:38,海上保安庁,anomaly,dw,噴火浅根直上に長さ約50m、幅約50mの薄い青白色の変色水が分布していた。 気泡の湧出は確認できなかった。,Pale blue-white discoloured water about 50 m long and 50 m wide lay directly over Funka Asane. No bubbles were seen.,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2017-12-11,14:04-14:20,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2018-07-18,14:13-14:18,海上保安庁,anomaly,dw,北硫黄島北東部に青白色の変色水域が幅約150m、長さ約300mで分布していた。,Pale blue-white discoloured water about 150 m wide and 300 m long lay off the north-east of Kita-Ioto.,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2018-07-18,14:13-14:18,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2019-01-29,14:15-14:18,海上保安庁,anomaly,dw,東部の石野村北部に緑色の変色水域が幅約100m､長さ約400mで分布していた。,Green discoloured water about 100 m wide and 400 m long lay north of Ishino-mura in the east.,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2019-01-29,14:15-14:18,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2019-11-19,14:12-14:24,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2019-11-19,14:12-14:24,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2021-06-08,14:07-14:11,海上保安庁,anomaly,dw,島の南南西の丸根北部に薄緑色の変色水域が認められた。,"Pale green discoloured water was seen north of Marune, south-south-west of the island.",2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2021-06-08,14:07-14:11,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2021-07-09,13:15-13:23,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2021-07-09,13:15-13:23,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2021-08-05,13:28-13:29,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2021-08-05,13:30-13:34,海上保安庁,anomaly,dw,噴火浅根南側に薄い青白色の変色水域を認めた。,Pale blue-white discoloured water was seen south of Funka Asane.,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2021-11-11,13:49-14:01,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2021-11-11,13:49-14:01,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2021-12-27,13:43-13:49,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2021-12-27,13:43-13:49,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2022-03-15,13:32-13:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2022-03-15,13:32-13:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2022-03-29,13:27-13:41,海上保安庁,none,,変色水等の特異事象なし。島の下半分に火山灰等の堆積はみられなかったが、中腹～山頂部は雲のため確認できなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2022-03-29,13:27-13:41,海上保安庁,none,,噴火、変色水及び浮遊物等の特異事象なし。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2022-04-18,13:29-14:00,海上保安庁,anomaly,dw,島の北岸～西岸に薄い茶褐色及び黄緑色の変色水が分布していた。,Pale brown and yellow-green discoloured water lay from the north shore to the west shore of the island.,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2022-04-18,13:29-14:00,海上保安庁,anomaly,fl,変色水は認めなかったが、茶褐色の浮遊物を少量認めた。 地形変化を判別できるほど明瞭ではなかったが、山体頂部の浅所を確認した。,"No discoloured water was seen, but a small amount of brown floating matter was. A shallow at the summit of the edifice was seen, though not clearly enough to judge changes of the topography.",2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2022-05-16,13:49-14:25,海上保安庁,none,,山頂部は雲で覆われており確認できなかったが、北硫黄島及び周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2022-05-16,13:49-14:25,海上保安庁,none,,地形変化を判別できるほど明瞭ではなかったが、山体頂部の浅所を認めた。 噴火浅根及び噴火浅根西ノ瀬に変色水などの特異事象を認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2022-06-17,13:51-14:22,海上保安庁,none,,山頂部は雲で覆われており確認できなかったが、北硫黄島及び周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2022-06-17,13:51-14:22,海上保安庁,none,,地形変化を判別できるほど明瞭ではなかったが、山体頂部の浅所を認めた。 噴火浅根及び噴火浅根西ノ瀬に変色水などの特異事象を認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2022-07-11,13:58-14:09,海上保安庁,none,,山頂部は雲で覆われており確認できなかったが、北硫黄島及び周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2022-07-11,13:58-14:09,海上保安庁,none,,山体頂部の浅所を認めた。 噴火浅根及び噴火浅根西ノ瀬の周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2022-08-23,13:33-13:40,海上保安庁,none,,雲がなく、山頂付近も見ることができた。目立つような噴火痕は見当たらなかったが、真上からの調査はできていない。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2022-08-23,13:33-13:40,海上保安庁,none,,山体頂部の浅所を認めた。 噴火浅根及び噴火浅根西ノ瀬の周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2022-11-25,13:35-13:41,海上保安庁,none,,山頂部は雲で覆われており確認できなかったが、北硫黄島及び周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2022-11-25,13:35-13:41,海上保安庁,none,,噴火浅根及び噴火浅根西ノ瀬の周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2023-05-11,13:18-13:37,海上保安庁,none,,山頂部は雲で覆われており確認できなかったが、北硫黄島及び周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2023-05-11,13:18-13:37,海上保安庁,anomaly,dw,噴火浅根付近に長さ約200ｍの青白色、黄白色の変色水を認めた。,Pale blue-white and yellowish-white discoloured water about 200 m long was seen near Funka Asane.,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2023-06-14,13:20-13:36,海上保安庁,anomaly,dw,山頂部は雲で覆われており確認できなかった。 北東岸の一部に薄い黄白色の変色水を認めた。,The summit was covered by cloud and could not be checked. Pale yellowish-white discoloured water was seen on part of the north-east shore.,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2023-06-14,13:20-13:36,海上保安庁,anomaly,dw,噴火浅根付近に直径約50ｍの青白色の変色水を認めた.,Pale blue-white discoloured water about 50 m across was seen near Funka Asane.,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2023-09-20,13:20-13:36,海上保安庁,none,,山頂部は雲で覆われており確認できなかったが、北硫黄島及び周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2023-09-20,13:22-13:35,海上保安庁,none,,変色水域等の特異事象なし.,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2024-02-13,14:40-15:10,海上保安庁,none,,変色水域等の特異事象なし.,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2024-12-26,14:29-14:37,海上保安庁,anomaly,dw,西岸の一部でごく小規模な青白色の変色水域を認めた。,A very small patch of pale blue-white discoloured water was seen along part of the west shore.,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2024-12-26,14:29-14:37,海上保安庁,none,,変色水域等の特異事象なし.,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2025-08-14,14:35-14:41,海上保安庁,none,,山頂部は雲で覆われており確認できなかったが、北硫黄島及び周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2025-08-14,14:35-14:41,海上保安庁,none,,変色水域等の特異事象なし.,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2025-12-18,14:13-14:22,海上保安庁,none,,山頂部は雲で覆われており確認できなかったが、北硫黄島及び周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2025-12-18,14:13-14:22,海上保安庁,none,,変色水域等の特異事象なし.,,2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2026-06-15,13:57-14:04,海上保安庁,none,,北硫黄島及び周辺海域に特異事象は認められなかった。,,2026-11-14
+GVP284110,kaiyo21-2.htm,噴火浅根,Funka Asane,summit,GVP284110-A,2026-06-15,13:57-14:04,海上保安庁,anomaly,dw,少量の変色水若しくはガスとみられる青白色の変色域を認めた。,"A small pale blue-white discoloured patch, thought to be discoloured water or gas, was seen.",2026-11-14
+GVP284110,kaiyo21-2.htm,北硫黄島,Kita-Ioto,nearby,GVP284110-A,2026-08-17,14:06-14:07,海上保安庁,anomaly,dw,西側のみから観測を行い、北岸に黄褐色の変色水を認めた。,Observed from the west side only; yellowish-brown discoloured water was seen on the north shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-01-22,14:00頃,第三管区海上保安本部,anomaly,dw+bubbles,湧出点付近から乳白色の変色水を確認した.,Milky-white discoloured water was seen from near the upwelling point.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-03-08,11:00-12:27,海上自衛隊,anomaly,dw+bubbles,湧出点付近から直径約1000m程度の乳白色及び青色の変色水を視認した。,"Milky-white and blue discoloured water about 1,000 m across was seen from near the upwelling point.",2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2013-03-26,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2013-03-26,,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-03-26,15:18-15:25,海上保安庁,anomaly,dw+bubbles,湧出点付近から幅約500m、長約1500m程度の帯状の乳白色、薄青色、薄緑色の変色水を視認した。,"A band of milky-white, pale blue and pale green discoloured water about 500 m wide and 1,500 m long was seen from near the upwelling point.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-04-10,,海上自衛隊,anomaly,dw+bubbles,湧出点（24-17.0N 141-29.1E）を中心に半径約630m程度の範囲に緑色の変色水域を視認した。,Green discoloured water was seen within a radius of about 630 m of the upwelling point (24-17.0N 141-29.1E).,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-04-21,15:10-15:20,第三管区海上保安本部,anomaly,dw,24-17.27N 141-28.8Eにおいて、直径約100mの乳白色の変色水を認めた。,Milky-white discoloured water about 100 m across was seen at 24-17.27N 141-28.8E.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-05-12,14:15,第三管区海上保安本部,anomaly,dw+bubbles,福徳岡ノ場において、湧出点付近に直径約50mで南方向へ400m流出する乳白色の変色水を認めた。軽石等の浮流物を認めず。,"At Fukutoku-Oka-no-Ba, milky-white discoloured water about 50 m across was seen near the upwelling point, flowing 400 m to the south. No floating matter such as pumice was seen.",2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2013-06-29,,海上保安庁,none,,変色水を認めず。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2013-06-29,,海上保安庁,anomaly,dw,南西小島から三星岩の間の南硫黄島西岸に明るい褐色の変色水域を認めた。,Light brown discoloured water was seen on the west shore of Minami-Ioto between Nansei-kojima and Mitsuboshi-iwa.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-06-29,,海上保安庁,none,,変色水等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-07-17,,第三管区海上保安本部,none,,変色水等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-08-21,,気象庁,anomaly,dw,"福徳岡ノ場から西南西方向へ約3.1kmの24°16'21""N141°27'14""E付近において北東方向に伸びる薄青白色の変色水域を観測した。","Pale blue-white discoloured water extending north-east was observed near 24°16'21""N 141°27'14""E, about 3.1 km west-south-west of Fukutoku-Oka-no-Ba.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-08-24,13:00-13:10,第三管区海上保安本部,none,,変色水等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-09-27,14:18,海上自衛隊,anomaly,dw+bubbles,福徳岡ノ場の半径450mの範囲に緑色の変色水と白い泡の噴出を観測した。,Green discoloured water and white froth bursting out were observed within a radius of 450 m at Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-12-16,10:32,海上自衛隊,anomaly,dw,"福徳岡ノ場の噴出点から東方向へ約1,850ｍに伸びる緑色の変色水域を認めた。","Green discoloured water was seen extending about 1,850 m east from the vent of Fukutoku-Oka-no-Ba.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2013-12-28,13:50-13:55,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2014-01-13,14:00-14:10,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2014-04-15,11:14,海上自衛隊,none,,変色水域等の特異事象なし,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2014-04-28,14:10-14:20,第三管区海上保安本部,anomaly,dw,北緯24°17.6′東経141°28.8′付近で直径約150ｍの白濁した薄い緑色の変色水域を確認した。浮流物は認められなかった。,Cloudy-white pale green discoloured water about 150 m across was seen near 24°17.6'N 141°28.8'E. No floating matter was seen.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2014-06-11,12:00,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2014-06-13,,第三管区海上保安本部,anomaly,dw,南硫黄島西側海岸部周辺に変色水域を認めた。,Discoloured water was seen around the west coast of Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2014-06-13,,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2014-06-25,13:50-13:58,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2014-09-12,11:31,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2014-10-17,14:55-14:57,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2014-11-26,13:18,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2014-11-26,13:18,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2014-12-26,9:22,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-01-27,14:10-14:20,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-02-15,13:15-13:20,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-02-18,13:50-13:52,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-03-03,10:12,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-04-14,14:28,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-05-05,,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-05-26,13:20,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2015-08-17,13:54-13:56,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-08-17,13:59-14:02,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-08-23,13:55,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2015-10-18,13:10,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2016-03-07,17:10-17:22,第三管区海上保安本部,anomaly,dw,"長さ約1,000ｍ、幅約200～300ｍの帯状でごく薄い緑色の変色水域を確認した。","Very pale green discoloured water was seen in a band about 1,000 m long and 200-300 m wide.",2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2016-03-29,14:22-14:24,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2016-03-29,14:26-14:35,海上保安庁,none,,変色水域等の特異事象は認められなかった。,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2016-12-24,15:17-15:18,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2016-12-24,15:20-15:23,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2017-02-09,10:41,海上自衛隊,none,,変色水域等の特異事象は認められなかった。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2017-03-07,,海上自衛隊,anomaly,dw,４ヶ所斑点状に半径500ｍで薄い緑色の変色水域が分布していた。,"Pale green discoloured water lay in four patches, each with a radius of 500 m.",2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2017-03-24,14:19-14:20,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2017-03-24,14:23-14:37,海上保安庁,anomaly,dw,福徳岡ノ場から北東方向へ帯状の長さ約1，000ｍ、幅約30～約50ｍの黄緑色の変色水域が分布していた。,"Yellow-green discoloured water lay in a band about 1,000 m long and about 30-50 m wide running north-east from Fukutoku-Oka-no-Ba.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2017-03-30,,海上自衛隊,anomaly,dw,直径700ｍで薄い緑色の変色水域が分布していた。,Pale green discoloured water about 700 m across was seen.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2017-04-24,11:21,海上自衛隊,none,,変色水域等の特異事象は認められなかった。,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2017-06-28,14:02-14:06,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2017-06-28,13:45-13:55,海上保安庁,anomaly,dw,島の北東端の松江岬先端に幅約100m、幅約300ｍの薄い黄緑色の変色水が分布していた。,Pale yellow-green discoloured water about 100 m by 300 m lay off the tip of Matsue-misaki at the north-east end of the island.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2017-06-28,13:45-13:55,海上保安庁,none,,変色水域等の特異事象は認められなかった,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2017-07-03,11:14,海上自衛隊,none,,変色水域等の特異事象は認められなかった,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2017-10-06,10:15,海上自衛隊,none,,変色水域等の特異事象は認められなかった,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2017-12-11,14:43-14:45,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2017-12-11,14:49-14:58,海上保安庁,anomaly,dw,福徳岡ノ場に、長径約６km、短径約２kmのごく薄い緑色の変色水域が分布していた。なお、変色水の色が薄く、湧出点は特定できなかった。,"Very pale green discoloured water lay at Fukutoku-Oka-no-Ba, about 6 km long and 2 km wide. The colour was so pale that the upwelling point could not be located.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2018-01-27,11:34,海上自衛隊,anomaly,dw,直径約600mで黄緑色の変色水が分布していた。,Yellow-green discoloured water about 600 m across was seen.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2018-02-24,10:06,海上自衛隊,anomaly,dw,"長さ約1,000m、幅約500mで薄い緑色の変色水が分布していた。","Pale green discoloured water about 1,000 m long and 500 m wide was seen.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2018-04-27,09:51,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2018-07-18,14:42-14:46,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2018-07-18,14:49-15:03,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2019-01-29,14:44-14:50,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2019-01-29,14:44-14:50,海上保安庁,anomaly,dw,南硫黄島は全周にわたり薄い黄緑色から黄褐色の変色水域が幅約100～200mで分布していた。,Pale yellow-green to yellowish-brown discoloured water about 100-200 m wide lay all round Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2019-01-29,14:44-14:50,海上保安庁,anomaly,dw,薄い緑色の変色水域が直径約500m～1kmで分布していた。,Pale green discoloured water about 500 m to 1 km across was seen.,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2019-11-19,13:00-13:03,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2019-11-19,13:06-13:16,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2019-11-19,13:06-13:16,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2020-02-04,13:45-13:46,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2020-02-04,13:50-14:03,海上保安庁,anomaly,dw,北岸から西岸にかけて 黄色の変色水が幅約50～100mで分布していた。,Yellow discoloured water about 50-100 m wide lay from the north shore to the west shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2020-02-04,13:50-14:03,海上保安庁,anomaly,dw+bubbles,北緯24度17.1分、東経141度28.9分の湧出点から白っぽい黄緑色の変色水が斑点状に湧出しており、途中から扇形に変化して西方向に約6300mに渡り薄い黄緑色の変色水が分布していた。,"Whitish yellow-green discoloured water welled up in patches from the upwelling point at 24°17.1'N 141°28.9'E, fanning out and spreading westward as pale yellow-green discoloured water for about 6,300 m.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2020-03-15,13:02-13:11,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2020-03-15,13:02-13:11,海上保安庁,anomaly,dw,青白色の変色水域が認められた。,Pale blue-white discoloured water was seen.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2020-04-16,13:45-13:48,第三管区海上保安本部,anomaly,dw,黄緑色の変色水域が認められた。,Yellow-green discoloured water was seen.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2020-04-19,14:18頃,第三管区海上保安本部,anomaly,dw,北緯24度17.6分、東経141度28.6分付近に青白色の変色水域が認められた。,Pale blue-white discoloured water was seen near 24°17.6'N 141°28.6'E.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2020-05-18,12:56-13:09,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2020-05-18,12:56-13:09,第三管区海上保安本部,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2020-06-19,13:32-13:35,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2020-06-19,13:32-13:35,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2021-04-05,13:29-13:37,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-04-05,13:17-13:22,海上保安庁,anomaly,dw,南硫黄島の北西部に黄緑色の変色水域が幅約100ｍで分布していた。三ツ星岩より南側には茶褐色の変色水域が分布していた。,"Yellow-green discoloured water about 100 m wide lay off the north-west of Minami-Ioto, and brown discoloured water south of Mitsuboshi-iwa.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-04-05,13:17-13:22,海上保安庁,anomaly,dw,ごく薄い青色の変色水域が認められた。,Very pale blue discoloured water was seen.,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2021-06-08,13:30-13:42,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-06-08,13:30-13:42,海上保安庁,anomaly,dw,南硫黄島の北西部に黄緑色の変色水域が認められた。,Yellow-green discoloured water was seen off the north-west of Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-06-08,13:30-13:42,海上保安庁,anomaly,dw+bubbles,"湧出点（24-17.1N,141-28.9E）から北方向に長さ約1.3M（約2400m）の帯状の青白色の変色水域が認められた。","A band of pale blue-white discoloured water about 1.3 nautical miles (about 2,400 m) long extended north from the upwelling point (24-17.1N, 141-28.9E).",2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2021-07-09,12:59,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-07-09,12:47-12:58,海上保安庁,anomaly,dw,南硫黄島の北東部に黄緑色の変色水域が認められた。,Yellow-green discoloured water was seen off the north-east of Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-07-09,12:47-12:58,海上保安庁,anomaly,dw+bubbles,"湧出点（24-17.1N,141-28.9E）付近に青白色の変色水域が認められた。","Pale blue-white discoloured water was seen near the upwelling point (24-17.1N, 141-28.9E).",2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2021-08-05,13:06-13:07,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-08-05,12:58-13:02,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-08-05,12:58-13:02,海上保安庁,anomaly,dw+bubbles,"湧出点（24-17.1N,141-28.9E）から南南西方向に青白色の変色水域が認められた。","Pale blue-white discoloured water was seen south-south-west of the upwelling point (24-17.1N, 141-28.9E).",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-08-13,14:50-15:30,第三管区海上保安本部,anomaly,plume+eruption,福徳岡ノ場付近にて噴煙を確認。なお、噴火の規模が大きく接近しての詳細な観測はできなかった。,"An eruption plume was seen near Fukutoku-Oka-no-Ba. The eruption was so large that a close, detailed observation was not possible.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-08-15,12:40-13:10,第三管区海上保安本部,anomaly,fl+eruption+island,直径約1kmの馬蹄型の新島を確認。断続的な噴火が継続。浮遊物が蛇行しながら北西方向に約60km流れていた。,A horseshoe-shaped new island about 1 km across was seen. Intermittent eruptions continued. Floating matter meandered about 60 km to the north-west.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-08-16,13:48-15:10,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-08-16,13:48-15:10,海上保安庁,anomaly,dw+fl+steam+island,昨日確認した南側に開いた馬蹄型の新島は北側が消失して()型に変化していた。()型の中心から水蒸気及び火山ガスの放出が継続していた。観測中に噴火は認められなかった。噴出した軽石等の浮遊物は、蛇行しながら西北西方向に断続的に約100km(最大幅約13km)まで達していた。褐色系の濃厚な変色水域は新島の内外で広範囲に発生していた。,"The horseshoe-shaped new island open to the south, seen the day before, had lost its northern part and become shaped like ( ). Steam and volcanic gas continued to be emitted from the centre of the ( ). No eruption was seen during the observation. Erupted pumice and other floating matter meandered west-north-westward intermittently for about 100 km (up to about 13 km wide). Dense brownish discoloured water was widespread inside and outside the new island.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-08-26,12:43-13:10,海上保安庁,anomaly,dw+island+other,新島の西側はほぼ変化なし、東側は一部を残し海没していた。観測中、噴火は認められなかった。二つの新島に挟まれた火口では海面上に灰色の物質が間欠的に湧出していた。変色水域は茶褐色の分布が広く認められ、西方へ延びていた。,"The western new island was almost unchanged; the eastern one had sunk except for a part. No eruption was seen during the observation. In the crater between the two new islands, grey material welled up intermittently on the sea surface. Brown discoloured water was widespread and extended westward.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-09-12,12:45-13:30,海上保安庁,anomaly,dw,南硫黄島の西岸～南岸に黄緑色の変色水域の分布が認められた。,Yellow-green discoloured water was seen from the west shore to the south shore of Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-09-12,12:45-13:30,海上保安庁,anomaly,dw+island,新島の西側はほぼ変化なし、東側は海没していた。観測中、噴火は認められなかった。新島周辺に黄緑～黄褐色の変色水域の分布が広く認められた。また、新島の東北東約2kmの位置において、新たに直径約2kmの独立した黄緑～黄褐色の変色水域の分布が広く認められた。,"The western new island was almost unchanged and the eastern one had sunk. No eruption was seen during the observation. Yellow-green to yellowish-brown discoloured water was widespread around the new island, and a new separate area of yellow-green to yellowish-brown discoloured water about 2 km across was seen about 2 km east-north-east of the new island.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-10-12,12:43-13:28,海上保安庁,anomaly,dw,南硫黄島のほぼ全周にわたって薄い黄緑色の変色水域の分布が認められた。,Pale yellow-green discoloured water was seen almost all round Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-10-12,12:43-13:28,海上保安庁,anomaly,dw+island,西側の新島は前回調査時（9/12）の1/3程度に縮小していた。 東側の新島は顕著な陸地は確認できなかったが、浅瀬が存在し、波浪礁による白波が確認できた。 西側新島北岸付近及び東側波浪礁北部に茶褐色の変色水が分布していた。 福徳岡ノ場周辺及び福徳岡ノ場から北西方向に約３海里伸びる黄緑色の変色水の分布を認めた。,"The western new island had shrunk to about one third of its size at the previous survey (12 Sep). No clear land of the eastern new island could be seen, but a shoal was there, with white breakers over it. Brown discoloured water lay near the north shore of the western new island and north of the eastern breaker reef; yellow-green discoloured water was seen around Fukutoku-Oka-no-Ba and extending about 3 nautical miles north-west from it.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-11-01,13:56-13:59,第三管区海上保安本部,anomaly,dw+island,新島の台地は前回調査時（10/12）から縮小していた。 新島の南部から青白色の帯状の変色水域を認めた。,The platform of the new island had shrunk since the previous survey (12 Oct). A band of pale blue-white discoloured water was seen from the southern part of the new island.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-11-11,12:36-13:16,海上保安庁,anomaly,dw+fl,南硫黄島の北岸～西岸に黄緑色の変色水域の分布が認められた。また、北岸に軽石とみられる浮遊物が漂着していた。,"Yellow-green discoloured water was seen from the north shore to the west shore of Minami-Ioto, and floating matter thought to be pumice had drifted ashore on the north shore.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-11-11,12:36-13:16,海上保安庁,anomaly,dw+fl+steam+island+bubbles,新島の台地はやや縮小しているものの、前回の調査（11/1）と比較して島の大きさに大きな変化は認められなかった。 新島の北端から立ち上がる白色噴気を確認。また、新島の北側の海面で円形状に湧出する気泡を認めた。 福徳岡ノ場を中心とした直径約3kmの範囲に濃黄緑色の変色水域を認めた。 また、福徳岡ノ場の南東約20km付近にて直径約2kmの黄緑色の変色水域及び軽石と思われる浮遊物を認めた。,"The platform of the new island had shrunk slightly, but the island's size had not changed much since the previous survey (1 Nov). White steam rose from the north end of the new island, and bubbles welled up in a circle on the sea north of it. Dense yellow-green discoloured water covered an area about 3 km across centred on Fukutoku-Oka-no-Ba; about 20 km south-east of Fukutoku-Oka-no-Ba, yellow-green discoloured water about 2 km across and floating matter thought to be pumice were seen.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-11-29,09:17-09:41,第三管区海上保安本部,anomaly,dw+island,前回の調査（11/11）までは確認できた新島の台地が消滅していた。 新島周辺に茶褐色～黄緑色の変色水域を認めた。,"The platform of the new island, still seen up to the previous survey (11 Nov), had disappeared. Brown to yellow-green discoloured water was seen around the new island.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-12-14,13:18-13:30,第三管区海上保安本部,anomaly,dw,南硫黄島の北部及び西部に黄緑色の変色水域の分布が認められた。。,Yellow-green discoloured water was seen off the north and west of Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-12-14,13:18-13:30,第三管区海上保安本部,anomaly,dw+island,前回の調査（11/29）と比較して新島の面積が減少していた。 新島周辺に黄緑色の変色水域を認めた。 新島北北東に青白色の変色水域を認めた。,The new island had shrunk in area since the previous survey (29 Nov). Yellow-green discoloured water was seen around it and pale blue-white discoloured water to its north-north-east.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2021-12-27,12:36-13:13,海上保安庁,anomaly,dw,南硫黄島の沿岸部ほぼ全周において乳白色の変色水の分布を認めた。,Milky-white discoloured water was seen along almost the whole coast of Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2021-12-27,12:36-13:13,海上保安庁,anomaly,dw+island+bubbles,前回の調査（12/14）と比較して、新島は縮小しており、波浪により陸地が見え隠れしている状況であった。 観測中の噴火は認められなかった。 新島の東側から茶褐色の変色水の湧出を認め、同位置から東側約5kmにかけて黄緑色の変色水域を認めた。,"The new island had shrunk since the previous survey (14 Dec), its land appearing and disappearing in the waves. No eruption was seen during the observation. Brown discoloured water welled up on the east side of the island, and yellow-green discoloured water extended about 5 km east from there.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2022-03-15,12:37-12:57,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-03-15,12:37-12:57,海上保安庁,anomaly,dw,"海況は穏やかで、かつての新島付近に波浪礁を認めなかった。 24-17.1N,141-28.9Eの地点を中心に、直径約30mの円型の濃厚な乳白色の変色水域を、その外側の直径約100mの範囲に黄緑色の変色水域の分布を認めた。 福徳岡ノ場から西方向に長さ約3海里の帯状の黄緑色の変色水域の分布を認めた。","The sea was calm and no breaker reef was seen near the former new island. A circular patch of dense milky-white discoloured water about 30 m across centred on 24-17.1N 141-28.9E was surrounded by yellow-green discoloured water about 100 m across, and a band of yellow-green discoloured water about 3 nautical miles long extended west from Fukutoku-Oka-no-Ba.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2022-03-29,12:48-13:04,海上保安庁,anomaly,dw,南硫黄島の北西岸に茶褐色～黄緑色の変色水の分布が認められた。,Brown to yellow-green discoloured water was seen on the north-west shore of Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-03-29,12:48-13:04,海上保安庁,anomaly,dw,海況は穏やかで、かつての新島付近に波浪礁を認めなかった。 福徳岡ノ場の火口直上に円型の乳白色の変色水を認め、そこから西方向へ約9kmに及ぶ黄緑色～緑色の変色水の分布を認めた。,"The sea was calm and no breaker reef was seen near the former new island. Circular milky-white discoloured water was seen directly over the Fukutoku-Oka-no-Ba crater, with yellow-green to green discoloured water extending about 9 km west from it.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2022-04-18,12:36-13:02,海上保安庁,anomaly,dw,南硫黄島のほぼ全周に茶褐色の変色水を認めた。 今までの観測と比較して、変色水の濃さ及び範囲の規模が大きかった。,Brown discoloured water was seen almost all round Minami-Ioto; it was denser and more extensive than in all earlier observations.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-04-18,12:36-13:02,海上保安庁,anomaly,dw+other,海況は穏やかであったが、かつての新島付近において、3/15及び3/29観測では確認できなかった波浪礁を時折認めた。 福徳岡ノ場の火口直上に円型の乳白色～黄緑色の変色水を認めた。,"The sea was calm, but near the former new island a breaker reef, not seen on 15 and 29 Mar, was seen from time to time. Circular milky-white to yellow-green discoloured water was seen directly over the Fukutoku-Oka-no-Ba crater.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2022-05-16,12:53-13:15,海上保安庁,anomaly,dw,南硫黄島の北～西～南岸にかけて黄緑色の変色水が分布していた。 前回4/18観測と比較して変色水の濃さ及び範囲の規模が小さく、前々回3/29観測と同程度であった。,Yellow-green discoloured water lay from the north round the west to the south shore of Minami-Ioto; its density and extent were smaller than on 18 Apr and similar to 29 Mar.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-05-16,12:53-13:15,海上保安庁,anomaly,dw+fl+bubbles,かつての新島付近において、前回4/18観測で確認した波浪礁は認められなかった。 福徳岡ノ場の火口直上に直径約300 mの円形の青白色の変色水が湧出し、そこから東方向へ帯状に約3 kmにわたって黄緑色の変色水が分布していた。 青白色の変色水湧出点付近に、白い浮遊物を認めた。,"Near the former new island, the breaker reef seen on the previous observation (18 Apr) was not seen. Pale blue-white discoloured water welled up in a circle about 300 m across directly over the Fukutoku-Oka-no-Ba crater, from which yellow-green discoloured water extended eastward in a band for about 3 km; white floating matter was seen near the pale blue-white upwelling point.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2022-06-17,13:00-13:42,海上保安庁,anomaly,dw,南岸の一部及び南南西岸～西岸～北岸～南東岸にかけて、黄褐色の変色水が幅約100ｍで分布していた。前回5/16観測と同程度であった。,"Yellowish-brown discoloured water about 100 m wide lay along part of the south shore and from the south-south-west shore round the west and north shores to the south-east shore, similar to the observation of 16 May.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-06-17,13:00-13:42,海上保安庁,anomaly,dw+other,福徳岡ノ場の火口直上に薄い黄緑色の変色水が分布していた。 噴火により形成された島が浸食を受けてできた浅海部がみられた。陸地部分が目視で確認できなくなった3/15観測以降、変色水により海面下の状況が確認できていなかったが、変色水量が減少したために目視が可能となった。 浮遊物や高温域は認めなかった。,"Pale yellow-green discoloured water lay directly over the Fukutoku-Oka-no-Ba crater. Shallows left by the erosion of the island formed in the eruption were seen; since 15 Mar, when no land could be seen any more, discoloured water had hidden the sea bed, but less discoloured water now made it visible. No floating matter or hot area was seen.",2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2022-07-11,14:33-14:35,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-07-11,14:39-14:51,海上保安庁,anomaly,dw,悪天候により詳細な調査はできなかったが、福徳岡ノ場の火口直上付近に黄緑色の変色水域が分布していた。,"Bad weather prevented a detailed survey, but yellow-green discoloured water lay near the area directly over the Fukutoku-Oka-no-Ba crater.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2022-08-23,12:49-13:05,海上保安庁,anomaly,dw+fl,北東岸に薄い茶褐色の変色水を認めた。 福徳岡ノ場から南硫黄島南東方にかけて断続的に軽石様の浮遊物を認めた。なお、航行に支障を及ぼす様な大量かつ大きな浮遊物ではなく、起源の特定はできなかった。,"Pale brown discoloured water was seen on the north-east shore. Pumice-like floating matter was seen intermittently from Fukutoku-Oka-no-Ba to south-east of Minami-Ioto; it was not in amounts or sizes that would hinder navigation, and its origin could not be identified.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-08-23,12:49-13:05,海上保安庁,anomaly,fl+other,福徳岡ノ場の火口を中心に複数箇所、青白色の浅所を認めた。 福徳岡ノ場から南硫黄島南東方にかけて断続的に軽石様の浮遊物を認めた。なお、航行に支障を及ぼす様な大量かつ大きな浮遊物ではなく、起源の特定はできなかった。,"Pale blue-white shallows were seen at several places centred on the Fukutoku-Oka-no-Ba crater. Pumice-like floating matter was seen intermittently from Fukutoku-Oka-no-Ba to south-east of Minami-Ioto; it was not in amounts or sizes that would hinder navigation, and its origin could not be identified.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-09-16,15:07-15:16,海上保安庁,anomaly,other,福徳岡ノ場に波浪礁を認めた。 悪天候により、変色水及び浮遊物は判別できなかった。,A breaker reef was seen at Fukutoku-Oka-no-Ba. Bad weather made it impossible to judge discoloured water or floating matter.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2022-10-12,14:19-14:32,海上保安庁,anomaly,dw,南硫黄島の北西岸に茶褐色～黄緑色の変色水を認めた。,Brown to yellow-green discoloured water was seen on the north-west shore of Minami-Ioto.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-10-12,14:19-14:32,海上保安庁,anomaly,dw,"福徳岡ノ場の火口直上に薄い黄緑色の変色水を認め、そこから西南西方向に幅約20m、長さ約7,400mで帯状に分布していた。","Pale yellow-green discoloured water was seen directly over the Fukutoku-Oka-no-Ba crater, extending west-south-west from there in a band about 20 m wide and 7,400 m long.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2022-11-25,12:47-12:59,海上保安庁,anomaly,dw+fl,南硫黄島の東岸に茶褐色～緑色の変色水を、北西～西岸に薄い褐色の変色水を認めた。 筋状の軽石を福徳岡ノ場から南硫黄島周辺海域にまばらに認めた。なお、船舶の航行に支障ない程度である。,"Brown to green discoloured water was seen on the east shore of Minami-Ioto and pale brown discoloured water from the north-west to the west shore. Streaks of pumice were scattered over the sea from Fukutoku-Oka-no-Ba to around Minami-Ioto, not enough to hinder ships.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2022-11-25,12:47-12:59,海上保安庁,anomaly,dw+fl,福徳岡ノ場の火口直上から南東方向に約8km、 薄い緑色の変色水を認めた。 波浪礁は認めなかった。 筋状の軽石を福徳岡ノ場から南硫黄島周辺海域にまばらに認めた。なお、船舶の航行に支障ない程度である。,"Pale green discoloured water extended about 8 km south-east from directly over the Fukutoku-Oka-no-Ba crater. No breaker reef was seen. Streaks of pumice were scattered over the sea from Fukutoku-Oka-no-Ba to around Minami-Ioto, not enough to hinder ships.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2023-06-14,12:50-13:00,海上保安庁,anomaly,dw,北岸に黄緑色から薄い緑色の変色水を認めた。,Yellow-green to pale green discoloured water was seen on the north shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2023-06-14,12:50-13:00,海上保安庁,anomaly,dw,"波浪礁は認めず、福徳岡ノ場から西方向に長さ約3,000～4,000ｍに渡って流れる薄い緑色の変色水を認めた。","No breaker reef was seen; pale green discoloured water was seen flowing west from Fukutoku-Oka-no-Ba for about 3,000-4,000 m.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2023-09-20,12:50-13:04,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2023-09-20,12:50-13:04,海上保安庁,anomaly,dw,波浪礁は認めず、福徳岡ノ場付近に薄い黄緑色～薄い緑色の変色水を認めた。,No breaker reef was seen; pale yellow-green to pale green discoloured water was seen near Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2023-10-04,13:28-13:39,海上保安庁,anomaly,dw+fl,島の全周にわたり濃厚な茶褐色から緑色の変色水を認めた。なお、変色水はこれまでの観測例の中でも最も濃い部類に入るものであった。 島の北～南西岸にかけての海上に浮遊物を認めた。,"Dense brown to green discoloured water was seen all round the island, among the densest ever observed. Floating matter was seen on the sea from the north to the south-west shore.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2023-10-04,13:28-13:39,海上保安庁,anomaly,dw+fl,波浪礁は認めず、福徳岡ノ場のほぼ直上に薄い黄緑色～薄い緑色の変色水を認めた。 福徳岡ノ場のほぼ直上に帯状の茶褐色の浮遊物を認めた。,No breaker reef was seen. Pale yellow-green to pale green discoloured water and a band of brown floating matter were seen almost directly over Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2023-10-04,13:28-13:39,海上保安庁,anomaly,dw+fl,波浪礁は認めず、福徳岡ノ場のほぼ直上に薄い黄緑色～薄い緑色の変色水を認めた。 福徳岡ノ場のほぼ直上に帯状の茶褐色の浮遊物を認めた。,No breaker reef was seen. Pale yellow-green to pale green discoloured water and a band of brown floating matter were seen almost directly over Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2024-04-20,15:07-15:10,海上保安庁,anomaly,dw,北東岸及び南西岸に変色水域を認めた。,Discoloured water was seen on the north-east and south-west shores.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2024-10-22,12:58-13:19,海上保安庁,anomaly,dw,島のほぼ全周に茶褐色～緑色の変色水域が分布しており、島の西側が最も濃かった。,"Brown to green discoloured water lay almost all round the island, densest on the west side.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2024-10-22,12:59-13:19,海上保安庁,anomaly,dw,福徳岡ノ場の周辺の半径約6kmの範囲に緑色の変色水域が渦巻状に分布していた。,Green discoloured water lay in a swirl within a radius of about 6 km around Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2024-11-27,12:41-12:53,海上保安庁,anomaly,dw,島の西岸～北岸～東岸にかけて薄い茶褐色から緑色の変色水を認めた。,Pale brown to green discoloured water was seen from the west shore round the north shore to the east shore of the island.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2024-11-27,12:41-12:53,海上保安庁,anomaly,dw,福徳岡ノ場周辺にはやや濃い緑色の変色水を認めた。,Fairly dense green discoloured water was seen around Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2024-12-26,13:51-14:02,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2024-12-26,13:51-14:02,海上保安庁,anomaly,dw,西岸～北岸～東岸にかけて青白色及び一部に灰白色の変色水域を認めた。,"Pale blue-white, in part greyish-white, discoloured water was seen from the west shore round the north shore to the east shore.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2024-12-26,13:51-14:02,海上保安庁,anomaly,dw,福徳岡ノ場周辺に薄い緑色の変色水域を認めた。,Pale green discoloured water was seen around Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2025-01-27,13:11-13:21,海上保安庁,anomaly,dw+fl,西岸～北岸にかけて青白色の変色水域を認めた。 沿岸に筋状で少量の灰色の浮遊物を認めた。,"Pale blue-white discoloured water was seen from the west shore to the north shore, and a small amount of grey floating matter in streaks along the coast.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2025-01-27,13:11-13:21,海上保安庁,anomaly,dw,福徳岡ノ場周辺に薄い緑色の変色水域を認めた。,Pale green discoloured water was seen around Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2025-02-13,14:08-14:13,海上保安庁,anomaly,dw+fl,南岸～西岸～北岸にかけて茶褐色及び緑色の変色水域を認めた。 沿岸に濃い灰色の浮遊物を認めた。 浮遊物の出所については不明であるが、硫黄島との位置関係や浮遊物の色合から硫黄島翁浜沖からの噴出物である可能性が考えられる。,"Brown and green discoloured water was seen from the south shore round the west shore to the north shore, and dark grey floating matter along the coast. The source of the floating matter is unknown, but its position relative to Ioto and its colour suggest it may be material erupted off Okina-hama, Ioto.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2025-02-13,14:08-14:13,海上保安庁,anomaly,dw+fl,福徳岡ノ場周辺に薄い緑色の変色水域を認めた。 福徳岡ノ場周辺に少量ではあるが広範囲に濃い灰色の浮遊物を認めた。 浮遊物の出所については不明であるが、硫黄島との位置関係や浮遊物の色合から硫黄島翁浜沖からの噴出物である可能性が考えられる。,"Pale green discoloured water was seen around Fukutoku-Oka-no-Ba, and dark grey floating matter, small in amount but widespread. The source of the floating matter is unknown, but its position relative to Ioto and its colour suggest it may be material erupted off Okina-hama, Ioto.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2025-03-12,13:20-13:31,海上保安庁,anomaly,dw,西岸から北岸にかけて緑色の変色水域を認めた。,Green discoloured water was seen from the west shore to the north shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2025-03-12,13:20-13:31,海上保安庁,anomaly,dw+fl,福徳岡ノ場周辺にやや濃い黄緑色の変色水域を認めた。 福徳岡ノ場周辺にごく少量の灰色の浮遊物を認めた。,Fairly dense yellow-green discoloured water and a very small amount of grey floating matter were seen around Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2025-08-14,14:07,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2025-08-14,13:59-14:05,海上保安庁,anomaly,dw,西岸に青白色、黄褐色～黄緑色の変色水を認めた。,Pale blue-white and yellowish-brown to yellow-green discoloured water was seen on the west shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2025-08-14,13:59-14:05,海上保安庁,anomaly,dw,福徳岡ノ場周辺に薄い緑色の変色水を認めた。,Pale green discoloured water was seen around Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2025-09-30,12:39-12:48,海上保安庁,anomaly,dw,西岸から北岸にかけて青白色、黄褐色、灰白色の変色水を認めた。,"Pale blue-white, yellowish-brown and greyish-white discoloured water was seen from the west shore to the north shore.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2025-09-30,12:39-12:48,海上保安庁,anomaly,dw,福徳岡ノ場周辺に薄い緑色の変色水を認めた。,Pale green discoloured water was seen around Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2025-10-23,12:51-13:00,海上保安庁,anomaly,dw+fl,南岸～西岸～北岸にかけて、灰白色、黄褐色～緑色の比較的濃い変色水を認めた。 島の北西側の海上に、灰色の筋状浮遊物を少量認めた。,Relatively dense greyish-white and yellowish-brown to green discoloured water was seen from the south shore round the west shore to the north shore. A small amount of grey floating matter in streaks was seen on the sea north-west of the island.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2025-10-23,12:51-13:00,海上保安庁,none,,特異事象は認められなかった。,,2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2025-12-18,13:39-13:40,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2025-12-18,13:26-13:37,海上保安庁,anomaly,dw,南岸～西岸～北岸にかけて黄褐色、青白色の変色水を認めた。,Yellowish-brown and pale blue-white discoloured water was seen from the south shore round the west shore to the north shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2025-12-18,13:26-13:37,海上保安庁,none,,特異事象は認められなかった。,,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2026-01-29,12:23-12:35,海上保安庁,anomaly,dw,南岸～西岸にかけて、少量の黄白色、青白色の変色水を認めた。,Small amounts of yellowish-white and pale blue-white discoloured water were seen from the south shore to the west shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2026-01-29,12:23-12:35,海上保安庁,anomaly,dw,福徳岡ノ場周辺にやや濃い黄緑色の変色水を認めた。,Fairly dense yellow-green discoloured water was seen around Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2026-02-26,14:37-14:49,海上保安庁,anomaly,dw,西岸から北側に、約１kmにわたりやや濃い茶褐色及び黄緑色の変色水を認めた。,Fairly dense brown and yellow-green discoloured water was seen for about 1 km from the west shore northward.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2026-02-26,14:37-14:49,海上保安庁,anomaly,dw,福徳岡ノ場に、直径約3.6kmにわたり黄褐色及び黄緑色のやや濃い変色水を認めた。,Fairly dense yellowish-brown and yellow-green discoloured water was seen at Fukutoku-Oka-no-Ba over a diameter of about 3.6 km.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2026-04-16,12:53-13:05,海上保安庁,anomaly,dw,南岸～西岸～北岸にやや濃い茶褐色及び黄緑色の変色水を認めた。,Fairly dense brown and yellow-green discoloured water was seen from the south shore round the west shore to the north shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2026-04-16,12:53-13:05,海上保安庁,anomaly,dw+fl,福徳岡ノ場に黄緑色の変色水と少量の筋状の浮遊物を認めたが、雲が低く低高度を飛行したため範囲は不明。,"Yellow-green discoloured water and a small amount of floating matter in streaks were seen at Fukutoku-Oka-no-Ba; the low cloud forced a low-altitude flight, so their extent is unknown.",2026-11-14
+GVP284130,kaiyo23-2.htm,北福徳堆,Kita-Fukutoku-tai,nearby,GVP284130-B,2026-06-15,13:23-13:26,海上保安庁,anomaly,fl,火山由来であるかは不明だが、北福徳堆周辺に少量の筋状浮遊物を認めた。,A small amount of floating matter in streaks was seen around Kita-Fukutoku-tai; whether it is volcanic is unknown.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2026-06-15,13:09-13:19,海上保安庁,anomaly,dw+fl,西岸～北岸にかけて、茶褐色、黄褐色及び青白色の変色水を認めた。 火山由来であるかは不明だが、南岸及び西岸の一部で少量の筋状浮遊物を認めた。,"Brown, yellowish-brown and pale blue-white discoloured water was seen from the west shore to the north shore. A small amount of floating matter in streaks was seen along parts of the south and west shores; whether it is volcanic is unknown.",2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2026-06-15,13:09-13:19,海上保安庁,anomaly,dw,福徳岡ノ場に薄い緑色の変色水を認めた。,Pale green discoloured water was seen at Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2026-08-03,13:38-13:49,海上保安庁,anomaly,dw+bubbles,福徳岡ノ場で気泡の噴出を認めた。気泡は数分間隔で間欠的に噴出していた。 軽石等の固形物は確認できなかった。 福徳岡ノ場周辺に黄緑色及び青白色の変色水を確認した。,"Bubbles were seen bursting out at Fukutoku-Oka-no-Ba, intermittently every few minutes. No solid matter such as pumice was seen. Yellow-green and pale blue-white discoloured water was seen around Fukutoku-Oka-no-Ba.",2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2026-08-17,14:36-14:45,海上保安庁,anomaly,dw,南岸～西岸～北岸にかけて茶褐色及び黄緑色の変色水を認めた。,Brown and yellow-green discoloured water was seen from the south shore round the west shore to the north shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2026-08-17,14:36-14:45,海上保安庁,anomaly,dw,福徳岡ノ場に薄い緑色の変色水を認めた。,Pale green discoloured water was seen at Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284130,kaiyo24-2.htm,南硫黄島,Minami-Ioto,nearby,,2026-09-17,12:40-12:53,海上保安庁,anomaly,dw,南岸～西岸～北岸にかけて黄褐色及び黄緑色の変色水を認めた。,Yellowish-brown and yellow-green discoloured water was seen from the south shore round the west shore to the north shore.,2026-11-14
+GVP284130,kaiyo24-2.htm,福徳岡ノ場,Fukutoku-Oka-no-Ba,summit,GVP284130-A,2026-09-17,12:40-12:53,海上保安庁,anomaly,dw,福徳岡ノ場に濃い黄緑色の変色水を認めた。,Dense yellow-green discoloured water was seen at Fukutoku-Oka-no-Ba.,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2013-03-08,11:55頃,海上自衛隊,none,,変色水を認めず。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2013-03-26,,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2013-04-10,,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2013-06-29,,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2013-09-27,,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2013-12-16,10:45,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2014-04-15,11:26,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2014-06-11,12:16,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2014-06-25,12:58-13:20,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2014-09-12,11:45,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2014-10-17,14:32-14:36,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2014-12-26,9:35,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2015-03-03,10:24,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2015-08-17,14:23-14:28,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2016-03-29,14:47-14:50,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2016-12-24,15:36,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2017-02-09,10:50,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2017-03-07,,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2017-03-24,14:48-14:50,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2017-03-30,,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2017-04-24,11:38,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2017-06-28,13:30-13:32,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2017-07-03,11:24,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2017-10-06,10:31,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2017-12-11,15:10-15:13,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2018-01-27,11:42,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2018-02-24,10:18,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2018-04-27,10:06,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2018-07-18,15:16-15:18,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2019-01-29,15:02,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2019-11-19,13:30-13:31,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2021-04-05,13:05,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2021-06-08,13:14-13:17,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2022-07-11,15:10,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2023-10-04,13:13-13:15,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2024-12-26,13:36-13:39,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2025-08-14,13:46-13:47,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2025-12-18,13:14-13:15,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284131,kaiyo25-2.htm,南日吉海山,Minami-Hiyoshi Seamount,summit,,2026-06-15,12:55-12:57,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2013-03-08,,海上自衛隊 海上保安庁,none,,2013年3月8日12:13，3月26日15:48-15:54（海保），4月10日12:06， 6月29日12:06-12:12（海保），9月27日14:40，12月16日11:02 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2013-03-26,,海上自衛隊 海上保安庁,none,,2013年3月8日12:13，3月26日15:48-15:54（海保），4月10日12:06， 6月29日12:06-12:12（海保），9月27日14:40，12月16日11:02 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2013-04-10,,海上自衛隊 海上保安庁,none,,2013年3月8日12:13，3月26日15:48-15:54（海保），4月10日12:06， 6月29日12:06-12:12（海保），9月27日14:40，12月16日11:02 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2013-06-29,,海上自衛隊 海上保安庁,none,,2013年3月8日12:13，3月26日15:48-15:54（海保），4月10日12:06， 6月29日12:06-12:12（海保），9月27日14:40，12月16日11:02 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2013-09-27,,海上自衛隊 海上保安庁,none,,2013年3月8日12:13，3月26日15:48-15:54（海保），4月10日12:06， 6月29日12:06-12:12（海保），9月27日14:40，12月16日11:02 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2013-12-16,,海上自衛隊 海上保安庁,none,,2013年3月8日12:13，3月26日15:48-15:54（海保），4月10日12:06， 6月29日12:06-12:12（海保），9月27日14:40，12月16日11:02 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2014-04-15,,海上自衛隊 海上保安庁 第三管区海上保安本部,none,,2014年4月15日11:02，6月11日12:34，6月25日13:30-13:35（三管）， 9月12日12:03，12月26日14:21-14:26(海保），12月26日09:53 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2014-06-11,,海上自衛隊 海上保安庁 第三管区海上保安本部,none,,2014年4月15日11:02，6月11日12:34，6月25日13:30-13:35（三管）， 9月12日12:03，12月26日14:21-14:26(海保），12月26日09:53 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2014-06-25,,海上自衛隊 海上保安庁 第三管区海上保安本部,none,,2014年4月15日11:02，6月11日12:34，6月25日13:30-13:35（三管）， 9月12日12:03，12月26日14:21-14:26(海保），12月26日09:53 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2014-09-12,,海上自衛隊 海上保安庁 第三管区海上保安本部,none,,2014年4月15日11:02，6月11日12:34，6月25日13:30-13:35（三管）， 9月12日12:03，12月26日14:21-14:26(海保），12月26日09:53 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2014-12-26,,海上自衛隊 海上保安庁 第三管区海上保安本部,none,,2014年4月15日11:02，6月11日12:34，6月25日13:30-13:35（三管）， 9月12日12:03，12月26日14:21-14:26(海保），12月26日09:53 変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2015-03-03,10:48,海上自衛隊,none,,変色水域等の特異事象なし．,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2015-08-17,14:36-14:38,海上保安庁,none,,変色水域等の特異事象なし．,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2016-03-29,14:59-15:03,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2016-12-24,15:44,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2017-02-09,11:13,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2017-03-07,,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2017-03-24,14:58-14:59,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2017-03-30,,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2017-04-24,13:21,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2017-06-28,13:18-13:21,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2017-07-03,11:38,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2017-10-06,10:49,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2017-12-11,15:22-15:24,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2018-01-27,12:01,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2018-02-24,10:36,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2018-04-27,10:25,海上自衛隊,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2018-07-18,15:26-15:28,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2019-01-29,15:09,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2019-11-19,13:39-13:42,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2021-04-05,12:57,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2021-06-08,13:01-13:05,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2022-07-11,15:22-15:24,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2023-10-04,12:59-13:04,海上保安庁,anomaly,fl,ごく少量で帯状の白色の浮遊物を認めた。,A very small amount of white floating matter was seen in a band.,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2023-10-22,12:33-12:39,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2024-12-26,13:23-13:25,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2025-08-14,13:34-13:37,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2025-12-18,13:04-13:05,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+GVP284132,kaiyo26-2.htm,日光海山,Nikko Seamount,summit,,2026-06-15,12:46-12:48,海上保安庁,none,,変色水域等の特異事象なし。,,2026-11-14
+IR-Omuro_Hole,kaiyo6-2.htm,大室ダシ,Omuro-dashi,summit,IR-Omuro_Hole-A,2025-06-19,10:56-11:20,海上保安庁,none,,特異事象は認められなかった。,,2026-11-14
+IR-Omuro_Hole,kaiyo6-2.htm,大室ダシ,Omuro-dashi,summit,IR-Omuro_Hole-A,2025-06-26,14:45-15:06,海上保安庁,none,,特異事象は認められなかった。,,2026-11-14
+IR-Omuro_Hole,kaiyo6-2.htm,大室ダシ,Omuro-dashi,summit,IR-Omuro_Hole-A,2026-08-17,11:33,海上保安庁,none,,特異事象は認められなかった。,,2026-11-14

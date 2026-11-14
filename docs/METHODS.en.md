@@ -103,6 +103,21 @@ For activity outside the documented eruption periods, the field "Earlier reports
 Where that field is empty, earlier reports were not checked.
 A record in this database does not mean that the activity had not been reported.
 
+## Observations by aircraft and ship in Japan
+
+For the volcanoes of Japan there is a second record to compare with.
+The Japan Coast Guard's database of submarine volcanoes (海域火山データベース) lists, volcano by volcano, the visits by aircraft and ship and what was seen. The observers are the Coast Guard and the Maritime Self-Defense Force, and one row is from the Japan Meteorological Agency.
+The records since 2013 were taken from the pages of 13 volcanoes of this database on 14 November 2026.
+Each record was sorted into "activity seen", "nothing unusual" or "not visible", and the records of activity were summarised in English; the Japanese text is the source's.
+The page of a volcano shows these records in a table and as squares on the timeline. Their dates are Japan time, while the satellite passes are in UTC.
+
+Every episode at these volcanoes is compared with the observations from 14 days before its start to 14 days after its end.
+The field "Earlier reports checked" says what the Coast Guard's database has for that time: activity, visits that found nothing unusual, or no visit.
+An observation counts for an episode when the feature it describes lies in the monitoring zone of the episode. One page of the source can cover several features, so activity at a neighbouring feature is named apart.
+The comparison does not change a class.
+Where the review dismissed an episode or left it undetermined, and the Coast Guard's database has activity in its zone at the time, the author's review takes that episode first.
+An aircraft sees a volcano for minutes, and the nearest satellite pass can be days away, so the two records can differ without either being wrong.
+
 ## Limits
 
 - This is not real-time monitoring. Sentinel-2 has revisited a zone every 2 to 5 days in recent years and less often before 2018, and the screening and the review come after that.
@@ -127,6 +142,7 @@ The tables are in `db/` of the GitHub repository, as CSV (UTF-8) and JSON. All t
 | `passes/<volcano>.csv` | Every high-resolution pass, including the passes without an alert and those with the sea not visible |
 | `lowres/<volcano>.csv` | The daily low-resolution record (days with the sea visible) |
 | `known_periods.csv` | The eruption periods used for the matching |
+| `jcg_observations.csv` | The observations by aircraft and ship at the volcanoes of Japan, from the Japan Coast Guard's database |
 | `records/` | Records of concentric ring waves and of airborne bands |
 
 The fields are described in `docs/DATA.md` of the repository.
@@ -142,13 +158,14 @@ The address is `https://gis.ikgm.net/submvolc/ql/<zone>/<zone>_<time>_<satellite
 - VIIRS and MODIS images: NASA's Global Imagery Browse Services (GIBS).
 - Eruption periods and volcano numbers: Volcanoes of the World, Global Volcanism Program, Smithsonian Institution (retrieved on 11 November 2026).
 - The positions of ten hydrothermal sites and the names of eleven targets without a GVP number: InterRidge Vents Database.
+- Observations by aircraft and ship at the volcanoes of Japan: made by editing the Japan Coast Guard's database of submarine volcanoes (海域火山データベース, https://www1.kaiho.mlit.go.jp/kaiikiDB/list-2.htm, used on 14 November 2026). The author of this database extracted the records since 2013, sorted them and summarised them in English.
 - The land on the map is from Natural Earth; the map is drawn with Leaflet.
 
 ## Terms of use and citation
 
 The data (the tables in `db/`, the files in `curation/`, these texts and the images) are under CC BY 4.0; the code is under the MIT licence.
 The images are made from Copernicus Sentinel and Landsat data, so please also give the sources above when you reuse them.
-What was taken from the Smithsonian's catalogue and from the InterRidge database stays under the terms of those sources.
+What was taken from the Smithsonian's catalogue, from the InterRidge database and from the Japan Coast Guard's database stays under the terms of those sources.
 
 An example of a citation:
 

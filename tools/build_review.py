@@ -18,6 +18,9 @@ Importance (the order of the list) is a number made of
   - the alert passes (1.5 each, up to 8) and those of level L3 (2 each, up to 5);
   - the area of discoloured water (6 x log10(1 + km2), up to 15);
   - floating matter or new land (5), hot pixels (2).
+When the Japan Coast Guard's database has activity in the zone within 14 days of an episode that is
+not counted as a documented eruption or likely volcanic, the class counts 75 at least and 20 is
+added: a visit that saw something beside a review that did not is the first thing to look at.
 It only orders the work; it is not published.
 """
 
@@ -32,6 +35,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_db import jcg_near, jcg_split  # noqa: E402
 from safeio import copy, write_text  # noqa: E402
 from vocab import CAUSES, CLASSES  # noqa: E402
 
@@ -60,9 +64,12 @@ def f(v) -> float:
         return 0.0
 
 
-def importance(e: dict) -> float:
+def importance(e: dict, seen_by_jcg: bool = False) -> float:
     ph = e["phenomena"].split("+")
-    score = WEIGHT[e["class"]] + 3 * f(e["interest"]) + 1.5 * min(f(e["n_detect"]), 8) + 2 * min(f(e["n_l3"]), 5)
+    score = WEIGHT[e["class"]]
+    if seen_by_jcg and e["class"] not in ("known", "likely"):
+        score = max(score, 75) + 20
+    score += 3 * f(e["interest"]) + 1.5 * min(f(e["n_detect"]), 8) + 2 * min(f(e["n_l3"]), 5)
     score += min(6 * math.log10(1 + f(e["max_dw_km2"])), 15)
     score += 5 * ("fl" in ph or "nl" in ph) + 2 * ("th" in ph)
     return round(score, 1)
@@ -121,8 +128,9 @@ def main() -> None:
             elif not e["image"]:
                 skipped += 1          # a low-resolution episode without a review sheet has nothing to look at
                 continue
-            near = [[r["date"], r["category"], r.get("site_ja", ""), r.get("text_ja", "")] for r in reports.get(vid, [])
-                    if _near(r["date"], e["start"], e["end"], 30)]
+            near = [[r["date"], r["category"], r["site_ja"], r["text_ja"], int(inside)]
+                    for r, inside in jcg_near(e, reports.get(vid, []), 30)]
+            seen = bool(jcg_split(e, reports.get(vid, []))[0])
             known = [f"{k['source']} {k['kind']} {k['start']}..{k['end'] or ''}" for k in periods.get(vid, [])
                      if (k["end"] or "9999") >= e["start"][:4] and k["start"][:4] <= e["end"][:4]]
             out.append(dict(
@@ -132,7 +140,8 @@ def main() -> None:
                 peak=e["peak"], cls=e["class"], basis=e["basis"], cause=e["cause"], interest=e["interest"],
                 known=e["known_ref"], prior=e["prior_reports"], image=e["image"], note_ja=e["note_ja"],
                 note_en=e["note_en"], owner_ja=e["owner_ja"], cur_ja=e["curation_ja"],
-                status=e.get("review_status", ""), imp=importance(e), passes=rows, jcg=near, periods=known))
+                status=e.get("review_status", ""), imp=importance(e, seen), passes=rows, jcg=near, jh=int(seen),
+                periods=known))
     out.sort(key=lambda r: (-r["imp"], r["s"]))
     data = dict(
         generated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), db_generated=meta["generated"],
@@ -153,23 +162,7 @@ def main() -> None:
     print(f"review/index.html: {len(out)} episodes with images ({skipped} without), "
           f"{len(reviews)} already reviewed, data.js {len(text) / 1e6:.1f} MB")
     print("by class:", dict(by_class))
-
-
-def _near(date: str, start: str, end: str, days: int) -> bool:
-    """A report dated within `days` of the episode. Dates of reports can be a month or a range."""
-    d0 = d1 = date
-    if "/" in date:
-        d0, d1 = date.split("/", 1)
-    lo = (d0 + "-01")[:10] if len(d0) == 7 else d0
-    hi = (d1 + "-28")[:10] if len(d1) == 7 else d1
-    try:
-        a = datetime.strptime(lo, "%Y-%m-%d").toordinal()
-        b = datetime.strptime(hi, "%Y-%m-%d").toordinal()
-    except ValueError:
-        return False
-    s = datetime.strptime(start, "%Y-%m-%d").toordinal() - days
-    t = datetime.strptime(end, "%Y-%m-%d").toordinal() + days
-    return a <= t and b >= s
+    print("activity in the Coast Guard's database at the time:", sum(r["jh"] for r in out), "episodes")
 
 
 if __name__ == "__main__":

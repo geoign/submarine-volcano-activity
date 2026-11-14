@@ -86,7 +86,7 @@ around it, and a review note or a volcano summary may give a larger area seen by
 | `cause` | For `nonvolcanic`: `cloud`, `cloud_shadow`, `sun_glint`, `reef_or_shoal`, `land_or_surf`, `land_or_ice`, `bloom`, `sediment_plume`, `ship_wake`, `sensor_artifact`, `neighbour_eruption`, `other` |
 | `interest` | Interest given by the first-pass review, 0 (dismissed) to 3; how much the episode deserved a second look, not a verdict |
 | `known_ref` | The eruption period the episode was matched to: `GVP <kind> <start>..<end>` with the dates of the catalogue, or `Own event list <start>..<end>` |
-| `prior_reports` | What was checked against earlier reports, with the date of the check. Empty: nothing was checked |
+| `prior_reports` | What was checked against earlier reports, with the date of the check. For a volcano that has a page in the Japan Coast Guard's database: what that database has from 14 days before the episode to 14 days after it (see `jcg_observations.csv`). Empty: nothing was checked |
 | `image` | Path of a review sheet under the image base (low-resolution episodes that were reviewed) |
 | `note_en`, `note_ja` | Review note. Written in Japanese; the English is a translation and is missing for most dismissed episodes |
 | `owner_en`, `owner_ja` | The author's verdict, where there is one |
@@ -164,6 +164,33 @@ Eruption periods since 2013 for the volcanoes of the database, as used for the c
 | `start`, `end` | Dates as given; a part that is not known is left out (`2014`, `2014-01`) |
 | `continuing` | `yes` when the catalogue marked the eruption as continuing |
 | `area`, `note` | Vent or area named by the catalogue; note of the own list |
+
+## jcg_observations.csv
+
+Observations by aircraft and ship at the volcanoes of Japan since 2013, made by editing the Japan
+Coast Guard's database of submarine volcanoes (海域火山データベース,
+<https://www1.kaiho.mlit.go.jp/kaiikiDB/list-2.htm>). One row for an observation of one feature.
+The source has one table for Kaikata Seamount, which is two volcanoes here: its rows are listed
+under both.
+
+| Column | Meaning |
+|---|---|
+| `volcano_id` | The volcano of this database that the feature belongs to or lies beside |
+| `site_ja`, `site_en` | The feature the table of the source is about: an island, a reef, a seamount |
+| `match` | `summit`: the feature is the volcano itself; `nearby`: a neighbouring feature |
+| `zones` | The high-resolution zones the feature lies in, separated by spaces; empty when it lies outside all of them. An observation is compared with the episodes of these zones and with the low-resolution episodes of the volcano |
+| `date`, `time` | As the source gives them (Japan time). Two days in one row are written `a/b`. Four rows of the source sum up the visits of a year; each became one row for every day it names |
+| `observer` | As given: 海上保安庁 (Japan Coast Guard), 第三管区/第十管区海上保安本部 (its regional headquarters), 海上自衛隊 (Maritime Self-Defense Force), 気象庁 (Japan Meteorological Agency) |
+| `category` | `anomaly` (discoloured water, floating matter or other activity was seen), `none` (nothing unusual), `not_visible` (the place could not be seen), `other`. Set for this database from the text |
+| `phenomena` | For `anomaly`, joined by `+`: `dw` discoloured water, `fl` floating matter, `steam`, `plume`, `eruption`, `island` (new island), `bubbles`, `thermal` (thermal anomaly), `other` |
+| `text_ja` | The text of the source |
+| `summary_en` | English summary of the text, for `anomaly`. Written for this database, not by the Coast Guard |
+| `url` | The page of the source |
+| `retrieved` | Day the page was read |
+
+`curation/jcg_sites.csv` says which feature of which page belongs to which volcano and zones.
+`tools/parse_jcg.py` sets the category and the phenomena by keyword rules;
+`curation/jcg_categories.csv` holds the texts whose category was set by hand, with the reason.
 
 ## records/
 

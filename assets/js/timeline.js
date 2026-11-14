@@ -26,6 +26,7 @@ export class Timeline {
     this.lowres = [];
     this.episodes = [];
     this.periods = [];
+    this.reports = [];
     this.showDismissed = false;
     this.selected = null;
     this.hover = null;
@@ -34,7 +35,8 @@ export class Timeline {
     new ResizeObserver(() => this.draw()).observe(canvas.parentNode);
   }
 
-  setData({ passes, lowres, episodes, periods, domain }) {
+  setData({ passes, lowres, episodes, periods, reports, domain }) {
+    this.reports = reports || [];
     this.passes = passes;
     this.lowres = lowres;
     this.episodes = episodes;
@@ -87,7 +89,8 @@ export class Timeline {
     const hasHi = this.passes.length > 0, hasLo = this.lowres.length > 0;
     let y = M.top;
     const L = { w, x0: M.left, x1: w - M.right };
-    L.episodes = [y, y + H.episodes]; y += H.episodes + H.gap;
+    const top = H.episodes + (this.reports.length ? 14 : 0);   // a third row for reported observations
+    L.episodes = [y, y + top]; y += top + H.gap;
     if (hasHi) { L.hires = [y, y + H.hires]; y += H.hires; L.rugs = [y + 3, y + H.rugs]; y += H.rugs + H.gap; }
     if (hasLo) { L.lowres = [y, y + H.lowres]; y += H.lowres + H.gap; }
     L.axis = y - H.gap + 4;
@@ -164,8 +167,8 @@ export class Timeline {
 
     // episodes: one row per tier
     g.save();
-    g.beginPath(); g.rect(L.x0, L.episodes[0], L.x1 - L.x0, H.episodes); g.clip();
-    const rows = { highres: L.episodes[0] + 9, lowres: L.episodes[0] + 25 };
+    g.beginPath(); g.rect(L.x0, L.episodes[0], L.x1 - L.x0, L.episodes[1] - L.episodes[0]); g.clip();
+    const rows = { highres: L.episodes[0] + 9, lowres: L.episodes[0] + 25, reports: L.episodes[0] + 40 };
     const eps = this.episodes.filter((e) => this.showDismissed || e.class !== "nonvolcanic")
       .sort((a, b) => RANK[b.class] - RANK[a.class]);
     for (const e of eps) {
@@ -176,10 +179,19 @@ export class Timeline {
       g.beginPath(); g.roundRect(a, y - 4, wdt, 8, 3); g.fill();
       if (e.class === "unreviewed") { g.strokeStyle = col.muted; g.lineWidth = 1.5; g.stroke(); }
     }
+    // observations reported by others: a filled square where activity was seen, a hollow one where not
+    for (const r of this.reports) {
+      const a = this.x(r.t0, L), b = this.x(r.t1, L);
+      if (b < L.x0 - 4 || a > L.x1 + 4) continue;
+      const px = Math.round((a + b) / 2), y = rows.reports, w = Math.max(6, b - a);
+      if (r.category === "anomaly") { g.fillStyle = col.ink; g.fillRect(px - w / 2, y - 3, w, 6); }
+      else { g.strokeStyle = col.muted; g.lineWidth = 1; g.strokeRect(px - 2.5, y - 2.5, 5, 5); }
+    }
     g.restore();
     g.fillStyle = col.muted; g.textAlign = "right"; g.font = "10px system-ui, sans-serif";
     g.fillText(t("v.axis.hrShort"), L.x0 - 6, rows.highres);
     g.fillText(t("v.axis.lrShort"), L.x0 - 6, rows.lowres);
+    if (this.reports.length) g.fillText(t("v.axis.jcg"), L.x0 - 6, rows.reports);
     g.textAlign = "left"; g.font = "11px system-ui, sans-serif";
 
     // high-resolution passes

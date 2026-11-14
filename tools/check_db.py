@@ -176,6 +176,23 @@ def check_tables() -> None:
     n_days = sum(len(read(p)) for p in (DB / "lowres").glob("*.csv"))
     if n_days != meta["lowres_days"]:
         fail(f"lowres tables hold {n_days} days, meta.json says {meta['lowres_days']}")
+    reports = read(DB / "jcg_observations.csv") if (DB / "jcg_observations.csv").exists() else []
+    if len(reports) != meta.get("jcg_observations", 0):
+        fail(f"jcg_observations.csv holds {len(reports)} rows, meta.json says {meta.get('jcg_observations', 0)}")
+    for r in reports:
+        where = f"jcg_observations.csv: {r['volcano_id']} {r['date']}"
+        if r["volcano_id"] not in vids:
+            fail(f"{where}: unknown volcano")
+        if any(z not in zids for z in r["zones"].split()):
+            fail(f"{where}: unknown zone in {r['zones']!r}")
+        if r["category"] not in ("anomaly", "none", "not_visible", "other") or r["match"] not in ("summit", "nearby"):
+            fail(f"{where}: bad category {r['category']!r} or match {r['match']!r}")
+        if not re.fullmatch(r"\d{4}(-\d\d(-\d\d)?)?(/\d{4}-\d\d-\d\d)?", r["date"]):
+            fail(f"{where}: bad date")
+        if r["category"] == "anomaly" and not (r["summary_en"] and r["phenomena"]):
+            fail(f"{where}: a report of activity without an English summary or without its phenomena")
+        if not r["url"].startswith("https://www1.kaiho.mlit.go.jp/kaiikiDB/") or not r["retrieved"]:
+            fail(f"{where}: no source page or no day of retrieval")
     print(f"tables: {len(volcanoes)} volcanoes, {len(zones)} zones, {len(episodes)} episodes, {n_pass} passes, {n_days} low-resolution days")
     print("episodes by class:", dict(by_class))
 

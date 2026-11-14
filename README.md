@@ -66,6 +66,8 @@ python tools/sync_images.py                              # new quicklooks to the
 python tools/build_about.py                              # about.html from docs/METHODS.*.md
 python tools/notes.py pending --out notes.csv            # review notes that lack an English text
 python tools/build_review.py                             # the author's local review form, review/index.html
+python tools/parse_jcg.py --fetch                        # the Japan Coast Guard's pages -> records (volcanoes of Japan)
+python tools/import_jcg.py --retrieved <day>             # those records -> curation/jcg_observations.csv
 ```
 
 `tools/build_db.py` only reads the monitor's stores. The class of an episode comes from the
@@ -83,6 +85,9 @@ the status `human-reviewed`.
 - Eruption periods and volcano numbers: Volcanoes of the World, Global Volcanism Program,
   Smithsonian Institution (retrieved on 11 November 2026).
 - Positions of ten hydrothermal sites and names of eleven targets: InterRidge Vents Database.
+- Observations by aircraft and ship at the volcanoes of Japan (`db/jcg_observations.csv`): made by
+  editing the Japan Coast Guard's database of submarine volcanoes (海域火山データベース,
+  <https://www1.kaiho.mlit.go.jp/kaiikiDB/list-2.htm>, used on 14 November 2026).
 - Land outline of the map: Natural Earth. Map library: Leaflet (BSD 2-Clause, in
   `assets/vendor/leaflet/`).
 
@@ -92,8 +97,8 @@ The data (`db/`, `curation/`, the texts in `docs/` and the images) are under
 [CC BY 4.0](LICENSE-DATA). The code (`tools/`, `tests/`, `assets/js/`, the style sheet and the HTML
 pages) is under the [MIT licence](LICENSE). Leaflet, in `assets/vendor/leaflet/`, keeps its own
 licence. The images are made from Copernicus Sentinel and Landsat data; give the sources above as
-well when you reuse them. What was taken from the Smithsonian's catalogue and from the InterRidge
-database stays under the terms of those sources.
+well when you reuse them. What was taken from the Smithsonian's catalogue, from the InterRidge
+database and from the Japan Coast Guard's database stays under the terms of those sources.
 
 > Ikegami, F. (2026). Submarine Volcano Activity Database.
 > https://github.com/geoign/submarine-volcano-activity

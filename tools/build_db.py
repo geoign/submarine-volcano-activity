@@ -32,6 +32,7 @@ import re
 import sqlite3
 import subprocess
 import sys
+from calendar import monthrange
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -550,6 +551,103 @@ def exact_known_refs(episodes: list[dict], periods: list[dict]) -> int:
     return changed
 
 
+JCG_URL = "https://www1.kaiho.mlit.go.jp/kaiikiDB/"
+JCG_WINDOW = 14     # days either side of an episode within which an observation counts as "at the time"
+JCG_PHENOMENA = {"dw": "discoloured water", "fl": "floating matter", "steam": "steam", "plume": "plume",
+                 "eruption": "eruption", "island": "new island", "bubbles": "bubbles", "thermal": "thermal anomaly",
+                 "other": "other activity"}
+
+
+def day_span(date: str) -> tuple[int, int] | None:
+    """First and last day (ordinal) of a date that may be a day, a month, a year or a range a/b."""
+    lo, _, hi = date.partition("/")
+
+    def edge(d: str, last: bool) -> int:
+        p = [int(x) for x in d.split("-")]
+        y = p[0]
+        m = p[1] if len(p) > 1 else (12 if last else 1)
+        dd = p[2] if len(p) > 2 else (monthrange(y, m)[1] if last else 1)
+        return datetime(y, m, dd).toordinal()
+    try:
+        return edge(lo, False), edge(hi or lo, True)
+    except (ValueError, IndexError):
+        return None
+
+
+def jcg_observations(volcanoes: dict) -> list[dict]:
+    """Observations of the Japan Coast Guard's database of submarine volcanoes, as curated."""
+    path = CURATION / "jcg_observations.csv"
+    if not path.exists():
+        return []
+    rows = []
+    for r in read_csv(path):
+        if r["volcano_id"] in volcanoes and day_span(r["date"]):
+            rows.append(dict(r, url=JCG_URL + r["jcg_page"]))
+    rows.sort(key=lambda r: (r["volcano_id"], r["date"], r["site_ja"]))
+    return rows
+
+
+def jcg_near(e: dict, rows: list[dict], window: int = JCG_WINDOW):
+    """The observations at the volcano within `window` days of an episode, each with whether its site lies
+    in the zone of the episode. A low-resolution zone (30 km) holds every site of its volcano. An
+    observation dated to more than a month says nothing about a day and is left out."""
+    s = datetime.strptime(e["start"][:10], "%Y-%m-%d").toordinal() - window
+    t = datetime.strptime(e["end"][:10], "%Y-%m-%d").toordinal() + window
+    zone = site_of(e["zone_id"])
+    for r in rows:
+        span = day_span(r["date"])
+        if span and span[1] - span[0] <= 31 and span[0] <= t and span[1] >= s:
+            yield r, e["tier"] == "lowres" or zone in r.get("zones", "").split()
+
+
+def jcg_split(e: dict, rows: list[dict], window: int = JCG_WINDOW) -> tuple[list, list, list]:
+    """Of the observations near an episode: activity in its zone, activity elsewhere at the volcano,
+    visits to its zone that found nothing."""
+    here, away, quiet = [], [], []
+    for r, inside in jcg_near(e, rows, window):
+        if r["category"] == "anomaly":
+            (here if inside else away).append(r)
+        elif r["category"] == "none" and inside:
+            quiet.append(r)
+    return here, away, quiet
+
+
+def jcg_prior(episodes: list[dict], rows: list[dict]) -> int:
+    """Say in prior_reports what the Coast Guard's database has within JCG_WINDOW days of each episode."""
+    by = defaultdict(list)
+    for r in rows:
+        by[r["volcano_id"]].append(r)
+    read = max((r.get("retrieved", "") for r in rows), default="")
+
+    def item(r):
+        what = ", ".join(JCG_PHENOMENA.get(p, p) for p in r["phenomena"].split("+") if p) or "activity"
+        return f"{r['date']} ({what} at {r['site_en'] or r['site_ja']})"
+    n = 0
+    for e in episodes:
+        mine = by.get(e["volcano_id"])
+        if not mine:
+            continue
+        here, away, quiet = jcg_split(e, mine)
+        parts = []
+        if here:
+            parts.append("activity reported on " + ", ".join(item(r) for r in here[:6])
+                         + (f" and in {len(here) - 6} more reports" if len(here) > 6 else ""))
+            if quiet:
+                parts.append(f"nothing unusual on {len(quiet)} other visit(s)")
+        elif quiet:
+            parts.append("nothing unusual reported on " + ", ".join(r["date"] for r in quiet[:6])
+                         + (f" and on {len(quiet) - 6} more visits" if len(quiet) > 6 else ""))
+        else:
+            parts.append(f"no observation of this zone within {JCG_WINDOW} days of the episode")
+        if away:
+            sites = sorted({r["site_en"] or r["site_ja"] for r in away})
+            parts.append(f"outside this zone, activity reported at {' and '.join(sites)} ({len(away)} report(s))")
+        text = f"Japan Coast Guard volcano database (retrieved {read}): " + "; ".join(parts)
+        e["prior_reports"] = f"{e['prior_reports']}; {text}" if e["prior_reports"] else text
+        n += 1
+    return n
+
+
 def lowres_days(mon: Path, volcanoes: dict):
     out = defaultdict(list)
     have = set()
@@ -625,6 +723,11 @@ def main() -> None:
     episodes += low
     classify(episodes, volcanoes, cur)
     periods = known_periods(mon, volcanoes)
+    jcg = jcg_observations(volcanoes)
+    n_jcg = jcg_prior(episodes, jcg)
+    if jcg:
+        print(f"Japan Coast Guard: {len(jcg)} observations at {len({r['volcano_id'] for r in jcg})} volcanoes, "
+              f"{n_jcg} episodes compared")
     n_ref = exact_known_refs(episodes, periods)
     print(f"episodes: hindcast {n_h}, monitor {n_m}, low resolution {len(low)}; {n_ref} catalogue references rewritten")
 
@@ -726,6 +829,9 @@ def main() -> None:
               ["day", "utc", "zone_id", "sensor", "area_km2", "length_km", "from_jadid", "level", "store"],
               [dict(zip(["day", "utc", "zone_id", "sensor", "area_km2", "length_km", "from_jadid", "level", "store"],
                         r.values())) for r in bands])
+    write_csv(DB / "jcg_observations.csv",
+              ["volcano_id", "site_ja", "site_en", "match", "zones", "date", "time", "observer", "category", "phenomena",
+               "text_ja", "summary_en", "url", "retrieved"], jcg)
     figs = [dict(volcano_id=f["volcano_id"], file="fig/" + f["file"].lstrip("/"), caption_en=f.get("caption_en", ""),
                  caption_ja=f.get("caption_ja", "")) for f in cur["figures"]
             if f["volcano_id"] in volcanoes and f["file"].lstrip("/") not in WITHHELD_FIGURES]
@@ -760,7 +866,7 @@ def main() -> None:
         episodes_by_class={c: sum(1 for e in episodes if e["cls"] == c) for c in CLASSES},
         episodes_by_source=dict(Counter(e["source"] for e in episodes)),
         episodes_by_review_status=dict(Counter(e["review_status"] for e in episodes)),
-        ring_wave_records=len(ring), airborne_band_records=len(bands))
+        ring_wave_records=len(ring), airborne_band_records=len(bands), jcg_observations=len(jcg))
     write_text(DB / "meta.json", json.dumps(meta, indent=1))
 
     (work / "lists").mkdir(parents=True, exist_ok=True)

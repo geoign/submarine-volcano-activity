@@ -13,7 +13,7 @@ const id = new URLSearchParams(location.search).get("id") || "";
 const wantEpisode = new URLSearchParams(location.search).get("ep") || "";
 const $ = (x) => document.getElementById(x);
 const S = { zone: "", showDismissed: false, listDismissed: false, selected: null, target: wantEpisode };
-let V, meta, zones, episodes, passes, lowres, periods, figures, ring, bands, chart, passByKey;
+let V, meta, zones, episodes, passes, lowres, periods, figures, ring, bands, reports, chart, passByKey;
 
 const siteOf = (z) => (z.endsWith("-LS") ? z.slice(0, -3) : z);
 const stamp = (p) => p.time.slice(0, 4) + p.time.slice(5, 7) + p.time.slice(8, 10) + "T" + p.time.slice(11, 13) + p.time.slice(14, 16);
@@ -45,11 +45,16 @@ async function load() {
     // the catalogue gives. No end date otherwise: the end is not on record.
     t1: k.continuing === "yes" ? lastT : (partialDate(k.end, true) ?? partialDate(k.start, true)),
   })).filter((k) => k.t0 !== null);
-  const [pr, lr, fg, rw, ab] = await Promise.all([
+  const [pr, lr, fg, rw, ab, jc] = await Promise.all([
     loadCSV(`${DB}passes/${id}.csv`, { optional: true }), loadCSV(`${DB}lowres/${id}.csv`, { optional: true }),
     loadCSV(DB + "figures.csv", { optional: true }), loadCSV(DB + "records/ring_waves.csv", { optional: true }),
-    loadCSV(DB + "records/airborne_bands.csv", { optional: true }),
+    loadCSV(DB + "records/airborne_bands.csv", { optional: true }), loadCSV(DB + "jcg_observations.csv", { optional: true }),
   ]);
+  // A reported day can be a month or a range; the mark sits in the middle of it.
+  reports = jc.filter((r) => r.volcano_id === id).map((r) => {
+    const [a, b] = r.date.split("/");
+    return { ...r, t0: partialDate(a, false), t1: partialDate(b || a, true) };
+  }).filter((r) => r.t0 !== null && r.t1 !== null);
   passes = pr.map((p) => ({
     ...p, t: ms(p.time), dw: Number(p.dw_km2 || 0), alert: p.level === "L2" || p.level === "L3", img: p.img === "1",
     site: siteOf(p.zone_id),
@@ -109,7 +114,7 @@ function feedChart() {
   const d0 = Math.min(...all), d1 = Math.max(...all, ms(meta.last_pass));
   const pad = (d1 - d0) * 0.012 + 5 * DAY;
   chart.showDismissed = S.showDismissed;
-  chart.setData({ passes: zp, lowres, episodes: eps, periods, domain: [d0 - pad, d1 + pad] });
+  chart.setData({ passes: zp, lowres, episodes: eps, periods, reports, domain: [d0 - pad, d1 + pad] });
 }
 
 function renderLegend() {
@@ -121,6 +126,7 @@ function renderLegend() {
     passes.length ? item(el("i", { class: "key-tick" }), t("v.legend.seen")) : null,
     passes.length ? item(el("i", { class: "key-tick", style: "opacity:.45;height:6px" }), t("v.legend.cloud")) : null,
     periods.length ? item(el("i", { class: "key-band" }), t("v.legend.eruption")) : null,
+    reports.length ? item(el("i", { class: "key-dot", style: "width:7px;height:7px;border-radius:0;background:var(--ink)" }), t("v.legend.jcg")) : null,
     lowres.length ? item(el("i", { class: "key-bar" }), t("v.legend.lowres")) : null);
 }
 
@@ -346,6 +352,20 @@ function renderRecords() {
   }
 }
 
+function renderReports() {
+  $("jcg-section").hidden = !reports.length;
+  if (!reports.length) return;
+  const src = clear($("jcg-source"));
+  src.append(t("v.jcg.lead", { date: reports.reduce((d, r) => (r.retrieved > d ? r.retrieved : d), "") }) + " ");
+  for (const url of [...new Set(reports.map((r) => r.url))]) src.append(el("a", { href: url, target: "_blank", rel: "noopener", text: url.split("/").pop() }), " ");
+  const rows = [...reports].sort((a, b) => (a.date < b.date ? 1 : -1));
+  const result = (r) => t("jcg." + r.category) + (r.phenomena ? ": " + r.phenomena.split("+").map((p) => t("jph." + p)).join(LANG === "ja" ? "、" : ", ") : "");
+  const text = (r) => (LANG === "ja" ? r.text_ja : (r.summary_en || (r.category === "anomaly" ? r.text_ja : "")));
+  const who = (r) => (LANG === "ja" ? r.observer : r.observer.split(" ").map((o) => t("jobs." + o)).join(", "));
+  simpleTable($("jcg"), ["j.date", "j.site", "j.observer", "j.result", "j.text"].map((k) => t(k)),
+    rows.map((r) => [r.date + (r.time ? ` ${r.time}` : ""), (LANG === "ja" ? r.site_ja : (r.site_en || r.site_ja)), who(r), result(r), text(r)]));
+}
+
 function renderZones() {
   $("zones-section").hidden = false;
   simpleTable($("zones"), ["v.zones.id", "v.zones.name", "v.zones.kind", "v.zones.centre", "v.zones.radius", "v.zones.sensors"].map((k) => t(k)),
@@ -372,6 +392,7 @@ function renderAll() {
   renderEpisodes();
   renderFigures();
   renderRecords();
+  renderReports();
   renderZones();
   if (chart) { renderLegend(); renderPass(); chart.draw(); const z = $("zone").options[0]; if (z) z.textContent = t("v.zone.all"); }
 }

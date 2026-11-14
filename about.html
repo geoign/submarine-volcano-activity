@@ -69,6 +69,9 @@
 </tbody></table>
 <p>Discoloured water outlasts an eruption, so the match to a documented eruption period takes the period from 30 days before the start of the eruption to 90 days after its end.</p>
 <p>For activity outside the documented eruption periods, the field "Earlier reports checked" says what was checked. Where that field is empty, earlier reports were not checked. A record in this database does not mean that the activity had not been reported.</p>
+<h2>Observations by aircraft and ship in Japan</h2>
+<p>For the volcanoes of Japan there is a second record to compare with. The Japan Coast Guard's database of submarine volcanoes (海域火山データベース) lists, volcano by volcano, the visits by aircraft and ship and what was seen. The observers are the Coast Guard and the Maritime Self-Defense Force, and one row is from the Japan Meteorological Agency. The records since 2013 were taken from the pages of 13 volcanoes of this database on 14 November 2026. Each record was sorted into "activity seen", "nothing unusual" or "not visible", and the records of activity were summarised in English; the Japanese text is the source's. The page of a volcano shows these records in a table and as squares on the timeline. Their dates are Japan time, while the satellite passes are in UTC.</p>
+<p>Every episode at these volcanoes is compared with the observations from 14 days before its start to 14 days after its end. The field "Earlier reports checked" says what the Coast Guard's database has for that time: activity, visits that found nothing unusual, or no visit. An observation counts for an episode when the feature it describes lies in the monitoring zone of the episode. One page of the source can cover several features, so activity at a neighbouring feature is named apart. The comparison does not change a class. Where the review dismissed an episode or left it undetermined, and the Coast Guard's database has activity in its zone at the time, the author's review takes that episode first. An aircraft sees a volcano for minutes, and the nearest satellite pass can be days away, so the two records can differ without either being wrong.</p>
 <h2>Limits</h2>
 <ul>
 <li>This is not real-time monitoring. Sentinel-2 has revisited a zone every 2 to 5 days in recent years and less often before 2018, and the screening and the review come after that.</li>
@@ -90,6 +93,7 @@
 <tr><td><code>passes/&lt;volcano&gt;.csv</code></td><td>Every high-resolution pass, including the passes without an alert and those with the sea not visible</td></tr>
 <tr><td><code>lowres/&lt;volcano&gt;.csv</code></td><td>The daily low-resolution record (days with the sea visible)</td></tr>
 <tr><td><code>known_periods.csv</code></td><td>The eruption periods used for the matching</td></tr>
+<tr><td><code>jcg_observations.csv</code></td><td>The observations by aircraft and ship at the volcanoes of Japan, from the Japan Coast Guard's database</td></tr>
 <tr><td><code>records/</code></td><td>Records of concentric ring waves and of airborne bands</td></tr>
 </tbody></table>
 <p>The fields are described in <code>docs/DATA.md</code> of the repository.</p>
@@ -101,10 +105,11 @@
 <li>VIIRS and MODIS images: NASA's Global Imagery Browse Services (GIBS).</li>
 <li>Eruption periods and volcano numbers: Volcanoes of the World, Global Volcanism Program, Smithsonian Institution (retrieved on 11 November 2026).</li>
 <li>The positions of ten hydrothermal sites and the names of eleven targets without a GVP number: InterRidge Vents Database.</li>
+<li>Observations by aircraft and ship at the volcanoes of Japan: made by editing the Japan Coast Guard's database of submarine volcanoes (海域火山データベース, <a href="https://www1.kaiho.mlit.go.jp/kaiikiDB/list-2.htm">https://www1.kaiho.mlit.go.jp/kaiikiDB/list-2.htm</a>, used on 14 November 2026). The author of this database extracted the records since 2013, sorted them and summarised them in English.</li>
 <li>The land on the map is from Natural Earth; the map is drawn with Leaflet.</li>
 </ul>
 <h2>Terms of use and citation</h2>
-<p>The data (the tables in <code>db/</code>, the files in <code>curation/</code>, these texts and the images) are under CC BY 4.0; the code is under the MIT licence. The images are made from Copernicus Sentinel and Landsat data, so please also give the sources above when you reuse them. What was taken from the Smithsonian's catalogue and from the InterRidge database stays under the terms of those sources.</p>
+<p>The data (the tables in <code>db/</code>, the files in <code>curation/</code>, these texts and the images) are under CC BY 4.0; the code is under the MIT licence. The images are made from Copernicus Sentinel and Landsat data, so please also give the sources above when you reuse them. What was taken from the Smithsonian's catalogue, from the InterRidge database and from the Japan Coast Guard's database stays under the terms of those sources.</p>
 <p>An example of a citation:</p>
 <p>Ikegami, F. (2026). Submarine Volcano Activity Database. <a href="https://github.com/geoign/submarine-volcano-activity">https://github.com/geoign/submarine-volcano-activity</a></p>
 <p>The author is Fumihiko Ikegami (Ikegami GeoResearch). Contact: <a href="mailto:f.ikegami@gmail.com">f.ikegami@gmail.com</a></p>
@@ -167,6 +172,9 @@
 </tbody></table>
 <p>変色水は噴火のあとも続くので、既知の噴火期間との照合では噴火の開始の 30 日前から終了の 90 日後までを期間に含めています。</p>
 <p>既知の噴火期間に当たらない活動には、既報を確かめた範囲を「既報の確認」の欄に書いています。この欄が空のエピソードは、既報を確かめていません。このデータベースに記録があることは、その活動が報告されていなかったことを意味しません。</p>
+<h2>日本の航空機と船による観測</h2>
+<p>日本の火山には、照らし合わせる記録がもう 1 つあります。海上保安庁の「海域火山データベース」は、航空機や船による観測の日時と見えたものを火山ごとに載せています。観測したのは海上保安庁と海上自衛隊で、気象庁の記録も 1 件あります。このデータベースの火山のうち 13 火山のページから、2013 年以降の記録を 2026 年 11 月 14 日に取りました。記録は「異常あり」「特異事象なし」「視認できず」に分け、異常の記録には英語の要約を付けました。日本語の文は出典のままです。火山のページでは、この記録を表と時間軸の四角で示しています。日付は日本時間で、衛星の通過は UTC です。</p>
+<p>これらの火山のエピソードは、開始の 14 日前から終了の 14 日後までの観測と照らし合わせています。「既報の確認」の欄には、その期間に海域火山データベースにあるものを書いています。異常の記録、特異事象なしの観測、観測なしのいずれかです。観測は、対象の地物がエピソードの監視区域の中にあるときに、そのエピソードのものとして数えます。出典の 1 つのページが複数の地物を扱うことがあるので、隣の地物の異常は分けて書いています。この照合では区分を変えません。判定で棄却したエピソードと判断がつかないとしたエピソードのうち、同じ時期のその区域に異常の記録があるものは、作者が優先して確認します。航空機が火山を見るのは数分で、もっとも近い衛星の通過と何日も離れていることがあります。2 つの記録が食い違っても、どちらかが誤りとは限りません。</p>
 <h2>限界</h2>
 <ul>
 <li>即時の監視ではありません。Sentinel-2 の再訪は近年で 2〜5 日おき、2018 年より前はそれよりまばらで、ふるい分けと判定はそのあとに行います。</li>
@@ -188,6 +196,7 @@
 <tr><td><code>passes/&lt;火山&gt;.csv</code></td><td>高解像度の全通過。警戒にならなかった通過と、海面が見えなかった通過も含みます</td></tr>
 <tr><td><code>lowres/&lt;火山&gt;.csv</code></td><td>低解像度の毎日の記録 (海面が見えた日)</td></tr>
 <tr><td><code>known_periods.csv</code></td><td>照合に使った噴火期間</td></tr>
+<tr><td><code>jcg_observations.csv</code></td><td>日本の火山の航空機と船による観測記録 (海上保安庁の海域火山データベースによる)</td></tr>
 <tr><td><code>records/</code></td><td>同心円状の波紋と大気中の帯の記録</td></tr>
 </tbody></table>
 <p>項目の説明はリポジトリの <code>docs/DATA.md</code> にあります。</p>
@@ -199,10 +208,11 @@
 <li>VIIRS と MODIS の画像は NASA の Global Imagery Browse Services (GIBS) から取得しました。</li>
 <li>噴火期間と火山番号は、スミソニアンの Global Volcanism Program の Volcanoes of the World によります (2026 年 11 月 11 日に取得)。</li>
 <li>熱水域 10 か所の位置と、GVP の番号を持たない 11 の対象の名前は、InterRidge Vents Database によります。</li>
+<li>日本の火山の航空機と船による観測記録は、海上保安庁「海域火山データベース」(<a href="https://www1.kaiho.mlit.go.jp/kaiikiDB/list-2.htm、2026">https://www1.kaiho.mlit.go.jp/kaiikiDB/list-2.htm、2026</a> 年 11 月 14 日に利用) を加工して作成しました。2013 年以降の記録を抜き出し、区分と英語の要約を付けたのは、このデータベースの作者です。</li>
 <li>地図の陸地は Natural Earth、地図の表示には Leaflet を使っています。</li>
 </ul>
 <h2>利用条件と引用</h2>
-<p>データ (<code>db/</code> の表、<code>curation/</code> のファイル、この説明の文章、画像) は CC BY 4.0、コードは MIT ライセンスです。画像は Copernicus Sentinel と Landsat のデータから作ったものなので、再利用するときは上の出典も示してください。スミソニアンの噴火表と InterRidge のデータベースから取った部分には、それぞれの利用条件が引き続き適用されます。</p>
+<p>データ (<code>db/</code> の表、<code>curation/</code> のファイル、この説明の文章、画像) は CC BY 4.0、コードは MIT ライセンスです。画像は Copernicus Sentinel と Landsat のデータから作ったものなので、再利用するときは上の出典も示してください。スミソニアンの噴火表、InterRidge のデータベース、海上保安庁の海域火山データベースから取った部分には、それぞれの利用条件が引き続き適用されます。</p>
 <p>引用の例は次のとおりです。</p>
 <p>Ikegami, F. (2026). Submarine Volcano Activity Database. <a href="https://github.com/geoign/submarine-volcano-activity">https://github.com/geoign/submarine-volcano-activity</a></p>
 <p>作者は池上郁彦 (イケガミ・ジオリサーチ) です。連絡先は <a href="mailto:f.ikegami@gmail.com">f.ikegami@gmail.com</a> です。</p>

@@ -32,6 +32,14 @@ apply to their part:
   coordinates)" in db/zones.csv) and the names of the eleven targets whose id begins with "IR-":
   InterRidge Vents Database. They stay under the terms of that database and are not covered by
   the grant above.
+- Observations by aircraft and ship at the volcanoes of Japan (db/jcg_observations.csv,
+  curation/jcg_observations.csv, and what the column prior_reports of db/episodes.csv says of
+  them): made by editing the Japan Coast Guard's database of submarine volcanoes
+  (海域火山データベース, https://www1.kaiho.mlit.go.jp/kaiikiDB/list-2.htm, used on 14 November
+  2026). The Japanese text of each observation is the Coast Guard's; the category, the phenomena
+  and the English summary were added for this database and are not the Coast Guard's statements.
+  The terms of the Coast Guard's site (https://www1.kaiho.mlit.go.jp/copyright.html) ask that the
+  source be named and that an edited version be marked as edited.
 - assets/land.json: Natural Earth (public domain).
 
 The database comes without warranty of any kind. It is not a volcano warning and not official
