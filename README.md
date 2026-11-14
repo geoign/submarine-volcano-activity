@@ -2,7 +2,7 @@
 
 A satellite record of shallow submarine volcanoes worldwide since 2013: discoloured water,
 floating pumice, new land, thermal anomalies and bands in the air seen in Sentinel-2, Landsat and
-low-resolution imagery, with the review of every detection.
+low-resolution imagery, with the reviews of the detections.
 
 - Site: <https://geoign.github.io/submarine-volcano-activity/>
 - Methods, classes and limits: [docs/METHODS.en.md](docs/METHODS.en.md) ([日本語](docs/METHODS.ja.md))
@@ -49,10 +49,17 @@ opening `index.html` from the file system does not work.
 ## Rebuilding the tables
 
 The tables are built from the stores of the monitoring system, which is not part of this
-repository. With that system checked out:
+repository. The tools take its location, a working folder and the rclone destination of the image
+store from a file `local.toml` beside this README (not committed):
+
+```toml
+monitor = "<checkout of the monitoring system>"
+work = "<folder for lists and intermediate tables>"
+remote = "<rclone remote:bucket/path of the image store>"
+```
 
 ```
-python tools/build_db.py --monitor D:/SubMVolc_Monitor   # db/
+python tools/build_db.py                                 # db/
 python tools/check_db.py                                 # counts, vocabularies, leaks
 python tools/sync_images.py                              # new quicklooks to the image store
 python tools/build_about.py                              # about.html from docs/METHODS.*.md
@@ -65,11 +72,13 @@ monitor's reviews and from `curation/overrides.csv`; see the module docstrings.
 ## Sources
 
 - Contains modified Copernicus Sentinel data (2015 to 2026): Sentinel-2 and Sentinel-3, obtained
-  from Element 84's Earth Search and Microsoft's Planetary Computer.
+  from Element 84's Earth Search, Microsoft's Planetary Computer and Google Cloud's public copy
+  of the Sentinel-2 products.
 - Landsat 8 and 9: U.S. Geological Survey, obtained from the Planetary Computer.
 - VIIRS and MODIS images: NASA's Global Imagery Browse Services (GIBS).
 - Eruption periods and volcano numbers: Volcanoes of the World, Global Volcanism Program,
   Smithsonian Institution (retrieved on 11 November 2026).
+- Positions of ten hydrothermal sites and names of eleven targets: InterRidge Vents Database.
 - Land outline of the map: Natural Earth. Map library: Leaflet (BSD 2-Clause, in
   `assets/vendor/leaflet/`).
 
@@ -79,7 +88,8 @@ The data (`db/`, `curation/`, the texts in `docs/` and the images) are under
 [CC BY 4.0](LICENSE-DATA). The code (`tools/`, `tests/`, `assets/js/`, the style sheet and the HTML
 pages) is under the [MIT licence](LICENSE). Leaflet, in `assets/vendor/leaflet/`, keeps its own
 licence. The images are made from Copernicus Sentinel and Landsat data; give the sources above as
-well when you reuse them.
+well when you reuse them. What was taken from the Smithsonian's catalogue and from the InterRidge
+database stays under the terms of those sources.
 
 > Ikegami, F. (2026). Submarine Volcano Activity Database.
 > https://github.com/geoign/submarine-volcano-activity

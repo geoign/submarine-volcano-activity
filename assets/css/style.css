@@ -264,6 +264,7 @@ button.chip[aria-pressed="false"] { opacity: .45; }
 .episode.airborne { border-left-color: var(--c-airborne); }
 .episode.undetermined { border-left-color: var(--c-undetermined); }
 .episode.nonvolcanic { border-left-color: var(--c-nonvolcanic); }
+.episode.target { outline: 2px solid var(--accent); outline-offset: 2px; }
 .episode .top { display: flex; flex-wrap: wrap; gap: .2rem .9rem; align-items: baseline; }
 .episode .dates { font-weight: 650; font-variant-numeric: tabular-nums; }
 .episode .nums { color: var(--ink-2); font-size: .86rem; }

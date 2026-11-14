@@ -1,7 +1,7 @@
 zone_id,time,sat,cls,clear,level,reasons,dw_km2,colour,dist_km,bearing,fl_km2,nl_km2,th_px,ap_km2,episode_id,img
 IR-Eolo_Seamount-A-LS,2013-04-24T09:43,L8,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A-LS,2013-05-26T09:43,L8,A,0.8,L1,,1.994,white,2.12,133,0,0,0,0,,1
-IR-Eolo_Seamount-A-LS,2013-06-11T09:43,L8,A,0.79,L1,,0.41,white,3.02,31,0,0,0,0,,1
+IR-Eolo_Seamount-A-LS,2013-06-11T09:43,L8,A,0.79,L1,,0.41,white,3.02,310,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2013-06-27T09:43,L8,A,0.99,L1,,0.144,white,4.57,267,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2013-07-13T09:43,L8,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2013-07-29T09:43,L8,A,1,L1,,0,,,,0,0,0,0,,1
@@ -187,7 +187,7 @@ IR-Eolo_Seamount-A-LS,2017-08-25T09:41,L8,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2017-08-26T09:50,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2017-08-31T09:58,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2017-09-05T09:50,S2A,A,0.93,L1,,0,,,,0,0,0,0,,1
-IR-Eolo_Seamount-A-LS,2017-09-10T09:41,L8,A,0.88,L3,dw,20.606,white,2.06,16,0,0,0,0,IR-Eolo_Seamount-A_20170910,1
+IR-Eolo_Seamount-A-LS,2017-09-10T09:41,L8,A,0.88,L3,dw,20.606,white,2.06,160,0,0,0,0,IR-Eolo_Seamount-A_20170910,1
 IR-Eolo_Seamount-A,2017-09-10T09:58,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2017-09-15T09:50,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2017-09-20T09:50,S2B,A,0.73,L1,,0,,,,0,0,0,0,,1
@@ -204,7 +204,7 @@ IR-Eolo_Seamount-A,2017-10-30T09:55,S2B,C,0.23,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2017-11-09T09:59,S2B,A,0.88,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2017-11-13T09:42,L8,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2017-11-14T09:52,S2A,C,0,L0,,,,,,,,,,,0
-IR-Eolo_Seamount-A,2017-11-19T09:54,S2B,B,0.5,L1,,0.109,white,3.28,14,0,0,0,0,,1
+IR-Eolo_Seamount-A,2017-11-19T09:54,S2B,B,0.5,L1,,0.109,white,3.28,140,0,0,0,0,,1
 IR-Eolo_Seamount-A,2017-11-24T09:53,S2A,A,0.99,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2017-11-29T09:41,L8,B,0.66,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2017-11-29T09:58,S2B,A,0.9,L1,,0,,,,0,0,0,0,,1
@@ -332,7 +332,7 @@ IR-Eolo_Seamount-A,2019-03-19T10:01,S2A,A,0.94,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2019-03-24T09:41,L8,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2019-03-24T10:00,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2019-03-29T10:00,S2A,A,1,L1,,0,,,,0,0,0,0,,1
-IR-Eolo_Seamount-A,2019-04-03T10:08,S2B,A,0.88,L2,dw,0.525,white,4.13,32,0,0,0,0,IR-Eolo_Seamount-A_20190403,1
+IR-Eolo_Seamount-A,2019-04-03T10:08,S2B,A,0.88,L2,dw,0.525,white,4.13,320,0,0,0,0,IR-Eolo_Seamount-A_20190403,1
 IR-Eolo_Seamount-A,2019-04-08T10:00,S2A,A,0.74,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2019-04-09T09:41,L8,A,0.92,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2019-04-13T10:00,S2B,B,0.68,L1,,0,,,,0,0,0,0,,1
@@ -387,7 +387,7 @@ IR-Eolo_Seamount-A,2019-10-15T10:00,S2A,A,0.94,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2019-10-18T09:42,L8,A,0.8,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2019-10-20T10:00,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2019-10-25T10:00,S2A,C,0,L0,,,,,,,,,,,0
-IR-Eolo_Seamount-A,2019-10-30T10:00,S2B,B,0.58,L1,,0.184,white,2.67,18,0,0,0,0,,1
+IR-Eolo_Seamount-A,2019-10-30T10:00,S2B,B,0.58,L1,,0.184,white,2.67,180,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2019-11-03T09:42,L8,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2019-11-04T10:00,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2019-11-09T10:00,S2B,B,0.48,L1,,0,,,,0,0,0,0,,1
@@ -500,7 +500,7 @@ IR-Eolo_Seamount-A,2020-12-23T10:00,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2020-12-28T10:00,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2021-01-02T10:00,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2021-01-07T10:00,S2A,A,0.99,L1,,0,,,,0,0,0,0,,1
-IR-Eolo_Seamount-A-LS,2021-01-08T09:42,L8,B,0.32,L3,dw+th,1.66,white,3.54,16,0,0,2,0,IR-Eolo_Seamount-A_20210108,1
+IR-Eolo_Seamount-A-LS,2021-01-08T09:42,L8,B,0.32,L3,dw+th,1.66,white,3.54,160,0,0,2,0,IR-Eolo_Seamount-A_20210108,1
 IR-Eolo_Seamount-A,2021-01-12T10:00,S2B,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2021-01-17T10:00,S2A,C,0.08,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2021-01-22T10:00,S2B,C,0,L0,,,,,,,,,,,0
@@ -528,7 +528,7 @@ IR-Eolo_Seamount-A,2021-04-12T10:00,S2B,C,0.13,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A-LS,2021-04-14T09:41,L8,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2021-04-17T09:59,S2A,C,0.01,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2021-04-22T09:59,S2B,A,0.92,L1,,0,,,,0,0,0,0,,1
-IR-Eolo_Seamount-A,2021-04-27T10:00,S2A,A,1,L2,dw,0.43,white,0.96,2,0,0,0,0,IR-Eolo_Seamount-A_20210427,1
+IR-Eolo_Seamount-A,2021-04-27T10:00,S2A,A,1,L2,dw,0.43,white,0.96,20,0,0,0,0,IR-Eolo_Seamount-A_20210427,1
 IR-Eolo_Seamount-A-LS,2021-04-30T09:41,L8,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2021-05-02T10:00,S2B,C,0.29,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2021-05-07T10:00,S2A,A,0.95,L3,dw,1.627,white,2.29,74,0,0,0,0,IR-Eolo_Seamount-A_20210427,1
@@ -860,7 +860,7 @@ IR-Eolo_Seamount-A,2024-04-21T10:00,S2A,A,0.86,L1,,0.022,white,4.55,116,0,0,0,0,
 IR-Eolo_Seamount-A,2024-04-26T10:00,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2024-04-30T09:41,L9,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2024-05-01T10:00,S2A,A,0.85,L1,,0.744,white,3.61,142,0,0,0,0,,1
-IR-Eolo_Seamount-A,2024-05-06T10:00,S2B,A,0.94,L2,dw,0.715,white,1.12,7,0,0,0,0,IR-Eolo_Seamount-A_20240506,1
+IR-Eolo_Seamount-A,2024-05-06T10:00,S2B,A,0.94,L2,dw,0.715,white,1.12,70,0,0,0,0,IR-Eolo_Seamount-A_20240506,1
 IR-Eolo_Seamount-A-LS,2024-05-08T09:41,L8,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2024-05-11T10:00,S2A,C,0.16,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A-LS,2024-05-16T09:41,L9,A,1,L1,,0,,,,0,0,0,0,,1
@@ -972,10 +972,10 @@ IR-Eolo_Seamount-A-LS,2025-04-01T09:41,L9,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2025-04-01T10:00,S2B,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2025-04-06T10:00,S2C,B,0.34,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2025-04-08T10:00,S2A,A,1,L1,,0,,,,0,0,0,0,,1
-IR-Eolo_Seamount-A-LS,2025-04-09T09:41,L8,A,1,L3,dw,6.343,white,1.19,14,0,0,0,0,IR-Eolo_Seamount-A_20250409,1
+IR-Eolo_Seamount-A-LS,2025-04-09T09:41,L8,A,1,L3,dw,6.343,white,1.19,140,0,0,0,0,IR-Eolo_Seamount-A_20250409,1
 IR-Eolo_Seamount-A,2025-04-11T10:00,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2025-04-16T10:00,S2C,C,0,L0,,,,,,,,,,,0
-IR-Eolo_Seamount-A-LS,2025-04-17T09:41,L9,B,0.32,L1,,0.166,white,3.24,24,0,0,0,0,,1
+IR-Eolo_Seamount-A-LS,2025-04-17T09:41,L9,B,0.32,L1,,0.166,white,3.24,240,0,0,0,0,,1
 IR-Eolo_Seamount-A,2025-04-18T10:00,S2A,C,0.09,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2025-04-21T10:00,S2B,A,0.95,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A-LS,2025-04-25T09:41,L8,B,0.56,L1,,0,,,,0,0,0,0,,1
@@ -1085,7 +1085,7 @@ IR-Eolo_Seamount-A,2026-01-26T10:00,S2B,C,0,L0,,,,,,,,,,,0
 IR-Eolo_Seamount-A,2026-01-31T10:00,S2C,B,0.68,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2026-02-05T10:00,S2B,B,0.59,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2026-02-10T10:00,S2C,C,0,L0,,,,,,,,,,,0
-IR-Eolo_Seamount-A,2026-02-15T10:00,S2B,B,0.43,L1,,0.038,white,3.46,14,0,0,0,0,,1
+IR-Eolo_Seamount-A,2026-02-15T10:00,S2B,B,0.43,L1,,0.038,white,3.46,140,0,0,0,0,,1
 IR-Eolo_Seamount-A,2026-02-20T10:00,S2C,A,0.92,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2026-02-25T10:00,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Eolo_Seamount-A,2026-03-02T10:00,S2C,C,0,L0,,,,,,,,,,,0

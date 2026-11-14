@@ -200,7 +200,7 @@ IR-Grover_Seamount-A-LS,2018-04-22T23:05,L8,C,0,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A,2018-04-25T23:28,S2B,B,0.66,L1,,0.032,white,2.55,143,0,0,0,0,,1
 IR-Grover_Seamount-A,2018-04-30T23:28,S2A,A,0.72,L1,,0.026,white,2.88,54,0,0,0,0,,1
 IR-Grover_Seamount-A,2018-05-05T23:28,S2B,C,0,L0,,,,,,,,,,,0
-IR-Grover_Seamount-A-LS,2018-05-08T23:05,L8,A,0.84,L1,,0.396,none,4.79,5,0,0,0,0,,1
+IR-Grover_Seamount-A-LS,2018-05-08T23:05,L8,A,0.84,L1,,0.396,none,4.79,50,0,0,0,0,,1
 IR-Grover_Seamount-A,2018-05-10T23:28,S2A,C,0,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A,2018-05-15T23:28,S2B,B,0.34,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2018-05-20T23:28,S2A,B,0.63,L1,,0,,,,0,0,0,0,,1
@@ -277,7 +277,7 @@ IR-Grover_Seamount-A,2019-02-19T23:29,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A-LS,2019-02-20T23:06,L8,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2019-02-24T23:44,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2019-03-01T23:37,S2B,A,1,L1,,0,,,,0,0,0,0,,1
-IR-Grover_Seamount-A,2019-03-06T23:38,S2A,A,0.96,L3,dw,1.578,brown,3.14,2,0,0,0,0,IR-Grover_Seamount-A_20190306,1
+IR-Grover_Seamount-A,2019-03-06T23:38,S2A,A,0.96,L3,dw,1.578,brown,3.14,20,0,0,0,0,IR-Grover_Seamount-A_20190306,1
 IR-Grover_Seamount-A-LS,2019-03-08T23:06,L8,A,0.79,L1,,0.328,white,4.2,165,0,0,0,0,,1
 IR-Grover_Seamount-A,2019-03-11T23:38,S2B,A,0.95,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2019-03-16T23:30,S2A,A,0.84,L1,,0,,,,0,0,0,0,,1
@@ -294,7 +294,7 @@ IR-Grover_Seamount-A-LS,2019-04-25T23:05,L8,C,0,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A,2019-04-25T23:29,S2A,C,0,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A,2019-04-30T23:29,S2B,B,0.62,L1,,0.03,white,3.86,161,0.046,0,0,0,,1
 IR-Grover_Seamount-A,2019-05-05T23:29,S2A,C,0,L0,,,,,,,,,,,0
-IR-Grover_Seamount-A,2019-05-10T23:29,S2B,A,0.92,L1,,0.086,white,2.67,15,0,0,0,0,,1
+IR-Grover_Seamount-A,2019-05-10T23:29,S2B,A,0.92,L1,,0.086,white,2.67,150,0,0,0,0,,1
 IR-Grover_Seamount-A-LS,2019-05-11T23:05,L8,B,0.67,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2019-05-15T23:29,S2A,B,0.52,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2019-05-25T23:29,S2A,C,0,L0,,,,,,,,,,,0
@@ -521,7 +521,7 @@ IR-Grover_Seamount-A,2021-09-21T23:29,S2A,A,0.84,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2021-09-26T23:29,S2B,A,0.77,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2021-10-01T23:29,S2A,B,0.57,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2021-10-06T23:29,S2B,A,0.88,L1,,0,,,,0,0,0,0,,1
-IR-Grover_Seamount-A-LS,2021-10-07T23:06,L8,B,0.68,L1,,0.13,white,2.7,33,0,0,0,0,,1
+IR-Grover_Seamount-A-LS,2021-10-07T23:06,L8,B,0.68,L1,,0.13,white,2.7,330,0,0,0,0,,1
 IR-Grover_Seamount-A,2021-10-11T23:29,S2A,B,0.64,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2021-10-16T23:29,S2B,B,0.63,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2021-10-21T23:29,S2A,A,0.92,L1,,0,,,,0,0,0,0,,1
@@ -626,7 +626,7 @@ IR-Grover_Seamount-A,2022-09-21T23:29,S2B,A,0.77,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A-LS,2022-09-24T23:07,L8,A,0.99,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2022-09-26T23:29,S2A,A,0.88,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2022-10-01T23:29,S2B,A,0.83,L1,,0,,,,0,0,0,0,,1
-IR-Grover_Seamount-A,2022-10-06T23:29,S2A,A,0.76,L1,,0.182,white,2.42,15,0,0,0,0,,1
+IR-Grover_Seamount-A,2022-10-06T23:29,S2A,A,0.76,L1,,0.182,white,2.42,150,0,0,0,0,,1
 IR-Grover_Seamount-A-LS,2022-10-10T23:06,L8,A,0.75,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2022-10-16T23:29,S2A,C,0,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A-LS,2022-10-18T23:06,L9,A,0.86,L1,,0.09,brown,4.42,114,0,0,0,0,,1
@@ -787,7 +787,7 @@ IR-Grover_Seamount-A-LS,2024-02-18T23:06,L8,C,0,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A,2024-02-18T23:29,S2A,C,0,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A,2024-02-23T23:29,S2B,A,0.83,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A-LS,2024-02-26T23:06,L9,C,0,L0,,,,,,,,,,,0
-IR-Grover_Seamount-A,2024-02-28T23:29,S2A,A,1,L1,,0.022,white,2.99,16,0,0,0,0,,1
+IR-Grover_Seamount-A,2024-02-28T23:29,S2A,A,1,L1,,0.022,white,2.99,160,0,0,0,0,,1
 IR-Grover_Seamount-A,2024-03-04T23:29,S2B,C,0.22,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A-LS,2024-03-05T23:06,L8,C,0,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A,2024-03-09T23:29,S2A,C,0.13,L0,,,,,,,,,,,0
@@ -873,7 +873,7 @@ IR-Grover_Seamount-A-LS,2024-11-08T23:06,L9,B,0.58,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2024-11-09T23:29,S2B,A,0.98,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A,2024-11-14T23:29,S2A,A,0.99,L1,,0,,,,0,0,0,0,,1
 IR-Grover_Seamount-A-LS,2024-11-16T23:06,L8,C,0.26,L0,,,,,,,,,,,0
-IR-Grover_Seamount-A,2024-11-19T23:29,S2B,A,0.96,L2,dw,0.154,brown,3.07,14,0,0,0,0,IR-Grover_Seamount-A_20241119,1
+IR-Grover_Seamount-A,2024-11-19T23:29,S2B,A,0.96,L2,dw,0.154,brown,3.07,140,0,0,0,0,IR-Grover_Seamount-A_20241119,1
 IR-Grover_Seamount-A-LS,2024-11-24T23:06,L9,B,0.67,L1,,0.371,brown,3.2,27,0,0,0,0,,1
 IR-Grover_Seamount-A,2024-11-24T23:29,S2A,C,0.26,L0,,,,,,,,,,,0
 IR-Grover_Seamount-A,2024-11-29T23:29,S2B,A,0.8,L1,,0,,,,0,0,0,0,,1

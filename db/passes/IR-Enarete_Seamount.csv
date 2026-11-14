@@ -21,8 +21,8 @@ IR-Enarete_Seamount-A-LS,2014-03-10T09:42,L8,C,0.07,L0,,,,,,,,,,,0
 IR-Enarete_Seamount-A-LS,2014-03-26T09:42,L8,B,0.42,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2014-04-27T09:41,L8,A,0.72,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2014-05-13T09:41,L8,C,0.01,L0,,,,,,,,,,,0
-IR-Enarete_Seamount-A-LS,2014-05-29T09:41,L8,B,0.46,L1,,0.652,white,1.19,23,0,0,0,0,,1
-IR-Enarete_Seamount-A-LS,2014-06-14T09:41,L8,A,0.93,L1,,0.112,white,4.44,26,0,0,0,0,,1
+IR-Enarete_Seamount-A-LS,2014-05-29T09:41,L8,B,0.46,L1,,0.652,white,1.19,230,0,0,0,0,,1
+IR-Enarete_Seamount-A-LS,2014-06-14T09:41,L8,A,0.93,L1,,0.112,white,4.44,260,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2014-06-30T09:41,L8,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2014-07-16T09:41,L8,A,0.99,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2014-08-01T09:41,L8,B,0.55,L1,,0,,,,0,0,0,0,,1
@@ -142,7 +142,7 @@ IR-Enarete_Seamount-A,2016-08-31T09:50,S2A,A,0.88,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2016-09-07T09:42,L8,C,0.15,L0,,,,,,,,,,,0
 IR-Enarete_Seamount-A,2016-09-10T09:50,S2A,A,0.72,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2016-09-20T09:50,S2A,A,1,L1,,0,,,,0,0,0,0,,1
-IR-Enarete_Seamount-A-LS,2016-09-23T09:42,L8,A,1,L1,,0.22,white,4.47,31,0,0,0,0,,1
+IR-Enarete_Seamount-A-LS,2016-09-23T09:42,L8,A,1,L1,,0.22,white,4.47,310,0,0,0,0,,1
 IR-Enarete_Seamount-A,2016-09-30T09:50,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2016-10-09T09:42,L8,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2016-10-10T09:50,S2A,A,0.71,L1,,0,,,,0,0,0,0,,1
@@ -176,12 +176,12 @@ IR-Enarete_Seamount-A,2017-03-29T09:50,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2017-04-03T09:41,L8,B,0.35,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2017-04-08T09:50,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2017-04-18T09:57,S2A,A,0.71,L1,,0,,,,0,0,0,0,,1
-IR-Enarete_Seamount-A-LS,2017-04-19T09:41,L8,A,0.78,L1,,0.158,white,2.47,35,0,0,0,0,,1
+IR-Enarete_Seamount-A-LS,2017-04-19T09:41,L8,A,0.78,L1,,0.158,white,2.47,350,0,0,0,0,,1
 IR-Enarete_Seamount-A,2017-04-28T09:57,S2A,A,0.9,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2017-05-05T09:41,L8,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2017-05-08T09:56,S2A,B,0.51,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2017-05-18T09:50,S2A,A,1,L1,,0,,,,0,0,0,0,,1
-IR-Enarete_Seamount-A-LS,2017-05-21T09:41,L8,A,0.86,L1,,1.094,white,1.78,9,0,0,0,0,,1
+IR-Enarete_Seamount-A-LS,2017-05-21T09:41,L8,A,0.86,L1,,1.094,white,1.78,90,0,0,0,0,,1
 IR-Enarete_Seamount-A,2017-05-28T09:50,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2017-06-06T09:41,L8,C,0.29,L0,,,,,,,,,,,0
 IR-Enarete_Seamount-A,2017-06-07T09:50,S2A,A,0.79,L1,,0,,,,0,0,0,0,,1
@@ -273,7 +273,7 @@ IR-Enarete_Seamount-A,2018-05-18T09:57,S2B,C,0,L0,,,,,,,,,,,0
 IR-Enarete_Seamount-A,2018-05-23T09:55,S2A,C,0.25,L0,,,,,,,,,,,0
 IR-Enarete_Seamount-A-LS,2018-05-24T09:40,L8,B,0.46,L1,,0.292,white,3.44,103,0,0,0,0,,1
 IR-Enarete_Seamount-A,2018-06-02T10:00,S2A,A,0.96,L1,,0,,,,0,0,0,0,,1
-IR-Enarete_Seamount-A,2018-06-07T10:00,S2B,B,0.67,L1,,0.016,white,4.92,28,0,0,0,0,,1
+IR-Enarete_Seamount-A,2018-06-07T10:00,S2B,B,0.67,L1,,0.016,white,4.92,280,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2018-06-09T09:40,L8,B,0.4,L1,,0.493,white,2.63,202,0,0,0,0,,1
 IR-Enarete_Seamount-A,2018-06-12T09:56,S2A,A,0.99,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2018-06-17T10:00,S2B,A,0.88,L1,,0,,,,0,0,0,0,,1
@@ -282,7 +282,7 @@ IR-Enarete_Seamount-A-LS,2018-06-25T09:40,L8,B,0.55,L1,,0.083,white,1.84,259,0,0
 IR-Enarete_Seamount-A,2018-06-27T09:55,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2018-07-02T10:00,S2A,B,0.67,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2018-07-07T10:00,S2B,B,0.5,L1,,0,,,,0,0,0,0,,1
-IR-Enarete_Seamount-A-LS,2018-07-11T09:40,L8,A,1,L1,,0.043,white,4.42,11,0,0,0,0,,1
+IR-Enarete_Seamount-A-LS,2018-07-11T09:40,L8,A,1,L1,,0.043,white,4.42,110,0,0,0,0,,1
 IR-Enarete_Seamount-A,2018-07-12T10:00,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2018-07-17T10:00,S2B,B,0.35,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2018-07-22T10:00,S2A,A,1,L1,,0,,,,0,0,0,0,,1
@@ -329,7 +329,7 @@ IR-Enarete_Seamount-A,2018-12-19T09:59,S2A,C,0,L0,,,,,,,,,,,0
 IR-Enarete_Seamount-A,2018-12-24T10:00,S2B,A,0.77,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2018-12-29T09:59,S2A,C,0.01,L0,,,,,,,,,,,0
 IR-Enarete_Seamount-A-LS,2019-01-03T09:41,L8,A,0.81,L1,,0,,,,0,0,0,0,,1
-IR-Enarete_Seamount-A,2019-01-03T10:00,S2B,B,0.45,L2,dw,0.59,white,0.61,23,0,0,0,0,IR-Enarete_Seamount-A_20190103,1
+IR-Enarete_Seamount-A,2019-01-03T10:00,S2B,B,0.45,L2,dw,0.59,white,0.61,230,0,0,0,0,IR-Enarete_Seamount-A_20190103,1
 IR-Enarete_Seamount-A,2019-01-08T10:00,S2A,B,0.57,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2019-01-13T10:00,S2B,B,0.43,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2019-01-18T10:00,S2A,C,0.08,L0,,,,,,,,,,,0
@@ -1046,7 +1046,7 @@ IR-Enarete_Seamount-A,2025-08-06T10:00,S2A,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2025-08-07T09:41,L9,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2025-08-09T10:00,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A,2025-08-14T10:00,S2C,A,1,L1,,0,,,,0,0,0,0,,1
-IR-Enarete_Seamount-A-LS,2025-08-15T09:41,L8,A,0.91,L1,,0.245,white,1.09,15,0,0,0,0,,1
+IR-Enarete_Seamount-A-LS,2025-08-15T09:41,L8,A,0.91,L1,,0.245,white,1.09,150,0,0,0,0,,1
 IR-Enarete_Seamount-A,2025-08-16T10:00,S2A,C,0.06,L0,,,,,,,,,,,0
 IR-Enarete_Seamount-A,2025-08-19T10:00,S2B,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Enarete_Seamount-A-LS,2025-08-23T09:41,L9,A,0.98,L3,dw,2.506,white,3.97,196,0,0,0,0,IR-Enarete_Seamount-A_20250823,1

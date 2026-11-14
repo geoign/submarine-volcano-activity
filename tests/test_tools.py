@@ -30,6 +30,20 @@ def test_num_formats_cells():
     assert build_db.num(17.7441) == "17.744"
     assert build_db.num(-0.0001) == "0"
     assert build_db.num(352.0, 0) == "352"
+    # whole numbers keep their zeros: a bearing of 290 is not 29
+    assert build_db.num(290, 0) == "290"
+    assert build_db.num(100.0, 0) == "100"
+    assert build_db.num(10, 0) == "10"
+    assert build_db.num(360, 0) == "360"
+    assert build_db.num(100) == "100"
+    assert build_db.num(10.50) == "10.5"
+    assert build_db.num(0.0, 0) == "0"
+
+
+def test_obs_days_reads_the_day_of_each_observation():
+    ids = "GVP243070-A_20240615T2201_S2B GVP243070-A-LS_20240617T2144_L9"
+    assert build_db.obs_days(ids) == {"20240615", "20240617"}
+    assert build_db.obs_days("") == set()
 
 
 def test_site_of_strips_the_landsat_twin():

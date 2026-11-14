@@ -63,7 +63,7 @@ IR-Kolbeinsey_Field-A-LS,2014-10-04T12:51,L8,B,0.52,L1,,0,,,,0,0,0,0,,1
 IR-Kolbeinsey_Field-A-LS,2014-10-06T12:39,L8,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A-LS,2014-10-13T12:45,L8,A,0.82,L1,,0,,,,0,0,0,0,,1
 IR-Kolbeinsey_Field-A-LS,2015-03-06T12:45,L8,C,0,L0,,,,,,,,,,,0
-IR-Kolbeinsey_Field-A-LS,2015-03-13T12:51,L8,B,0.5,L3,dw+th,6.005,none,2.87,14,0,0,2,0,IR-Kolbeinsey_Field-A_20150313,1
+IR-Kolbeinsey_Field-A-LS,2015-03-13T12:51,L8,B,0.5,L3,dw+th,6.005,none,2.87,140,0,0,2,0,IR-Kolbeinsey_Field-A_20150313,1
 IR-Kolbeinsey_Field-A-LS,2015-03-15T12:38,L8,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A-LS,2015-03-22T12:44,L8,A,1,L1,,0,,,,0,0,0,0,,1
 IR-Kolbeinsey_Field-A-LS,2015-03-29T12:51,L8,C,0,L0,,,,,,,,,,,0
@@ -1252,7 +1252,7 @@ IR-Kolbeinsey_Field-A,2021-03-30T13:03,S2B,C,0.16,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A-LS,2021-03-31T12:39,L8,C,0.12,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-03-31T13:22,S2A,C,0.12,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-04-01T12:53,S2A,C,0.15,L0,,,,,,,,,,,0
-IR-Kolbeinsey_Field-A,2021-04-02T13:13,S2B,A,0.81,L1,,0.019,white,4.87,26,0,0,0,0,,1
+IR-Kolbeinsey_Field-A,2021-04-02T13:13,S2B,A,0.81,L1,,0.019,white,4.87,260,0,0,0,0,,1
 IR-Kolbeinsey_Field-A,2021-04-04T13:03,S2A,C,0.09,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-04-05T13:22,S2B,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-04-06T12:53,S2B,C,0.06,L0,,,,,,,,,,,0
@@ -1351,7 +1351,7 @@ IR-Kolbeinsey_Field-A,2021-07-09T13:22,S2A,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-07-10T12:53,S2A,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-07-11T13:13,S2B,C,0.01,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A-LS,2021-07-12T12:45,L8,C,0,L0,,,,,,,,,,,0
-IR-Kolbeinsey_Field-A,2021-07-13T13:03,S2A,B,0.55,L1,,0.174,white,0.76,33,0,0,0,0,,1
+IR-Kolbeinsey_Field-A,2021-07-13T13:03,S2A,B,0.55,L1,,0.174,white,0.76,330,0,0,0,0,,1
 IR-Kolbeinsey_Field-A,2021-07-14T13:22,S2B,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-07-15T12:53,S2B,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-07-16T13:13,S2A,C,0,L0,,,,,,,,,,,0
@@ -1404,7 +1404,7 @@ IR-Kolbeinsey_Field-A,2021-09-01T13:03,S2A,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-09-02T13:22,S2B,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-09-03T12:53,S2B,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-09-04T13:13,S2A,C,0,L0,,,,,,,,,,,0
-IR-Kolbeinsey_Field-A-LS,2021-09-05T12:51,L8,B,0.68,L1,,0.274,none,4.23,21,0,0,3,0,,1
+IR-Kolbeinsey_Field-A-LS,2021-09-05T12:51,L8,B,0.68,L1,,0.274,none,4.23,210,0,0,3,0,,1
 IR-Kolbeinsey_Field-A,2021-09-06T13:03,S2B,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A-LS,2021-09-07T12:39,L8,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2021-09-07T13:22,S2A,C,0.09,L0,,,,,,,,,,,0
@@ -1604,7 +1604,7 @@ IR-Kolbeinsey_Field-A,2022-06-24T13:23,S2A,C,0.16,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2022-06-25T12:53,S2A,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2022-06-26T13:13,S2B,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A-LS,2022-06-28T12:51,L9,B,0.47,L1,,0,,,,0,0,0,0,,1
-IR-Kolbeinsey_Field-A,2022-06-28T13:03,S2A,A,0.99,L1,,0.027,brown,4.19,3,0,0,0,0,,1
+IR-Kolbeinsey_Field-A,2022-06-28T13:03,S2A,A,0.99,L1,,0.027,brown,4.19,30,0,0,0,0,,1
 IR-Kolbeinsey_Field-A-LS,2022-06-29T12:45,L8,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A,2022-06-29T13:23,S2B,C,0,L0,,,,,,,,,,,0
 IR-Kolbeinsey_Field-A-LS,2022-06-30T12:39,L9,C,0,L0,,,,,,,,,,,0

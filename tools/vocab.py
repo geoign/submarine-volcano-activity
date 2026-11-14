@@ -80,6 +80,9 @@ ZONE_TYPE = {
     "2026年噴火地点（NE・SW火口）": "eruption site of 2026 (NE and SW vents)",
 }
 
+# Where the class of an episode comes from (column `basis`).
+BASES = ["catalogue", "ai_review", "ai_review_partial", "rule", "lead_review", "owner", ""]
+
 # verdict vocabulary of the monitor (python -m submvolc verdict)
 VERDICT_CLASS = {
     "volcanic_likely": "likely",

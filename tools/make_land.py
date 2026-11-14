@@ -1,6 +1,6 @@
 """Write assets/land.json, the land outline of the overview map, from Natural Earth 1:50m.
 
-    python tools/make_land.py D:/GIS/natural_earth_vector/50m_physical/ne_50m_land.shp
+    python tools/make_land.py <path to>/ne_50m_land.shp
 
 Natural Earth is in the public domain (naturalearthdata.com). The polygons are simplified and
 rounded to 0.01 degree; the file is a list of polygons, each a list of rings of [lon, lat].

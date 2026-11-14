@@ -1,6 +1,8 @@
 """Build the public tables under db/ from the stores of the monitoring system.
 
-    python tools/build_db.py [--monitor D:/SubMVolc_Monitor] [--work C:/tmp/submvolc_web]
+    python tools/build_db.py [--monitor <checkout of the monitoring system>] [--work <folder>]
+
+Both default to the entries `monitor` and `work` of local.toml (not committed; see README).
 
 The monitoring system (not part of this repository) keeps its observations in SQLite stores and
 its reviews in CSV tables. This tool reads them, never writes to them, and produces:
@@ -48,6 +50,16 @@ SAT = {"sentinel-2a": "S2A", "sentinel-2b": "S2B", "sentinel-2c": "S2C", "sentin
 RANK = {c: i for i, c in enumerate(CLASSES)}
 # Figures of the reports that are not published: they overlay bathymetry that is not yet public.
 WITHHELD_FIGURES = {"hindcast1/fig28_fonuafoou_10m_study.jpg"}
+# Working documents of the monitoring system that notes refer to, and where their content is here.
+PUBLIC_COPIES = {"docs/AIRBORNE_BANDS.md": "db/records/airborne_bands.csv",
+                 "docs/RING_WAVES.md": "db/records/ring_waves.csv"}
+REEF_ZONES = {"Curacoa", "Hankow Reef"}
+REEF_JA = "礁と海岸。毎回同じ場所に出るので、1 件ずつの確認からは外した (2 回目の遡及調査の報告)。"
+USUAL_EN = ("The low-resolution review filed this as the usual appearance of the zone. At this volcano the usual "
+            "appearance is volcanic discoloured water, so the episode is listed as possibly volcanic, like the "
+            "high-resolution episodes of the same period.")
+USUAL_JA = ("低解像度の判定では、区域のいつもの姿とされました。この火山のいつもの姿は火山性の変色水なので、"
+            "同じ時期の高解像度のエピソードと同じく「火山性の可能性あり」としています。")
 DIGEST_EN = ("Low-resolution passes (VIIRS, MODIS, OLCI) of the reviewed episodes, cut out 30 km square around the zone "
              "centre (yellow cross). One row per episode; pink outline: discoloured water, orange outline: bright "
              "floating matter. Above each frame: date, satellite, area of discoloured water and of bright matter in "
@@ -58,6 +70,15 @@ DIGEST_JA = ("判定した低解像度のエピソードの通過 (VIIRS、MODIS
 
 
 # ----------------------------------------------------------------------------- helpers
+
+def local_settings() -> dict:
+    """Paths of this PC: local.toml beside the repository's README, never committed."""
+    path = ROOT / "local.toml"
+    if not path.exists():
+        return {}
+    import tomllib
+    return tomllib.loads(path.read_text(encoding="utf-8"))
+
 
 def read_csv(path: Path) -> list[dict]:
     with open(path, encoding="utf-8-sig", newline="") as f:
@@ -90,7 +111,9 @@ def num(v, digits: int = 3):
         return ""
     if x != x:  # NaN
         return ""
-    s = f"{x:.{digits}f}".rstrip("0").rstrip(".")
+    s = f"{x:.{digits}f}"
+    if "." in s:  # only zeros of the fraction go; "290" must stay "290"
+        s = s.rstrip("0").rstrip(".")
     return "0" if s in ("", "-0") else s
 
 
@@ -101,6 +124,11 @@ def note_key(text: str) -> str:
 def site_of(zone_id: str) -> str:
     """The zone a Landsat twin zone belongs to."""
     return zone_id[:-3] if zone_id.endswith("-LS") else zone_id
+
+
+def obs_days(obs_ids: str) -> set[str]:
+    """The days (YYYYMMDD) of a list of observation ids."""
+    return {m.group(1) for m in re.finditer(r"_(\d{8})T\d{4}_", obs_ids or "")}
 
 
 def md_table(path: Path, first_header: str) -> list[dict]:
@@ -233,20 +261,34 @@ def hindcast_episodes(mon: Path, zone_volcano: dict) -> list[dict]:
     eps = read_csv(mon / "data/retro2/review/episodes.csv")
     triage = {r["episode"]: r for r in read_csv(mon / HINDCAST_REPORT / "triage.csv")}
     owner = {r["episode"]: r.get("owner_verdict", "") for r in read_csv(mon / HINDCAST_REPORT / "look.csv")}
+    first = mon / "data/retro/review/episodes.csv"
+    earlier = {r["episode"]: obs_days(r["obs_ids"]) for r in read_csv(first)} if first.exists() else {}
     rows = []
+    n_void = 0
     for e in eps:
         t = triage.get(e["episode"], {})
         cls, basis, cause, interest, note = "unreviewed", "", "", "", ""
+        # The second hindcast took over the review of the first for every episode that overlaps one
+        # of the first within 21 days. Where the two share no alert day, the review was of other
+        # passes: the episode is not reviewed.
+        carried = t.get("source") == "earlier run"
+        mine, theirs = obs_days(e["obs_ids"]), earlier.get(e.get("prior_episode", ""), set())
+        if carried and not e["known"] and not (mine & theirs):
+            n_void += 1
+            t = {}
+        # "ai_review_partial": the review saw some of this episode's alert passes, not all of them.
+        how = "ai_review_partial" if carried and not mine <= theirs else "ai_review"
         if e["known"]:
             cls, basis = "known", "catalogue"
         elif t.get("call") == "dismiss":
-            cls, basis, cause, interest = "nonvolcanic", "ai_review", t.get("cause", ""), "0"
+            cls, basis, cause, interest = "nonvolcanic", how, t.get("cause", ""), "0"
         elif t.get("call") == "look":
             interest = str(int(float(t.get("interest") or 0)))
-            cls, basis = {"3": "likely", "2": "possible"}.get(interest, "undetermined"), "ai_review"
+            cls, basis = {"3": "likely", "2": "possible"}.get(interest, "undetermined"), how
         note = (t.get("note") or "").strip()
         rows.append(_episode_row(e, "hindcast2", zone_volcano, cls, basis, cause, interest, note,
                                  owner.get(e["episode"], "")))
+    print(f"  hindcast: {n_void} carried reviews set aside (no alert day in common with the reviewed episode)")
     return rows
 
 
@@ -262,6 +304,8 @@ def monitor_episodes(mon: Path, work: Path, zone_volcano: dict, refresh: bool) -
             raise SystemExit("the monitor's retro_episodes.py failed:\n" + res.stderr[-2000:])
     eps = [e for e in read_csv(out / "episodes.csv") if e["start"] >= CUT[:10]]
     notes = {r["episode"]: (r.get("note") or "").strip() for r in read_csv(prev)}
+    old = mon / "data/review/episodes.csv"
+    earlier = {r["episode"]: obs_days(r["obs_ids"]) for r in read_csv(old)} if old.exists() else {}
     con = ro(mon / "data/state.sqlite")
     verdicts = {}
     for obs_id, verdict, evidence, causes in con.execute(
@@ -275,12 +319,18 @@ def monitor_episodes(mon: Path, work: Path, zone_volcano: dict, refresh: bool) -
     rows = []
     for e in eps:
         cls, basis, cause, interest, note = "unreviewed", "", "", "", ""
-        if e["prior_call"] == "dismiss":
-            cls, basis, cause, interest = "nonvolcanic", "ai_review", e["prior_cause"], "0"
+        mine, theirs = obs_days(e["obs_ids"]), earlier.get(e["prior_episode"], set())
+        shared = mine & theirs
+        how = "ai_review" if mine <= theirs else "ai_review_partial"
+        if not shared:
+            pass  # the triage it would inherit looked at other passes
+        elif e["prior_call"] == "dismiss":
+            cls, basis, cause, interest = "nonvolcanic", how, e["prior_cause"], "0"
         elif e["prior_call"] == "look":
             interest = str(int(float(e["prior_interest"] or 0)))
-            cls, basis = {"3": "likely", "2": "possible"}.get(interest, "undetermined"), "ai_review"
-        note = notes.get(e["prior_episode"], "")
+            cls, basis = {"3": "likely", "2": "possible"}.get(interest, "undetermined"), how
+        if shared:
+            note = notes.get(e["prior_episode"], "")
         # A verdict recorded for a pass of the episode outweighs the triage of the episode.
         best = None
         for o in e["obs_ids"].split():
@@ -289,7 +339,9 @@ def monitor_episodes(mon: Path, work: Path, zone_volcano: dict, refresh: bool) -
                 if c and (best is None or RANK[c] < RANK[best[0]]):
                     best = (c, verdicts[o][1], verdicts[o][2])
         explicit = False
-        if best and (cls in ("unreviewed", "undetermined") or RANK[best[0]] < RANK[cls]):
+        # A verdict of "likely" or "possible" always stands: it was given to a pass on purpose. A
+        # dismissal of one pass does not undo a flag on the whole episode.
+        if best and (best[0] in ("likely", "possible") or cls in ("unreviewed", "undetermined") or RANK[best[0]] < RANK[cls]):
             cls, basis, explicit = best[0], "ai_review", True
             if best[1]:
                 note = best[1]
@@ -328,22 +380,33 @@ def lowres_episodes(mon: Path, volcanoes: dict) -> list[dict]:
             cls, cause = "recurrent", ""
         else:
             cls, cause = "nonvolcanic", r["cause"]
-        rows.append(_lowres_row(k, cls, "ai_review", cause, interest, r["note"].strip(), sheet=True))
+        row = _lowres_row(k, cls, "ai_review", cause, interest, r["note"].strip(), sheet=True)
+        if cls == "recurrent" and k["target_id"] in volcanoes and not volcanoes[k["target_id"]]["_usual"]:
+            # The review filed it as the zone's usual appearance; at a volcano that is not on the
+            # owner's list of usual features the usual appearance is volcanic discoloured water.
+            row.update(cls="possible", basis="rule", curation_en=USUAL_EN, curation_ja=USUAL_JA)
+        rows.append(row)
     for eid, k in ranked.items():
         # Alerts inside a documented eruption period count only where the water was at the vent.
-        if eid in reviewed or not k["known"] or int(k["near_days"] or 0) < 2:
+        if eid in reviewed or int(k["near_days"] or 0) < 2:
             continue
         # "..ongoing" is the monitor's reading of a catalogue entry without an end date. For an
         # eruption that began years before the episode that is no match (McDonald Islands 2001).
         m = re.match(r"GVP .*? (\d{4})-\d\d-\d\d\.\.ongoing", k["known"])
-        if m and int(k["start"][:4]) - int(m.group(1)) > 2:
-            continue
-        rows.append(_lowres_row(k, "known", "catalogue", "", "", "", sheet=False))
+        stale = bool(m) and int(k["start"][:4]) - int(m.group(1)) > 2
+        if k["known"] and not stale:
+            rows.append(_lowres_row(k, "known", "catalogue", "", "", "", sheet=False))
+        elif k["volcano"] in REEF_ZONES:
+            # Left out of the one-by-one review as reef zones (report of the second hindcast).
+            rows.append(_lowres_row(dict(k, known=""), "nonvolcanic", "lead_review", "reef_or_shoal", "0", REEF_JA, sheet=False))
+        else:
+            rows.append(_lowres_row(dict(k, known=""), "unreviewed", "", "", "", "", sheet=False))
     return [r for r in rows if r["volcano_id"] in volcanoes]
 
 
 def _lowres_row(k, cls, basis, cause, interest, note, sheet) -> dict:
-    kinds = {"dw": "dw", "bright": "fl", "dw+bright": "dw+fl"}
+    # "bright" of the survey answers to cloud that kept its reflectance; it is not floating matter.
+    kinds = {"dw": "dw", "bright": "", "dw+bright": "dw"}
     return dict(
         episode_id=k["episode"], volcano_id=k["target_id"], zone_id=k["wide_id"], tier="lowres",
         source="olci_survey", start=k["start"], end=k["end"], n_detect=k["near_days"], n_seen=k["days_seen"],
@@ -369,6 +432,8 @@ def classify(episodes: list[dict], volcanoes: dict, cur: dict) -> None:
                 e["cls"], e["cause"] = "nonvolcanic", e["cause"] or "other"
             elif "異常ではない" in o:
                 e["cls"] = "recurrent"
+            else:
+                print(f"  warning: the owner's verdict of {e['episode_id']} was not understood: {o[:40]}")
         ov = cur["overrides"].get(e["episode_id"])
         if ov:
             if ov.get("class"):
@@ -468,9 +533,8 @@ def exact_known_refs(episodes: list[dict], periods: list[dict]) -> int:
 
 def lowres_days(mon: Path, volcanoes: dict):
     out = defaultdict(list)
-    sources = [(mon / "data/wide_survey/wide.sqlite", "olci")]
-    last = ""
-    con = ro(sources[0][0])
+    have = set()
+    con = ro(mon / "data/wide_survey/wide.sqlite")
     for wid, date, n, cls, level, dw, bright, dw2 in con.execute(
             "select wide_id, date, n_passes, best_class, level, dw_masked_km2, bright_masked_km2, dw_two_pass_km2 "
             "from zone_days where best_class in ('A','B') order by wide_id, date"):
@@ -478,20 +542,22 @@ def lowres_days(mon: Path, volcanoes: dict):
         if vid in volcanoes:
             out[vid].append(dict(date=date, src="olci", n_passes=n, cls=cls, level=level, dw_km2=num(dw, 2),
                                  bright_km2=num(bright, 2), dw_two_pass_km2=num(dw2, 2)))
-            last = max(last, date)
+            have.add((vid, date))
     con.close()
-    # The monitor's own low-resolution tier (VIIRS) continues the record after the survey.
+    # The monitor's own low-resolution tier (VIIRS) fills the days the survey has no row for.
     mw = mon / "data/wide/wide.sqlite"
     if mw.exists():
         con = ro(mw)
         for wid, date, n, cls, level, dw, bright, dw2 in con.execute(
                 "select wide_id, date, n_passes, best_class, level, dw_masked_km2, bright_masked_km2, dw_two_pass_km2 "
-                "from zone_days where best_class in ('A','B') and date > ? order by wide_id, date", (last,)):
+                "from zone_days where best_class in ('A','B') order by wide_id, date"):
             vid = wid[2:]
-            if vid in volcanoes:
+            if vid in volcanoes and (vid, date) not in have:
                 out[vid].append(dict(date=date, src="viirs", n_passes=n, cls=cls, level=level, dw_km2=num(dw, 2),
                                      bright_km2=num(bright, 2), dw_two_pass_km2=num(dw2, 2)))
         con.close()
+    for rows in out.values():
+        rows.sort(key=lambda r: r["date"])
     return out
 
 
@@ -515,8 +581,11 @@ VOLCANO_COLUMNS = [
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--monitor", default=os.environ.get("SUBMVOLC_MONITOR", "D:/SubMVolc_Monitor"))
-    ap.add_argument("--work", default=os.environ.get("SUBMVOLC_WEB_WORK", "C:/tmp/submvolc_web"))
+    local = local_settings()
+    ap.add_argument("--monitor", default=local.get("monitor"), required="monitor" not in local,
+                    help="checkout of the monitoring system (or `monitor` in local.toml)")
+    ap.add_argument("--work", default=local.get("work", str(ROOT / "build")),
+                    help="folder for lists and the rebuilt episode table (or `work` in local.toml)")
     ap.add_argument("--no-refresh", action="store_true", help="use <work>/monitor_review as it is")
     args = ap.parse_args()
     mon, work = Path(args.monitor), Path(args.work)
@@ -540,10 +609,19 @@ def main() -> None:
     n_ref = exact_known_refs(episodes, periods)
     print(f"episodes: hindcast {n_h}, monitor {n_m}, low resolution {len(low)}; {n_ref} catalogue references rewritten")
 
+    days = lowres_days(mon, volcanoes)
+    for e in episodes:
+        if e["tier"] == "lowres":
+            e["n_seen"] = sum(1 for d in days.get(e["volcano_id"], []) if e["start"] <= d["date"] <= e["end"])
+
     # Notes: English from the curated translations, keyed by the Japanese text.
     missing = Counter()
     for e in episodes:
         e["class"] = e["cls"]
+        for col in ("note_ja", "owner_ja", "curation_ja", "curation_en"):
+            for private, public in PUBLIC_COPIES.items():
+                if private in (e.get(col) or ""):
+                    e[col] = e[col].replace(private, public)
         for src, dst in (("note_ja", "note_en"), ("owner_ja", "owner_en")):
             text = e.get(src, "")
             e[dst] = cur["notes_en"].get(note_key(text), "") if text else ""
@@ -579,7 +657,6 @@ def main() -> None:
         print(f"  warning: {len(stray)} alert passes of the episode lists are not in the pass tables, e.g. {stray[:3]}")
     print(f"passes: {n_pass} ({n_img} with a quicklook)")
 
-    days = lowres_days(mon, volcanoes)
     n_days = 0
     for vid in volcanoes:
         rows = days.get(vid, [])
@@ -615,6 +692,9 @@ def main() -> None:
 
     # Records kept by the monitor as markdown tables.
     ring = md_table(mon / "docs/RING_WAVES.md", "Pass (UTC)")
+    for r in ring:
+        for k in r:
+            r[k] = re.sub(r"\s*\(`[^`]*`\)", "", r[k]).replace("`", "")
     write_csv(DB / "records/ring_waves.csv",
               ["pass_utc", "zone_id", "volcano", "centre", "reach", "spacing", "sea", "with_it", "noted"],
               [dict(zip(["pass_utc", "zone_id", "volcano", "centre", "reach", "spacing", "sea", "with_it", "noted"],

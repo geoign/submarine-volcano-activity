@@ -21,12 +21,17 @@ Material from other sources
 The images and the measurements are derived from data of other providers, whose terms continue to
 apply to their part:
 
-- Sentinel-2 and Sentinel-3: contains modified Copernicus Sentinel data (2015 to 2026).
+- Sentinel-2 and Sentinel-3: contains modified Copernicus Sentinel data (2015 to 2026), obtained
+  from Element 84's Earth Search, Microsoft's Planetary Computer and Google Cloud's public copy.
 - Landsat 8 and 9: U.S. Geological Survey.
 - VIIRS and MODIS images: NASA Global Imagery Browse Services (GIBS).
 - Eruption periods and volcano numbers (db/known_periods.csv, the column known_ref of
   db/episodes.csv, the column gvp_number): Volcanoes of the World, Global Volcanism Program,
   Smithsonian Institution.
+- The positions of ten hydrothermal sites (zones described as "hydrothermal field (InterRidge
+  coordinates)" in db/zones.csv) and the names of the eleven targets whose id begins with "IR-":
+  InterRidge Vents Database. They stay under the terms of that database and are not covered by
+  the grant above.
 - assets/land.json: Natural Earth (public domain).
 
 The database comes without warranty of any kind. It is not a volcano warning and not official

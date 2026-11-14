@@ -12,7 +12,7 @@ renderChrome("");
 const id = new URLSearchParams(location.search).get("id") || "";
 const wantEpisode = new URLSearchParams(location.search).get("ep") || "";
 const $ = (x) => document.getElementById(x);
-const S = { zone: "", showDismissed: false, listDismissed: false, selected: null };
+const S = { zone: "", showDismissed: false, listDismissed: false, selected: null, target: wantEpisode };
 let V, meta, zones, episodes, passes, lowres, periods, figures, ring, bands, chart, passByKey;
 
 const siteOf = (z) => (z.endsWith("-LS") ? z.slice(0, -3) : z);
@@ -41,8 +41,9 @@ async function load() {
   const lastT = ms(meta.last_pass) + DAY;
   periods = known.filter((k) => k.volcano_id === id).map((k) => ({
     ...k, t0: partialDate(k.start, false),
-    // No end date: the eruption was continuing when the catalogue was read, or its end is not on record.
-    t1: partialDate(k.end, true) ?? (k.continuing === "yes" ? lastT : partialDate(k.start, true)),
+    // Continuing when the catalogue was read: the band runs to the end of the record, whatever end date
+    // the catalogue gives. No end date otherwise: the end is not on record.
+    t1: k.continuing === "yes" ? lastT : (partialDate(k.end, true) ?? partialDate(k.start, true)),
   })).filter((k) => k.t0 !== null);
   const [pr, lr, fg, rw, ab] = await Promise.all([
     loadCSV(`${DB}passes/${id}.csv`, { optional: true }), loadCSV(`${DB}lowres/${id}.csv`, { optional: true }),
@@ -116,6 +117,7 @@ function renderLegend() {
   const item = (key, text) => el("span", {}, key, text);
   add(clear($("legend")),
     ...present.map((c) => item(el("i", { class: `dot ${c}` }), classLabel(c))),
+    passes.some((p) => !p.alert && p.cls !== "C" && p.dw >= 0.05) ? item(el("i", { class: "key-dot", style: "width:5px;height:5px;background:var(--muted)" }), t("v.legend.measured")) : null,
     passes.length ? item(el("i", { class: "key-tick" }), t("v.legend.seen")) : null,
     passes.length ? item(el("i", { class: "key-tick", style: "opacity:.45;height:6px" }), t("v.legend.cloud")) : null,
     periods.length ? item(el("i", { class: "key-band" }), t("v.legend.eruption")) : null,
@@ -172,13 +174,23 @@ function renderPass() {
     ...row(t("v.pass.zone"), p.zone_id),
     ...row(t("v.pass.cls"), `${p.cls} · ${t("v.pass.cls." + p.cls)}`),
     ...row(t("v.pass.level"), p.level + (p.reasons ? ` · ${phenomena(p.reasons)}` : "")),
-    ...row(t("v.pass.dw"), `${fmtNum(p.dw, 2)} km²` + (p.colour && p.colour !== "none" && has(p.dw) ? ` (${p.colour})` : "")),
+    ...row(t("v.pass.dw"), `${fmtNum(p.dw, 2)} km²` + (p.colour && p.colour !== "none" && has(p.dw) ? ` (${t("colour." + p.colour)})` : "")),
     ...(has(p.dw) && p.dist_km !== "" ? row(t("v.pass.pos"), t("v.pass.pos.fmt", { d: p.dist_km, b: p.bearing })) : []),
     ...(has(p.fl_km2) ? row(t("v.pass.fl"), `${fmtNum(p.fl_km2, 2)} km²`) : []),
     ...(has(p.nl_km2) ? row(t("v.pass.nl"), `${fmtNum(p.nl_km2, 2)} km²`) : []),
     ...(has(p.th_px) ? row(t("v.pass.th"), p.th_px) : []),
     ...(has(p.ap_km2) ? row(t("v.pass.ap"), `${fmtNum(p.ap_km2, 2)} km²`) : []),
-    ...(e ? row(t("v.pass.episode"), el("a", { href: `#ep-${e.episode_id}` }, classBadge(e.class, true))) : [])));
+    ...(e ? row(t("v.pass.episode"), el("a", { href: `#ep-${e.episode_id}`, onclick: (ev) => { ev.preventDefault(); revealEpisode(e); } },
+      classBadge(e.class, true))) : [])));
+}
+
+/** Scroll to the card of an episode; a dismissed one is listed first if the list hides them. */
+function revealEpisode(e) {
+  S.target = e.episode_id;
+  if (e.class === "nonvolcanic") S.listDismissed = true;
+  renderEpisodes();
+  const node = document.getElementById(`ep-${e.episode_id}`);
+  if (node) node.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function select(p, opts) {
@@ -228,6 +240,7 @@ function setupTimeline() {
   });
   feedChart();
   renderLegend();
+  $("own-history").hidden = V.baseline_class === "quiet" || !passes.length;
   if (passes.some((p) => p.img)) $("viewer-section").hidden = false;
 
   // What to show first: the episode asked for, else the latest significant one.
@@ -268,14 +281,14 @@ function renderEpisodes() {
   btn.textContent = S.listDismissed ? t("v.episodes.hideDismissed") : t("v.episodes.showDismissed", { n: dismissed });
   btn.onclick = () => { S.listDismissed = !S.listDismissed; renderEpisodes(); };
   const box = clear($("episodes"));
-  const list = episodes.filter((e) => S.listDismissed || e.class !== "nonvolcanic" || e.episode_id === wantEpisode)
+  const list = episodes.filter((e) => S.listDismissed || e.class !== "nonvolcanic" || e.episode_id === S.target)
     .sort((a, b) => b.t0 - a.t0);
   if (!list.length) box.append(el("p", { class: "notice", text: t(dismissed ? "v.episodes.onlyDismissed" : "v.episodes.none") }));
   for (const e of list) {
     const note = noteText(e, "note"), owner = noteText(e, "owner"), cur = noteText(e, "curation");
     const low = e.tier === "lowres";
     const extra = (label, value) => (value ? el("p", { class: "extra" }, el("b", { text: label + ": " }), value) : null);
-    box.append(el("article", { class: `episode ${e.class}`, id: `ep-${e.episode_id}` },
+    box.append(el("article", { class: `episode ${e.class}${e.episode_id === S.target ? " target" : ""}`, id: `ep-${e.episode_id}` },
       el("div", { class: "top" },
         el("span", { class: "dates", text: dateRange(e.start, e.end) }), classBadge(e.class),
         el("span", { class: "tag", text: t("tier." + e.tier) }),
@@ -319,13 +332,13 @@ function renderRecords() {
   $("records-section").hidden = false;
   if (ring.length) {
     const tb = el("table", { class: "data" });
-    simpleTable(tb, ["Pass (UTC)", "Zone", "Centre (km E, N)", "Reach", "Spacing", "Sea", "With it", "Noted"],
+    simpleTable(tb, ["r.pass", "r.zone", "r.centre", "r.reach", "r.spacing", "r.sea", "r.with", "r.noted"].map((k) => t(k)),
       ring.map((r) => [r.pass_utc, r.zone_id, r.centre, r.reach, r.spacing, r.sea, r.with_it, r.noted]));
     box.append(el("h3", { text: t("v.records.ring") }), el("div", { class: "table-wrap" }, tb));
   }
   if (bands.length) {
     const tb = el("table", { class: "data" });
-    simpleTable(tb, ["Day", "UTC", "Zone", "Sensor", "Area km²", "Length km", "From Jadid Island (km, bearing)", "Level"],
+    simpleTable(tb, ["b.day", "b.utc", "r.zone", "b.sensor", "b.area", "b.length", "b.from", "b.level"].map((k) => t(k)),
       bands.map((r) => [r.day, r.utc, r.zone_id, r.sensor, r.area_km2, r.length_km, r.from_jadid, r.level]));
     box.append(el("h3", { text: t("v.records.bands") }), el("div", { class: "table-wrap" }, tb));
   }
@@ -339,9 +352,9 @@ function renderZones() {
   const gvp = periods.filter((k) => k.source);
   $("known-title").hidden = $("known-wrap").hidden = !gvp.length;
   if (gvp.length) {
-    simpleTable($("known"), ["Source", "Kind", "Start", "End", "Area"],
-      gvp.map((k) => [k.source === "GVP" ? "Smithsonian GVP" : "This database", k.kind, k.start,
-        k.end || (k.continuing === "yes" ? "(continuing)" : "–"), k.area]));
+    simpleTable($("known"), ["t.source", "t.kind", "t.start", "t.end", "t.area"].map((k) => t(k)),
+      gvp.map((k) => [t(k.source === "GVP" ? "t.gvp" : "t.own"), k.kind, k.start,
+        (k.end || "–") + (k.continuing === "yes" ? ` (${t("t.continuing")})` : ""), k.area]));
   }
   const links = clear($("data-links"));
   const link = (href, text) => { if (links.childNodes.length) links.append(" · "); links.append(el("a", { href, text })); };
@@ -366,5 +379,4 @@ load().then(() => {
   setupTimeline();
   onLang(renderAll);
   onTheme(() => chart && chart.draw());
-  if (wantEpisode) { const n = document.getElementById(`ep-${wantEpisode}`); if (n) n.classList.add("target"); }
 }).catch((err) => showError($("head"), err));

@@ -3,7 +3,8 @@
 This repository is the public database of a satellite monitoring system for shallow submarine
 volcanoes, and the static site that shows it (GitHub Pages:
 <https://geoign.github.io/submarine-volcano-activity/>). The monitoring system itself lives in
-another, private checkout (`D:\SubMVolc_Monitor` on the owner's PC) and is not published.
+another, private checkout and is not published. Its location, the working folder and the rclone
+destination of the image store are in `local.toml` (not committed; the README shows its form).
 `CLAUDE.md` is a copy of this file.
 
 ## Layout
@@ -53,6 +54,17 @@ folder is synchronised to a cloud drive: keep it to text and the few images of t
 
 ## Things that already went wrong once
 
+- `num()` of the build once stripped trailing zeros from whole numbers, so a bearing of 290 was
+  written 29 and ten hot pixels became one. Zeros are stripped from a fraction only; the test
+  covers multiples of ten.
+- A review carried over from an overlapping episode is not a review of this episode. The second
+  hindcast took the verdict of the first for every episode within 21 days of one reviewed there,
+  and the monitor's list inherits the triage of 2026-11-12 the same way. The build compares the
+  alert days: none in common means `unreviewed`, some means basis `ai_review_partial`. Do not
+  write that every alert was reviewed.
+- The survey's low-resolution field `days_seen` counts alert days, and its kind `bright` answers
+  to cloud. The build counts the visible days of an episode from the daily record and lists
+  discoloured water only.
 - DOM `append(null)` prints the word "null". Use `add()` or `el()` of `assets/js/common.js`,
   which leave out null and false.
 - The monitor reads a catalogue eruption without an end date as "ongoing". For an eruption that

@@ -18,7 +18,7 @@ function store(key, value) {
 
 function initialLang() {
   const q = new URLSearchParams(location.search).get("lang");
-  if (q === "ja" || q === "en") return q;
+  if (q === "ja" || q === "en") { store("lang", q); return q; }   // kept for the pages that follow
   const saved = store("lang");
   if (saved === "ja" || saved === "en") return saved;
   return (navigator.language || "en").toLowerCase().startsWith("ja") ? "ja" : "en";

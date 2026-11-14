@@ -8,12 +8,14 @@ Identifiers
 
 - `volcano_id`: the target of the monitoring system. `GVP<number>` for a volcano of the
   Smithsonian's Global Volcanism Program, `CAL<n>` for a submarine caldera of the author's
-  caldera list that has no GVP number, `IR-<name>` for a site taken from the InterRidge vents
-  list.
+  caldera list (a few of them also carry the GVP number of the volcano they belong to),
+  `IR-<name>` for a site taken from the InterRidge Vents Database.
 - `zone_id`: `<volcano_id>-<letter>` for a high-resolution monitoring zone (`-A` the main zone,
   `-B`, `-C` further vents or cones, `-W` a wide zone round the whole edifice or caldera),
   `W-<volcano_id>` for the low-resolution zone. A trailing `-LS` in the pass tables marks a pass
-  that was read on the Landsat grid of the same zone.
+  that was read on the Landsat grid of the same zone. Such passes exist up to 2025-11-11 only:
+  the hindcast read Landsat for every zone, the monitoring system reads it only where Sentinel-2
+  does not image.
 - `episode_id`: `<zone_id>_<YYYYMMDD of the first alert>`. An episode id can change when the
   screening rules change and the alerts of a zone are grouped anew.
 
@@ -69,7 +71,7 @@ around it, and a review note or a volcano summary may give a larger area seen by
 | `n_detect` | High resolution: alert passes. Low resolution: days on which the largest patch of discoloured water lay within 5 km of the zone centre |
 | `n_seen` | High resolution: usable passes between start and end. Low resolution: days with the sea visible |
 | `n_l3` | Passes (days) of level L3 |
-| `phenomena` | Reasons of the alerts, joined by `+`: `dw` discoloured water, `fl` floating matter, `nl` new land, `th` hot pixels, `sc` water colour of the whole zone, `ap` airborne band |
+| `phenomena` | Reasons of the alerts, joined by `+`: `dw` discoloured water, `fl` floating matter, `nl` new land, `th` hot pixels, `sc` water colour of the whole zone, `ap` airborne band. Low resolution: `dw` only (the survey's indicator of bright patches answers to cloud and is not carried over) |
 | `max_dw_km2` | Largest area of discoloured water on one pass (low resolution: on a day with the patch at the vent) |
 | `max_fl_km2`, `max_nl_km2` | Largest area of floating matter and of new land |
 | `colour` | Most frequent colour class of the discoloured water: `green`, `cyan`, `brown`, `white`, `none` |
@@ -77,7 +79,7 @@ around it, and a review note or a volcano summary may give a larger area seen by
 | `sensors` | `Sentinel-2`, `Landsat`, `Landsat+Sentinel-2` or `OLCI` |
 | `peak` | The strongest pass (as `<zone>_<YYYYMMDDTHHMM>_<satellite>`) or, at low resolution, the peak day |
 | `class` | Public class, see below |
-| `basis` | Where the class comes from: `catalogue` (date match with an eruption period), `ai_review` (AI-assisted review), `rule` (volcano with a usual feature), `lead_review` (conclusion of the review report), `owner` (the author's verdict) |
+| `basis` | Where the class comes from: `catalogue` (date match with an eruption period), `ai_review` (AI-assisted review of the episode's passes), `ai_review_partial` (the review was of an overlapping episode of the first hindcast, or of an earlier state of the monitor's list, and saw only some of this episode's alert passes; its note may describe other days), `rule` (place with a usual feature, or the usual volcanic discoloured water of the volcano), `lead_review` (conclusion of the review report), `owner` (the author's verdict). Empty for `unreviewed` |
 | `cause` | For `nonvolcanic`: `cloud`, `cloud_shadow`, `sun_glint`, `reef_or_shoal`, `land_or_surf`, `land_or_ice`, `bloom`, `sediment_plume`, `ship_wake`, `sensor_artifact`, `neighbour_eruption`, `other` |
 | `interest` | Interest given by the first-pass review, 0 (dismissed) to 3; how much the episode deserved a second look, not a verdict |
 | `known_ref` | The eruption period the episode was matched to: `GVP <kind> <start>..<end>` with the dates of the catalogue, or `Own event list <start>..<end>` |
@@ -98,7 +100,7 @@ Classes
 | `airborne` | Faint band in the air beside an island; kind not decided |
 | `undetermined` | Lowest interest, not looked at again |
 | `nonvolcanic` | Dismissed, with a cause |
-| `unreviewed` | Not reviewed |
+| `unreviewed` | Not reviewed. This includes episodes whose only review was of an overlapping episode with no alert pass in common |
 
 ## passes/&lt;volcano_id&gt;.csv
 
@@ -111,9 +113,9 @@ Every high-resolution pass over the zones of one volcano, alert or not, in order
 | `sat` | `S2A`, `S2B`, `S2C`, `L8`, `L9` |
 | `cls` | Visibility of the sea surface in the zone: `A` (70 % or more clear), `B` (30 % or more), `C` (less; nothing was measured) |
 | `clear` | Clear fraction of the zone |
-| `level` | `L0` not visible, `L1` visible and no candidate, `L2` candidate, `L3` strong candidate |
+| `level` | `L0` not visible, `L1` visible and no candidate above the thresholds, `L2` candidate, `L3` strong candidate |
 | `reasons` | Reasons of an alert, as in `phenomena` |
-| `dw_km2` | Area of candidate discoloured water, before the thresholds |
+| `dw_km2` | Area of candidate discoloured water, before the thresholds. It can be large on a pass of level L1: at a volcano judged against its own past, and where glint or cloud raised the threshold |
 | `colour`, `dist_km`, `bearing` | Colour class of the discoloured water; distance (km) and bearing (degrees from north) of its centroid from the zone centre |
 | `fl_km2`, `nl_km2` | Area of floating matter and of new land |
 | `th_px` | Number of hot pixels |
@@ -134,16 +136,18 @@ One row per day with the sea visible in the low-resolution zone (30 km radius).
 | Column | Meaning |
 |---|---|
 | `date` | Day (UTC) |
-| `src` | `olci` (Sentinel-3 OLCI, survey of the archive) or `viirs` (the monitor's daily VIIRS images) |
+| `src` | `olci` (Sentinel-3 OLCI, survey of the archive) or `viirs` (the monitor's daily VIIRS images; used for days without an OLCI row) |
 | `n_passes` | Passes of that day |
 | `cls` | Best visibility class of the day, `A` or `B` |
 | `level` | Level of the day, `L0` to `L3` |
 | `dw_km2` | Area of water of a different colour, outside the zone's persistent mask |
-| `bright_km2` | Area of bright floating matter |
+| `bright_km2` | Area of bright patches. In OLCI this answers to cloud that kept its reflectance; do not read it as floating matter |
 | `dw_two_pass_km2` | Area flagged at the same place by two passes of the day |
 
 These are screening values. Most low-resolution alerts are blooms, glacial turbidity, reefs or
-cloud; only the episodes listed in `episodes.csv` were reviewed.
+cloud; only the episodes listed in `episodes.csv` were reviewed. The record has gaps: no rows for
+2018-02 and 2026-03, few for early 2018 and for 2026-05, 07 and 08, and from 2023-07 on only a
+part of the OLCI passes.
 
 ## known_periods.csv
 
@@ -163,6 +167,8 @@ Eruption periods since 2013 for the volcanoes of the database, as used for the c
 - `ring_waves.csv`: passes on which the sea surface round a summit shows concentric wave crests.
   They are read as an effect of the seafloor relief on the swell and do not change a verdict.
 - `airborne_bands.csv`: passes with a faint grey band in the air beside an island (Zubair Group).
+  It lists every pass on which the rule fired. Not every line was confirmed by eye, and the
+  review of the episode a pass belongs to can say otherwise.
 
 ## figures.csv
 

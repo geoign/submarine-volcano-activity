@@ -147,7 +147,7 @@ IR-Adventure_Caldera-A,2018-04-01T11:27,S2A,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2018-04-03T11:17,S2B,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A-LS,2018-04-05T11:04,L8,B,0.64,L1,,0,,,,0,0,0,0,,1
 IR-Adventure_Caldera-A,2018-04-06T11:27,S2B,C,0,L0,,,,,,,,,,,0
-IR-Adventure_Caldera-A,2018-04-08T11:17,S2A,B,0.63,L1,,0.211,white,4.58,27,0,0,0,0,,1
+IR-Adventure_Caldera-A,2018-04-08T11:17,S2A,B,0.63,L1,,0.211,white,4.58,270,0,0,0,0,,1
 IR-Adventure_Caldera-A,2018-04-11T11:27,S2A,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A-LS,2018-04-12T11:10,L8,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2018-04-13T11:17,S2B,C,0.1,L0,,,,,,,,,,,0
@@ -652,13 +652,13 @@ IR-Adventure_Caldera-A,2022-04-02T11:18,S2B,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2022-04-05T11:28,S2B,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A-LS,2022-04-07T11:10,L8,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2022-04-07T11:18,S2A,C,0.18,L0,,,,,,,,,,,0
-IR-Adventure_Caldera-A-LS,2022-04-08T11:04,L9,B,0.36,L1,,0,,,,0,0,2,0,,1
+IR-Adventure_Caldera-A-LS,2022-04-08T11:04,L9,B,0.36,L1,,0,,,,0,0,20,0,,1
 IR-Adventure_Caldera-A,2022-04-10T11:28,S2A,C,0.3,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2022-04-12T11:18,S2B,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A-LS,2022-04-15T11:10,L9,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2022-04-15T11:28,S2B,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2022-04-17T11:18,S2A,C,0,L0,,,,,,,,,,,0
-IR-Adventure_Caldera-A,2022-04-20T11:28,S2A,B,0.59,L1,,0.366,white,1.56,26,0,0,0,0,,1
+IR-Adventure_Caldera-A,2022-04-20T11:28,S2A,B,0.59,L1,,0.366,white,1.56,260,0,0,0,0,,1
 IR-Adventure_Caldera-A,2022-04-25T11:28,S2B,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2022-04-27T11:18,S2A,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2022-04-30T11:28,S2A,C,0,L0,,,,,,,,,,,0
@@ -1268,7 +1268,7 @@ IR-Adventure_Caldera-A,2026-02-10T11:18,S2B,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2026-02-13T11:28,S2B,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2026-02-15T11:18,S2C,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2026-02-18T11:28,S2C,C,0,L0,,,,,,,,,,,0
-IR-Adventure_Caldera-A,2026-02-20T11:18,S2B,A,0.96,L1,,0.03,white,2.36,31,0,0,0,0,,1
+IR-Adventure_Caldera-A,2026-02-20T11:18,S2B,A,0.96,L1,,0.03,white,2.36,310,0,0,0,0,,1
 IR-Adventure_Caldera-A,2026-02-23T11:28,S2B,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2026-02-25T11:18,S2C,C,0,L0,,,,,,,,,,,0
 IR-Adventure_Caldera-A,2026-02-28T11:28,S2C,C,0.04,L0,,,,,,,,,,,0

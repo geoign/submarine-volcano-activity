@@ -1,7 +1,9 @@
 """Copy the quicklooks of the usable passes to the image store (Cloudflare R2, gis.ikgm.net).
 
-    python tools/sync_images.py [--monitor D:/SubMVolc_Monitor] [--work C:/tmp/submvolc_web]
-                                [--remote cloudflare1:gis/submvolc] [--dry-run] [--extras]
+    python tools/sync_images.py [--monitor <checkout>] [--work <folder>] [--remote <rclone remote:path>]
+                                [--since YYYY-MM-DD] [--extras] [--dry-run]
+
+The three paths default to `monitor`, `work` and `remote` of local.toml (not committed).
 
 build_db.py writes the lists of quicklooks that the pass tables point to into <work>/lists.
 This tool hands them to rclone, which copies only what the store does not hold yet (it asks the
@@ -55,9 +57,13 @@ def stage_extras(mon: Path, stage: Path) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--monitor", default=os.environ.get("SUBMVOLC_MONITOR", "D:/SubMVolc_Monitor"))
-    ap.add_argument("--work", default=os.environ.get("SUBMVOLC_WEB_WORK", "C:/tmp/submvolc_web"))
-    ap.add_argument("--remote", default="cloudflare1:gis/submvolc")
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from build_db import ROOT, local_settings
+    local = local_settings()
+    ap.add_argument("--monitor", default=local.get("monitor"), required="monitor" not in local)
+    ap.add_argument("--work", default=local.get("work", str(ROOT / "build")))
+    ap.add_argument("--remote", default=local.get("remote"), required="remote" not in local,
+                    help="rclone destination of the image store")
     ap.add_argument("--since", help="only passes on or after this day (YYYY-MM-DD)")
     ap.add_argument("--extras", action="store_true")
     ap.add_argument("--dry-run", action="store_true")

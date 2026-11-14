@@ -4,6 +4,7 @@
 import { cssVar, t, classLabel, fmtNum, phenomena, RANK } from "./common.js";
 
 const DAY = 86400000;
+const MEASURED = 0.05;   // km2: the base threshold; smaller candidates are not drawn
 const M = { left: 52, right: 14, top: 8 };
 const H = { episodes: 34, hires: 168, rugs: 22, lowres: 78, axis: 22, gap: 10 };
 
@@ -43,7 +44,9 @@ export class Timeline {
     this.domain = domain;
     if (!this.range) this.range = domain.slice();
     const alertMax = Math.max(1, ...passes.filter((p) => p.alert).map((p) => p.dw));
-    this.hiMax = alertMax * 1.08;
+    // Measurements below the alert threshold are drawn too; the scale follows all but their top 2 %.
+    const quiet = passes.filter((p) => !p.alert && p.cls !== "C" && p.dw >= MEASURED).map((p) => p.dw).sort((a, b) => a - b);
+    this.hiMax = Math.max(alertMax, quiet.length ? quiet[Math.floor(quiet.length * 0.98)] : 0) * 1.08;
     this.loMax = Math.max(1, ...lowres.filter((d) => d.alert).map((d) => d.dw)) * 1.08;
     this.draw();
   }
@@ -201,6 +204,13 @@ export class Timeline {
         const px = Math.round(this.x(p.t, L)) + 0.5;
         if (p.cls === "C") { g.strokeStyle = col.axis; g.beginPath(); g.moveTo(px, cloudY); g.lineTo(px, cloudY + 5); g.stroke(); }
         else if (!p.alert || !this.visible(p)) { g.strokeStyle = col.muted; g.beginPath(); g.moveTo(px, seenY); g.lineTo(px, seenY + 8); g.stroke(); }
+      }
+      // what was measured on passes without an alert: small grey dots, clipped at the top of the scale
+      g.fillStyle = col.muted;
+      const top = this.hiMax / 1.08;
+      for (const p of this.passes) {
+        if (p.t < r0 - DAY || p.t > r1 + DAY || p.cls === "C" || p.dw < MEASURED || (p.alert && this.visible(p))) continue;
+        g.beginPath(); g.arc(this.x(p.t, L), this.yHi(Math.min(p.dw, top), L), 1.7, 0, 7); g.fill();
       }
       // alert passes; significant classes last so that they lie on top
       const alerts = this.passes.filter((p) => p.alert && this.visible(p) && p.t >= r0 - DAY && p.t <= r1 + DAY);

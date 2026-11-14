@@ -47,10 +47,10 @@ def notes_in_db(all_notes: bool) -> dict[str, dict]:
     volcano = {r["volcano_id"]: r["name"] for r in read(ROOT / "db" / "volcanoes.csv")}
     out = {}
     for e in read(ROOT / "db" / "episodes.csv"):
-        if e["class"] == "nonvolcanic" and not all_notes:
-            continue
         for col in ("note_ja", "owner_ja"):
             text = e[col].strip()
+            if col == "note_ja" and e["class"] == "nonvolcanic" and not all_notes:
+                continue
             if text:
                 out.setdefault(key(text), dict(key=key(text), note_ja=text,
                                                context=f"{volcano[e['volcano_id']]} {e['start']}..{e['end']} ({e['tier']})"))

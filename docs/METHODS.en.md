@@ -3,7 +3,7 @@
 ## This database
 
 This database records what public satellite imagery has shown at shallow submarine volcanoes around the world since 2013: discoloured water, floating matter such as pumice, new land, thermal anomalies and bands in the air.
-It covers 204 volcanoes. Every satellite pass is screened by the same rules, and every pass that raises an alert is reviewed.
+It covers 204 volcanoes. Every satellite pass is screened by the same rules; the passes that raise an alert are grouped into episodes, and the episodes are reviewed. A few are not reviewed yet and are marked so.
 
 The record up to November 2025 comes from a hindcast through the image archives.
 Later records come from the monitoring system and are updated whenever the monitoring runs.
@@ -27,8 +27,8 @@ Sentinel-2 and Landsat do not image 35 of the volcanoes, which are watched in lo
 
 | Tier | Sensors | Pixel | Period in the database |
 |---|---|---|---|
-| High resolution | Sentinel-2 (L2A), Landsat 8 and 9 (Collection 2 Level-2) | 20 to 40 m (Landsat 30 m) | from April 2013 |
-| Low resolution | Sentinel-3 OLCI (300 m), daily VIIRS images (250 m); MODIS is also used to check candidates | 250 to 300 m | from November 2017 |
+| High resolution | Sentinel-2 (L2A), Landsat 8 and 9 (Collection 2 Level-2) | screened at 20 to 80 m: most passes at 40 m, most Landsat passes at 60 m | from April 2013 |
+| Low resolution | Sentinel-3 OLCI; daily VIIRS images of NASA GIBS; MODIS is also used to check candidates | 300 m (OLCI); the VIIRS images are served on a 250 m grid | from November 2017 |
 
 ## Screening
 
@@ -50,11 +50,12 @@ A pass has one of four levels.
 | Level | Meaning |
 |---|---|
 | L0 | The sea surface was not visible |
-| L1 | The sea surface was visible and there was no candidate |
-| L2 | Discoloured water, floating matter, new land or an airborne band passed its threshold |
+| L1 | The sea surface was visible and no candidate passed its threshold |
+| L2 | Discoloured water, floating matter, new land, an airborne band or the water colour of the zone passed its threshold |
 | L3 | Discoloured water of 1 km² or more and three times the threshold or more, or several reasons at once |
 
-The threshold for discoloured water is 0.05 km². It is raised on passes with the sea only partly visible, on passes with sun glint, for white candidates and for Landsat.
+The threshold for discoloured water is 0.05 km². It is raised on passes with the sea only partly visible, on passes with sun glint, for white candidates and for Landsat, and it is never lower than twice the 75th percentile of the areas the zone showed in the past.
+A pass with the sun lower than 15° raises no alert.
 At volcanoes where something always shows, such as reefs, shoals or a young island that is being eroded, a pass raises an alert only when it exceeds the zone's own past.
 
 In the low-resolution tier the areas of water of a different colour and of bright floating matter are measured in the daily image of each volcano, against the open ocean of the same image.
@@ -64,7 +65,8 @@ The bars in the lower panel of a timeline are these daily values; they have not 
 
 An episode is a run of alert passes (L2 or L3) of one zone with no more than 21 days between neighbours.
 In the low-resolution survey it is a run of alert days.
-Of the low-resolution episodes, the list holds only those reviewed from the images, where discoloured water lay within 5 km of the zone centre on two days or more, and those that overlap a documented eruption period.
+Of the low-resolution episodes, the list holds only those where discoloured water lay within 5 km of the zone centre on two days or more.
+Most of these were reviewed from the images; those at two reef zones were dismissed together, and a few are not reviewed.
 
 ## Review
 
@@ -75,6 +77,10 @@ The review had three stages.
 3. The author's verdict. The author, a volcanologist, read the reports and judged some of the cases himself.
 
 The field "Basis" of an episode says which stage its class comes from.
+
+The archives were searched twice in November 2026; the notes call the two runs the first and the second hindcast and refer to their reports.
+The second run kept the review of the first for every episode that overlaps an episode reviewed there.
+Where the two share no alert pass, the episode is listed as not reviewed; where they share only some, "Basis" says so.
 "The owner" in the review notes means the author of this database.
 
 ## Classes
@@ -98,13 +104,15 @@ A record in this database does not mean that the activity had not been reported.
 
 ## Limits
 
-- This is not real-time monitoring. Sentinel-2 revisits a zone every 2 to 5 days, and the screening and the review come after that.
+- This is not real-time monitoring. Sentinel-2 has revisited a zone every 2 to 5 days in recent years and less often before 2018, and the screening and the review come after that.
 - About half of all passes show the sea surface. A zone under persistent cloud has gaps of weeks in its record.
 - Small activity, pale discoloured water and deep eruptions that leave nothing at the sea surface are not in the record. Nor is discoloured water under thick cloud or under an eruption plume. White steam cannot be told from cloud, nor volcanic ash from dust.
 - The thresholds are provisional. In six known events labelled by eye, 46 of the 64 days on which a phenomenon was visible raised an alert; in the four events judged with fixed thresholds, 39 of 43 days.
-- A volcano with frequent activity is judged against its own past, so the onset of its next activity can be passed over as "the usual range".
-- A low-resolution pixel is 250 to 300 m, and small activity does not show. Most candidates come from blooms at high latitudes, glacial turbidity, reefs and the eruptions of neighbouring volcanoes, and only a part has been reviewed. From July 2023 to February 2026 the archive that was used holds only about a quarter of the Sentinel-3 OLCI passes.
+- A volcano with frequent activity is judged against its own past, so its next activity can be passed over as "the usual range": the passes of Home Reef during the eruption that began in December 2025 raised no alert. The grey dots of a timeline show what was measured on every pass, alert or not.
+- A low-resolution pixel is about 300 m, and small activity does not show. Most candidates come from blooms at high latitudes, glacial turbidity, reefs and the eruptions of neighbouring volcanoes, and only a part has been reviewed.
+- The low-resolution record has gaps. The archive that was used holds only a part of the Sentinel-3 OLCI passes from July 2023 on, few for early 2018 and for May, July and August 2026, and none for February 2018 and March 2026. Days of the monitoring system's VIIRS record fill some of the gaps of 2026.
 - Landsat takes more sun glint than Sentinel-2, and a larger share of its alerts was dismissed. A part of the Landsat passes of 2022 could not be read.
+- The hindcast, which ends on 11 November 2025, read Landsat for every zone. The monitoring system reads Landsat only for the zones Sentinel-2 does not image, so from 12 November 2025 the zones of both sensors have Sentinel-2 passes only.
 - An AI review both overlooks and misreads. An area is the sum of the pixels the rules took as candidates, not a calibrated measurement.
 
 ## Data
@@ -128,16 +136,18 @@ The address is `https://gis.ikgm.net/submvolc/ql/<zone>/<zone>_<time>_<satellite
 
 ## Sources
 
-- Sentinel-2 and Sentinel-3: contains modified Copernicus Sentinel data (2015 to 2026), obtained from Element 84's Earth Search and Microsoft's Planetary Computer.
+- Sentinel-2 and Sentinel-3: contains modified Copernicus Sentinel data (2015 to 2026), obtained from Element 84's Earth Search, Microsoft's Planetary Computer and Google Cloud's public copy of the Sentinel-2 products.
 - Landsat 8 and 9: data of the U.S. Geological Survey (USGS), obtained from the Planetary Computer.
 - VIIRS and MODIS images: NASA's Global Imagery Browse Services (GIBS).
 - Eruption periods and volcano numbers: Volcanoes of the World, Global Volcanism Program, Smithsonian Institution (retrieved on 11 November 2026).
+- The positions of ten hydrothermal sites and the names of eleven targets without a GVP number: InterRidge Vents Database.
 - The land on the map is from Natural Earth; the map is drawn with Leaflet.
 
 ## Terms of use and citation
 
-The data (the tables in `db/` and the images) are under CC BY 4.0; the code is under the MIT licence.
+The data (the tables in `db/`, the files in `curation/`, these texts and the images) are under CC BY 4.0; the code is under the MIT licence.
 The images are made from Copernicus Sentinel and Landsat data, so please also give the sources above when you reuse them.
+What was taken from the Smithsonian's catalogue and from the InterRidge database stays under the terms of those sources.
 
 An example of a citation:
 

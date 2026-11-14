@@ -25,7 +25,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from vocab import CAUSES, CLASSES, PHENOMENA  # noqa: E402
+from vocab import BASES, CAUSES, CLASSES, PHENOMENA  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "db"
@@ -33,6 +33,8 @@ LEAKS = [
     (re.compile(r"[A-Za-z]:\\Users\\", re.I), "Windows user folder"),
     (re.compile(r"/c/Users/|C:/Users/", re.I), "Windows user folder"),
     (re.compile(r"OneDrive", re.I), "local folder name"),
+    (re.compile(r"\b[A-Z]:[\\/][A-Za-z_]"), "drive path of this PC"),
+    (re.compile(r"\bcloudflare\d*:"), "name of an rclone remote"),
     (re.compile(r"\b(?:AKIA|ASIA)[0-9A-Z]{16}\b"), "AWS access key"),
     (re.compile(r"\bgh[pousr]_[A-Za-z0-9]{30,}\b"), "GitHub token"),
     (re.compile(r"\bsk-[A-Za-z0-9_-]{24,}\b"), "API key"),
@@ -89,7 +91,11 @@ def check_tables() -> None:
             fail(f"{e['episode_id']}: unknown class {e['class']!r}")
         if e["cause"] and e["cause"] not in CAUSES:
             fail(f"{e['episode_id']}: unknown cause {e['cause']!r}")
-        if e["class"] == "nonvolcanic" and e["basis"] == "ai_review" and not e["cause"]:
+        if e["basis"] not in BASES:
+            fail(f"{e['episode_id']}: unknown basis {e['basis']!r}")
+        if (e["class"] == "unreviewed") != (e["basis"] == ""):
+            fail(f"{e['episode_id']}: class {e['class']} with basis {e['basis']!r}")
+        if e["class"] == "nonvolcanic" and not e["cause"]:
             fail(f"{e['episode_id']}: dismissed without a cause")
         if any(p not in PHENOMENA for p in e["phenomena"].split("+") if p):
             fail(f"{e['episode_id']}: unknown phenomenon in {e['phenomena']!r}")
@@ -97,6 +103,14 @@ def check_tables() -> None:
             fail(f"{e['episode_id']}: bad dates {e['start']}..{e['end']}")
         if e["class"] == "known" and not e["known_ref"]:
             fail(f"{e['episode_id']}: class known without a reference")
+    overrides = ROOT / "curation" / "overrides.csv"
+    if overrides.exists():
+        gone = [r["episode_id"] for r in read(overrides) if r["episode_id"] not in ids]
+        if gone:
+            fail(f"curation/overrides.csv names {len(gone)} episode(s) that are not in the tables, e.g. {gone[:3]}")
+    for e in episodes:
+        if e["tier"] == "lowres" and "fl" in e["phenomena"].split("+"):
+            fail(f"{e['episode_id']}: low-resolution episode with floating matter")
     if dict(by_class) != {c: n for c, n in meta["episodes_by_class"].items() if n}:
         fail("meta.json: episodes_by_class differs from episodes.csv")
     for v in volcanoes:
@@ -118,6 +132,9 @@ def check_tables() -> None:
                 fail(f"passes/{path.name}: not in order of time at {p['time']}")
                 break
             last = p["time"]
+            if p["bearing"] and not 0 <= float(p["bearing"]) <= 360:
+                fail(f"passes/{path.name}: bearing {p['bearing']} at {p['time']}")
+                break
             if p["cls"] not in ("A", "B", "C") or p["level"] not in ("L0", "L1", "L2", "L3"):
                 fail(f"passes/{path.name}: bad class or level at {p['time']}")
                 break
@@ -158,7 +175,7 @@ def check_leaks() -> None:
                     continue
                 if what == "local account name" and path.name == "check_db.py":
                     continue
-                if what in ("Windows user folder", "local folder name") and path.name == "check_db.py":
+                if what in ("Windows user folder", "local folder name", "drive path of this PC", "name of an rclone remote") and path.name == "check_db.py":
                     continue
                 fail(f"{path.relative_to(ROOT)}: {what}: {m.group(0)[:40]}")
                 break

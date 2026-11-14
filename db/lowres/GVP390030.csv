@@ -211,5 +211,6 @@ date,src,n_passes,cls,level,dw_km2,bright_km2,dw_two_pass_km2
 2026-10-10,olci,2,A,L1,0,0,0
 2026-10-20,olci,2,A,L1,0,0.38,0
 2026-10-26,olci,2,A,L1,0,0,0
+2026-10-30,viirs,2,B,L1,0,0,0
 2026-10-31,olci,2,A,L1,0,1.31,0
 2026-11-09,olci,2,B,L3,0,11.19,0
