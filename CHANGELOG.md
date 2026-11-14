@@ -29,18 +29,18 @@ First publication.
 
 ## 2026-11-14, third update
 
-- The author's first reviews in the form: 175 episodes, so that 200 are `human-reviewed`
-  (3,557 `ai-reviewed`, 193 `automatic`). 104 of them changed class: 47 episodes without a review
-  and 16 that the review had kept as possible or undetermined were judged not volcanic, 34 were
+- The author's first reviews in the form: 219 episodes, so that 244 are `human-reviewed`
+  (3,517 `ai-reviewed`, 189 `automatic`). 141 of them changed class: 49 episodes without a review
+  and 49 that the review had kept as possible or undetermined were judged not volcanic, 34 were
   raised to likely volcanic (most of them the recurring discoloured water of Fukutoku-Oka-no-Ba
-  and Lateiki), two passes matched by date to the eruption of Snow volcano (Gorshkov Caldera)
-  were judged to show the usual appearance of the place, and five moved to possible, undetermined
-  or recurrent. Classes now: 89 known, 78 likely, 76 possible,
-  234 recurrent, 22 airborne, 195 undetermined, 3,196 not volcanic, 60 unreviewed.
+  and Lateiki), three passes matched by date to a documented eruption (two at Gorshkov Caldera,
+  one at Myojinsho) were judged not volcanic, and six moved to possible, undetermined or
+  recurrent. Classes now: 88 known, 78 likely, 77 possible, 234 recurrent, 22 airborne,
+  161 undetermined, 3,232 not volcanic, 58 unreviewed.
 - Of the 22 episodes that disagreed with the Coast Guard's records, the author reviewed 19:
   four were raised to likely volcanic and one to possibly volcanic, one stays undetermined, and
   13 were confirmed as not volcanic. Three at Funka Asane are left.
-- The summaries of 23 volcanoes say what the author judged; Napo Taroare has a summary.
+- The summaries of 24 volcanoes say what the author judged; Napo Taroare and Doyo Seamount have a summary.
   English text for the author's comments.
 - Sofu-gan and the Sofu Seamount caldera are different volcanoes: the Coast Guard's table of
   Sofu-gan stays out of the database, and the data dictionary says so.
