@@ -437,6 +437,35 @@ def known_periods(mon: Path, volcanoes: dict, first_year: int = 2013) -> list[di
     return rows
 
 
+def exact_known_refs(episodes: list[dict], periods: list[dict]) -> int:
+    """Write the eruption an episode was matched to with the dates the catalogue has.
+
+    The monitor reads the catalogue with every day cut at 28 (so that any month holds it) and
+    prints a missing cell as "(nan)"; its reference to an eruption of 2023-01-31 reads 2023-01-28.
+    """
+    by = defaultdict(list)
+    for p in periods:
+        if p["source"] == "GVP":
+            by[p["volcano_id"]].append(p)
+    day = lambda d: datetime.strptime(d, "%Y-%m-%d").toordinal()  # noqa: E731
+    changed = 0
+    for e in episodes:
+        ref = (e["known_ref"] or "").replace(" (nan)", "").replace("events.toml ", "Own event list ")
+        m = re.match(r"GVP (Confirmed Eruption|Uncertain Eruption) (\d{4}-\d\d-\d\d)\.\.(\S+)(.*)", ref)
+        if m:
+            kind, start, _, rest = m.groups()
+            for p in by.get(e["volcano_id"], []):
+                full = len(p["start"]) == 10
+                if p["kind"] == kind and (abs(day(p["start"]) - day(start)) <= 3 if full else start.startswith(p["start"])):
+                    end = p["end"] or ("continuing" if p["continuing"] else "end not given")
+                    ref = f"GVP {kind} {p['start']}..{end}{rest}"
+                    break
+        if ref != e["known_ref"]:
+            e["known_ref"] = ref
+            changed += 1
+    return changed
+
+
 def lowres_days(mon: Path, volcanoes: dict):
     out = defaultdict(list)
     sources = [(mon / "data/wide_survey/wide.sqlite", "olci")]
@@ -507,7 +536,9 @@ def main() -> None:
     low = lowres_episodes(mon, volcanoes)
     episodes += low
     classify(episodes, volcanoes, cur)
-    print(f"episodes: hindcast {n_h}, monitor {n_m}, low resolution {len(low)}")
+    periods = known_periods(mon, volcanoes)
+    n_ref = exact_known_refs(episodes, periods)
+    print(f"episodes: hindcast {n_h}, monitor {n_m}, low resolution {len(low)}; {n_ref} catalogue references rewritten")
 
     # Notes: English from the curated translations, keyed by the Japanese text.
     missing = Counter()
@@ -564,7 +595,6 @@ def main() -> None:
     for e in episodes:
         by_volcano[e["volcano_id"]].append(e)
 
-    periods = known_periods(mon, volcanoes)
     write_csv(DB / "known_periods.csv", ["volcano_id", "source", "kind", "start", "end", "continuing", "area", "note"], periods)
 
     vol_rows = []

@@ -80,7 +80,7 @@ around it, and a review note or a volcano summary may give a larger area seen by
 | `basis` | Where the class comes from: `catalogue` (date match with an eruption period), `ai_review` (AI-assisted review), `rule` (volcano with a usual feature), `lead_review` (conclusion of the review report), `owner` (the author's verdict) |
 | `cause` | For `nonvolcanic`: `cloud`, `cloud_shadow`, `sun_glint`, `reef_or_shoal`, `land_or_surf`, `land_or_ice`, `bloom`, `sediment_plume`, `ship_wake`, `sensor_artifact`, `neighbour_eruption`, `other` |
 | `interest` | Interest given by the first-pass review, 0 (dismissed) to 3; how much the episode deserved a second look, not a verdict |
-| `known_ref` | The eruption period the episode was matched to |
+| `known_ref` | The eruption period the episode was matched to: `GVP <kind> <start>..<end>` with the dates of the catalogue, or `Own event list <start>..<end>` |
 | `prior_reports` | What was checked against earlier reports, with the date of the check. Empty: nothing was checked |
 | `image` | Path of a review sheet under the image base (low-resolution episodes that were reviewed) |
 | `note_en`, `note_ja` | Review note. Written in Japanese; the English is a translation and is missing for most dismissed episodes |
