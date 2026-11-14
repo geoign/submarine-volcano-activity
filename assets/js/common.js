@@ -211,7 +211,9 @@ export function volcanoName(v) {
 }
 export function volcanoAlt(v) {
   const ja = v.name_ja;
-  return LANG === "ja" && ja ? v.name : (ja || "");
+  if (LANG === "ja") return ja ? v.name : "";
+  // In English the Japanese name is shown for volcanoes of Japan only; elsewhere it is a transliteration.
+  return ja && (v.country || "").startsWith("Japan") ? ja : "";
 }
 export function countryName(c) { return LANG === "ja" ? (COUNTRY_JA[c] || c) : c; }
 export function classLabel(c, short = false) { return t((short ? "class.short." : "class.") + (c || "none")); }
