@@ -61,13 +61,17 @@ remote = "<rclone remote:bucket/path of the image store>"
 ```
 python tools/build_db.py                                 # db/
 python tools/check_db.py                                 # counts, vocabularies, leaks
+python tools/check_images.py 20                          # the image store answers
 python tools/sync_images.py                              # new quicklooks to the image store
 python tools/build_about.py                              # about.html from docs/METHODS.*.md
 python tools/notes.py pending --out notes.csv            # review notes that lack an English text
+python tools/build_review.py                             # the author's local review form, review/index.html
 ```
 
 `tools/build_db.py` only reads the monitor's stores. The class of an episode comes from the
-monitor's reviews and from `curation/overrides.csv`; see the module docstrings.
+monitor's reviews, from `curation/overrides.csv` and, last, from the author's own reviews in
+`curation/human_review.csv`; see the module docstrings. An episode the author has reviewed carries
+the status `human-reviewed`.
 
 ## Sources
 

@@ -17,6 +17,9 @@ import hashlib
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from safeio import write_csv  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 STORE = ROOT / "curation" / "notes_en.csv"
 
@@ -35,12 +38,7 @@ def load_store() -> dict[str, dict]:
 
 
 def save_store(store: dict[str, dict]) -> None:
-    STORE.parent.mkdir(exist_ok=True)
-    with open(STORE, "w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f, lineterminator="\n")
-        w.writerow(["key", "note_ja", "note_en"])
-        for k in sorted(store):
-            w.writerow([k, store[k].get("note_ja", ""), store[k].get("note_en", "")])
+    write_csv(STORE, ["key", "note_ja", "note_en"], [store[k] for k in sorted(store)])
 
 
 def notes_in_db(all_notes: bool) -> dict[str, dict]:

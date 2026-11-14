@@ -87,6 +87,30 @@ def test_classify_applies_rule_owner_and_override():
     assert got["f"] == ("likely", "owner")
     assert eps[5]["prior_reports"] == "read"
     assert eps[3]["cause"] == "other"
+    status = {e["episode_id"]: e["review_status"] for e in eps}
+    assert status == {"a": "ai-reviewed", "b": "ai-reviewed", "c": "ai-reviewed", "d": "human-reviewed",
+                      "e": "human-reviewed", "f": "human-reviewed"}
+    assert eps[3]["reviewed_at"] == "2026-11-14"
+
+
+def test_the_authors_review_is_the_last_word():
+    volcanoes = {"V1": {"_usual": True}}
+    eps = [dict(episode_id="a", volcano_id="V1", cls="possible", basis="ai_review", cause="", owner_ja="",
+                prior_reports="", known_ref=""),
+           dict(episode_id="b", volcano_id="V1", cls="likely", basis="ai_review", cause="", owner_ja="",
+                prior_reports="", known_ref=""),
+           dict(episode_id="c", volcano_id="V1", cls="known", basis="catalogue", cause="", owner_ja="",
+                prior_reports="", known_ref="GVP Confirmed Eruption 2020-01-01..2020-02-01")]
+    cur = {"overrides": {"a": {"episode_id": "a", "class": "recurrent", "basis": "lead_review"}},
+           "human": {"a": {"episode_id": "a", "verdict": "likely", "cause": "", "comment": "火口からの変色水", "reviewed_at": "2026-11-20"},
+                     "b": {"episode_id": "b", "verdict": "nonvolcanic", "cause": "", "comment": "", "reviewed_at": "2026-11-21"}}}
+    build_db.classify(eps, volcanoes, cur)
+    a, b, c = eps
+    assert (a["cls"], a["basis"], a["review_status"], a["reviewed_at"]) == ("likely", "owner", "human-reviewed", "2026-11-20")
+    assert a["owner_ja"] == "2026-11-20: 火口からの変色水"
+    assert (b["cls"], b["cause"], b["review_status"]) == ("nonvolcanic", "other", "human-reviewed")
+    assert b["_owner_en"] == "2026-11-21: reviewed from the images (not volcanic)"
+    assert (c["cls"], c["review_status"], c["reviewed_at"]) == ("known", "automatic", "")
 
 
 def test_built_tables_are_consistent():

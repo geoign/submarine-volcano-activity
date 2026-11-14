@@ -37,7 +37,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from vocab import CAUSES, CLASSES, COVERAGE, DEPTH_CLASS, VERDICT_CLASS, ZONE_TYPE  # noqa: E402
+from safeio import write_csv, write_text  # noqa: E402
+from vocab import CAUSES, CLASS_EN, CLASS_JA, CLASSES, COVERAGE, DEPTH_CLASS, VERDICT_CLASS, ZONE_TYPE  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "db"
@@ -85,16 +86,6 @@ def read_csv(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def write_csv(path: Path, columns: list[str], rows) -> int:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    n = 0
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f, lineterminator="\n")
-        w.writerow(columns)
-        for r in rows:
-            w.writerow(["" if r.get(c) is None else r.get(c) for c in columns])
-            n += 1
-    return n
 
 
 def ro(path: Path) -> sqlite3.Connection:
@@ -153,7 +144,13 @@ def md_table(path: Path, first_header: str) -> list[dict]:
 # ----------------------------------------------------------------------------- curation
 
 def load_curation() -> dict:
-    cur = {"overrides": {}, "notes_en": {}, "names_ja": {}, "summaries": {}, "figures": []}
+    cur = {"overrides": {}, "notes_en": {}, "names_ja": {}, "summaries": {}, "figures": [], "human": {}}
+    p = CURATION / "human_review.csv"
+    if p.exists():
+        for r in read_csv(p):
+            if r.get("verdict") not in CLASSES or r["verdict"] == "unreviewed":
+                raise SystemExit(f"curation/human_review.csv: verdict {r.get('verdict')!r} for {r.get('episode_id')}")
+            cur["human"][r["episode_id"]] = r
     p = CURATION / "overrides.csv"
     if p.exists():
         for r in read_csv(p):
@@ -451,8 +448,30 @@ def classify(episodes: list[dict], volcanoes: dict, cur: dict) -> None:
                 e["owner_ja"] = ov["owner_ja"]
             e["curation_ja"] = ov.get("reason_ja", "")
             e["curation_en"] = ov.get("reason_en", "")
+        h = cur.get("human", {}).get(e["episode_id"])
+        if h:
+            # The author's review in the form (tools/build_review.py) is the last word.
+            day = (h.get("reviewed_at") or "")[:10]
+            e["cls"], e["basis"] = h["verdict"], "owner"
+            e["cause"] = (h.get("cause") or e["cause"] or "other") if h["verdict"] == "nonvolcanic" else ""
+            comment = (h.get("comment") or "").strip()
+            e["owner_ja"] = f"{day}: {comment}" if comment else f"{day}: 画像を確認 ({CLASS_JA[h['verdict']]})"
+            e["_owner_en"] = "" if comment else f"{day}: reviewed from the images ({CLASS_EN[h['verdict']]})"
+            e["_reviewed_at"] = day
         if e["cls"] != "nonvolcanic" and e["cause"] and e["cls"] != "recurrent":
             e["cause"] = ""
+        # Who looked: the author, an AI-assisted review, or only the screening and a date match.
+        if e["basis"] == "owner":
+            e["review_status"] = "human-reviewed"
+            m = re.match(r"(\d{4}-\d\d-\d\d)", e.get("owner_ja") or "")
+            e["reviewed_at"] = e.get("_reviewed_at") or (m.group(1) if m else "")
+        elif e["basis"] in ("ai_review", "ai_review_partial", "lead_review", "rule"):
+            e["review_status"], e["reviewed_at"] = "ai-reviewed", ""
+        else:
+            e["review_status"], e["reviewed_at"] = "automatic", ""
+    gone = set(cur.get("human", {})) - {e["episode_id"] for e in episodes}
+    if gone:
+        print(f"  warning: {len(gone)} human review(s) name an episode that is not in the tables, e.g. {sorted(gone)[:3]}")
     unknown = set(cur["overrides"]) - {e["episode_id"] for e in episodes}
     if unknown:
         print(f"  warning: {len(unknown)} override(s) name an episode that is not in the tables, e.g. {sorted(unknown)[:3]}")
@@ -566,7 +585,7 @@ def lowres_days(mon: Path, volcanoes: dict):
 EPISODE_COLUMNS = [
     "episode_id", "volcano_id", "zone_id", "tier", "source", "start", "end", "n_detect", "n_seen", "n_l3",
     "phenomena", "max_dw_km2", "max_fl_km2", "max_nl_km2", "colour", "median_dist_km", "sensors", "peak",
-    "class", "basis", "cause", "interest", "known_ref", "prior_reports", "image",
+    "class", "review_status", "reviewed_at", "basis", "cause", "interest", "known_ref", "prior_reports", "image",
     "note_en", "note_ja", "owner_en", "owner_ja", "curation_en", "curation_ja"]
 PASS_COLUMNS = ["zone_id", "time", "sat", "cls", "clear", "level", "reasons", "dw_km2", "colour", "dist_km",
                 "bearing", "fl_km2", "nl_km2", "th_px", "ap_km2", "episode_id", "img"]
@@ -575,7 +594,7 @@ VOLCANO_COLUMNS = [
     "volcano_id", "gvp_number", "name", "name_ja", "country", "lat", "lon", "depth_class", "coverage", "tiers",
     "baseline_class", "n_zones", "first_pass", "last_pass", "n_passes", "n_usable", "lowres_days",
     "n_known", "n_likely", "n_possible", "n_recurrent", "n_airborne", "n_undetermined", "n_nonvolcanic",
-    "n_unreviewed", "top_class", "last_activity", "summary_en", "summary_ja"]
+    "n_unreviewed", "n_human_reviewed", "top_class", "last_activity", "summary_en", "summary_ja"]
 
 
 def main() -> None:
@@ -625,6 +644,8 @@ def main() -> None:
         for src, dst in (("note_ja", "note_en"), ("owner_ja", "owner_en")):
             text = e.get(src, "")
             e[dst] = cur["notes_en"].get(note_key(text), "") if text else ""
+            if dst == "owner_en" and not e[dst] and e.get("_owner_en"):
+                e[dst] = e["_owner_en"]          # a review without a comment needs no translator
             if text and not e[dst] and e["cls"] != "nonvolcanic":
                 missing[src] += 1
         e["image"] = f"wide/sheet/{e['episode_id']}.jpg" if e.get("_sheet") else ""
@@ -682,6 +703,7 @@ def main() -> None:
         top = min((e["cls"] for e in eps), key=lambda c: RANK[c], default="")
         s = cur["summaries"].get(vid, {})
         v.update(stats[vid], top_class=top, last_activity=max((e["end"] for e in active), default=""),
+                 n_human_reviewed=sum(1 for e in eps if e["review_status"] == "human-reviewed"),
                  summary_en=s.get("summary_en", ""), summary_ja=s.get("summary_ja", ""),
                  **{f"n_{c}": counts.get(c, 0) for c in CLASSES})
         vol_rows.append(v)
@@ -722,11 +744,11 @@ def main() -> None:
             baseline=v["baseline_class"], depth=v["depth_class"], top=v["top_class"], last=v["last_activity"],
             usable=v["n_usable"], lowres_days=v["lowres_days"],
             counts=[v[f"n_{c}"] for c in CLASSES],
-            episodes=[[e["start"], e["end"], RANK[e["cls"]], 0 if e["tier"] == "highres" else 1, e["phenomena"]]
+            episodes=[[e["start"], e["end"], RANK[e["cls"]], 0 if e["tier"] == "highres" else 1, e["phenomena"],
+                       1 if e["review_status"] == "human-reviewed" else 0]
                       for e in by_volcano.get(v["volcano_id"], []) if e["cls"] != "nonvolcanic"],
         ) for v in vol_rows])
-    (DB / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8",
-                                   newline="\n")
+    write_text(DB / "index.json", json.dumps(index, ensure_ascii=False, separators=(",", ":")))
 
     head = subprocess.run(["git", "-C", str(mon), "rev-parse", "--short", "HEAD"], capture_output=True, text=True)
     last_pass = max((s["last_pass"] for s in stats.values() if s["last_pass"]), default="")
@@ -737,12 +759,13 @@ def main() -> None:
         lowres_days=n_days, episodes=len(episodes),
         episodes_by_class={c: sum(1 for e in episodes if e["cls"] == c) for c in CLASSES},
         episodes_by_source=dict(Counter(e["source"] for e in episodes)),
+        episodes_by_review_status=dict(Counter(e["review_status"] for e in episodes)),
         ring_wave_records=len(ring), airborne_band_records=len(bands))
-    (DB / "meta.json").write_text(json.dumps(meta, indent=1), encoding="utf-8", newline="\n")
+    write_text(DB / "meta.json", json.dumps(meta, indent=1))
 
     (work / "lists").mkdir(parents=True, exist_ok=True)
     for store, name in (("hindcast2", "ql_retro2.txt"), ("monitor", "ql_monitor.txt")):
-        (work / "lists" / name).write_text("\n".join(sorted(lists[store])) + "\n", encoding="utf-8", newline="\n")
+        write_text(work / "lists" / name, "\n".join(sorted(lists[store])) + "\n")
     print(json.dumps(meta, indent=1))
 
 

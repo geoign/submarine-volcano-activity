@@ -25,11 +25,15 @@ folder is synchronised to a cloud drive: keep it to text and the few images of t
 ## Updating the database
 
 1. `python tools/build_db.py` reads the monitor's stores (read only) and rewrites `db/`.
-2. `python tools/check_db.py --images 20` must end with `OK`.
+2. `python tools/check_db.py` must end with `OK`; `python tools/check_images.py 20` asks the image store.
 3. `python tools/sync_images.py --since <day of the last update>` sends the new quicklooks.
 4. `python tools/notes.py pending` lists review notes without an English text; translate them and
    `python tools/notes.py merge <file>`, then build again.
-5. Commit. Push only when the owner asks, or under a standing instruction for the routine update.
+5. `python tools/build_review.py` rebuilds the author's review form (`review/index.html`, opened
+   from disk, not committed). The author saves the reviews from the form into
+   `curation/human_review.csv`; the next build gives those episodes the status `human-reviewed`.
+   Never edit that file by hand or on the author's behalf: it records what a person looked at.
+6. Commit. Push only when the owner asks, or under a standing instruction for the routine update.
 
 ## Rules
 

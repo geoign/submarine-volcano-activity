@@ -88,7 +88,7 @@ function renderHead() {
       Number(V.n_passes) ? tile(t("v.tile.passes"), fmtInt(V.n_passes), t("v.tile.passes.sub", { usable: fmtInt(V.n_usable) })) : null,
       Number(V.n_passes) ? tile(t("v.tile.period"), dateRange(V.first_pass.slice(0, 7), V.last_pass.slice(0, 7))) : null,
       Number(V.lowres_days) ? tile(t("v.tile.lowres"), fmtInt(V.lowres_days), t("v.tile.lowres.sub")) : null,
-      tile(t("v.tile.episodes"), fmtInt(total), t("v.tile.episodes.sub", { n: fmtInt(active) })),
+      tile(t("v.tile.episodes"), fmtInt(total), t("v.tile.episodes.sub", { n: fmtInt(active), h: fmtInt(V.n_human_reviewed || 0) })),
       tile(t("v.tile.last"), V.last_activity || t("v.tile.none"), t("v.tile.last.sub"))));
 }
 
@@ -292,6 +292,8 @@ function renderEpisodes() {
       el("div", { class: "top" },
         el("span", { class: "dates", text: dateRange(e.start, e.end) }), classBadge(e.class),
         el("span", { class: "tag", text: t("tier." + e.tier) }),
+        el("span", { class: `tag${e.review_status === "human-reviewed" ? " human" : ""}`,
+          text: t("status." + e.review_status) + (e.reviewed_at ? ` ${e.reviewed_at}` : "") }),
         el("span", { class: "nums", text: [
           phenomena(e.phenomena), e.max_dw_km2 && Number(e.max_dw_km2) > 0 ? t("v.ep.maxdw", { v: fmtNum(e.max_dw_km2, 2) }) : "",
           t(low ? "v.ep.days" : "v.ep.passes", { a: e.n_detect, u: e.n_seen }), e.sensors, low ? "" : e.zone_id,

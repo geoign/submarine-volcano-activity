@@ -39,6 +39,7 @@ One row per volcano (204).
 | `n_passes`, `n_usable` | High-resolution passes, and those with the sea visible (class A or B) |
 | `lowres_days` | Days of the low-resolution record with the sea visible |
 | `n_<class>` | Number of episodes of each class |
+| `n_human_reviewed` | Number of episodes the author has reviewed |
 | `top_class` | The most significant class among the volcano's episodes |
 | `last_activity` | End of the latest episode of class `known`, `likely` or `possible` |
 | `summary_en`, `summary_ja` | Short summary of the record, written from the review reports |
@@ -79,6 +80,8 @@ around it, and a review note or a volcano summary may give a larger area seen by
 | `sensors` | `Sentinel-2`, `Landsat`, `Landsat+Sentinel-2` or `OLCI` |
 | `peak` | The strongest pass (as `<zone>_<YYYYMMDDTHHMM>_<satellite>`) or, at low resolution, the peak day |
 | `class` | Public class, see below |
+| `review_status` | Who looked at the episode: `human-reviewed` (the author judged it from the images), `ai-reviewed` (AI-assisted review only), `automatic` (screening and date match only; nobody looked) |
+| `reviewed_at` | Day of the author's review, for `human-reviewed` |
 | `basis` | Where the class comes from: `catalogue` (date match with an eruption period), `ai_review` (AI-assisted review of the episode's passes), `ai_review_partial` (the review was of an overlapping episode of the first hindcast, or of an earlier state of the monitor's list, and saw only some of this episode's alert passes; its note may describe other days), `rule` (place with a usual feature, or the usual volcanic discoloured water of the volcano), `lead_review` (conclusion of the review report), `owner` (the author's verdict). Empty for `unreviewed` |
 | `cause` | For `nonvolcanic`: `cloud`, `cloud_shadow`, `sun_glint`, `reef_or_shoal`, `land_or_surf`, `land_or_ice`, `bloom`, `sediment_plume`, `ship_wake`, `sensor_artifact`, `neighbour_eruption`, `other` |
 | `interest` | Interest given by the first-pass review, 0 (dismissed) to 3; how much the episode deserved a second look, not a verdict |
@@ -175,8 +178,14 @@ Eruption periods since 2013 for the volcanoes of the database, as used for the c
 Figures shown on a volcano's page: `volcano_id`, `file` (path under the image base),
 `caption_en`, `caption_ja`.
 
+## curation/human_review.csv
+
+The author's reviews, entered in the local review form (`tools/build_review.py`): `episode_id`,
+`verdict` (a class), `cause` (for `nonvolcanic`), `comment`, `reviewed_at`. The build gives these
+episodes the verdict as their class, the basis `owner` and the status `human-reviewed`.
+
 ## index.json, meta.json
 
 `index.json` is what the map page reads: the volcanoes with their episodes that are not dismissed,
-as `[start, end, class index, tier index, phenomena]`. `meta.json` holds the build time, the commit
+as `[start, end, class index, tier index, phenomena, human-reviewed (1 or 0)]`. `meta.json` holds the build time, the commit
 of the monitoring system the tables were built from, the image base and the counts.

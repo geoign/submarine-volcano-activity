@@ -1,14 +1,15 @@
 """Check the built tables under db/ and the files that will be published.
 
-    python tools/check_db.py [--images N]
+    python tools/check_db.py
 
 Exits with status 1 when a check fails. The checks:
 
 - every table parses, has its columns, and uses only the documented vocabularies;
 - ids join: episodes and zones point to volcanoes, alert passes to episodes;
 - counts agree between meta.json, index.json and the tables;
-- nothing that is to be committed holds a local path, a user name, or anything shaped like a key;
-- with --images N, N quicklook URLs drawn at random answer with an image (network).
+- nothing that is to be committed holds a local path, a user name, or anything shaped like a key.
+
+Whether the image store answers is checked by tools/check_images.py.
 """
 
 from __future__ import annotations
@@ -16,16 +17,14 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import random
 import re
 import subprocess
 import sys
-import urllib.request
 from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from vocab import BASES, CAUSES, CLASSES, PHENOMENA  # noqa: E402
+from vocab import BASES, CAUSES, CLASSES, PHENOMENA, REVIEW_STATUS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "db"
@@ -41,7 +40,16 @@ LEAKS = [
     (re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"), "private key"),
     (re.compile(r"[\w.+-]+@(?!users\.noreply\.github\.com)[\w-]+\.[\w.-]+"), "e-mail address"),
 ]
-ALLOWED_MAIL = {"f.ikegami@gmail.com", "noreply@anthropic.com"}
+
+
+def allowed_mail() -> set[str]:
+    """The addresses that may appear: the author's public contact, as CITATION.cff gives it."""
+    cff = ROOT / "CITATION.cff"
+    found = set(re.findall(r"email:\s*(\S+)", cff.read_text(encoding="utf-8"))) if cff.exists() else set()
+    return {a.strip("\"'") for a in found}
+
+
+ALLOWED_MAIL = allowed_mail()
 TEXT = {".py", ".js", ".css", ".html", ".md", ".csv", ".json", ".cff", ".txt", ".svg", ".toml", ".yml", ".yaml", ""}
 
 errors: list[str] = []
@@ -91,6 +99,12 @@ def check_tables() -> None:
             fail(f"{e['episode_id']}: unknown class {e['class']!r}")
         if e["cause"] and e["cause"] not in CAUSES:
             fail(f"{e['episode_id']}: unknown cause {e['cause']!r}")
+        if e["review_status"] not in REVIEW_STATUS:
+            fail(f"{e['episode_id']}: unknown review status {e['review_status']!r}")
+        if (e["review_status"] == "human-reviewed") != (e["basis"] == "owner"):
+            fail(f"{e['episode_id']}: review status {e['review_status']} with basis {e['basis']!r}")
+        if e["review_status"] == "human-reviewed" and not re.fullmatch(r"\d{4}-\d\d-\d\d", e["reviewed_at"]):
+            fail(f"{e['episode_id']}: human-reviewed without a date")
         if e["basis"] not in BASES:
             fail(f"{e['episode_id']}: unknown basis {e['basis']!r}")
         if (e["class"] == "unreviewed") != (e["basis"] == ""):
@@ -108,6 +122,17 @@ def check_tables() -> None:
         gone = [r["episode_id"] for r in read(overrides) if r["episode_id"] not in ids]
         if gone:
             fail(f"curation/overrides.csv names {len(gone)} episode(s) that are not in the tables, e.g. {gone[:3]}")
+    human = ROOT / "curation" / "human_review.csv"
+    if human.exists():
+        rows = read(human)
+        gone = [r["episode_id"] for r in rows if r["episode_id"] not in ids]
+        if gone:
+            fail(f"curation/human_review.csv names {len(gone)} episode(s) that are not in the tables, e.g. {gone[:3]}")
+        by_id = {e["episode_id"]: e for e in episodes}
+        for r in rows:
+            e = by_id.get(r["episode_id"])
+            if e and (e["class"] != r["verdict"] or e["review_status"] != "human-reviewed"):
+                fail(f"{r['episode_id']}: the author's verdict {r['verdict']} is not what the table shows ({e['class']})")
     for e in episodes:
         if e["tier"] == "lowres" and "fl" in e["phenomena"].split("+"):
             fail(f"{e['episode_id']}: low-resolution episode with floating matter")
@@ -171,7 +196,8 @@ def check_leaks() -> None:
         text = path.read_text(encoding="utf-8", errors="replace")
         for pattern, what in LEAKS:
             for m in pattern.finditer(text):
-                if what == "e-mail address" and (m.group(0) in ALLOWED_MAIL or m.group(0).endswith((".jpg", ".png", ".csv"))):
+                if what == "e-mail address" and (m.group(0) in ALLOWED_MAIL or m.group(0).startswith("noreply@")
+                                                 or m.group(0).endswith((".jpg", ".png", ".csv"))):
                     continue
                 if what == "local account name" and path.name == "check_db.py":
                     continue
@@ -182,40 +208,12 @@ def check_leaks() -> None:
     print(f"leak scan: {n} text files")
 
 
-def check_images(n: int) -> None:
-    meta = json.loads((DB / "meta.json").read_text(encoding="utf-8"))
-    rng = random.Random(20261114)
-    files = sorted((DB / "passes").glob("*.csv"))
-    urls = []
-    while len(urls) < n:
-        rows = [p for p in read(rng.choice(files)) if p["img"] == "1"]
-        if rows:
-            p = rng.choice(rows)
-            stamp = p["time"].replace("-", "").replace(":", "")
-            urls.append(f"{meta['image_base']}/ql/{p['zone_id']}/{p['zone_id']}_{stamp}_{p['sat']}.jpg")
-    bad = 0
-    for url in urls:
-        try:
-            req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "submvolc-db-check"})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                if r.status != 200 or not r.headers.get("Content-Type", "").startswith("image/"):
-                    bad += 1
-                    fail(f"{url}: {r.status} {r.headers.get('Content-Type')}")
-        except Exception as exc:  # noqa: BLE001
-            bad += 1
-            fail(f"{url}: {exc}")
-    print(f"images: {n - bad} of {n} sampled quicklooks answer")
-
-
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--images", type=int, default=0, help="number of quicklook URLs to request")
-    args = ap.parse_args()
+    ap.parse_args()
     check_tables()
     check_leaks()
-    if args.images:
-        check_images(args.images)
     print("OK" if not errors else f"{len(errors)} check(s) failed")
     sys.exit(1 if errors else 0)
 

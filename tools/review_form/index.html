@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>エピソードの確認 · 海底火山活動履歴データベース</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>エピソードの確認</h1>
+  <div id="progress" class="progress"></div>
+  <div class="save">
+    <span id="save-state" class="state"></span>
+    <button type="button" id="pick">保存先の CSV を選ぶ</button>
+    <button type="button" id="import">CSV を読み込む</button>
+    <button type="button" id="download">CSV をダウンロード</button>
+    <input type="file" id="file" accept=".csv,text/csv" hidden>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="filters">
+      <div class="row">
+        <label>状態
+          <select id="f-status">
+            <option value="pending">未確認</option>
+            <option value="done">確認済み</option>
+            <option value="all">すべて</option>
+          </select></label>
+        <label>並び
+          <select id="f-sort">
+            <option value="imp">重要度</option>
+            <option value="new">新しい順</option>
+            <option value="old">古い順</option>
+            <option value="volcano">火山名</option>
+          </select></label>
+      </div>
+      <input type="search" id="f-q" placeholder="火山名、国名、エピソード ID">
+      <div class="chips" id="f-classes"></div>
+      <div class="row">
+        <label><input type="checkbox" id="f-high" checked> 高解像度</label>
+        <label><input type="checkbox" id="f-low" checked> 低解像度</label>
+      </div>
+      <div id="count" class="count"></div>
+    </div>
+    <ol id="list"></ol>
+    <button type="button" id="more" hidden>さらに表示</button>
+  </aside>
+
+  <main id="detail"><p class="hint">左の一覧からエピソードを選んでください。</p></main>
+</div>
+
+<div id="help" class="help">
+  キー操作: <kbd>1</kbd>〜<kbd>7</kbd> 区分 · <kbd>A</kbd> いまの区分のまま確認 · <kbd>Enter</kbd> 保存して次へ ·
+  <kbd>J</kbd> / <kbd>K</kbd> 次 / 前のエピソード · <kbd>←</kbd> <kbd>→</kbd> 通過を送る · <kbd>C</kbd> コメント欄へ
+</div>
+<noscript><p>このページは JavaScript が必要です。</p></noscript>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

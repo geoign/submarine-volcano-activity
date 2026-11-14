@@ -80,6 +80,18 @@ ZONE_TYPE = {
     "2026年噴火地点（NE・SW火口）": "eruption site of 2026 (NE and SW vents)",
 }
 
+# Labels of the classes, for texts the build writes itself.
+CLASS_EN = {"known": "documented eruption period", "likely": "likely volcanic", "possible": "possibly volcanic",
+            "recurrent": "recurrent discolouration", "airborne": "airborne band", "undetermined": "undetermined",
+            "nonvolcanic": "not volcanic", "unreviewed": "not reviewed"}
+CLASS_JA = {"known": "既知の噴火期間", "likely": "火山性の可能性が高い", "possible": "火山性の可能性あり",
+            "recurrent": "繰り返す変色", "airborne": "大気中の帯", "undetermined": "判断がつかない",
+            "nonvolcanic": "火山性ではない", "unreviewed": "未判定"}
+
+# Who looked at an episode (column `review_status`), after the status of earthquake catalogues:
+# the author's own verdict, an AI-assisted review, or nothing but the screening and a date match.
+REVIEW_STATUS = ["human-reviewed", "ai-reviewed", "automatic"]
+
 # Where the class of an episode comes from (column `basis`).
 BASES = ["catalogue", "ai_review", "ai_review_partial", "rule", "lead_review", "owner", ""]
 

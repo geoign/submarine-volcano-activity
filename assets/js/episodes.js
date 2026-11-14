@@ -10,7 +10,7 @@ renderChrome("episodes");
 const $ = (x) => document.getElementById(x);
 const PAGE = 100;
 const S = {
-  q: "", y0: "", y1: "", tier: "", page: 0, sort: "start", dir: -1,
+  q: "", y0: "", y1: "", tier: "", status: "", page: 0, sort: "start", dir: -1,
   shown: new Set(CLASSES.filter((c) => c !== "nonvolcanic")),
 };
 let rows = [], volcano = new Map(), view = [];
@@ -34,6 +34,7 @@ function filter() {
   view = rows.filter((e) => {
     if (!S.shown.has(e.class)) return false;
     if (S.tier && e.tier !== S.tier) return false;
+    if (S.status && e.review_status !== S.status) return false;
     if (S.y0 && e.end.slice(0, 4) < S.y0) return false;
     if (S.y1 && e.start.slice(0, 4) > S.y1) return false;
     if (q) {
@@ -78,7 +79,8 @@ function drawTable() {
       el("td", {}, el("a", { href: `volcano.html?id=${encodeURIComponent(e.volcano_id)}&ep=${encodeURIComponent(e.episode_id)}`, text: volcanoName(v) }),
         el("div", { class: "notice", style: "font-size:.78rem", text: countryName(v.country) })),
       el("td", { class: "nowrap", text: e.start }), el("td", { class: "nowrap", text: e.end }),
-      el("td", {}, classBadge(e.class, true), e.tier === "lowres" ? el("div", {}, el("span", { class: "tag", text: t("tier.lowres") })) : null),
+      el("td", {}, classBadge(e.class, true), e.tier === "lowres" ? el("div", {}, el("span", { class: "tag", text: t("tier.lowres") })) : null,
+        e.review_status === "human-reviewed" ? el("div", {}, el("span", { class: "tag human", text: t("status.human-reviewed") })) : null),
       el("td", { text: phenomena(e.phenomena) }),
       el("td", { class: "num", text: fmtNum(e.max_dw_km2, 2) }),
       el("td", { class: "num", text: `${e.n_detect} / ${e.n_seen}` }),
@@ -104,6 +106,7 @@ async function main() {
   if (q) { S.q = q; $("q").value = q; }
   $("q").addEventListener("input", (e) => { S.q = e.target.value; S.page = 0; draw(); });
   $("tier").addEventListener("change", (e) => { S.tier = e.target.value; S.page = 0; draw(); });
+  $("status").addEventListener("change", (e) => { S.status = e.target.value; S.page = 0; draw(); });
   $("prev").addEventListener("click", () => { S.page--; drawTable(); window.scrollTo({ top: 0 }); });
   $("next").addEventListener("click", () => { S.page++; drawTable(); window.scrollTo({ top: 0 }); });
   $("download").addEventListener("click", () => {

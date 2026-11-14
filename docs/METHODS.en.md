@@ -77,6 +77,7 @@ The review had three stages.
 3. The author's verdict. The author, a volcanologist, read the reports and judged some of the cases himself.
 
 The field "Basis" of an episode says which stage its class comes from.
+Each episode also carries a review status, as earthquake catalogues do: "human-reviewed" when the author has judged it from the images, "AI-reviewed" when only the AI-assisted review has looked at it, and "automatic" when it rests on the screening and a date match alone.
 
 The archives were searched twice in November 2026; the notes call the two runs the first and the second hindcast and refer to their reports.
 The second run kept the review of the first for every episode that overlaps an episode reviewed there.
