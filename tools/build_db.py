@@ -46,6 +46,8 @@ HINDCAST_REPORT = "reports/hindcast2-20261114"
 SAT = {"sentinel-2a": "S2A", "sentinel-2b": "S2B", "sentinel-2c": "S2C", "sentinel-2d": "S2D",
        "landsat-8": "L8", "landsat-9": "L9"}
 RANK = {c: i for i, c in enumerate(CLASSES)}
+# Figures of the reports that are not published: they overlay bathymetry that is not yet public.
+WITHHELD_FIGURES = {"hindcast1/fig28_fonuafoou_10m_study.jpg"}
 DIGEST_EN = ("Low-resolution passes (VIIRS, MODIS, OLCI) of the reviewed episodes, cut out 30 km square around the zone "
              "centre (yellow cross). One row per episode; pink outline: discoloured water, orange outline: bright "
              "floating matter. Above each frame: date, satellite, area of discoloured water and of bright matter in "
@@ -593,7 +595,8 @@ def main() -> None:
               [dict(zip(["day", "utc", "zone_id", "sensor", "area_km2", "length_km", "from_jadid", "level", "store"],
                         r.values())) for r in bands])
     figs = [dict(volcano_id=f["volcano_id"], file="fig/" + f["file"].lstrip("/"), caption_en=f.get("caption_en", ""),
-                 caption_ja=f.get("caption_ja", "")) for f in cur["figures"] if f["volcano_id"] in volcanoes]
+                 caption_ja=f.get("caption_ja", "")) for f in cur["figures"]
+            if f["volcano_id"] in volcanoes and f["file"].lstrip("/") not in WITHHELD_FIGURES]
     for d in sorted((mon / "data/wide_refine/review/digest").glob("W-*.jpg")):
         vid = d.stem[2:]
         if vid in volcanoes and any(e["tier"] == "lowres" and e.get("_sheet") for e in by_volcano.get(vid, [])):

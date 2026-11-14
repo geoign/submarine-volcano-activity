@@ -26,6 +26,8 @@ import sys
 from pathlib import Path
 
 CACHE = "Cache-Control: public, max-age=604800"
+# Not published: figures that overlay bathymetry which is not yet public (see build_db.py).
+WITHHELD = {"hindcast1/fig28_fonuafoou_10m_study.jpg"}
 
 
 def rclone(args: list[str], dry: bool) -> int:
@@ -47,7 +49,7 @@ def stage_extras(mon: Path, stage: Path) -> None:
         shutil.copy2(digest, stage / "wide/digest" / digest.name)
     for tag, report in (("hindcast1", "hindcast-20261113"), ("hindcast2", "hindcast2-20261114")):
         for fig in (mon / "reports" / report / "fig").glob("*"):
-            if fig.suffix.lower() in (".jpg", ".jpeg", ".png"):
+            if fig.suffix.lower() in (".jpg", ".jpeg", ".png") and f"{tag}/{fig.name}" not in WITHHELD:
                 shutil.copy2(fig, stage / "fig" / tag / fig.name)
 
 
