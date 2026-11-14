@@ -35,6 +35,12 @@ folder is synchronised to a cloud drive: keep it to text and the few images of t
    Never edit that file by hand or on the author's behalf: it records what a person looked at.
    A row whose episode has gone from the tables stays; `tools/check_db.py` notes it. The form
    lists an episode again when passes were added to it after the day of its review.
+   When the author saved the file somewhere else and asks for it to be taken in, it replaces
+   `curation/human_review.csv` as a whole, byte for byte, after a comparison: a row of the old
+   file that the new one lacks is a review the author withdrew, or a file from another browser,
+   so ask before it is lost. After new reviews, the summaries of `curation/volcano_summaries.csv`
+   that the verdicts contradict are rewritten, and the author's comments get an English text
+   (step 4).
 6. Volcanoes of Japan: the Japan Coast Guard adds observations to its database of submarine
    volcanoes a few times a year. `python tools/parse_jcg.py --fetch` reads its pages again (one
    request at a time) and extracts the records; `python tools/import_jcg.py --pending <file>`
@@ -74,7 +80,9 @@ folder is synchronised to a cloud drive: keep it to text and the few images of t
   has Minami-Ioto, and Kita-Fukutoku-tai has a page of its own but is a zone of the same volcano
   here. The first comparison took every row of a volcano for every episode. An observation now
   counts for the zones its feature lies in (`curation/jcg_sites.csv`), and for the low-resolution
-  episodes of the volcano. The table of Kaitoku Seamount is of Higashi-Kaitoku-ba only.
+  episodes of the volcano. The table of Kaitoku Seamount is of Higashi-Kaitoku-ba only. Sofu-gan
+  (孀婦岩) and the Sofu Seamount caldera, 20 km to its west, are different volcanoes (the author,
+  2026-11-14): Sofu-gan is not a target here, and its table is not attached to the caldera.
 - The first rules read "湧出" (discoloured water welling up) as bubbles: 17 rows said "bubbles"
   under the Coast Guard's name without the source saying so. A label is added only for a word the
   text has; `prior_reports` says "reported", not "activity", and says how far the records reach

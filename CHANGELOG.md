@@ -26,3 +26,24 @@ First publication.
   what that database has within 14 days. The classes are unchanged: 22 episodes that the review
   had dismissed, left undetermined or counted as a usual feature have a record of something seen
   in their zone at the time, and wait for the author's review.
+
+## 2026-11-14, third update
+
+- The author's first reviews in the form: 175 episodes, so that 200 are `human-reviewed`
+  (3,557 `ai-reviewed`, 193 `automatic`). 104 of them changed class: 47 episodes without a review
+  and 16 that the review had kept as possible or undetermined were judged not volcanic, 34 were
+  raised to likely volcanic (most of them the recurring discoloured water of Fukutoku-Oka-no-Ba
+  and Lateiki), two passes matched by date to the eruption of Snow volcano (Gorshkov Caldera)
+  were judged to show the usual appearance of the place, and five moved to possible, undetermined
+  or recurrent. Classes now: 89 known, 78 likely, 76 possible,
+  234 recurrent, 22 airborne, 195 undetermined, 3,196 not volcanic, 60 unreviewed.
+- Of the 22 episodes that disagreed with the Coast Guard's records, the author reviewed 19:
+  four were raised to likely volcanic and one to possibly volcanic, one stays undetermined, and
+  13 were confirmed as not volcanic. Three at Funka Asane are left.
+- The summaries of 23 volcanoes say what the author judged; Napo Taroare has a summary.
+  English text for the author's comments.
+- Sofu-gan and the Sofu Seamount caldera are different volcanoes: the Coast Guard's table of
+  Sofu-gan stays out of the database, and the data dictionary says so.
+- The author's review form can leave out volcanoes where activity is seen almost all the time,
+  takes the cause of a dismissal by key, shows all passes of an episode side by side and
+  remembers the file it saves to.

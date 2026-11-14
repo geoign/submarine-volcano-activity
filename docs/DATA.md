@@ -83,9 +83,9 @@ around it, and a review note or a volcano summary may give a larger area seen by
 | `review_status` | Who looked at the episode: `human-reviewed` (the author judged it from the images), `ai-reviewed` (AI-assisted review only), `automatic` (nobody looked at the episode: screening and a date match only, or a decision taken for a whole zone). With the basis `ai_review_partial` the AI-assisted review saw only some of the alert passes |
 | `reviewed_at` | Day of the author's review, for `human-reviewed`. Passes added to the episode after that day were not part of the review |
 | `basis` | Where the class comes from: `catalogue` (date match with an eruption period), `ai_review` (AI-assisted review of the episode's passes), `ai_review_partial` (the review was of an overlapping episode of the first hindcast, or of an earlier state of the monitor's list, and saw only some of this episode's alert passes; its note may describe other days), `rule` (place with a usual feature, or the usual volcanic discoloured water of the volcano), `lead_review` (conclusion of the review report), `owner` (the author's verdict). Empty for `unreviewed` |
-| `cause` | For `nonvolcanic`: `cloud`, `cloud_shadow`, `sun_glint`, `reef_or_shoal`, `land_or_surf`, `land_or_ice`, `bloom`, `sediment_plume`, `ship_wake`, `sensor_artifact`, `neighbour_eruption`, `other` |
+| `cause` | For `nonvolcanic`: `cloud`, `cloud_shadow`, `sun_glint`, `reef_or_shoal`, `land_or_surf`, `land_or_ice`, `bloom`, `sediment_plume`, `ship_wake`, `sensor_artifact`, `neighbour_eruption`, `persistent` (the usual appearance of the place), `other` |
 | `interest` | Interest given by the first-pass review, 0 (dismissed) to 3; how much the episode deserved a second look, not a verdict |
-| `known_ref` | The eruption period the episode was matched to: `GVP <kind> <start>..<end>` with the dates of the catalogue, or `Own event list <start>..<end>` |
+| `known_ref` | The eruption period the episode was matched to: `GVP <kind> <start>..<end>` with the dates of the catalogue, or `Own event list <start>..<end>`. It stays when the author's review gave the episode another class: the dates overlap, and the author judged what the passes show |
 | `prior_reports` | What was checked against earlier reports, with the date of the check. For a volcano that has a page in the Japan Coast Guard's database: a digest, made for this database, of what that database has from 14 days before the episode to 14 days after it (see `jcg_observations.csv`), with the pages and the day they were used. "No record" comes with the span of the records used, since a table of the source can begin late and end before the episode. Empty: nothing was checked |
 | `image` | Path of a review sheet under the image base (low-resolution episodes that were reviewed) |
 | `note_en`, `note_ja` | Review note. Written in Japanese; the English is a translation and is missing for most dismissed episodes |
@@ -96,12 +96,12 @@ Classes
 
 | `class` | Meaning |
 |---|---|
-| `known` | Overlaps a documented eruption period (GVP eruption table or the database's own event list), from 30 days before its start to 90 days after its end. Matched by date, not reviewed one by one |
+| `known` | Overlaps a documented eruption period (GVP eruption table or the database's own event list), from 30 days before its start to 90 days after its end. Matched by date, and not reviewed one by one unless `review_status` says `human-reviewed` |
 | `likely` | Discoloured water, pumice or new land at the vent, judged likely volcanic |
 | `possible` | Volcanic origin cannot be excluded, nothing decisive |
 | `recurrent` | Pale water or turbidity that returns at the same place (eroding young island, shoal over the vent, hydrothermal bay). On record, not an alert |
 | `airborne` | Faint band in the air beside an island; kind not decided |
-| `undetermined` | Lowest interest, not looked at again |
+| `undetermined` | Not decided. Most are of the lowest interest in the AI-assisted review and were not looked at again; a few were looked at by the author and left undecided (`review_status`) |
 | `nonvolcanic` | Dismissed, with a cause |
 | `unreviewed` | Not reviewed. This includes episodes whose only review was of an overlapping episode with no alert pass in common |
 
@@ -173,7 +173,9 @@ Coast Guard's database of submarine volcanoes (海域火山データベース,
 The source has one table for Kaikata Seamount, which is two volcanoes here: its rows are listed
 under both. A row the source has twice is kept once. Tables of features farther than about 10 km
 from every zone centre of a volcano are not used (the islands Hachijojima, Aogashima, Mikurajima
-and Io-Torishima, and the rock Sofu-gan, 20 km from the Sofu Seamount caldera).
+and Io-Torishima). The table of the rock Sofu-gan (孀婦岩) is not used either: Sofu-gan and the
+Sofu Seamount caldera (孀婦海山カルデラ, 20 km to its west) are different volcanoes, and Sofu-gan is
+not among the volcanoes of this database, so its records are not shown under the caldera.
 
 | Column | Meaning |
 |---|---|
