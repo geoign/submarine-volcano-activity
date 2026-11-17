@@ -64,10 +64,12 @@ W-CAL727,CAL727,lowres,Raoul SW,whole volcano,-29.487,-178.1024,30,lowres
 CAL801-A,CAL801,highres,Quest,whole caldera (centroid of the rim polygon),-55.8139,-28.5191,4,s2+landsat
 W-CAL801,CAL801,lowres,Quest,whole volcano,-55.8139,-28.5191,30,lowres
 CAL802-A,CAL802,highres,Resolution caldera,whole caldera (centroid of the rim polygon),-59.4294,-27.0631,5,s2+landsat
+CAL802-S,CAL802,highres,Resolution カルデラ東 鉛直 CLVD 型の震源,zone on an earthquake cluster (centroid of the epicentres),-59.54,-26.672,8.5,s2+landsat
 W-CAL802,CAL802,lowres,Resolution caldera,whole volcano,-59.4294,-27.0631,30,lowres
 CAL804-A,CAL804,highres,Kemp Caldera,whole caldera (centroid of the rim polygon),-59.6937,-28.3403,6,s2+landsat
 W-CAL804,CAL804,lowres,Kemp Caldera,whole volcano,-59.6937,-28.3403,30,lowres
 CAL901-A,CAL901,highres,Orca,whole caldera (centroid of the rim polygon),-62.4296,-58.404,4,s2+landsat
+CAL901-S,CAL901,highres,Orca 2020年貫入の地震群の重心,zone on an earthquake cluster (centroid of the epicentres),-62.318,-58.264,8,s2+landsat
 W-CAL901,CAL901,lowres,Orca,whole volcano,-62.4296,-58.404,30,lowres
 CAL902-A,CAL902,highres,Humpback,whole caldera (centroid of the rim polygon),-62.8504,-59.8461,5,s2+landsat
 W-CAL902,CAL902,lowres,Humpback,whole volcano,-62.8504,-59.8461,30,lowres
@@ -82,6 +84,7 @@ W-GVP211070,GVP211070,lowres,Campi Flegrei del Mar di Sicilia,whole volcano,37.1
 GVP211080-A,GVP211080,highres,Marsili,summit or vent (GVP coordinates),39.284,14.399,5,s2+landsat
 W-GVP211080,GVP211080,lowres,Marsili,whole volcano,39.284,14.399,30,lowres
 GVP212042-A,GVP212042,highres,Kolumbo 火口,vent,36.524,25.483,3,s2+landsat
+GVP212042-S,GVP212042,highres,Kolumbo 2025年貫入の地震群の重心,zone on an earthquake cluster (centroid of the epicentres),36.574,25.638,9,s2+landsat
 W-GVP212042,GVP212042,lowres,Kolumbo,whole volcano,36.524,25.483,30,lowres
 GVP221020-A,GVP221020,highres,Sholan Island (2011-12),vent (new island),15.1572,42.1011,3,s2+landsat
 GVP221020-B,GVP221020,highres,Jadid Island (2013),vent (new island),15.0975,42.1336,3,s2+landsat
@@ -106,8 +109,10 @@ W-GVP241201,GVP241201,lowres,Ngatoroirangi,whole volcano,-33.729,179.827,30,lowr
 W-GVP241203,GVP241203,lowres,Kuiwai,whole volcano,-33.159,-179.957,30,lowres
 W-GVP241204,GVP241204,lowres,Haungaroa,whole volcano,-32.617,-179.624,30,lowres
 GVP242001-A,GVP242001,highres,Wright,summit or vent (GVP coordinates),-31.85,-179.18,5,landsat
+GVP242001-S,GVP242001,highres,Wright 北東 2023年地震群の重心,zone on an earthquake cluster (centroid of the epicentres),-31.767,-178.919,7,landsat
 W-GVP242001,GVP242001,lowres,Wright,whole volcano,-31.85,-179.18,30,lowres
 GVP242005-A,GVP242005,highres,Havre カルデラ,whole caldera,-31.106,-179.034,5,landsat
+GVP242005-S,GVP242005,highres,Havre 2022年地震群の重心,zone on an earthquake cluster (centroid of the epicentres),-31.167,-178.937,12,landsat
 W-GVP242005,GVP242005,lowres,Havre Seamount,whole volcano,-31.106,-179.034,30,lowres
 GVP242010-A,GVP242010,highres,Curtis Island,volcanic island and caldera,-30.543,-178.556,8,s2+landsat
 GVP242010-B,GVP242010,highres,Vulkanolog 海山,summit,-30.687,-178.453,3,s2+landsat
@@ -121,6 +126,7 @@ GVP242030-W,GVP242030,highres,Raoul Island 全体,around the volcanic island,-29
 W-GVP242030,GVP242030,lowres,Raoul Island,whole volcano,-29.19,-177.88,30,lowres
 GVP242031-A,GVP242031,highres,Hinetapeka 北部カルデラ,caldera,-28.6248,-177.8042,7,landsat
 GVP242031-B,GVP242031,highres,Hinetapeka 南部山頂,summit,-28.831,-177.826,3,landsat
+GVP242031-S,GVP242031,highres,Hinetapeka 2023年地震群の重心,zone on an earthquake cluster (centroid of the epicentres),-28.539,-177.698,12,landsat
 W-GVP242031,GVP242031,lowres,Hinetapeka,whole volcano,-28.6248,-177.8042,30,lowres
 GVP242032-A,GVP242032,highres,Volcano OP,summit (GVP coordinates),-28.218,-177.692,5,landsat
 W-GVP242032,GVP242032,lowres,Volcano OP,whole volcano,-28.218,-177.692,30,lowres
@@ -142,6 +148,7 @@ GVP243009-W,GVP243009,highres,Tofua Arc 21.8°S カルデラ,whole caldera,-21.8
 W-GVP243009,GVP243009,lowres,Tofua Arc at 21.8°S,whole volcano,-21.83,-175.9248,30,lowres
 GVP243010-A,GVP243010,highres,Tofua Arc 21.3°S 山頂,summit,-21.3351,-175.6555,5,s2+landsat
 GVP243010-B,GVP243010,highres,Tofua Arc 21.3°S 北西カルデラ・火口丘,caldera and cone,-21.2856,-175.7001,4,s2+landsat
+GVP243010-S,GVP243010,highres,Tofua 弧 21.2°S 鉛直 CLVD 型の震源,zone on an earthquake cluster (centroid of the epicentres),-21.214,-175.631,7,s2+landsat
 W-GVP243010,GVP243010,lowres,Tofua Arc at 21.3°S,whole volcano,-21.3351,-175.6555,30,lowres
 GVP243011-A,GVP243011,highres,Volcano 1 (Tofua Arc 21.1°S),two scoria cones inside the caldera,-21.15,-175.75,6,s2+landsat
 W-GVP243011,GVP243011,lowres,Tofua Arc at 21.1°S,whole volcano,-21.15,-175.75,30,lowres
@@ -212,6 +219,7 @@ GVP250010-A,GVP250010,highres,Tuluman (1953-57),vent,-2.4469,147.3167,3,s2+lands
 GVP250010-W,GVP250010,highres,St. Andrew Strait 全体,whole strait,-2.38,147.35,10,s2+landsat
 W-GVP250010,GVP250010,lowres,St. Andrew Strait,whole volcano,-2.4469,147.3167,30,lowres
 GVP250030-A,GVP250030,highres,Titan Ridge 2026年噴火地点,eruption site of 2026 (NE and SW vents),-3.104,147.905,10,s2+landsat
+GVP250030-S,GVP250030,highres,Titan Ridge 2026年地震群の重心,zone on an earthquake cluster (centroid of the epicentres),-2.94,147.788,12,s2+landsat
 W-GVP250030,GVP250030,lowres,Titan Ridge,whole volcano,-3.104,147.905,30,lowres
 GVP251041-A,GVP251041,highres,Hankow Reef,summit or vent (GVP coordinates),-4.883,146.717,5,s2+landsat
 W-GVP251041,GVP251041,lowres,Hankow Reef,whole volcano,-4.883,146.717,30,lowres
@@ -222,6 +230,7 @@ W-GVP255052,GVP255052,lowres,Kana Keoki,whole volcano,-8.75,157.03,30,lowres
 GVP255053-A,GVP255053,highres,Coleman Seamount,summit or vent (GVP coordinates),-8.841,157.16,5,s2+landsat
 W-GVP255053,GVP255053,lowres,Coleman Seamount,whole volcano,-8.841,157.16,30,lowres
 GVP255060-A,GVP255060,highres,Kavachi 山頂,vent,-8.994,157.9735,4,s2+landsat
+GVP255060-S,GVP255060,highres,Kavachi 北 2026年地震群の重心,zone on an earthquake cluster (centroid of the epicentres),-8.883,157.989,12,s2+landsat
 W-GVP255060,GVP255060,lowres,Kavachi,whole volcano,-8.994,157.9735,30,lowres
 GVP255061-A,GVP255061,highres,New Georgia at 8.9°S,GVP coordinates,-8.92,158.03,5,s2+landsat
 W-GVP255061,GVP255061,lowres,New Georgia at 8.9°S,whole volcano,-8.92,158.03,30,lowres
@@ -261,6 +270,7 @@ W-GVP284088,GVP284088,lowres,Kayo Seamount,whole volcano,29.064,140.537,30,lowre
 GVP284089-A,GVP284089,highres,Kinyo Seamount,summit (GVP coordinates),28.084,140.802,5,s2+landsat
 W-GVP284089,GVP284089,lowres,Kinyo Seamount,whole volcano,28.084,140.802,30,lowres
 GVP284093-A,GVP284093,highres,Suiyo Seamount,summit or vent (GVP coordinates),28.575,140.633,5,s2
+GVP284093-S,GVP284093,highres,水曜海山 2022年地震群の重心,zone on an earthquake cluster (centroid of the epicentres),28.62,140.473,12,s2
 W-GVP284093,GVP284093,lowres,Suiyo Seamount,whole volcano,28.575,140.633,30,lowres
 GVP284094-A,GVP284094,highres,Mokuyo Seamount,summit or vent (GVP coordinates),28.327,140.572,5,s2+landsat
 W-GVP284094,GVP284094,lowres,Mokuyo Seamount,whole volcano,28.327,140.572,30,lowres
@@ -305,6 +315,7 @@ GVP284188-A,GVP284188,highres,West Sarigan,summit (GVP coordinates),16.7424,145.
 W-GVP284188,GVP284188,lowres,West Sarigan,whole volcano,16.7424,145.6183,30,lowres
 GVP284191-A,GVP284191,highres,Zealandia Bank 山頂,summit (twin peaks),16.8944,145.8502,3,s2+landsat
 GVP284191-B,GVP284191,highres,Zealandia Bank 西部カルデラ,caldera and central cone,16.8827,145.8218,2.5,s2+landsat
+GVP284191-S,GVP284191,highres,Zealandia Bank 2015年地震群の重心,zone on an earthquake cluster (centroid of the epicentres),16.96,145.915,9.5,s2+landsat
 W-GVP284191,GVP284191,lowres,Zealandia Bank,whole volcano,16.8944,145.8502,30,lowres
 GVP284193-A,GVP284193,highres,South Sarigan 火山群,"three cones (north: vent of 2010, south: shallowest, east)",16.5936,145.775,3.5,s2+landsat
 W-GVP284193,GVP284193,lowres,South Sarigan Seamount,whole volcano,16.5936,145.775,30,lowres

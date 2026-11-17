@@ -50,3 +50,50 @@ First publication.
 - The author's review form can leave out volcanoes where activity is seen almost all the time,
   takes the cause of a dismissal by key, shows all passes of an episode side by side and
   remembers the file it saves to.
+
+## 2026-11-17
+
+- Passes up to 2026-11-16 (the monitoring cycle of 2026-11-17).
+- 11 zones on earthquake clusters (`kind` "zone on an earthquake cluster (centroid of the
+  epicentres)"), so 408 zones. They hold 25 episodes: six matched to a known eruption or event
+  period (Kavachi, Titan Ridge), one of this cycle judged not volcanic (Kolumbo), 18 without a
+  review.
+- The second hindcast was built again after a review of the monitoring system's code: 24,987 of its
+  passes had been judged against the current land mask and reference image although a baseline of
+  their own period existed; the 1,980 of them whose images are still stored were judged again, and
+  the store was levelled with the current zone table (the six volcanoes treated as having a usual
+  feature since 2026-11-14 among them). Hindcast episodes: 3,435 (3,488); 76 episodes are gone and
+  23 new ones are parts of earlier episodes whose alert passes changed (St. Andrew Strait, Tagoro,
+  Moekeshiwan, Zubair group, Raoul Island, Kuril 45.43N, Panarea), all without a review.
+- A review counts only for the alert days it was given on: a verdict carried from the first hindcast
+  for the days of the first hindcast's episode, a verdict of the second hindcast for the days of the
+  episode as it was then (`curation/hindcast2_triaged_days.csv`, the list of 2026-11-14). 81 reviews
+  are set aside, about as many as before by the same rule for carried verdicts; the only episode
+  that loses its review is that of Tagoro of 2024-10-04, now a single pass. Episodes with alert days
+  their review did not see are `ai_review_partial`.
+- The Smithsonian catalogue is read with its end dates as given: an eruption without an end date is
+  no longer taken as going on, and one marked `>` before its end year was still going on at the last
+  date the catalogue gives (Kavachi from 2020, '>' 2024-04-24, now shown as "..continuing"). So one
+  episode of Kavachi of 2024-08-31 that the review had kept as possibly volcanic is known, the
+  episodes of Kavachi from 2024-08 to 2026-10 refer to that eruption (the author's verdicts on them
+  stand), the summary of Kavachi says so, and the episode of the Zubair group of 2014-01-27 refers
+  to the eruption that built Jadid Island (the three of 2013 did already). The episode of Kaitoku
+  Seamount of 2023-03-31 refers to the monitoring system's own event period (2022-08-15 to
+  2023-03-31) instead of the Smithsonian eruption.
+- Judged against its own period's baseline, the "new land" detection of Fukutoku-Oka-no-Ba of
+  2024-04-30, which the first hindcast had found false, is no longer an alert, and its override is
+  gone with its episode. Likewise the first pass of the author's reviewed episode of Tagoro of
+  2016-05-07 is no longer an alert; the review stays in `curation/human_review.csv`, and the
+  remaining pass (episode of 2016-05-23) awaits the author's review. The author's reviewed episode
+  of the Zubair group of 2024-03-15 (airborne) took in the next episode (2024-05-09 to 06-07,
+  recurrent by the rule for places with a usual feature) and now holds 8 alert passes instead of 2;
+  the verdict stays and is to be checked by the author.
+- The low-resolution daily record was judged again: 2,515 Sentinel-3A passes of 2023-04-26 to 05-10
+  had been stored as "no data" (bad catalogue footprints); the slice of 2023-04-26 to 07-25 was
+  fetched again (1,212 passes read, 401 days added), and every day was levelled again (4,383 days
+  changed, 1,253 in level: 739 from L2 to L1, 233 from L1 to L2, 230 from L3 to L2, 51 others). Two
+  days of Kuiwai (2026-10-26, 10-27) are out since its passes, whose window crosses the
+  antimeridian, were fetched again as one overpass each. The low-resolution episodes are still those
+  reviewed on 2026-11-14.
+- Classes now: 95 known, 77 likely, 76 possible, 214 recurrent, 22 airborne, 161 undetermined, 3,180
+  not volcanic, 100 unreviewed; 242 `human-reviewed`, 3,445 `ai-reviewed`, 238 `automatic`.

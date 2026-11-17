@@ -58,6 +58,7 @@ ZONE_TYPE = {
     "火口・山頂": "vent and summit",
     "火山群全域": "whole volcanic group",
     "山頂火口": "summit crater",
+    "地震群の警戒域": "zone on an earthquake cluster (centroid of the epicentres)",
     "カルデラ内スコリア丘2個": "two scoria cones inside the caldera",
     "カルデラ・火口丘": "caldera and cone",
     "後カルデラ中央火口丘": "post-caldera central cone",

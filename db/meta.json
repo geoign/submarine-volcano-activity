@@ -1,35 +1,35 @@
 {
- "generated": "2026-11-14T14:36Z",
- "monitor_commit": "16ae189",
+ "generated": "2026-11-17T09:22Z",
+ "monitor_commit": "77f5be9",
  "image_base": "https://gis.ikgm.net/submvolc",
  "cut": "2025-11-12T00:00:00Z",
  "first_pass": "2013-04-01",
- "last_pass": "2026-11-12",
+ "last_pass": "2026-11-16",
  "volcanoes": 204,
- "zones": 397,
- "passes": 242959,
- "quicklooks": 127063,
- "lowres_days": 191702,
- "episodes": 3950,
+ "zones": 408,
+ "passes": 244277,
+ "quicklooks": 127748,
+ "lowres_days": 192719,
+ "episodes": 3925,
  "episodes_by_class": {
-  "known": 88,
+  "known": 95,
   "likely": 77,
-  "possible": 77,
-  "recurrent": 234,
+  "possible": 76,
+  "recurrent": 214,
   "airborne": 22,
   "undetermined": 161,
-  "nonvolcanic": 3232,
-  "unreviewed": 59
+  "nonvolcanic": 3180,
+  "unreviewed": 100
  },
  "episodes_by_source": {
-  "hindcast2": 3488,
-  "monitor": 285,
+  "hindcast2": 3435,
+  "monitor": 313,
   "olci_survey": 177
  },
  "episodes_by_review_status": {
-  "ai-reviewed": 3517,
-  "automatic": 190,
-  "human-reviewed": 243
+  "ai-reviewed": 3445,
+  "automatic": 238,
+  "human-reviewed": 242
  },
  "ring_wave_records": 4,
  "airborne_band_records": 24,

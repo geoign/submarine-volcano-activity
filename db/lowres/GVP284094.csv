@@ -758,8 +758,9 @@ date,src,n_passes,cls,level,dw_km2,bright_km2,dw_two_pass_km2
 2023-04-18,olci,1,A,L1,0,1,0
 2023-04-19,olci,1,A,L1,0,0,0
 2023-04-24,olci,2,B,L1,0,0,0
-2023-05-01,olci,2,A,L1,0,0,0
-2023-05-05,olci,2,B,L1,0,0,0
+2023-05-01,olci,1,A,L1,0,0,0
+2023-05-05,olci,1,B,L1,0,0,0
+2023-05-06,olci,2,A,L1,0.56,0,0
 2023-05-13,olci,1,B,L1,0,0,0
 2023-05-16,olci,1,A,L1,0,0,0
 2023-05-17,olci,2,A,L1,0,0,0
@@ -980,3 +981,6 @@ date,src,n_passes,cls,level,dw_km2,bright_km2,dw_two_pass_km2
 2026-11-06,olci,2,A,L1,0,0,0
 2026-11-07,olci,1,A,L1,0,0,0
 2026-11-10,olci,2,B,L1,0,0,0
+2026-11-13,viirs,2,B,L1,0,0,0
+2026-11-14,viirs,2,A,L1,0,0,0
+2026-11-16,viirs,2,B,L1,0,0,0

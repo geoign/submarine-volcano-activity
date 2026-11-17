@@ -276,32 +276,43 @@ def hindcast_episodes(mon: Path, zone_volcano: dict) -> list[dict]:
     owner = {r["episode"]: r.get("owner_verdict", "") for r in read_csv(mon / HINDCAST_REPORT / "look.csv")}
     first = mon / "data/retro/review/episodes.csv"
     earlier = {r["episode"]: obs_days(r["obs_ids"]) for r in read_csv(first)} if first.exists() else {}
+    # The alert days of the episodes as they were when the report's triage was made (2026-11-14).
+    # The store's list is built again when the first stage changes (2026-11-17), and an episode can
+    # keep its id with other passes: a verdict counts for the days it was given on.
+    snap = ROOT / "curation" / "hindcast2_triaged_days.csv"
+    if not snap.exists():
+        raise SystemExit(f"missing {snap.relative_to(ROOT)}: the alert days the hindcast's reviews were given on")
+    triaged = {r["episode"]: set(filter(None, r["alert_days"].split(";"))) for r in read_csv(snap)}
     rows = []
     n_void = 0
     for e in eps:
         t = triage.get(e["episode"], {})
         cls, basis, cause, interest, note = "unreviewed", "", "", "", ""
         # The second hindcast took over the review of the first for every episode that overlaps one
-        # of the first within 21 days. Where the two share no alert day, the review was of other
-        # passes: the episode is not reviewed.
+        # of the first within 21 days: that verdict was given on the passes of the first hindcast's
+        # episode the triage names. A verdict of this run was given on the passes of the episode as
+        # it was then. Where this episode shares no alert day with those, the review was of other
+        # passes: the episode is not reviewed; where it has days they lacked, the review is partial.
         carried = t.get("source") == "earlier run"
-        mine, theirs = obs_days(e["obs_ids"]), earlier.get(e.get("prior_episode", ""), set())
-        if carried and not e["known"] and not (mine & theirs):
+        mine = obs_days(e["obs_ids"])
+        theirs = earlier.get(t.get("prior_episode") or "", set()) if carried else triaged.get(e["episode"], mine)
+        if t and not (mine & theirs):
             n_void += 1
             t = {}
         # "ai_review_partial": the review saw some of this episode's alert passes, not all of them.
-        how = "ai_review_partial" if carried and not mine <= theirs else "ai_review"
-        if e["known"]:
-            cls, basis = "known", "catalogue"
-        elif t.get("call") == "dismiss":
+        how = "ai_review_partial" if t and not mine <= theirs else "ai_review"
+        if t.get("call") == "dismiss":
             cls, basis, cause, interest = "nonvolcanic", how, t.get("cause", ""), "0"
         elif t.get("call") == "look":
             interest = str(int(float(t.get("interest") or 0)))
             cls, basis = {"3": "likely", "2": "possible"}.get(interest, "undetermined"), how
+        if e["known"]:
+            # A catalogue match decides the class; the review's interest and note stay.
+            cls, basis, cause = "known", "catalogue", ""
         note = (t.get("note") or "").strip()
         rows.append(_episode_row(e, "hindcast2", zone_volcano, cls, basis, cause, interest, note,
                                  owner.get(e["episode"], "")))
-    print(f"  hindcast: {n_void} carried reviews set aside (no alert day in common with the reviewed episode)")
+    print(f"  hindcast: {n_void} reviews set aside (no alert day in common with the episode they were given on)")
     return rows
 
 
@@ -529,7 +540,10 @@ def known_periods(mon: Path, volcanoes: dict, first_year: int = 2013) -> list[di
             rows.append(dict(
                 volcano_id=vid, source="GVP", kind=r["Activity_Type"], start=start,
                 end=date(r["EndDateYear"], r["EndDateMonth"], r["EndDateDay"]),
-                continuing="yes" if (r["Volcano_Number"].split(".")[0], start.replace("-", "")) in continuing else "",
+                # A '>' before the end year marks an eruption still going on at the last date the
+                # catalogue gives for it (its end date): Kavachi from 2020, '>' 2024-04-24.
+                continuing="yes" if ((r["Volcano_Number"].split(".")[0], start.replace("-", "")) in continuing
+                                     or (r.get("EndDateYearModifier") or "").strip() == ">") else "",
                 area=r["ActivityArea"], note=""))
     ev = mon / "config/events.toml"
     if ev.exists():
@@ -562,7 +576,7 @@ def exact_known_refs(episodes: list[dict], periods: list[dict]) -> int:
             for p in by.get(e["volcano_id"], []):
                 full = len(p["start"]) == 10
                 if p["kind"] == kind and (abs(day(p["start"]) - day(start)) <= 3 if full else start.startswith(p["start"])):
-                    end = p["end"] or ("continuing" if p["continuing"] else "end not given")
+                    end = "continuing" if p["continuing"] else (p["end"] or "end not given")
                     ref = f"GVP {kind} {p['start']}..{end}{rest}"
                     break
         if ref != e["known_ref"]:

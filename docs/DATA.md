@@ -162,7 +162,7 @@ Eruption periods since 2013 for the volcanoes of the database, as used for the c
 | `source` | `GVP` (Volcanoes of the World, Global Volcanism Program, Smithsonian Institution, retrieved 2026-11-11) or `monitor` (the database's own list of event periods, taken wide on purpose) |
 | `kind` | `Confirmed Eruption`, `Uncertain Eruption` or `Event period` |
 | `start`, `end` | Dates as given; a part that is not known is left out (`2014`, `2014-01`) |
-| `continuing` | `yes` when the catalogue marked the eruption as continuing |
+| `continuing` | `yes` when the catalogue marks the eruption as continuing (its flag, or `>` before the end year: still going on at the last date the catalogue gives for it, which is then `end`) |
 | `area`, `note` | Vent or area named by the catalogue; note of the own list |
 
 ## jcg_observations.csv
